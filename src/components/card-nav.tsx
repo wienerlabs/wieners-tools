@@ -28,6 +28,8 @@ type CardNavProps = {
   buttonTextColor?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
   menuLabel?: string;
   closeLabel?: string;
   rightSlot?: React.ReactNode;
@@ -44,6 +46,8 @@ export default function CardNav({
   buttonTextColor = "#fff4dd",
   ctaLabel,
   ctaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
   menuLabel = "Menu",
   closeLabel = "Close",
   rightSlot
@@ -91,6 +95,13 @@ export default function CardNav({
 
         <div className="ws-cardnav-actions">
           {rightSlot}
+
+          {secondaryCtaLabel && secondaryCtaHref ? (
+            <Link href={secondaryCtaHref} className="ws-cardnav-cta is-secondary">
+              <span>{secondaryCtaLabel}</span>
+              <ArrowUpRight size={14} />
+            </Link>
+          ) : null}
 
           {ctaLabel && ctaHref ? (
             <Link href={ctaHref} className="ws-cardnav-cta">

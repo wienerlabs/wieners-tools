@@ -29,6 +29,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       items={ui.cardNav.items}
       ctaLabel={ui.cardNav.ctaLabel}
       ctaHref={`/${locale}/components/`}
+      secondaryCtaLabel={ui.cardNav.secondaryCtaLabel}
+      secondaryCtaHref={`/${locale}/blockchain/`}
       menuLabel={ui.cardNav.menuLabel}
       closeLabel={ui.cardNav.closeLabel}
       rightSlot={<LanguageSwitcher currentLabel={localeNames[locale]} options={languageOptions} />}

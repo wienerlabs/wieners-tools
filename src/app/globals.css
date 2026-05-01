@@ -2049,6 +2049,18 @@ button, input, textarea, select { font: inherit; }
   opacity: 0.92;
 }
 
+.ws-cardnav-cta.is-secondary {
+  background: transparent;
+  color: var(--cn-menu);
+  border: 1px solid var(--cn-menu);
+}
+
+.ws-cardnav-cta.is-secondary:hover {
+  background: var(--cn-menu);
+  color: var(--cn-base);
+  opacity: 1;
+}
+
 .ws-cardnav-toggle {
   display: inline-flex;
   align-items: center;
@@ -2180,6 +2192,7 @@ button, input, textarea, select { font: inherit; }
   .ws-cardnav-card-title { font-size: 24px; }
   .ws-cardnav-cta span { display: none; }
   .ws-cardnav-cta { padding: 9px 12px; }
+  .ws-cardnav-cta.is-secondary { display: none; }
 }
 
 @media (max-width: 520px) {

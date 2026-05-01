@@ -83,6 +83,7 @@ export type SiteContent = {
     menuLabel: string;
     closeLabel: string;
     ctaLabel: string;
+    secondaryCtaLabel: string;
     items: Array<{
       label: string;
       bgColor?: string;
@@ -255,6 +256,7 @@ export const content: Record<Locale, SiteContent> = {
       menuLabel: "Menü",
       closeLabel: "Kapat",
       ctaLabel: "Komponentler",
+      secondaryCtaLabel: "Blockchain",
       items: [
         {
           label: "Araçlar",
@@ -477,6 +479,7 @@ export const content: Record<Locale, SiteContent> = {
       menuLabel: "Menu",
       closeLabel: "Close",
       ctaLabel: "Components",
+      secondaryCtaLabel: "Blockchain",
       items: [
         {
           label: "Tools",
@@ -699,6 +702,7 @@ export const content: Record<Locale, SiteContent> = {
       menuLabel: "Menü",
       closeLabel: "Schließen",
       ctaLabel: "Komponenten",
+      secondaryCtaLabel: "Blockchain",
       items: [
         {
           label: "Werkzeuge",
@@ -921,6 +925,7 @@ export const content: Record<Locale, SiteContent> = {
       menuLabel: "القائمة",
       closeLabel: "إغلاق",
       ctaLabel: "المكونات",
+      secondaryCtaLabel: "Blockchain",
       items: [
         {
           label: "الأدوات",
