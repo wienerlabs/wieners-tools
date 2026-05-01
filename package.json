@@ -1,6 +1,6 @@
 {
   "name": "wieners-tools",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Browser-native image toolkit — compress, convert, edit, generate. 100% client-side.",
   "scripts": {
@@ -17,7 +17,20 @@
     "qrcode": "^1.5.4",
     "colorthief": "^2.4.0",
     "lucide-react": "^0.469.0",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "@imgly/background-removal": "^1.5.5",
+    "tesseract.js": "^5.1.1",
+    "heic2any": "^0.0.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
+    "exifreader": "^4.23.7",
+    "piexifjs": "^1.0.6",
+    "gifenc": "^1.0.3",
+    "gifuct-js": "^2.1.2",
+    "react-image-crop": "^11.0.7",
+    "imagetracerjs": "^1.2.6",
+    "pica": "^9.0.1",
+    "svgo": "^3.3.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
@@ -25,6 +38,7 @@
     "@types/qrcode": "^1.5.5",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/pica": "^9.0.4",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "tailwindcss": "latest",

@@ -36,7 +36,7 @@ export function ToolCard({ locale, tool, i18n }: ToolCardProps) {
     if (b === "ai") return ui.toolsSection.badgeAi;
     if (b === "new") return ui.toolsSection.badgeNew;
     if (b === "fast") return ui.toolsSection.badgeFast;
-    if (b === "offline") return ui.toolsSection.badgeOffline;
+    if (b === "clientside") return ui.toolsSection.badgeClientSide;
     if (b === "beta") return ui.toolsSection.badgeBeta;
     return b;
   };

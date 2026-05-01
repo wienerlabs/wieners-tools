@@ -24,7 +24,7 @@ export type SiteContent = {
     badgeBeta: string;
     badgeNew: string;
     badgeFast: string;
-    badgeOffline: string;
+    badgeClientSide: string;
   };
   about: {
     title: string;
@@ -99,7 +99,7 @@ export const content: Record<Locale, SiteContent> = {
       badgeBeta: "Beta",
       badgeNew: "Yeni",
       badgeFast: "Hızlı",
-      badgeOffline: "Offline"
+      badgeClientSide: "Client-side"
     },
     about: {
       title: "Wiener's Tools nedir?",
@@ -189,7 +189,7 @@ export const content: Record<Locale, SiteContent> = {
       badgeBeta: "Beta",
       badgeNew: "New",
       badgeFast: "Fast",
-      badgeOffline: "Offline"
+      badgeClientSide: "Client-side"
     },
     about: {
       title: "What is Wiener's Tools?",
@@ -279,7 +279,7 @@ export const content: Record<Locale, SiteContent> = {
       badgeBeta: "Beta",
       badgeNew: "Neu",
       badgeFast: "Schnell",
-      badgeOffline: "Offline"
+      badgeClientSide: "Client-side"
     },
     about: {
       title: "Was ist Wiener's Tools?",
@@ -369,7 +369,7 @@ export const content: Record<Locale, SiteContent> = {
       badgeBeta: "تجريبي",
       badgeNew: "جديد",
       badgeFast: "سريع",
-      badgeOffline: "بدون اتصال"
+      badgeClientSide: "في المتصفح"
     },
     about: {
       title: "ما هو Wiener's Tools؟",

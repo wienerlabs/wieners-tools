@@ -10,21 +10,24 @@ export const tools: ToolDefinition[] = [
     accept: "image/*",
     multiple: true,
     maxSizeMB: 100,
-    badges: ["fast", "offline"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "optimize-svg",
     category: "compression",
     icon: "FileCode",
-    status: "soon",
-    accept: ".svg,image/svg+xml"
+    status: "ready",
+    accept: ".svg,image/svg+xml",
+    multiple: true,
+    badges: ["fast", "clientside"]
   },
   {
     slug: "compress-pdf",
     category: "compression",
     icon: "FileText",
-    status: "soon",
-    accept: ".pdf,application/pdf"
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
   },
 
   // ------------- Conversion
@@ -35,43 +38,50 @@ export const tools: ToolDefinition[] = [
     status: "ready",
     accept: "image/*",
     multiple: true,
-    badges: ["fast", "offline"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "heic-to-jpg",
     category: "conversion",
     icon: "Image",
-    status: "soon",
-    accept: ".heic,.heif,image/heic,image/heif"
+    status: "ready",
+    accept: ".heic,.heif,image/heic,image/heif",
+    multiple: true,
+    badges: ["new", "clientside"]
   },
   {
     slug: "image-to-pdf",
     category: "conversion",
     icon: "FilePlus",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    multiple: true
+    multiple: true,
+    badges: ["new", "clientside"]
   },
   {
     slug: "pdf-to-image",
     category: "conversion",
     icon: "FileImage",
-    status: "soon",
-    accept: ".pdf,application/pdf"
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
   },
   {
     slug: "svg-to-png",
     category: "conversion",
     icon: "FileImage",
-    status: "soon",
-    accept: ".svg,image/svg+xml"
+    status: "ready",
+    accept: ".svg,image/svg+xml",
+    multiple: true,
+    badges: ["fast", "clientside"]
   },
   {
     slug: "png-to-svg",
     category: "conversion",
     icon: "Vector",
-    status: "soon",
-    accept: "image/png,image/jpeg"
+    status: "ready",
+    accept: "image/png,image/jpeg",
+    badges: ["new", "clientside"]
   },
   {
     slug: "favicon-generator",
@@ -79,7 +89,7 @@ export const tools: ToolDefinition[] = [
     icon: "Star",
     status: "ready",
     accept: "image/*",
-    badges: ["fast"]
+    badges: ["fast", "clientside"]
   },
 
   // ------------- Editing
@@ -89,14 +99,15 @@ export const tools: ToolDefinition[] = [
     icon: "Maximize2",
     status: "ready",
     accept: "image/*",
-    badges: ["fast", "offline"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "crop-image",
     category: "editing",
     icon: "Crop",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    badges: ["new", "clientside"]
   },
   {
     slug: "rotate-flip",
@@ -104,7 +115,7 @@ export const tools: ToolDefinition[] = [
     icon: "RotateCw",
     status: "ready",
     accept: "image/*",
-    badges: ["fast"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "pixelart",
@@ -120,7 +131,7 @@ export const tools: ToolDefinition[] = [
     icon: "Sliders",
     status: "ready",
     accept: "image/*",
-    badges: ["fast"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "apply-filter",
@@ -128,36 +139,41 @@ export const tools: ToolDefinition[] = [
     icon: "Aperture",
     status: "ready",
     accept: "image/*",
-    badges: ["fast"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "add-watermark",
     category: "editing",
     icon: "Stamp",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    multiple: true,
+    badges: ["new", "clientside"]
   },
   {
     slug: "blur-region",
     category: "editing",
     icon: "Droplets",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    badges: ["new", "clientside"]
   },
   {
     slug: "collage-maker",
     category: "editing",
     icon: "LayoutGrid",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    multiple: true
+    multiple: true,
+    badges: ["new", "clientside"]
   },
   {
     slug: "image-splitter",
     category: "editing",
     icon: "Grid2x2",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    badges: ["fast", "clientside"]
   },
 
   // ------------- AI
@@ -165,25 +181,25 @@ export const tools: ToolDefinition[] = [
     slug: "remove-background",
     category: "ai",
     icon: "Eraser",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    badges: ["ai"]
+    badges: ["ai", "clientside"]
   },
   {
     slug: "upscale-image",
     category: "ai",
     icon: "ZoomIn",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    badges: ["ai"]
+    badges: ["ai", "clientside"]
   },
   {
     slug: "image-ocr",
     category: "ai",
     icon: "ScanText",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    badges: ["ai"]
+    badges: ["ai", "clientside"]
   },
 
   // ------------- Generation
@@ -201,28 +217,31 @@ export const tools: ToolDefinition[] = [
     icon: "Palette",
     status: "ready",
     accept: "image/*",
-    badges: ["fast"]
+    badges: ["fast", "clientside"]
   },
   {
     slug: "color-picker",
     category: "generation",
     icon: "Pipette",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    badges: ["new", "fast"]
   },
   {
     slug: "mockup-generator",
     category: "generation",
     icon: "MonitorSmartphone",
-    status: "soon",
-    accept: "image/*"
+    status: "ready",
+    accept: "image/*",
+    badges: ["new", "clientside"]
   },
   {
     slug: "og-image-generator",
     category: "generation",
     icon: "Image",
-    status: "soon",
-    accept: ""
+    status: "ready",
+    accept: "",
+    badges: ["new", "fast"]
   },
   {
     slug: "ascii-art",
@@ -238,23 +257,26 @@ export const tools: ToolDefinition[] = [
     slug: "exif-viewer",
     category: "metadata",
     icon: "Info",
-    status: "soon",
-    accept: "image/jpeg,image/tiff,image/heic"
+    status: "ready",
+    accept: "image/jpeg,image/tiff,image/heic",
+    badges: ["new", "clientside"]
   },
   {
     slug: "gif-maker",
     category: "metadata",
     icon: "Film",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
-    multiple: true
+    multiple: true,
+    badges: ["new", "clientside"]
   },
   {
     slug: "gif-extractor",
     category: "metadata",
     icon: "Layers",
-    status: "soon",
-    accept: ".gif,image/gif"
+    status: "ready",
+    accept: ".gif,image/gif",
+    badges: ["new", "clientside"]
   }
 ];
 

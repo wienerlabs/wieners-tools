@@ -10,7 +10,7 @@ export type CategoryId =
 
 export type ToolStatus = "ready" | "beta" | "soon";
 
-export type ToolBadge = "ai" | "beta" | "new" | "fast" | "offline";
+export type ToolBadge = "ai" | "beta" | "new" | "fast" | "clientside";
 
 export type ToolDefinition = {
   slug: string;
