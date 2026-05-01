@@ -239,5 +239,32 @@ export const toolsAR: ToolI18nBundle = {
   "smart-crop": { name: "قص ذكي", short: "قص بناءً على البروز", description: "قص تلقائي إلى أبرز منطقة عبر خريطة saliency.", keywords: ["crop"], options: { aspect: "النسبة", padding: "التبطين" } },
   "photo-restore": { name: "ترميم الصور", short: "تقليل الضوضاء + الحدّة", description: "تحسين التباين والحبيبات والحدة عبر convolution داخل المتصفح.", keywords: ["restore"], options: { strength: "القوة" } },
   "face-anonymizer": { name: "تشويش الوجوه", short: "تشويش الوجوه تلقائياً", description: "تحديد الوجوه على الجهاز وتشويشها. قريباً — تنزيل النموذج عند الطلب.", keywords: ["face", "blur"] },
-  "object-detection": { name: "كشف الكائنات", short: "YOLO في المتصفح", description: "كشف كائنات يومية بنموذج YOLO صغير. قريباً — تنزيل النموذج بعد الموافقة.", keywords: ["yolo"] }
+  "object-detection": { name: "كشف الكائنات", short: "YOLO في المتصفح", description: "كشف كائنات يومية بنموذج YOLO صغير. قريباً — تنزيل النموذج بعد الموافقة.", keywords: ["yolo"] },
+
+  // ------------- API & HTTP
+  "http-request": { name: "باني طلبات HTTP", short: "أرسل طلباً وشاهد الرد", description: "Postman-lite في المتصفح. GET/POST/PUT/PATCH/DELETE، headers، JSON body.", keywords: ["http", "rest"], options: { method: "الطريقة", url: "الرابط", headers: "الترويسات", body: "الجسم" } },
+  "curl-converter": { name: "cURL ↔ كود", short: "curl → fetch / axios", description: "ألصق سطر cURL واحصل على كود fetch أو axios.", keywords: ["curl"], options: { target: "الهدف" } },
+  "graphql-tester": { name: "ساحة GraphQL", short: "endpoint + استعلام → رد", description: "أرسل استعلام GraphQL مع variables إلى أي endpoint وافحص JSON.", keywords: ["graphql"], options: { endpoint: "Endpoint", query: "الاستعلام", variables: "Variables" } },
+  "websocket-tester": { name: "اختبار WebSocket", short: "اتصل، أرسل، استقبل", description: "افتح WebSocket إلى wss:// أو ws://، أرسل رسائل، شاهد سجل الإطارات.", keywords: ["websocket"] },
+  "http-status": { name: "رموز HTTP", short: "مرجع 100→599 قابل للبحث", description: "كل رموز HTTP باسمها ومعناها. ابحث بالرقم أو الكلمة.", keywords: ["http", "status"] },
+
+  // ------------- الأمان
+  "totp-generator": { name: "مولد TOTP / 2FA", short: "كود حي 6 أرقام من otpauth", description: "ألصق رابط otpauth:// أو سر Base32. الكود الحالي مع عداد 30 ثانية.", keywords: ["totp", "2fa"], options: { input: "السر أو رابط otpauth", digits: "الأرقام", period: "المدة" } },
+  "password-generator": { name: "مولد كلمات السر", short: "قواعد مخصصة، إخراج كثير", description: "كلمات سر crypto-random؛ الطول والرموز والأرقام واستبعاد الملتبس قابلة للتعديل.", keywords: ["password"], options: { length: "الطول", count: "العدد", uppercase: "A-Z", lowercase: "a-z", digits: "0-9", symbols: "الرموز", excludeAmbiguous: "استبعاد المتشابه" } },
+  "password-strength": { name: "مقياس قوة كلمة السر", short: "Entropy + زمن الكسر", description: "تقييم بـ بتات entropy وتنوع الفئات وزمن brute-force.", keywords: ["password"] },
+  "bcrypt-tool": { name: "Bcrypt تجزئة + تحقق", short: "جزّئ كلمة سر، تحقق من تجزئة", description: "إنشاء bcrypt hash لكلمة سر أو التحقق من كلمة سر مقابل hash.", keywords: ["bcrypt"], options: { mode: "الوضع", rounds: "Rounds" } },
+  "aes-gcm": { name: "AES-GCM تشفير / فك", short: "تشفير متماثل موثّق", description: "AES-256-GCM عبر Web Crypto. توليد مفتاح، تشفير نص بـ IV عشوائي.", keywords: ["aes", "gcm"], options: { mode: "الوضع", key: "المفتاح (base64)" } },
+
+  // ------------- مطورون (تحويل بيانات)
+  "csv-json": { name: "CSV ↔ JSON", short: "محوّل ثنائي الاتجاه", description: "كشف الترويسات والفواصل؛ CSV إلى JSON أو العكس.", keywords: ["csv", "json"], options: { direction: "الاتجاه", delimiter: "الفاصل", header: "الصف الأول ترويسة" } },
+  "json-yaml": { name: "JSON ↔ YAML", short: "محوّل ثنائي الاتجاه", description: "تحويل JSON ↔ YAML بدون فقد. مع ضبط المسافات لـ YAML.", keywords: ["json", "yaml"], options: { direction: "الاتجاه", indent: "المسافات" } },
+  "sql-formatter": { name: "منسّق SQL", short: "تنسيق SQL", description: "تنسيق SQL بمسافات متّسقة وحالة كلمات مفتاحية موحدة.", keywords: ["sql"], options: { keywordCase: "حالة الكلمات", indent: "المسافات" } },
+  "slug-generator": { name: "مولد Slug", short: "Slug آمن للـ URL", description: "تحويل أي نص إلى slug آمن للـ URL مع ترجمة الأحرف غير ASCII.", keywords: ["slug", "url"], options: { separator: "الفاصل", lowercase: "أحرف صغيرة" } },
+  "case-converter": { name: "محوّل الحالة", short: "camel ↔ snake ↔ kebab ↔ pascal", description: "تحويل نص بين camelCase وsnake_case وkebab-case وPascalCase وCONSTANT_CASE وTitle Case.", keywords: ["case"] },
+
+  // ------------- شبكة / Sysadmin
+  "ip-cidr": { name: "حاسبة IP / CIDR", short: "Subnet، broadcast، عدد الأجهزة", description: "IPv4 مع CIDR (مثلاً 10.0.0.0/24). Network، broadcast، أول/آخر host، mask.", keywords: ["ip", "cidr"] },
+  "dns-lookup": { name: "بحث DNS (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS عبر HTTPS من Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "نوع السجل" } },
+  "cron-builder": { name: "باني Cron", short: "بناء + شرح cron", description: "تأليف cron من 5 حقول، معناه بالنص، الـ 5 تشغيلات التالية.", keywords: ["cron"], options: { expression: "Cron expression" } },
+  "timestamp": { name: "محوّل Timestamp", short: "Unix ↔ ISO ↔ نسبي", description: "تحويل بين Unix epoch (s/ms)، ISO 8601، RFC 1123 ووقت نسبي مقروء.", keywords: ["timestamp", "unix"], options: { input: "المدخل" } }
 };

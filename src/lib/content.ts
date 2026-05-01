@@ -250,7 +250,10 @@ export const content: Record<Locale, SiteContent> = {
             { label: "PDF", href: "/tr/#pdf" },
             { label: "Video & Ses", href: "/tr/#media" },
             { label: "Tasarım", href: "/tr/#design" },
-            { label: "Geliştirici", href: "/tr/#developer" }
+            { label: "Geliştirici", href: "/tr/#developer" },
+            { label: "API & HTTP", href: "/tr/#api" },
+            { label: "Güvenlik", href: "/tr/#security" },
+            { label: "Ağ & Sysadmin", href: "/tr/#network" }
           ]
         },
         {
@@ -446,7 +449,10 @@ export const content: Record<Locale, SiteContent> = {
             { label: "PDF", href: "/en/#pdf" },
             { label: "Video & Audio", href: "/en/#media" },
             { label: "Design", href: "/en/#design" },
-            { label: "Developer", href: "/en/#developer" }
+            { label: "Developer", href: "/en/#developer" },
+            { label: "API & HTTP", href: "/en/#api" },
+            { label: "Security", href: "/en/#security" },
+            { label: "Network", href: "/en/#network" }
           ]
         },
         {
@@ -642,7 +648,10 @@ export const content: Record<Locale, SiteContent> = {
             { label: "PDF", href: "/de/#pdf" },
             { label: "Video & Audio", href: "/de/#media" },
             { label: "Design", href: "/de/#design" },
-            { label: "Entwickler", href: "/de/#developer" }
+            { label: "Entwickler", href: "/de/#developer" },
+            { label: "API & HTTP", href: "/de/#api" },
+            { label: "Sicherheit", href: "/de/#security" },
+            { label: "Netzwerk", href: "/de/#network" }
           ]
         },
         {
@@ -838,7 +847,10 @@ export const content: Record<Locale, SiteContent> = {
             { label: "PDF", href: "/ar/#pdf" },
             { label: "فيديو وصوت", href: "/ar/#media" },
             { label: "التصميم", href: "/ar/#design" },
-            { label: "المطورون", href: "/ar/#developer" }
+            { label: "المطورون", href: "/ar/#developer" },
+            { label: "API و HTTP", href: "/ar/#api" },
+            { label: "الأمان", href: "/ar/#security" },
+            { label: "الشبكة", href: "/ar/#network" }
           ]
         },
         {

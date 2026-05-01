@@ -10,7 +10,10 @@ export type CategoryId =
   | "developer"
   | "pdf"
   | "design"
-  | "media";
+  | "media"
+  | "api"
+  | "security"
+  | "network";
 
 export type ToolStatus = "ready" | "beta" | "soon";
 

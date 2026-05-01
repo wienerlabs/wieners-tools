@@ -11,7 +11,10 @@ export const categoryOrder: CategoryId[] = [
   "pdf",
   "media",
   "design",
-  "developer"
+  "developer",
+  "api",
+  "security",
+  "network"
 ];
 
 const tr: CategoryBundle = {
@@ -64,6 +67,21 @@ const tr: CategoryBundle = {
     name: "Video & Ses",
     short: "ffmpeg.wasm tarayıcıda",
     description: "Video sıkıştır, kırp, GIF'e dönüştür; ses ayıkla, sesi mp3'e çevir — hepsi ffmpeg.wasm ile cihazında."
+  },
+  api: {
+    name: "API & HTTP",
+    short: "Postman-lite tarayıcıda",
+    description: "HTTP request builder, cURL ↔ fetch converter, GraphQL playground, WebSocket tester ve status code referansı."
+  },
+  security: {
+    name: "Güvenlik",
+    short: "Şifre, TOTP, AES",
+    description: "Password generator + güç metresi, TOTP/2FA, bcrypt hash, AES-GCM şifreleme — Web Crypto'yla tarayıcıda."
+  },
+  network: {
+    name: "Ağ & Sysadmin",
+    short: "IP, DNS, cron",
+    description: "IP/CIDR hesaplayıcı, DoH üzerinden DNS lookup, cron expression builder, Unix timestamp dönüştürücü."
   }
 };
 
@@ -117,6 +135,21 @@ const en: CategoryBundle = {
     name: "Video & Audio",
     short: "ffmpeg.wasm in your browser",
     description: "Compress video, trim, convert to GIF; extract audio, transcode to mp3 — all via ffmpeg.wasm on-device."
+  },
+  api: {
+    name: "API & HTTP",
+    short: "Postman-lite in the browser",
+    description: "HTTP request builder, cURL ↔ fetch converter, GraphQL playground, WebSocket tester and a status-code reference."
+  },
+  security: {
+    name: "Security",
+    short: "Password, TOTP, AES",
+    description: "Password generator + strength meter, TOTP/2FA, bcrypt hashing, AES-GCM encryption — all in-browser via Web Crypto."
+  },
+  network: {
+    name: "Network & Sysadmin",
+    short: "IP, DNS, cron",
+    description: "IP/CIDR calculator, DNS lookup over DoH, cron expression builder, Unix timestamp converter."
   }
 };
 
@@ -170,6 +203,21 @@ const de: CategoryBundle = {
     name: "Video & Audio",
     short: "ffmpeg.wasm im Browser",
     description: "Video komprimieren, schneiden, in GIF wandeln; Audio extrahieren oder als mp3 transkodieren — alles via ffmpeg.wasm."
+  },
+  api: {
+    name: "API & HTTP",
+    short: "Postman-lite im Browser",
+    description: "HTTP-Request-Builder, cURL↔fetch-Konverter, GraphQL-Playground, WebSocket-Tester und Status-Code-Referenz."
+  },
+  security: {
+    name: "Sicherheit",
+    short: "Passwort, TOTP, AES",
+    description: "Passwort-Generator + Stärke-Meter, TOTP/2FA, Bcrypt-Hash, AES-GCM-Verschlüsselung — im Browser via Web Crypto."
+  },
+  network: {
+    name: "Netzwerk & Sysadmin",
+    short: "IP, DNS, Cron",
+    description: "IP/CIDR-Rechner, DNS-Lookup via DoH, Cron-Builder, Unix-Timestamp-Konverter."
   }
 };
 
@@ -223,6 +271,21 @@ const ar: CategoryBundle = {
     name: "فيديو وصوت",
     short: "ffmpeg.wasm في المتصفح",
     description: "ضغط الفيديو، قصّ، تحويل إلى GIF؛ استخراج الصوت أو تحويله إلى mp3 — كل ذلك عبر ffmpeg.wasm على جهازك."
+  },
+  api: {
+    name: "API و HTTP",
+    short: "Postman-lite في المتصفح",
+    description: "بناء طلبات HTTP، تحويل cURL ↔ fetch، ساحة GraphQL، اختبار WebSocket ومرجع رموز الحالة."
+  },
+  security: {
+    name: "الأمان",
+    short: "كلمات السر، TOTP، AES",
+    description: "مولّد كلمات السر + مقياس القوة، TOTP/2FA، تجزئة Bcrypt، تشفير AES-GCM — كله في المتصفح عبر Web Crypto."
+  },
+  network: {
+    name: "الشبكة والإدارة",
+    short: "IP، DNS، cron",
+    description: "حاسبة IP/CIDR، بحث DNS عبر DoH، باني cron، محوّل Unix timestamp."
   }
 };
 

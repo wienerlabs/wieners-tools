@@ -488,5 +488,141 @@ export const toolsTR: ToolI18nBundle = {
     short: "Tarayıcıda YOLO",
     description: "Küçük YOLO tarzı modelle gündelik nesneleri tespit et. Yakında — büyük model dosyaları sadece onaydan sonra indirilir.",
     keywords: ["tespit", "yolo", "nesne"]
+  },
+
+  // ------------- API & HTTP
+  "http-request": {
+    name: "HTTP Request Builder",
+    short: "Herhangi bir istek gönder, yanıtı gör",
+    description: "Tarayıcıda Postman-lite. GET/POST/PUT/PATCH/DELETE, özel header'lar, JSON body, yanıt status / süre / boyut.",
+    keywords: ["http", "request", "rest", "api"],
+    options: { method: "Yöntem", url: "URL", headers: "Header'lar", body: "Body" }
+  },
+  "curl-converter": {
+    name: "cURL ↔ Kod",
+    short: "curl → fetch / axios",
+    description: "Bir cURL satırı yapıştır, eşdeğer JavaScript fetch veya axios kodunu al.",
+    keywords: ["curl", "fetch", "axios", "dönüştür"],
+    options: { target: "Hedef" }
+  },
+  "graphql-tester": {
+    name: "GraphQL Playground",
+    short: "Endpoint + sorgu → yanıt",
+    description: "Herhangi bir endpoint'e GraphQL sorgusu (variables ile) gönder ve JSON yanıtı incele.",
+    keywords: ["graphql", "sorgu", "playground"],
+    options: { endpoint: "Endpoint", query: "Sorgu", variables: "Variables" }
+  },
+  "websocket-tester": {
+    name: "WebSocket Test Aracı",
+    short: "Bağlan, gönder, al",
+    description: "Herhangi bir wss:// veya ws:// URL'sine bağlan, mesaj gönder, canlı frame log'unu izle.",
+    keywords: ["websocket", "ws", "test"]
+  },
+  "http-status": {
+    name: "HTTP Status Kodları",
+    short: "Aranabilir 100→599 referansı",
+    description: "Tüm HTTP status kodları, isimleri ve tek satırlık anlamı. Numara veya anahtar kelime ile aranabilir.",
+    keywords: ["http", "status", "kod", "referans"]
+  },
+
+  // ------------- Güvenlik
+  "totp-generator": {
+    name: "TOTP / 2FA Üretici",
+    short: "otpauth URL'den canlı 6 haneli kod",
+    description: "otpauth:// URL'si veya Base32 secret yapıştır. 30 saniyelik geri sayımla mevcut 6 haneli kodu gösterir.",
+    keywords: ["totp", "2fa", "otp", "authenticator"],
+    options: { input: "Secret veya otpauth URL", digits: "Hane", period: "Periyot" }
+  },
+  "password-generator": {
+    name: "Parola Üretici",
+    short: "Özel kurallar, toplu çıktı",
+    description: "Crypto-random parolalar; uzunluk, sembol, rakam, benzer karakter dışlama ayarlanabilir. Tek veya toplu üretim.",
+    keywords: ["parola", "şifre", "üretici"],
+    options: { length: "Uzunluk", count: "Adet", uppercase: "A-Z", lowercase: "a-z", digits: "0-9", symbols: "Semboller", excludeAmbiguous: "Benzer karakterleri çıkar" }
+  },
+  "password-strength": {
+    name: "Parola Güç Metresi",
+    short: "Entropi + kırma süresi tahmini",
+    description: "Parolayı entropi bitleri, karakter sınıf çeşitliliği ve tahmini brute-force süresi ile değerlendir.",
+    keywords: ["parola", "entropi", "güç"]
+  },
+  "bcrypt-tool": {
+    name: "Bcrypt Hash + Doğrula",
+    short: "Parola hash'le, hash doğrula",
+    description: "Parola için bcrypt hash üret (rounds ayarlanabilir) veya parolayı mevcut hash'e karşı doğrula.",
+    keywords: ["bcrypt", "hash", "doğrula"],
+    options: { mode: "Mod", rounds: "Rounds" }
+  },
+  "aes-gcm": {
+    name: "AES-GCM Şifrele / Çöz",
+    short: "Doğrulamalı simetrik şifreleme",
+    description: "Web Crypto ile AES-256-GCM. Anahtar üret, rastgele IV ile metni şifrele, geri çöz. Hepsi tarayıcıda.",
+    keywords: ["aes", "gcm", "şifrele", "crypto"],
+    options: { mode: "Mod", key: "Anahtar (base64)" }
+  },
+
+  // ------------- Geliştirici (data conversion)
+  "csv-json": {
+    name: "CSV ↔ JSON",
+    short: "İki yönlü CSV/JSON dönüştürücü",
+    description: "Header ve delimiter algıla; CSV'yi JSON object array'ine veya JSON'u CSV'ye çevir.",
+    keywords: ["csv", "json", "dönüştür"],
+    options: { direction: "Yön", delimiter: "Delimiter", header: "İlk satır header" }
+  },
+  "json-yaml": {
+    name: "JSON ↔ YAML",
+    short: "İki yönlü JSON/YAML dönüştürücü",
+    description: "Kayıpsız JSON ↔ YAML dönüşümü; yorumlar atlanır. YAML çıktısı için indent boyutu seç.",
+    keywords: ["json", "yaml", "dönüştür"],
+    options: { direction: "Yön", indent: "Indent" }
+  },
+  "sql-formatter": {
+    name: "SQL Formatlayıcı",
+    short: "SQL'i güzelleştir",
+    description: "Tutarlı indent ve keyword case ile SQL formatla. Yaygın dialect'ler (Postgres, MySQL, SQLite).",
+    keywords: ["sql", "format"],
+    options: { keywordCase: "Keyword case", indent: "Indent" }
+  },
+  "slug-generator": {
+    name: "Slug Üretici",
+    short: "URL-safe slug, çok dilli",
+    description: "Herhangi bir metni URL-safe slug'a çevir. Türkçe / Almanca / Arapça aksanları transliteration ile işler.",
+    keywords: ["slug", "url", "kebab"],
+    options: { separator: "Ayırıcı", lowercase: "küçük harf" }
+  },
+  "case-converter": {
+    name: "Case Dönüştürücü",
+    short: "camel ↔ snake ↔ kebab ↔ pascal",
+    description: "Bir string'i camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case arasında çevir.",
+    keywords: ["case", "camel", "snake", "kebab"]
+  },
+
+  // ------------- Ağ & Sysadmin
+  "ip-cidr": {
+    name: "IP / CIDR Hesaplayıcı",
+    short: "Subnet, broadcast, host sayısı",
+    description: "CIDR ile IPv4 gir (örn. 10.0.0.0/24). Network, broadcast, ilk/son host, mask, toplam adres.",
+    keywords: ["ip", "cidr", "subnet", "mask"]
+  },
+  "dns-lookup": {
+    name: "DNS Lookup (DoH)",
+    short: "A / AAAA / MX / TXT / CNAME / NS",
+    description: "Cloudflare üzerinden DNS over HTTPS sorgu. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA — tarayıcıdan.",
+    keywords: ["dns", "doh", "lookup"],
+    options: { type: "Kayıt türü" }
+  },
+  "cron-builder": {
+    name: "Cron Builder",
+    short: "Cron expression kur ve açıkla",
+    description: "5 alanlı cron oluştur, sade dilde anlamını ve sonraki 5 tetikleme zamanını saat dilimine göre gör.",
+    keywords: ["cron", "schedule", "crontab"],
+    options: { expression: "Cron expression" }
+  },
+  "timestamp": {
+    name: "Timestamp Dönüştürücü",
+    short: "Unix ↔ ISO ↔ göreceli",
+    description: "Unix epoch (s/ms), ISO 8601, RFC 1123 ve insan-okur göreceli zaman arasında çevir.",
+    keywords: ["timestamp", "unix", "epoch", "tarih"],
+    options: { input: "Girdi" }
   }
 };

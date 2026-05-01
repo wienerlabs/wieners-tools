@@ -488,5 +488,141 @@ export const toolsEN: ToolI18nBundle = {
     short: "YOLO in your browser",
     description: "Detect everyday objects with a small YOLO-style model. Coming soon — heavy model weights are gated behind explicit opt-in.",
     keywords: ["detect", "yolo", "object"]
+  },
+
+  // ------------- API & HTTP
+  "http-request": {
+    name: "HTTP Request Builder",
+    short: "Send any request, see the response",
+    description: "Postman-lite in your browser. GET/POST/PUT/PATCH/DELETE, custom headers, JSON body, response status / time / size.",
+    keywords: ["http", "request", "rest", "postman", "api"],
+    options: { method: "Method", url: "URL", headers: "Headers", body: "Body" }
+  },
+  "curl-converter": {
+    name: "cURL ↔ Code",
+    short: "curl → fetch / axios",
+    description: "Paste a cURL one-liner and get equivalent JavaScript fetch or axios code.",
+    keywords: ["curl", "fetch", "axios", "convert"],
+    options: { target: "Target" }
+  },
+  "graphql-tester": {
+    name: "GraphQL Playground",
+    short: "Endpoint + query → response",
+    description: "Send a GraphQL query (with variables) to any endpoint and inspect the JSON response.",
+    keywords: ["graphql", "query", "playground"],
+    options: { endpoint: "Endpoint", query: "Query", variables: "Variables" }
+  },
+  "websocket-tester": {
+    name: "WebSocket Tester",
+    short: "Connect, send, receive",
+    description: "Open a WebSocket to any wss:// or ws:// URL, send messages, watch the live frame log.",
+    keywords: ["websocket", "ws", "wss", "test"]
+  },
+  "http-status": {
+    name: "HTTP Status Codes",
+    short: "Searchable 100→599 reference",
+    description: "Every HTTP status code with its name and one-line meaning. Searchable by number or keyword.",
+    keywords: ["http", "status", "code", "reference"]
+  },
+
+  // ------------- Security
+  "totp-generator": {
+    name: "TOTP / 2FA Generator",
+    short: "Live 6-digit code from an otpauth URL",
+    description: "Paste an otpauth:// URL or Base32 secret. Shows the current 6-digit code with a 30-second countdown.",
+    keywords: ["totp", "2fa", "otp", "authenticator"],
+    options: { input: "Secret or otpauth URL", digits: "Digits", period: "Period" }
+  },
+  "password-generator": {
+    name: "Password Generator",
+    short: "Custom rules, bulk output",
+    description: "Crypto-random passwords with configurable length, symbols, digits, ambiguity exclusion. Generate one or many.",
+    keywords: ["password", "generator", "random"],
+    options: { length: "Length", count: "Count", uppercase: "A-Z", lowercase: "a-z", digits: "0-9", symbols: "Symbols", excludeAmbiguous: "Exclude lookalikes" }
+  },
+  "password-strength": {
+    name: "Password Strength Meter",
+    short: "Entropy + crack-time estimate",
+    description: "Rate any password by entropy bits, character class diversity, and an estimated brute-force time.",
+    keywords: ["password", "entropy", "strength"]
+  },
+  "bcrypt-tool": {
+    name: "Bcrypt Hash + Verify",
+    short: "Hash a password, verify a hash",
+    description: "Generate a bcrypt hash (configurable rounds) for a password, or verify a password against an existing hash.",
+    keywords: ["bcrypt", "hash", "verify"],
+    options: { mode: "Mode", rounds: "Rounds" }
+  },
+  "aes-gcm": {
+    name: "AES-GCM Encrypt / Decrypt",
+    short: "Authenticated symmetric encryption",
+    description: "AES-256-GCM via Web Crypto. Generate a key, encrypt text with random IV, decrypt back. All in-browser.",
+    keywords: ["aes", "gcm", "encrypt", "decrypt", "crypto"],
+    options: { mode: "Mode", key: "Key (base64)" }
+  },
+
+  // ------------- Developer (data conversion expansion)
+  "csv-json": {
+    name: "CSV ↔ JSON",
+    short: "Two-way CSV/JSON converter",
+    description: "Detect headers and delimiters; convert CSV to a JSON array of objects, or JSON back to CSV.",
+    keywords: ["csv", "json", "convert"],
+    options: { direction: "Direction", delimiter: "Delimiter", header: "First row is header" }
+  },
+  "json-yaml": {
+    name: "JSON ↔ YAML",
+    short: "Two-way JSON/YAML converter",
+    description: "Lossless JSON ↔ YAML conversion with comments stripped. Choose indent size for the YAML output.",
+    keywords: ["json", "yaml", "convert"],
+    options: { direction: "Direction", indent: "Indent" }
+  },
+  "sql-formatter": {
+    name: "SQL Formatter",
+    short: "Pretty-print SQL",
+    description: "Format SQL with consistent indentation and keyword casing. Supports common dialects (Postgres, MySQL, SQLite).",
+    keywords: ["sql", "format", "pretty"],
+    options: { keywordCase: "Keyword case", indent: "Indent" }
+  },
+  "slug-generator": {
+    name: "Slug Generator",
+    short: "URL-safe slug, multilingual",
+    description: "Convert any text to a URL-safe slug. Handles Turkish, German, Arabic accents and non-ASCII via transliteration.",
+    keywords: ["slug", "url", "kebab"],
+    options: { separator: "Separator", lowercase: "lowercase" }
+  },
+  "case-converter": {
+    name: "Case Converter",
+    short: "camel ↔ snake ↔ kebab ↔ pascal",
+    description: "Convert any string between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case.",
+    keywords: ["case", "camel", "snake", "kebab", "pascal"]
+  },
+
+  // ------------- Network & sysadmin
+  "ip-cidr": {
+    name: "IP / CIDR Calculator",
+    short: "Subnet, broadcast, host count",
+    description: "Enter an IPv4 with CIDR (e.g. 10.0.0.0/24). Get network, broadcast, first/last host, mask, total addresses.",
+    keywords: ["ip", "cidr", "subnet", "mask"]
+  },
+  "dns-lookup": {
+    name: "DNS Lookup (DoH)",
+    short: "A / AAAA / MX / TXT / CNAME / NS",
+    description: "Query DNS over HTTPS via Cloudflare. Resolve A, AAAA, MX, TXT, CNAME, NS, SOA, CAA — straight from your browser.",
+    keywords: ["dns", "doh", "lookup", "resolve"],
+    options: { type: "Record type" }
+  },
+  "cron-builder": {
+    name: "Cron Builder",
+    short: "Build & explain cron expressions",
+    description: "Compose a 5-field cron, see its plain-English meaning and the next 5 firing times in your timezone.",
+    keywords: ["cron", "schedule", "crontab"],
+    options: { expression: "Cron expression" }
+  },
+  "timestamp": {
+    name: "Timestamp Converter",
+    short: "Unix ↔ ISO ↔ relative",
+    description: "Convert between Unix epoch (s/ms), ISO 8601, RFC 1123, and a human-readable relative time.",
+    keywords: ["timestamp", "unix", "epoch", "date"],
+    options: { input: "Input" }
   }
 };

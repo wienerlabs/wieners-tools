@@ -95,8 +95,35 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
 
   // AI extension
   "smart-crop": dynamic(() => import("./smart-crop"), { ssr: false, loading: Loader }),
-  "photo-restore": dynamic(() => import("./photo-restore"), { ssr: false, loading: Loader })
+  "photo-restore": dynamic(() => import("./photo-restore"), { ssr: false, loading: Loader }),
   // face-anonymizer + object-detection are status:soon → workbench placeholder
+
+  // API & HTTP
+  "http-request": dynamic(() => import("./http-request"), { ssr: false, loading: Loader }),
+  "curl-converter": dynamic(() => import("./curl-converter"), { ssr: false, loading: Loader }),
+  "graphql-tester": dynamic(() => import("./graphql-tester"), { ssr: false, loading: Loader }),
+  "websocket-tester": dynamic(() => import("./websocket-tester"), { ssr: false, loading: Loader }),
+  "http-status": dynamic(() => import("./http-status"), { ssr: false, loading: Loader }),
+
+  // Security
+  "totp-generator": dynamic(() => import("./totp-generator"), { ssr: false, loading: Loader }),
+  "password-generator": dynamic(() => import("./password-generator"), { ssr: false, loading: Loader }),
+  "password-strength": dynamic(() => import("./password-strength"), { ssr: false, loading: Loader }),
+  "bcrypt-tool": dynamic(() => import("./bcrypt-tool"), { ssr: false, loading: Loader }),
+  "aes-gcm": dynamic(() => import("./aes-gcm"), { ssr: false, loading: Loader }),
+
+  // Developer (data conversion expansion)
+  "csv-json": dynamic(() => import("./csv-json"), { ssr: false, loading: Loader }),
+  "json-yaml": dynamic(() => import("./json-yaml"), { ssr: false, loading: Loader }),
+  "sql-formatter": dynamic(() => import("./sql-formatter"), { ssr: false, loading: Loader }),
+  "slug-generator": dynamic(() => import("./slug-generator"), { ssr: false, loading: Loader }),
+  "case-converter": dynamic(() => import("./case-converter"), { ssr: false, loading: Loader }),
+
+  // Network & sysadmin
+  "ip-cidr": dynamic(() => import("./ip-cidr"), { ssr: false, loading: Loader }),
+  "dns-lookup": dynamic(() => import("./dns-lookup"), { ssr: false, loading: Loader }),
+  "cron-builder": dynamic(() => import("./cron-builder"), { ssr: false, loading: Loader }),
+  "timestamp": dynamic(() => import("./timestamp"), { ssr: false, loading: Loader })
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

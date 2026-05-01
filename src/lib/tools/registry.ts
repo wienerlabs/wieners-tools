@@ -542,7 +542,34 @@ export const tools: ToolDefinition[] = [
     status: "soon",
     accept: "image/*",
     badges: ["ai", "beta", "clientside"]
-  }
+  },
+
+  // ------------- API & HTTP
+  { slug: "http-request",      category: "api", icon: "Send",        status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "curl-converter",    category: "api", icon: "Terminal",    status: "ready", accept: "", badges: ["fast", "clientside"] },
+  { slug: "graphql-tester",    category: "api", icon: "Workflow",    status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "websocket-tester",  category: "api", icon: "Plug",        status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "http-status",       category: "api", icon: "Hash",        status: "ready", accept: "", badges: ["fast", "clientside"] },
+
+  // ------------- Security
+  { slug: "totp-generator",    category: "security", icon: "ShieldCheck",  status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "password-generator",category: "security", icon: "KeyRound",     status: "ready", accept: "", badges: ["fast", "clientside"] },
+  { slug: "password-strength", category: "security", icon: "Gauge",        status: "ready", accept: "", badges: ["fast", "clientside"] },
+  { slug: "bcrypt-tool",       category: "security", icon: "Lock",         status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "aes-gcm",           category: "security", icon: "ShieldAlert",  status: "ready", accept: "", badges: ["new", "clientside"] },
+
+  // ------------- Developer (data conversion expansion)
+  { slug: "csv-json",          category: "developer", icon: "Table",       status: "ready", accept: ".csv,text/csv,application/json", badges: ["fast", "clientside"] },
+  { slug: "json-yaml",         category: "developer", icon: "FileJson",    status: "ready", accept: ".json,.yaml,.yml,text/plain",     badges: ["fast", "clientside"] },
+  { slug: "sql-formatter",     category: "developer", icon: "Database",    status: "ready", accept: "text/plain",                       badges: ["fast", "clientside"] },
+  { slug: "slug-generator",    category: "developer", icon: "Type",        status: "ready", accept: "text/plain",                       badges: ["fast", "clientside"] },
+  { slug: "case-converter",    category: "developer", icon: "TextCursorInput", status: "ready", accept: "text/plain",                   badges: ["fast", "clientside"] },
+
+  // ------------- Network & sysadmin
+  { slug: "ip-cidr",           category: "network", icon: "Network",       status: "ready", accept: "", badges: ["fast", "clientside"] },
+  { slug: "dns-lookup",        category: "network", icon: "Globe",         status: "ready", accept: "", badges: ["new", "clientside"] },
+  { slug: "cron-builder",      category: "network", icon: "CalendarClock", status: "ready", accept: "", badges: ["fast", "clientside"] },
+  { slug: "timestamp",         category: "network", icon: "Clock",         status: "ready", accept: "", badges: ["fast", "clientside"] }
 ];
 
 export function getTool(slug: string): ToolDefinition | undefined {

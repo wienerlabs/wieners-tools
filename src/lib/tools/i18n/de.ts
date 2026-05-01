@@ -240,5 +240,32 @@ export const toolsDE: ToolI18nBundle = {
   "smart-crop": { name: "Smart Crop", short: "Saliency-Crop", description: "Auto-Zuschnitt auf den visuell interessantesten Bereich.", keywords: ["crop", "saliency"], options: { aspect: "Verhältnis", padding: "Padding" } },
   "photo-restore": { name: "Foto-Restauration", short: "Entrauschen + Schärfen", description: "Kontrast / Korn / Schärfe via In-Browser-Convolution.", keywords: ["restore", "schärfen"], options: { strength: "Stärke" } },
   "face-anonymizer": { name: "Gesichts-Anonymizer", short: "Gesichter blurren", description: "Gesichter erkennen und blurren. Bald verfügbar — Modell wird nur on-demand geladen.", keywords: ["face", "blur"] },
-  "object-detection": { name: "Objekterkennung", short: "YOLO im Browser", description: "Alltagsobjekte mit kleinem YOLO-Modell erkennen. Bald verfügbar — Modell wird nur opt-in geladen.", keywords: ["yolo", "objekt"] }
+  "object-detection": { name: "Objekterkennung", short: "YOLO im Browser", description: "Alltagsobjekte mit kleinem YOLO-Modell erkennen. Bald verfügbar — Modell wird nur opt-in geladen.", keywords: ["yolo", "objekt"] },
+
+  // ------------- API & HTTP
+  "http-request": { name: "HTTP-Request-Builder", short: "Request senden, Response sehen", description: "Postman-lite im Browser. GET/POST/PUT/PATCH/DELETE, Header, JSON-Body.", keywords: ["http", "request", "rest"], options: { method: "Methode", url: "URL", headers: "Header", body: "Body" } },
+  "curl-converter": { name: "cURL ↔ Code", short: "curl → fetch / axios", description: "cURL einfügen, JS-fetch- oder axios-Code erhalten.", keywords: ["curl", "fetch", "axios"], options: { target: "Ziel" } },
+  "graphql-tester": { name: "GraphQL-Playground", short: "Endpoint + Query → Response", description: "GraphQL-Query (mit Variables) an einen Endpoint senden und JSON-Response ansehen.", keywords: ["graphql"], options: { endpoint: "Endpoint", query: "Query", variables: "Variables" } },
+  "websocket-tester": { name: "WebSocket-Tester", short: "Verbinden, senden, empfangen", description: "WebSocket zu wss:// oder ws:// öffnen, Nachrichten senden, Live-Frame-Log sehen.", keywords: ["websocket", "ws"] },
+  "http-status": { name: "HTTP-Status-Codes", short: "100→599 Referenz", description: "Alle HTTP-Status-Codes mit Name und Bedeutung. Suche nach Nummer oder Stichwort.", keywords: ["http", "status"] },
+
+  // ------------- Sicherheit
+  "totp-generator": { name: "TOTP / 2FA-Generator", short: "Live-6-stelliger Code aus otpauth", description: "otpauth:// URL oder Base32-Secret einfügen. Aktueller Code mit 30-Sekunden-Countdown.", keywords: ["totp", "2fa"], options: { input: "Secret oder otpauth URL", digits: "Stellen", period: "Periode" } },
+  "password-generator": { name: "Passwort-Generator", short: "Regeln + Bulk-Output", description: "Crypto-Random-Passwörter, konfigurierbare Länge / Symbole / Ambiguität-Filter.", keywords: ["passwort"], options: { length: "Länge", count: "Anzahl", uppercase: "A-Z", lowercase: "a-z", digits: "0-9", symbols: "Symbole", excludeAmbiguous: "Ähnliche ausschließen" } },
+  "password-strength": { name: "Passwort-Stärke", short: "Entropie + Crack-Zeit", description: "Passwort nach Entropie-Bits, Klassen-Vielfalt und Brute-Force-Zeit bewerten.", keywords: ["passwort", "entropie"] },
+  "bcrypt-tool": { name: "Bcrypt-Hash + Verify", short: "Hash erzeugen, prüfen", description: "Bcrypt-Hash für ein Passwort erzeugen oder ein Passwort gegen einen Hash prüfen.", keywords: ["bcrypt"], options: { mode: "Modus", rounds: "Rounds" } },
+  "aes-gcm": { name: "AES-GCM Verschlüsseln / Entschlüsseln", short: "Authentifizierte sym. Verschlüsselung", description: "AES-256-GCM via Web Crypto. Schlüssel erzeugen, Text mit Random-IV verschlüsseln.", keywords: ["aes", "gcm"], options: { mode: "Modus", key: "Schlüssel (base64)" } },
+
+  // ------------- Developer (data conv)
+  "csv-json": { name: "CSV ↔ JSON", short: "Beidseitiger Konverter", description: "Header und Delimiter erkennen; CSV in JSON-Array oder zurück.", keywords: ["csv", "json"], options: { direction: "Richtung", delimiter: "Trenner", header: "Header in 1. Zeile" } },
+  "json-yaml": { name: "JSON ↔ YAML", short: "Beidseitiger Konverter", description: "Verlustfreie JSON ↔ YAML. Indent für YAML einstellbar.", keywords: ["json", "yaml"], options: { direction: "Richtung", indent: "Indent" } },
+  "sql-formatter": { name: "SQL-Formatierer", short: "SQL hübsch ausgeben", description: "SQL mit konsistentem Indent und Keyword-Case formatieren.", keywords: ["sql"], options: { keywordCase: "Keyword-Case", indent: "Indent" } },
+  "slug-generator": { name: "Slug-Generator", short: "URL-safer Slug", description: "Beliebigen Text in URL-safen Slug; Umlaute / Akzente / Nicht-ASCII via Transliteration.", keywords: ["slug"], options: { separator: "Trenner", lowercase: "kleinbuchstaben" } },
+  "case-converter": { name: "Case-Konverter", short: "camel ↔ snake ↔ kebab ↔ pascal", description: "String zwischen camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case.", keywords: ["case"] },
+
+  // ------------- Netzwerk
+  "ip-cidr": { name: "IP / CIDR-Rechner", short: "Subnet, Broadcast, Host-Anzahl", description: "IPv4 mit CIDR (z. B. 10.0.0.0/24). Network, Broadcast, erster/letzter Host, Maske.", keywords: ["ip", "cidr"] },
+  "dns-lookup": { name: "DNS-Lookup (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS über HTTPS via Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "Record-Typ" } },
+  "cron-builder": { name: "Cron-Builder", short: "Cron erstellen + erklären", description: "5-Feld-Cron komponieren, Klartext-Bedeutung, nächste 5 Trigger-Zeiten.", keywords: ["cron"], options: { expression: "Cron-Expression" } },
+  "timestamp": { name: "Timestamp-Konverter", short: "Unix ↔ ISO ↔ relativ", description: "Zwischen Unix-Epoch (s/ms), ISO 8601, RFC 1123 und relativer Zeit umrechnen.", keywords: ["timestamp", "unix"], options: { input: "Eingabe" } }
 };
