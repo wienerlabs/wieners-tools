@@ -97,6 +97,36 @@ export type SiteContent = {
     ctaLabel: string;
     note: string;
   };
+  blockchainPage: {
+    nav: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    audience: string;
+    agentic: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      quote: string;
+      ctaLabel: string;
+      ctaUrl: string;
+    };
+    networkLabels: {
+      brandKit: string;
+      docs: string;
+      visitSite: string;
+    };
+    networkOverrides: {
+      base: { tagline: string; about: string };
+      solana: { tagline: string; about: string };
+    };
+    sectionLabels: Record<
+      "starters" | "wallets" | "dex" | "defi" | "infra" | "data" | "ai" | "agentic",
+      string
+    >;
+  };
   contact: {
     email: string;
     githubUrl: string;
@@ -233,6 +263,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           label: "Stüdyo",
           links: [
+            { label: "Blockchain", href: "/tr/blockchain/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -246,6 +277,55 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText ve CodeBlock — hepsi monokrom palette canlı önizleme ve kopyala-yapıştır kod ile.",
       ctaLabel: "Galeriyi aç",
       note: "6 komponent · canlı önizleme · TypeScript snippet"
+    },
+    blockchainPage: {
+      nav: "Blockchain",
+      metaTitle: "Blockchain Entegrasyonu — Wiener's Tools",
+      metaDescription:
+        "Solana ve Base üzerinde geliştirme yapan ekipler için: scaffold CLI'ları, cüzdanlar, DEX'ler, lending protokolleri, RPC sağlayıcılar, AI agent toolkit'leri ve agentic payments — tek bir referans sayfada.",
+      eyebrow: "Geliştiriciler için",
+      title: "Blockchain entegrasyonu",
+      intro:
+        "Kendi ürününe onchain bir katman ekliyorsan, başlangıç için iki ağa baktık: Base ve Solana. Her biri için scaffold CLI'larından AI agent toolkit'lerine kadar gerçekten kullandığımız kaynakları listeledik.",
+      audience:
+        "Bu sayfa Wiener Labs ekiplerinin ortak referansıdır — bir araç burada listelendiyse en az bir prod ürünümüzde denenmiştir.",
+      agentic: {
+        eyebrow: "Yeni paradigma",
+        title: "Agentic payments — agent'lar para gönderir",
+        body:
+          "Otomatik, programatik ödeme. AI agent, app veya insan istekle birlikte ödemeyi gönderir, sunucu doğrular, cevap döner. API key, faturalama hesabı, signup yoktur. Sub-cent ücretler ile per-request billing artık fizible.",
+        quote:
+          "Agents, apps, or humans pay as part of their request, and the server verifies payment before returning the response.",
+        ctaLabel: "Tempo'da Machine Payments dokümanı",
+        ctaUrl: "https://docs.tempo.xyz/guide/machine-payments"
+      },
+      networkLabels: {
+        brandKit: "Brand kit",
+        docs: "Dokümantasyon",
+        visitSite: "Ekosistem"
+      },
+      networkOverrides: {
+        base: {
+          tagline: "Coinbase'in EVM L2 ağı — düşük ücret, hızlı bilgilendirme.",
+          about:
+            "Base, Optimism'in OP Stack'i üzerine kurulu, Coinbase tarafından inkübe edilen bir Ethereum L2'sidir. EVM uyumlu, Solidity ile çalışır, Coinbase ürünleriyle native entegrasyon sağlar."
+        },
+        solana: {
+          tagline: "Yüksek throughput, düşük gecikme L1 — tek global state.",
+          about:
+            "Solana ~400ms slot süresi ile çalışan paralel L1. Rust ve Anchor framework'ü ile yazılır, sub-cent ücretler + tek global state ile hızlı UX'in temelidir."
+        }
+      },
+      sectionLabels: {
+        starters: "Başlangıç & scaffold",
+        wallets: "Cüzdanlar & auth",
+        dex: "DEX & swap",
+        defi: "DeFi protokolleri",
+        infra: "RPC & altyapı",
+        data: "Veri & explorer",
+        ai: "AI tooling",
+        agentic: "Agentic payments"
+      }
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -379,6 +459,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           label: "Studio",
           links: [
+            { label: "Blockchain", href: "/en/blockchain/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -392,6 +473,55 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText and CodeBlock — all in our monochrome palette with live previews and copy-paste code.",
       ctaLabel: "Open gallery",
       note: "6 components · live previews · TypeScript snippets"
+    },
+    blockchainPage: {
+      nav: "Blockchain",
+      metaTitle: "Blockchain Integration — Wiener's Tools",
+      metaDescription:
+        "For teams shipping on-chain: scaffold CLIs, wallets, DEXes, lending protocols, RPC providers, AI agent toolkits and agentic payments — across Base and Solana, in one reference page.",
+      eyebrow: "For builders",
+      title: "Blockchain integration",
+      intro:
+        "If you're adding an on-chain layer to a product, here are the two networks we keep coming back to: Base and Solana. For each, we listed the resources we actually use — from scaffold CLIs to AI agent toolkits.",
+      audience:
+        "Internal reference for Wiener Labs teams. If a tool is listed here, we've shipped at least one production product on top of it.",
+      agentic: {
+        eyebrow: "New paradigm",
+        title: "Agentic payments — agents pay for themselves",
+        body:
+          "Automated, programmatic settlement. An AI agent, app, or human attaches payment to the request; the server verifies and returns the response. No API keys, no billing account, no signup. Sub-cent fees make per-request billing viable.",
+        quote:
+          "Agents, apps, or humans pay as part of their request, and the server verifies payment before returning the response.",
+        ctaLabel: "Tempo Machine Payments docs",
+        ctaUrl: "https://docs.tempo.xyz/guide/machine-payments"
+      },
+      networkLabels: {
+        brandKit: "Brand kit",
+        docs: "Docs",
+        visitSite: "Ecosystem"
+      },
+      networkOverrides: {
+        base: {
+          tagline: "Coinbase's EVM L2 — cheap fees, fast confirmations.",
+          about:
+            "Base is an Ethereum L2 built on Optimism's OP Stack and incubated by Coinbase. EVM-compatible, written in Solidity, with native integration into Coinbase products."
+        },
+        solana: {
+          tagline: "High-throughput, low-latency L1 — one global state.",
+          about:
+            "Solana is a parallel L1 with ~400ms slot times. Programs are written in Rust + Anchor; sub-cent fees and a single global state keep UX fast."
+        }
+      },
+      sectionLabels: {
+        starters: "Starters & scaffolds",
+        wallets: "Wallets & auth",
+        dex: "DEX & swap",
+        defi: "DeFi protocols",
+        infra: "RPC & infra",
+        data: "Data & explorers",
+        ai: "AI tooling",
+        agentic: "Agentic payments"
+      }
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -525,6 +655,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           label: "Studio",
           links: [
+            { label: "Blockchain", href: "/de/blockchain/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -538,6 +669,55 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText und CodeBlock — alles in unserer monochromen Palette mit Live-Vorschauen und Code zum Kopieren.",
       ctaLabel: "Galerie öffnen",
       note: "6 Komponenten · Live-Vorschauen · TypeScript-Snippets"
+    },
+    blockchainPage: {
+      nav: "Blockchain",
+      metaTitle: "Blockchain-Integration — Wiener's Tools",
+      metaDescription:
+        "Für Teams, die on-chain bauen: Scaffold-CLIs, Wallets, DEXes, Lending, RPCs, AI-Agent-Toolkits und Agentic Payments — für Base und Solana, eine Referenzseite.",
+      eyebrow: "Für Builder",
+      title: "Blockchain-Integration",
+      intro:
+        "Wenn du eine On-Chain-Schicht in dein Produkt einbaust, sind das die zwei Netzwerke, zu denen wir immer wieder zurückkehren: Base und Solana. Pro Netzwerk haben wir die Werkzeuge gelistet, die wir tatsächlich nutzen.",
+      audience:
+        "Interne Referenz für Wiener-Labs-Teams. Was hier steht, haben wir mindestens in einem Produkt eingesetzt.",
+      agentic: {
+        eyebrow: "Neues Paradigma",
+        title: "Agentic Payments — Agenten zahlen selbst",
+        body:
+          "Automatische, programmatische Abrechnung. AI-Agent, App oder Mensch hängt die Zahlung an die Anfrage; der Server verifiziert und antwortet. Keine API-Keys, keine Abo-Konten, kein Signup. Sub-Cent-Gebühren machen Per-Request-Billing möglich.",
+        quote:
+          "Agents, apps, or humans pay as part of their request, and the server verifies payment before returning the response.",
+        ctaLabel: "Tempo Machine-Payments-Doku",
+        ctaUrl: "https://docs.tempo.xyz/guide/machine-payments"
+      },
+      networkLabels: {
+        brandKit: "Brand-Kit",
+        docs: "Doku",
+        visitSite: "Ökosystem"
+      },
+      networkOverrides: {
+        base: {
+          tagline: "Coinbases EVM-L2 — niedrige Gebühren, schnelle Bestätigungen.",
+          about:
+            "Base ist ein Ethereum-L2 auf Optimisms OP-Stack, inkubiert von Coinbase. EVM-kompatibel, Solidity, native Integration in Coinbase-Produkte."
+        },
+        solana: {
+          tagline: "Hoher Durchsatz, niedrige Latenz L1 — ein globaler Zustand.",
+          about:
+            "Solana ist eine parallele L1 mit ~400 ms Slot-Zeit. Programme in Rust + Anchor; Sub-Cent-Gebühren und ein einziger globaler Zustand halten die UX schnell."
+        }
+      },
+      sectionLabels: {
+        starters: "Starter & Scaffolds",
+        wallets: "Wallets & Auth",
+        dex: "DEX & Swap",
+        defi: "DeFi-Protokolle",
+        infra: "RPC & Infra",
+        data: "Daten & Explorer",
+        ai: "AI-Tooling",
+        agentic: "Agentic Payments"
+      }
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -671,6 +851,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           label: "الاستوديو",
           links: [
+            { label: "Blockchain", href: "/ar/blockchain/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
@@ -684,6 +865,55 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast وTypewriterTitle وMagnetLines وCubes وFallingText وCodeBlock — جميعها بلوحتنا أحادية اللون مع معاينات حية وكود قابل للنسخ.",
       ctaLabel: "افتح المعرض",
       note: "6 مكونات · معاينات حية · مقتطفات TypeScript"
+    },
+    blockchainPage: {
+      nav: "Blockchain",
+      metaTitle: "تكامل Blockchain — Wiener's Tools",
+      metaDescription:
+        "للفرق التي تطوّر on-chain: scaffold CLIs، محافظ، DEXes، بروتوكولات إقراض، RPC، أدوات AI agent، ومدفوعات agentic — لشبكتي Base وSolana في صفحة مرجعية واحدة.",
+      eyebrow: "للمطورين",
+      title: "تكامل Blockchain",
+      intro:
+        "إذا كنت تضيف طبقة on-chain إلى منتج، فهاتان الشبكتان نعود إليهما دائماً: Base وSolana. لكل منهما أدرجنا الأدوات التي نستخدمها فعلاً.",
+      audience:
+        "مرجع داخلي لفرق Wiener Labs. ما يُذكر هنا استخدمناه في منتج إنتاجي واحد على الأقل.",
+      agentic: {
+        eyebrow: "نموذج جديد",
+        title: "Agentic payments — العملاء يدفعون بأنفسهم",
+        body:
+          "تسوية تلقائية برمجية. AI agent أو تطبيق أو إنسان يلحق الدفعة بالطلب؛ يتحقق الخادم ثم يعيد الإجابة. بدون API keys ولا حسابات فوترة ولا تسجيل. الرسوم دون السنت تجعل الفوترة لكل طلب ممكنة.",
+        quote:
+          "Agents, apps, or humans pay as part of their request, and the server verifies payment before returning the response.",
+        ctaLabel: "وثائق Tempo Machine Payments",
+        ctaUrl: "https://docs.tempo.xyz/guide/machine-payments"
+      },
+      networkLabels: {
+        brandKit: "Brand kit",
+        docs: "الوثائق",
+        visitSite: "النظام البيئي"
+      },
+      networkOverrides: {
+        base: {
+          tagline: "L2 من Coinbase على EVM — رسوم منخفضة وتأكيدات سريعة.",
+          about:
+            "Base هي L2 لـ Ethereum مبنية على OP Stack من Optimism، باحتضان من Coinbase. متوافقة مع EVM، تُكتب بـ Solidity، وتتكامل أصلياً مع منتجات Coinbase."
+        },
+        solana: {
+          tagline: "L1 عالية الإنتاجية ومنخفضة الزمن — حالة عالمية واحدة.",
+          about:
+            "Solana هي L1 متوازية بزمن slot ~400 مللي ثانية. تُكتب البرامج بـ Rust وAnchor؛ الرسوم دون السنت والحالة العالمية الواحدة تُبقي تجربة المستخدم سريعة."
+        }
+      },
+      sectionLabels: {
+        starters: "البداية وSscaffold",
+        wallets: "محافظ والمصادقة",
+        dex: "DEX وswap",
+        defi: "بروتوكولات DeFi",
+        infra: "RPC والبنية",
+        data: "بيانات والمستكشفات",
+        ai: "أدوات AI",
+        agentic: "Agentic payments"
+      }
     },
     contact: {
       email: "baturalp@wienerlabs.com",
