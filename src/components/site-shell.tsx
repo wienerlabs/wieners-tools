@@ -43,6 +43,9 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         <Link href={`/${locale}/#tools`} className="ws-nav-link">
           {navLabels.tools}
         </Link>
+        <Link href={`/${locale}/components/`} className="ws-nav-link">
+          {ui.gallery.nav}
+        </Link>
         <Link href={`/${locale}/about/`} className="ws-nav-link">
           {navLabels.about}
         </Link>

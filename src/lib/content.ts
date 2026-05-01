@@ -70,6 +70,15 @@ export type SiteContent = {
     highlightWords: string[];
     hint: string;
   };
+  gallery: {
+    nav: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    previewLabel: string;
+    codeLabel: string;
+    audience: string;
+  };
   contact: {
     email: string;
     githubUrl: string;
@@ -171,6 +180,15 @@ export const content: Record<Locale, SiteContent> = {
       highlightWords: ["Wiener", "Tools", "tarayıcınızda", "atölyesidir", "32", "altı", "sunucumuza", "cihazınızda", "tek"],
       hint: "Üzerine gelince yere düşer."
     },
+    gallery: {
+      nav: "Komponentler",
+      eyebrow: "İç araç · Frontend",
+      title: "Komponent galerisi",
+      intro: "Wiener şirketindeki frontend ekibi için canlı önizleme + kod. Tüm bileşenler bizim tasarım sisteminde, monokrom palette ve Host Grotesk tipografi ile.",
+      previewLabel: "Canlı önizleme",
+      codeLabel: "Kullanım",
+      audience: "Yalnızca Wiener Labs ekipleri için referans katalog."
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -267,6 +285,15 @@ export const content: Record<Locale, SiteContent> = {
       text: "Wiener Tools is a browser-native image workshop. Thirty-two tools spread across six categories. No file ever reaches our servers because everything runs on your device. Compress convert edit generate all in one place.",
       highlightWords: ["Wiener", "Tools", "browser-native", "workshop", "Thirty-two", "six", "servers", "device", "one"],
       hint: "Hover to drop."
+    },
+    gallery: {
+      nav: "Components",
+      eyebrow: "Internal · Frontend",
+      title: "Component gallery",
+      intro: "Live previews and copy-paste snippets for the Wiener frontend team. Every component lives inside our monochrome palette and Host Grotesk type system.",
+      previewLabel: "Live preview",
+      codeLabel: "Usage",
+      audience: "Reference catalog for Wiener Labs teams."
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -365,6 +392,15 @@ export const content: Record<Locale, SiteContent> = {
       highlightWords: ["Wiener", "Tools", "Browser", "Bildwerkstatt", "Zweiunddreißig", "sechs", "Server", "Gerät", "einem"],
       hint: "Hover lässt es fallen."
     },
+    gallery: {
+      nav: "Komponenten",
+      eyebrow: "Intern · Frontend",
+      title: "Komponentengalerie",
+      intro: "Live-Vorschauen und Code-Snippets für das Wiener Frontend-Team. Alle Komponenten in unserer monochromen Palette und Host Grotesk Typografie.",
+      previewLabel: "Live-Vorschau",
+      codeLabel: "Verwendung",
+      audience: "Referenz-Katalog für Wiener Labs Teams."
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -461,6 +497,15 @@ export const content: Record<Locale, SiteContent> = {
       text: "Wiener Tools ورشة صور تعمل داخل المتصفح. اثنتان وثلاثون أداة موزعة على ست فئات. لا ملف يصل إلى خوادمنا لأن كل شيء يعمل على جهازك. اضغط حوّل عدّل أنتج كله في مكان واحد.",
       highlightWords: ["Wiener", "Tools", "المتصفح", "ورشة", "وثلاثون", "ست", "خوادمنا", "جهازك", "واحد"],
       hint: "مرر فوقها لتسقط."
+    },
+    gallery: {
+      nav: "المكونات",
+      eyebrow: "داخلي · Frontend",
+      title: "معرض المكونات",
+      intro: "معاينات حية ومقتطفات للنسخ من فريق Wiener للواجهة. كل المكونات تتبع لوحتنا أحادية اللون وخط Host Grotesk.",
+      previewLabel: "معاينة حية",
+      codeLabel: "الاستخدام",
+      audience: "كتالوج مرجعي لفرق Wiener Labs."
     },
     contact: {
       email: "baturalp@wienerlabs.com",

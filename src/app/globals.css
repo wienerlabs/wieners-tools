@@ -1715,3 +1715,221 @@ button, input, textarea, select { font: inherit; }
   .ws-cubes-frame { padding: 16px; }
   .ws-cube { width: 36px; height: 36px; }
 }
+
+/* ----------------------------------------------------------------------------
+   Component gallery
+   ----------------------------------------------------------------------------*/
+
+.ws-gallery-hero {
+  position: relative;
+  min-height: 460px;
+  padding: 96px 32px 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ws-gallery-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ws-gallery-hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ws-gallery-hero-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.ws-gallery-hero-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin: 0;
+  color: var(--text);
+}
+
+.ws-gallery-hero-intro {
+  margin: 24px auto 0;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.ws-gallery-hero-audience {
+  margin: 22px 0 0;
+  display: inline-block;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.ws-pixel-blast {
+  width: 100%;
+  height: 100%;
+}
+
+.ws-pixel-blast canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* List */
+
+.ws-gallery-list {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+  display: grid;
+  gap: 28px;
+}
+
+.ws-gallery-item {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  background: var(--bg);
+  display: grid;
+  gap: 20px;
+}
+
+.ws-gallery-item-head {
+  display: grid;
+  gap: 6px;
+}
+
+.ws-gallery-item-head h2 {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
+}
+
+.ws-gallery-item-head p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.ws-gallery-preview {
+  position: relative;
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.ws-gallery-preview-tall {
+  min-height: 360px;
+  padding: 0;
+}
+
+.ws-gallery-preview-center {
+  padding: 32px;
+}
+
+.ws-gallery-preview-falling {
+  min-height: 320px;
+  padding: 0;
+}
+
+.ws-gallery-preview-falling .ft-container {
+  width: 100%;
+  height: 320px;
+}
+
+/* Code block */
+
+.ws-code {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.ws-code-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.ws-code-lang {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ws-code-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 180ms;
+}
+
+.ws-code-copy:hover {
+  border-color: var(--ink);
+}
+
+.ws-code-body {
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--ink);
+  color: var(--bg);
+  overflow-x: auto;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ws-code-body code { background: transparent; color: inherit; }
+
+@media (max-width: 720px) {
+  .ws-gallery-hero { padding: 64px 20px; min-height: 360px; }
+  .ws-gallery-list { padding: 48px 16px 72px; }
+  .ws-gallery-item { padding: 18px; border-radius: 14px; }
+  .ws-gallery-preview { min-height: 180px; padding: 16px; }
+  .ws-gallery-preview-tall { min-height: 280px; }
+}
