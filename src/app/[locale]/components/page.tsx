@@ -114,8 +114,8 @@ export default async function ComponentsPage({ params }: PageProps) {
     <>
       <SeoJsonLd data={breadcrumbs} />
       <SiteShell locale={locale} variant="compact">
-        <section className="ws-gallery-hero">
-          <div className="ws-gallery-hero-bg" aria-hidden="true">
+        <section className="ws-gallery-hero ws-gallery-hero-bare" aria-hidden="true">
+          <div className="ws-gallery-hero-bg">
             <PixelBlast
               variant="square"
               pixelSize={4}
@@ -132,7 +132,10 @@ export default async function ComponentsPage({ params }: PageProps) {
               transparent
             />
           </div>
-          <div className="ws-gallery-hero-inner">
+        </section>
+
+        <section className="ws-gallery-intro">
+          <div className="ws-gallery-intro-inner">
             <p className="ws-gallery-hero-eyebrow">{page.gallery.eyebrow}</p>
             <h1 className="ws-gallery-hero-title">{page.gallery.title}</h1>
             <p className="ws-gallery-hero-intro">{page.gallery.intro}</p>

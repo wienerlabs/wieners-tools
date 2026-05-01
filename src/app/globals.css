@@ -253,13 +253,13 @@ button, input, textarea, select { font: inherit; }
 .ws-hero-proof {
   margin-top: 56px;
   display: flex;
-  gap: 32px;
+  gap: 28px;
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* ----------------------------------------------------------------------------
@@ -1732,6 +1732,11 @@ button, input, textarea, select { font: inherit; }
   isolation: isolate;
 }
 
+.ws-gallery-hero-bare {
+  min-height: 360px;
+  padding: 0;
+}
+
 .ws-gallery-hero-bg {
   position: absolute;
   inset: 0;
@@ -1745,6 +1750,18 @@ button, input, textarea, select { font: inherit; }
   text-align: center;
   max-width: 720px;
   margin: 0 auto;
+}
+
+.ws-gallery-intro {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 72px 32px;
+}
+
+.ws-gallery-intro-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .ws-gallery-hero-eyebrow {
@@ -1928,6 +1945,8 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 720px) {
   .ws-gallery-hero { padding: 64px 20px; min-height: 360px; }
+  .ws-gallery-hero-bare { padding: 0; min-height: 280px; }
+  .ws-gallery-intro { padding: 56px 20px; }
   .ws-gallery-list { padding: 48px 16px 72px; }
   .ws-gallery-item { padding: 18px; border-radius: 14px; }
   .ws-gallery-preview { min-height: 180px; padding: 16px; }

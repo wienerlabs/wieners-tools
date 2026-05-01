@@ -103,7 +103,7 @@ export type SiteContent = {
   };
 };
 
-const SHARED_PROOF = ["TR / DE / EN / AR", "100% in your browser", "Open source ready"];
+const SHARED_PROOF = ["tr / de / en / ar", "100% in your browser", "open source ready"];
 
 export const content: Record<Locale, SiteContent> = {
   tr: {
