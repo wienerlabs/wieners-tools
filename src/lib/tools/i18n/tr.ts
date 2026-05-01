@@ -344,5 +344,78 @@ export const toolsTR: ToolI18nBundle = {
     description: "İki metnin yan yana farkı — satır ve kelime düzeyinde. Yükleme yok, hepsi tarayıcıda.",
     keywords: ["diff", "karşılaştır", "metin"],
     options: { left: "Sol", right: "Sağ", mode: "Mod" }
+  },
+
+  // ------------- PDF
+  "pdf-merge": {
+    name: "PDF Birleştir",
+    short: "PDF'leri sırayla birleştir",
+    description: "Birden çok PDF bırak, sırayla birleştir. Dışa aktarmadan önce sırayı serbestçe değiştir.",
+    keywords: ["pdf", "birleştir"]
+  },
+  "pdf-split": {
+    name: "PDF Böl",
+    short: "Sayfa veya aralıklara böl",
+    description: "PDF'i tek sayfa veya aralıklara böl (örn. 1-3, 5, 8-).",
+    keywords: ["pdf", "böl"],
+    options: { mode: "Mod", ranges: "Aralıklar" }
+  },
+  "pdf-rotate": {
+    name: "PDF Döndür",
+    short: "Sayfaları döndür",
+    description: "Seçili sayfaları 90/180/270° döndür.",
+    keywords: ["pdf", "döndür"],
+    options: { angle: "Açı" }
+  },
+  "pdf-reorder": {
+    name: "PDF Sırala",
+    short: "Sayfaları yeniden sırala",
+    description: "PDF sayfalarını sürükle-bırak ile yeniden sırala ve dışa aktar.",
+    keywords: ["pdf", "sırala", "sayfa"]
+  },
+  "pdf-metadata": {
+    name: "PDF Metadata Düzenle",
+    short: "Başlık / yazar / konu",
+    description: "PDF info dictionary'sini gör ve düzenle — başlık, yazar, konu, anahtar kelimeler, üretici.",
+    keywords: ["pdf", "metadata"]
+  },
+  "pdf-text-extract": {
+    name: "PDF Metin Çıkart",
+    short: "PDF'in metin katmanı",
+    description: "PDF'in gömülü metin katmanını çıkart (OCR değil; taranmış PDF'ler için Image OCR'a bak).",
+    keywords: ["pdf", "metin", "çıkart"]
+  },
+
+  // ------------- Tasarım yardımcıları
+  "gradient-generator": {
+    name: "Gradient Üretici",
+    short: "Linear / radial / conic",
+    description: "Stop'lar ve açı ile CSS gradient kur. Kopyalamaya hazır background-image string'i üretir.",
+    keywords: ["gradient", "css"],
+    options: { type: "Tür", angle: "Açı", stops: "Stop'lar" }
+  },
+  "box-shadow": {
+    name: "Box Shadow Üretici",
+    short: "Çoklu gölge",
+    description: "Offset, blur, spread ve birden çok katman ile CSS box-shadow oluştur.",
+    keywords: ["shadow", "css"]
+  },
+  "border-radius": {
+    name: "Border Radius Üretici",
+    short: "Köşe başına yarıçap",
+    description: "Her köşenin yarıçapını görsel olarak ayarla, CSS'i kopyala.",
+    keywords: ["border-radius", "css"]
+  },
+  "cubic-bezier": {
+    name: "Cubic Bezier Editör",
+    short: "Easing eğrisi önizleme",
+    description: "İki kontrol noktasını sürükleyerek cubic-bezier() tasarla, hareketi önizle.",
+    keywords: ["bezier", "easing", "animasyon"]
+  },
+  "contrast-checker": {
+    name: "Kontrast Denetleyici",
+    short: "WCAG AA/AAA kararı",
+    description: "İki renk arasındaki kontrast oranını kontrol et, normal ve büyük metin için WCAG AA / AAA kararını gör.",
+    keywords: ["kontrast", "wcag", "erişilebilirlik"]
   }
 };

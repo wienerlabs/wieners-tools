@@ -344,5 +344,78 @@ export const toolsEN: ToolI18nBundle = {
     description: "Side-by-side diff of two strings — line and word level. No upload, all in your browser.",
     keywords: ["diff", "compare", "text"],
     options: { left: "Left", right: "Right", mode: "Mode" }
+  },
+
+  // ------------- PDF
+  "pdf-merge": {
+    name: "PDF Merge",
+    short: "Combine PDFs in order",
+    description: "Drop several PDFs and merge them into one. Reorder freely before exporting.",
+    keywords: ["pdf", "merge", "combine"]
+  },
+  "pdf-split": {
+    name: "PDF Split",
+    short: "Split into pages or ranges",
+    description: "Split a PDF into single pages or by page ranges (e.g. 1-3, 5, 8-).",
+    keywords: ["pdf", "split"],
+    options: { mode: "Mode", ranges: "Ranges" }
+  },
+  "pdf-rotate": {
+    name: "PDF Rotate",
+    short: "Rotate selected pages",
+    description: "Rotate any subset of pages by 90/180/270°.",
+    keywords: ["pdf", "rotate"],
+    options: { angle: "Angle" }
+  },
+  "pdf-reorder": {
+    name: "PDF Reorder",
+    short: "Drag pages into a new order",
+    description: "Reorder pages of a PDF and re-export.",
+    keywords: ["pdf", "reorder", "page"]
+  },
+  "pdf-metadata": {
+    name: "PDF Metadata Editor",
+    short: "Title / author / subject",
+    description: "View and edit the PDF info dictionary — title, author, subject, keywords, creator.",
+    keywords: ["pdf", "metadata"]
+  },
+  "pdf-text-extract": {
+    name: "PDF Text Extract",
+    short: "Pull text from a PDF",
+    description: "Extract the embedded text layer of a PDF (no OCR; for scanned PDFs use Image OCR).",
+    keywords: ["pdf", "text", "extract"]
+  },
+
+  // ------------- Design helpers
+  "gradient-generator": {
+    name: "Gradient Generator",
+    short: "Linear / radial / conic",
+    description: "Build CSS gradients with stops and angle. Copies a ready-to-paste background-image string.",
+    keywords: ["gradient", "css", "background"],
+    options: { type: "Type", angle: "Angle", stops: "Stops" }
+  },
+  "box-shadow": {
+    name: "Box Shadow Builder",
+    short: "Stack multiple shadows",
+    description: "Compose CSS box-shadow with offset, blur, spread and multiple layers.",
+    keywords: ["shadow", "box-shadow", "css"]
+  },
+  "border-radius": {
+    name: "Border Radius Builder",
+    short: "Per-corner radii",
+    description: "Visually adjust each corner radius and copy the CSS.",
+    keywords: ["border-radius", "css"]
+  },
+  "cubic-bezier": {
+    name: "Cubic Bezier Editor",
+    short: "Easing curve preview",
+    description: "Drag the two control points to design a cubic-bezier() and preview the motion.",
+    keywords: ["bezier", "easing", "animation"]
+  },
+  "contrast-checker": {
+    name: "Contrast Checker",
+    short: "WCAG AA/AAA verdict",
+    description: "Check the contrast ratio between two colours and see WCAG AA / AAA verdicts for normal and large text.",
+    keywords: ["contrast", "wcag", "a11y"]
   }
 };

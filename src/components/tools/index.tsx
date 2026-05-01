@@ -68,7 +68,22 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "lorem-ipsum": dynamic(() => import("./lorem-ipsum"), { ssr: false, loading: Loader }),
   "regex-tester": dynamic(() => import("./regex-tester"), { ssr: false, loading: Loader }),
   "color-converter": dynamic(() => import("./color-converter"), { ssr: false, loading: Loader }),
-  "diff-viewer": dynamic(() => import("./diff-viewer"), { ssr: false, loading: Loader })
+  "diff-viewer": dynamic(() => import("./diff-viewer"), { ssr: false, loading: Loader }),
+
+  // PDF
+  "pdf-merge": dynamic(() => import("./pdf-merge"), { ssr: false, loading: Loader }),
+  "pdf-split": dynamic(() => import("./pdf-split"), { ssr: false, loading: Loader }),
+  "pdf-rotate": dynamic(() => import("./pdf-rotate"), { ssr: false, loading: Loader }),
+  "pdf-reorder": dynamic(() => import("./pdf-reorder"), { ssr: false, loading: Loader }),
+  "pdf-metadata": dynamic(() => import("./pdf-metadata"), { ssr: false, loading: Loader }),
+  "pdf-text-extract": dynamic(() => import("./pdf-text-extract"), { ssr: false, loading: Loader }),
+
+  // Design
+  "gradient-generator": dynamic(() => import("./gradient-generator"), { ssr: false, loading: Loader }),
+  "box-shadow": dynamic(() => import("./box-shadow"), { ssr: false, loading: Loader }),
+  "border-radius": dynamic(() => import("./border-radius"), { ssr: false, loading: Loader }),
+  "cubic-bezier": dynamic(() => import("./cubic-bezier"), { ssr: false, loading: Loader }),
+  "contrast-checker": dynamic(() => import("./contrast-checker"), { ssr: false, loading: Loader })
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

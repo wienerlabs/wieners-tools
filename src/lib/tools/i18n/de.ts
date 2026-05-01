@@ -211,5 +211,20 @@ export const toolsDE: ToolI18nBundle = {
     description: "Side-by-side Diff zweier Texte — Zeilen- und Wortebene. Kein Upload, alles im Browser.",
     keywords: ["diff", "vergleich"],
     options: { left: "Links", right: "Rechts", mode: "Modus" }
-  }
+  },
+
+  // ------------- PDF
+  "pdf-merge": { name: "PDF zusammenführen", short: "PDFs in Reihenfolge", description: "Mehrere PDFs zusammenführen, Reihenfolge frei änderbar.", keywords: ["pdf", "merge"] },
+  "pdf-split": { name: "PDF teilen", short: "Seiten oder Bereiche", description: "PDF in Einzelseiten oder Bereiche teilen (z. B. 1-3, 5, 8-).", keywords: ["pdf", "split"], options: { mode: "Modus", ranges: "Bereiche" } },
+  "pdf-rotate": { name: "PDF drehen", short: "Seiten drehen", description: "Ausgewählte Seiten um 90/180/270° drehen.", keywords: ["pdf", "rotate"], options: { angle: "Winkel" } },
+  "pdf-reorder": { name: "PDF neu ordnen", short: "Seiten umsortieren", description: "PDF-Seiten per Drag & Drop umsortieren und exportieren.", keywords: ["pdf", "reorder"] },
+  "pdf-metadata": { name: "PDF-Metadaten", short: "Titel / Autor / Thema", description: "PDF-Info-Dictionary anzeigen und bearbeiten.", keywords: ["pdf", "metadata"] },
+  "pdf-text-extract": { name: "PDF-Text extrahieren", short: "Text-Layer auslesen", description: "Eingebetteten Text-Layer aus einer PDF ziehen (kein OCR).", keywords: ["pdf", "text"] },
+
+  // ------------- Design-Helfer
+  "gradient-generator": { name: "Gradient-Generator", short: "Linear / radial / conic", description: "CSS-Gradient mit Stops und Winkel.", keywords: ["gradient", "css"], options: { type: "Typ", angle: "Winkel", stops: "Stops" } },
+  "box-shadow": { name: "Box-Shadow-Builder", short: "Mehrere Schatten", description: "CSS box-shadow mit Offset, Blur, Spread und mehreren Layern.", keywords: ["shadow", "css"] },
+  "border-radius": { name: "Border-Radius-Builder", short: "Pro-Ecke-Radius", description: "Pro Ecke Radius einstellen und CSS kopieren.", keywords: ["border-radius", "css"] },
+  "cubic-bezier": { name: "Cubic-Bezier-Editor", short: "Easing-Kurve", description: "Zwei Kontrollpunkte ziehen, Bewegung vorschau.", keywords: ["bezier", "easing"] },
+  "contrast-checker": { name: "Kontrast-Checker", short: "WCAG AA/AAA", description: "Kontrastverhältnis zweier Farben mit WCAG-AA/AAA-Verdikt.", keywords: ["kontrast", "wcag"] }
 };

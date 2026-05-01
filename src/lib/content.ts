@@ -217,8 +217,9 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Tüm araçlar", href: "/tr/#tools" },
             { label: "Sıkıştırma", href: "/tr/#compression" },
-            { label: "Dönüştürme", href: "/tr/#conversion" },
             { label: "AI", href: "/tr/#ai" },
+            { label: "PDF", href: "/tr/#pdf" },
+            { label: "Tasarım", href: "/tr/#design" },
             { label: "Geliştirici", href: "/tr/#developer" }
           ]
         },
@@ -362,8 +363,9 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "All tools", href: "/en/#tools" },
             { label: "Compression", href: "/en/#compression" },
-            { label: "Conversion", href: "/en/#conversion" },
             { label: "AI", href: "/en/#ai" },
+            { label: "PDF", href: "/en/#pdf" },
+            { label: "Design", href: "/en/#design" },
             { label: "Developer", href: "/en/#developer" }
           ]
         },
@@ -507,8 +509,9 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Alle Werkzeuge", href: "/de/#tools" },
             { label: "Komprimierung", href: "/de/#compression" },
-            { label: "Konvertierung", href: "/de/#conversion" },
             { label: "KI", href: "/de/#ai" },
+            { label: "PDF", href: "/de/#pdf" },
+            { label: "Design", href: "/de/#design" },
             { label: "Entwickler", href: "/de/#developer" }
           ]
         },
@@ -652,8 +655,9 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "كل الأدوات", href: "/ar/#tools" },
             { label: "الضغط", href: "/ar/#compression" },
-            { label: "التحويل", href: "/ar/#conversion" },
             { label: "الذكاء الاصطناعي", href: "/ar/#ai" },
+            { label: "PDF", href: "/ar/#pdf" },
+            { label: "التصميم", href: "/ar/#design" },
             { label: "المطورون", href: "/ar/#developer" }
           ]
         },

@@ -359,6 +359,99 @@ export const tools: ToolDefinition[] = [
     status: "ready",
     accept: "text/plain",
     badges: ["new", "clientside"]
+  },
+
+  // ------------- PDF
+  {
+    slug: "pdf-merge",
+    category: "pdf",
+    icon: "Combine",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    multiple: true,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-split",
+    category: "pdf",
+    icon: "Scissors",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-rotate",
+    category: "pdf",
+    icon: "RotateCw",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-reorder",
+    category: "pdf",
+    icon: "ArrowUpDown",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-metadata",
+    category: "pdf",
+    icon: "Info",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-text-extract",
+    category: "pdf",
+    icon: "FileText",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+
+  // ------------- Design helpers
+  {
+    slug: "gradient-generator",
+    category: "design",
+    icon: "Sparkles",
+    status: "ready",
+    accept: "",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "box-shadow",
+    category: "design",
+    icon: "Square",
+    status: "ready",
+    accept: "",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "border-radius",
+    category: "design",
+    icon: "RectangleHorizontal",
+    status: "ready",
+    accept: "",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "cubic-bezier",
+    category: "design",
+    icon: "Spline",
+    status: "ready",
+    accept: "",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "contrast-checker",
+    category: "design",
+    icon: "Contrast",
+    status: "ready",
+    accept: "",
+    badges: ["new", "clientside"]
   }
 ];
 

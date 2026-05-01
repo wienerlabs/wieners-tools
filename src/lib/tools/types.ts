@@ -7,7 +7,9 @@ export type CategoryId =
   | "ai"
   | "generation"
   | "metadata"
-  | "developer";
+  | "developer"
+  | "pdf"
+  | "design";
 
 export type ToolStatus = "ready" | "beta" | "soon";
 

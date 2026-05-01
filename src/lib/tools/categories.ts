@@ -8,6 +8,8 @@ export const categoryOrder: CategoryId[] = [
   "ai",
   "generation",
   "metadata",
+  "pdf",
+  "design",
   "developer"
 ];
 
@@ -46,6 +48,16 @@ const tr: CategoryBundle = {
     name: "Geliştirici",
     short: "JSON, Base64, hash, regex",
     description: "JSON formatla, Base64 / URL / JWT decode et, hash & UUID üret, regex test et, renkleri çevir."
+  },
+  pdf: {
+    name: "PDF Araçları",
+    short: "Birleştir, böl, döndür",
+    description: "PDF'leri birleştir, böl, döndür, sırala, kilit kaldır, metin çıkart — hepsi tarayıcıda."
+  },
+  design: {
+    name: "Tasarım Yardımcıları",
+    short: "Gradient, gölge, kontrast",
+    description: "Gradient / box-shadow / radius / cubic-bezier üret, WCAG kontrast & renk körlüğü simülasyonu."
   }
 };
 
@@ -84,6 +96,16 @@ const en: CategoryBundle = {
     name: "Developer",
     short: "JSON, Base64, hash, regex",
     description: "Format JSON, decode Base64 / URL / JWT, hash & UUID, test regex, convert colors."
+  },
+  pdf: {
+    name: "PDF Tools",
+    short: "Merge, split, rotate",
+    description: "Merge, split, rotate, reorder, unlock and extract text from PDFs — fully in-browser."
+  },
+  design: {
+    name: "Design Helpers",
+    short: "Gradient, shadow, contrast",
+    description: "Generate gradients, box shadows, radii and cubic-beziers; check WCAG contrast and simulate colour blindness."
   }
 };
 
@@ -122,6 +144,16 @@ const de: CategoryBundle = {
     name: "Entwickler",
     short: "JSON, Base64, Hash, Regex",
     description: "JSON formatieren, Base64 / URL / JWT dekodieren, Hash & UUID, Regex testen, Farben konvertieren."
+  },
+  pdf: {
+    name: "PDF-Werkzeuge",
+    short: "Zusammenführen, teilen, drehen",
+    description: "PDFs zusammenführen, teilen, drehen, neu ordnen, entsperren und Text extrahieren — alles im Browser."
+  },
+  design: {
+    name: "Design-Helfer",
+    short: "Gradient, Schatten, Kontrast",
+    description: "Gradient / Box-Shadow / Radius / Cubic-Bezier erzeugen, WCAG-Kontrast & Farbenblindheit simulieren."
   }
 };
 
@@ -160,6 +192,16 @@ const ar: CategoryBundle = {
     name: "أدوات المطورين",
     short: "JSON وBase64 وHash وRegex",
     description: "تنسيق JSON، فك Base64 / URL / JWT، Hash وUUID، اختبار Regex، تحويل الألوان."
+  },
+  pdf: {
+    name: "أدوات PDF",
+    short: "دمج، تقسيم، تدوير",
+    description: "دمج، تقسيم، تدوير، إعادة ترتيب، فتح، واستخراج نص من PDF — كل ذلك في المتصفح."
+  },
+  design: {
+    name: "مساعدات التصميم",
+    short: "تدرج، ظل، تباين",
+    description: "توليد تدرجات / ظلال / نصف قطر / cubic-bezier، فحص تباين WCAG ومحاكاة عمى الألوان."
   }
 };
 

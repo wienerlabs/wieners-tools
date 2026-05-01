@@ -210,5 +210,20 @@ export const toolsAR: ToolI18nBundle = {
     description: "فروق جنباً إلى جنب بين نصين — على مستوى السطر والكلمة. بدون رفع.",
     keywords: ["diff"],
     options: { left: "يسار", right: "يمين", mode: "الوضع" }
-  }
+  },
+
+  // ------------- PDF
+  "pdf-merge": { name: "دمج PDF", short: "ضم PDF بترتيب", description: "ضم عدة ملفات PDF بترتيب قابل للتغيير.", keywords: ["pdf"] },
+  "pdf-split": { name: "تقسيم PDF", short: "صفحات أو مجالات", description: "تقسيم PDF إلى صفحات أو مجالات (مثل 1-3, 5, 8-).", keywords: ["pdf"], options: { mode: "الوضع", ranges: "المجالات" } },
+  "pdf-rotate": { name: "تدوير PDF", short: "تدوير الصفحات", description: "تدوير صفحات مختارة بـ 90/180/270°.", keywords: ["pdf"], options: { angle: "الزاوية" } },
+  "pdf-reorder": { name: "إعادة ترتيب PDF", short: "ترتيب الصفحات", description: "أعد ترتيب صفحات PDF بالسحب وأعد التصدير.", keywords: ["pdf"] },
+  "pdf-metadata": { name: "بيانات PDF", short: "العنوان / المؤلف", description: "عرض وتعديل قاموس معلومات PDF.", keywords: ["pdf"] },
+  "pdf-text-extract": { name: "استخراج نص PDF", short: "طبقة النص", description: "استخراج طبقة النص المضمّنة من PDF (ليس OCR).", keywords: ["pdf"] },
+
+  // ------------- مساعدات التصميم
+  "gradient-generator": { name: "مولّد التدرج", short: "خطي / شعاعي / مخروطي", description: "بناء CSS gradient مع stops والزاوية.", keywords: ["gradient", "css"], options: { type: "النوع", angle: "الزاوية", stops: "نقاط التوقف" } },
+  "box-shadow": { name: "بناء Box Shadow", short: "ظلال متعددة", description: "تأليف CSS box-shadow بـ offset وblur وspread وطبقات متعددة.", keywords: ["shadow", "css"] },
+  "border-radius": { name: "بناء Border Radius", short: "نصف قطر لكل زاوية", description: "ضبط نصف قطر كل زاوية ونسخ CSS.", keywords: ["border-radius", "css"] },
+  "cubic-bezier": { name: "محرر Cubic Bezier", short: "منحنى easing", description: "اسحب نقطتي التحكم لتصميم cubic-bezier() ومعاينة الحركة.", keywords: ["bezier", "easing"] },
+  "contrast-checker": { name: "فاحص التباين", short: "حكم WCAG AA/AAA", description: "فحص نسبة التباين بين لونين مع حكم WCAG AA / AAA.", keywords: ["contrast", "wcag"] }
 };
