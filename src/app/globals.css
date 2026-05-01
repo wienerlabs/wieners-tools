@@ -1885,6 +1885,29 @@ button, input, textarea, select { font: inherit; }
   height: 320px;
 }
 
+.ws-gallery-preview-dark {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.ws-gallery-preview-pressure {
+  position: relative;
+  padding: 0;
+  min-height: 320px;
+  display: block;
+}
+
+.ws-anim-h1 {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text);
+  display: inline-block;
+}
+
 /* Code block */
 
 .ws-code {

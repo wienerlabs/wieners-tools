@@ -5,7 +5,8 @@
       "name": "wieners-tools",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "autoPort": true
+      "port": 3300,
+      "autoPort": false
     }
   ]
 }

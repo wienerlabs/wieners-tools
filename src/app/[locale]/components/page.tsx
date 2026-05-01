@@ -8,6 +8,13 @@ import TypewriterTitle from "@/components/typewriter-title";
 import MagnetLines from "@/components/magnet-lines";
 import Cubes from "@/components/cubes";
 import FallingText from "@/components/falling-text";
+import SplitText from "@/components/split-text";
+import BlurText from "@/components/blur-text";
+import CircularText from "@/components/circular-text";
+import TextType from "@/components/text-type";
+import Shuffle from "@/components/shuffle";
+import ShinyText from "@/components/shiny-text";
+import TextPressure from "@/components/text-pressure";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 import { absoluteUrl, breadcrumbSchema, buildPageMetadata } from "@/lib/site";
@@ -98,7 +105,79 @@ const SNIPPETS = {
   codeBlock: `<CodeBlock
   language="tsx"
   code={\`<TypewriterTitle autoLoop naturalVariance />\`}
-/>`
+/>`,
+  splitText: `<SplitText
+  text="Hello, you!"
+  className="text-2xl font-semibold text-center"
+  delay={50}
+  duration={1.25}
+  ease="easeOut"
+  splitType="chars"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+/>`,
+  blurText: `<BlurText
+  text="Isn't this so cool?!"
+  delay={200}
+  animateBy="words"
+  direction="top"
+  className="text-2xl mb-8"
+/>`,
+  circularText: `<CircularText
+  text="WIENER*TOOLS*COMPONENTS*"
+  onHover="speedUp"
+  spinDuration={20}
+/>`,
+  textType: `<TextType
+  text={["Text typing effect", "for your websites", "Happy coding!"]}
+  typingSpeed={75}
+  pauseDuration={1500}
+  showCursor
+  cursorCharacter="_"
+  deletingSpeed={50}
+  cursorBlinkDuration={0.5}
+/>`,
+  shuffle: `<Shuffle
+  text="Hello World"
+  shuffleDirection="right"
+  duration={0.35}
+  animationMode="evenodd"
+  shuffleTimes={1}
+  stagger={0.03}
+  threshold={0.1}
+  triggerOnce={true}
+  triggerOnHover
+  respectReducedMotion={true}
+  loop={false}
+  loopDelay={0}
+/>`,
+  shinyText: `<ShinyText
+  text="✨ Shiny Text Effect"
+  speed={2}
+  color="#000000"
+  shineColor="#fff4dd"
+  spread={120}
+  direction="left"
+  yoyo={false}
+  pauseOnHover={false}
+/>`,
+  textPressure: `<div style={{ position: "relative", height: "300px" }}>
+  <TextPressure
+    text="Hello!"
+    flex
+    alpha={false}
+    stroke={false}
+    width
+    weight
+    italic
+    textColor="#000000"
+    strokeColor="#fff4dd"
+    minFontSize={36}
+  />
+</div>`
 };
 
 export default async function ComponentsPage({ params }: PageProps) {
@@ -260,6 +339,149 @@ export default async function ComponentsPage({ params }: PageProps) {
               <CodeBlock language="tsx" code={SNIPPETS.codeBlock} />
             </div>
             <CodeBlock language="tsx" code={SNIPPETS.codeBlock} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>SplitText</h2>
+              <p>Karakter / kelime / satır bazında stagger&rsquo;li giriş animasyonu. IntersectionObserver tetikli.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center">
+              <SplitText
+                text="Hello, you!"
+                delay={50}
+                duration={1.1}
+                ease="easeOut"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-50px"
+                textAlign="center"
+                className="ws-anim-h1"
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.splitText} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>BlurText</h2>
+              <p>Blur+offset&rsquo;ten kelime/karakter sırasıyla netleşme. Yön (top/bottom/left/right) seçilebilir.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center">
+              <BlurText
+                text="Isn't this so cool?!"
+                delay={160}
+                animateBy="words"
+                direction="top"
+                className="ws-anim-h1"
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.blurText} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>CircularText</h2>
+              <p>Sürekli dönen dairesel yazı. Hover&rsquo;da hızlanır / yavaşlar / durur / çıldırır.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center">
+              <CircularText
+                text="WIENER*TOOLS*COMPONENTS*"
+                spinDuration={20}
+                onHover="speedUp"
+                size={220}
+                fontSize={14}
+                letterSpacing={2}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.circularText} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>TextType</h2>
+              <p>Çoklu metin sırasıyla yazılır + silinir. Sabit veya değişken hız, özelleştirilebilir caret.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center">
+              <span className="ws-anim-h1">
+                <TextType
+                  text={["Text typing effect", "for your websites", "Happy coding!"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  deletingSpeed={50}
+                  cursorCharacter="_"
+                  cursorBlinkDuration={0.5}
+                />
+              </span>
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.textType} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>Shuffle</h2>
+              <p>Karakterler rastgele harflerden geçerek hedefe oturur. Hover veya viewport tetikli.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center">
+              <span className="ws-anim-h1">
+                <Shuffle
+                  text="Hello World"
+                  shuffleDirection="right"
+                  duration={0.45}
+                  animationMode="evenodd"
+                  shuffleTimes={1}
+                  stagger={0.04}
+                  triggerOnce={false}
+                  triggerOnHover
+                  loop={false}
+                />
+              </span>
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.shuffle} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>ShinyText</h2>
+              <p>Metin üzerinden geçen parlak bant. Pure CSS, mask + linear-gradient.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center ws-gallery-preview-dark">
+              <span className="ws-anim-h1">
+                <ShinyText
+                  text="✨ Shiny Text Effect"
+                  speed={2.4}
+                  color="rgba(255, 244, 221, 0.45)"
+                  shineColor="#fff4dd"
+                  spread={140}
+                  direction="left"
+                />
+              </span>
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.shinyText} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>TextPressure</h2>
+              <p>Variable font (Compressa VF) + cursor mesafesine bağlı weight/width/italic. Mouse&rsquo;a yaklaştırın.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure">
+              <TextPressure
+                text="Wiener!"
+                flex
+                alpha={false}
+                stroke={false}
+                width
+                weight
+                italic
+                textColor="#000000"
+                strokeColor="#fff4dd"
+                minFontSize={36}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.textPressure} />
           </article>
         </section>
       </SiteShell>
