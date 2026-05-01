@@ -18,7 +18,6 @@ import TextPressure from "@/components/text-pressure";
 import StickerPeel from "@/components/sticker-peel";
 import FaultyTerminal from "@/components/faulty-terminal";
 import Dither from "@/components/dither";
-import Galaxy from "@/components/galaxy";
 import GradientBlinds from "@/components/gradient-blinds";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
@@ -225,22 +224,6 @@ const SNIPPETS = {
     waveAmplitude={0.3}
     waveFrequency={3}
     waveSpeed={0.05}
-  />
-</div>`,
-  galaxy: `<div style={{ width: "100%", height: 600, position: "relative" }}>
-  <Galaxy
-    mouseRepulsion
-    mouseInteraction
-    density={1}
-    glowIntensity={0.3}
-    saturation={0}
-    hueShift={140}
-    twinkleIntensity={0.3}
-    rotationSpeed={0.1}
-    repulsionStrength={2}
-    autoCenterRepulsion={0}
-    starSpeed={0.5}
-    speed={1}
   />
 </div>`,
   gradientBlinds: `<div style={{ width: "100%", height: 600, position: "relative" }}>
@@ -631,30 +614,6 @@ export default async function ComponentsPage({ params }: PageProps) {
               />
             </div>
             <CodeBlock language="tsx" code={SNIPPETS.dither} />
-          </article>
-
-          <article className="ws-gallery-item">
-            <header className="ws-gallery-item-head">
-              <h2>Galaxy</h2>
-              <p>WebGL spiral parçacık galaksisi. Mouse repulsion, twinkle, hue-shift ve rotation.</p>
-            </header>
-            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure ws-gallery-preview-dark">
-              <Galaxy
-                mouseRepulsion
-                mouseInteraction
-                density={1}
-                glowIntensity={0.3}
-                saturation={0}
-                hueShift={140}
-                twinkleIntensity={0.3}
-                rotationSpeed={0.1}
-                repulsionStrength={2}
-                autoCenterRepulsion={0}
-                starSpeed={0.5}
-                speed={1}
-              />
-            </div>
-            <CodeBlock language="tsx" code={SNIPPETS.galaxy} />
           </article>
 
           <article className="ws-gallery-item">

@@ -82,7 +82,7 @@ export default async function BlockchainPage({ params }: PageProps) {
             return (
               <article
                 key={network.id}
-                className="ws-bc-network"
+                className={`ws-bc-network ws-bc-network-${network.id}`}
                 style={
                   {
                     ["--bc-primary" as string]: network.primaryColor,
