@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description: "Browser-native image toolkit. 100% client-side.",
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/favicon.svg"
+    icon: "/logo.jpg"
   },
   openGraph: {
     siteName,
