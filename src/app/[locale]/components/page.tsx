@@ -15,6 +15,11 @@ import TextType from "@/components/text-type";
 import Shuffle from "@/components/shuffle";
 import ShinyText from "@/components/shiny-text";
 import TextPressure from "@/components/text-pressure";
+import StickerPeel from "@/components/sticker-peel";
+import FaultyTerminal from "@/components/faulty-terminal";
+import Dither from "@/components/dither";
+import Galaxy from "@/components/galaxy";
+import GradientBlinds from "@/components/gradient-blinds";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 import { absoluteUrl, breadcrumbSchema, buildPageMetadata } from "@/lib/site";
@@ -176,6 +181,82 @@ const SNIPPETS = {
     textColor="#000000"
     strokeColor="#fff4dd"
     minFontSize={36}
+  />
+</div>`,
+  stickerPeel: `<StickerPeel
+  imageSrc="/logo.jpg"
+  width={200}
+  rotate={0}
+  peelBackHoverPct={30}
+  peelBackActivePct={40}
+  shadowIntensity={0.5}
+  lightingIntensity={0.1}
+  initialPosition={{ x: 0, y: 0 }}
+  peelDirection={0}
+/>`,
+  faultyTerminal: `<div style={{ width: "100%", height: 600, position: "relative" }}>
+  <FaultyTerminal
+    scale={1.5}
+    gridMul={[2, 1]}
+    digitSize={1.2}
+    timeScale={0.5}
+    pause={false}
+    scanlineIntensity={0.5}
+    glitchAmount={1}
+    flickerAmount={1}
+    noiseAmp={1}
+    chromaticAberration={0}
+    dither={0}
+    curvature={0.1}
+    tint="#A7EF9E"
+    mouseReact
+    mouseStrength={0.5}
+    pageLoadAnimation
+    brightness={0.6}
+  />
+</div>`,
+  dither: `<div style={{ width: "100%", height: 600, position: "relative" }}>
+  <Dither
+    waveColor={[0.5, 0.5, 0.5]}
+    disableAnimation={false}
+    enableMouseInteraction
+    mouseRadius={0.3}
+    colorNum={4}
+    waveAmplitude={0.3}
+    waveFrequency={3}
+    waveSpeed={0.05}
+  />
+</div>`,
+  galaxy: `<div style={{ width: "100%", height: 600, position: "relative" }}>
+  <Galaxy
+    mouseRepulsion
+    mouseInteraction
+    density={1}
+    glowIntensity={0.3}
+    saturation={0}
+    hueShift={140}
+    twinkleIntensity={0.3}
+    rotationSpeed={0.1}
+    repulsionStrength={2}
+    autoCenterRepulsion={0}
+    starSpeed={0.5}
+    speed={1}
+  />
+</div>`,
+  gradientBlinds: `<div style={{ width: "100%", height: 600, position: "relative" }}>
+  <GradientBlinds
+    gradientColors={["#FF9FFC", "#5227FF"]}
+    angle={0}
+    noise={0.3}
+    blindCount={12}
+    blindMinWidth={50}
+    spotlightRadius={0.5}
+    spotlightSoftness={1}
+    spotlightOpacity={1}
+    mouseDampening={0.15}
+    distortAmount={0}
+    shineDirection="left"
+    mixBlendMode="lighten"
   />
 </div>`
 };
@@ -482,6 +563,122 @@ export default async function ComponentsPage({ params }: PageProps) {
               />
             </div>
             <CodeBlock language="tsx" code={SNIPPETS.textPressure} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>StickerPeel</h2>
+              <p>Hover&rsquo;da köşeden kıvrılan sticker efekti. Drag ile yerleştirilebilir; logomuzla sahnede.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-center ws-gallery-preview-sticker">
+              <StickerPeel
+                imageSrc="/logo.jpg"
+                width={200}
+                rotate={-6}
+                peelBackHoverPct={28}
+                peelBackActivePct={42}
+                shadowIntensity={0.6}
+                lightingIntensity={0.18}
+                peelDirection={0}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.stickerPeel} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>FaultyTerminal</h2>
+              <p>WebGL CRT terminal — karakter grid, scanlines, glitch, flicker, curvature. Mouse&rsquo;a tepki verir.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure ws-gallery-preview-dark">
+              <FaultyTerminal
+                scale={1.5}
+                gridMul={[2, 1]}
+                digitSize={1.2}
+                timeScale={0.5}
+                scanlineIntensity={0.5}
+                glitchAmount={1}
+                flickerAmount={1}
+                noiseAmp={1}
+                chromaticAberration={0}
+                dither={0}
+                curvature={0.1}
+                tint="#A7EF9E"
+                mouseReact
+                mouseStrength={0.5}
+                pageLoadAnimation
+                brightness={0.6}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.faultyTerminal} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>Dither</h2>
+              <p>Bayer-dithered sinüs dalga. Mouse imleci yakınlığa göre dalgayı bozar.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure ws-gallery-preview-dark">
+              <Dither
+                waveColor={[1.0, 0.96, 0.87]}
+                disableAnimation={false}
+                enableMouseInteraction
+                mouseRadius={0.3}
+                colorNum={4}
+                waveAmplitude={0.3}
+                waveFrequency={3}
+                waveSpeed={0.05}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.dither} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>Galaxy</h2>
+              <p>WebGL spiral parçacık galaksisi. Mouse repulsion, twinkle, hue-shift ve rotation.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure ws-gallery-preview-dark">
+              <Galaxy
+                mouseRepulsion
+                mouseInteraction
+                density={1}
+                glowIntensity={0.3}
+                saturation={0}
+                hueShift={140}
+                twinkleIntensity={0.3}
+                rotationSpeed={0.1}
+                repulsionStrength={2}
+                autoCenterRepulsion={0}
+                starSpeed={0.5}
+                speed={1}
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.galaxy} />
+          </article>
+
+          <article className="ws-gallery-item">
+            <header className="ws-gallery-item-head">
+              <h2>GradientBlinds</h2>
+              <p>Dikey gradient bantlar + imleci takip eden spotlight. Blend-mode ile efekt katmanlanır.</p>
+            </header>
+            <div className="ws-gallery-preview ws-gallery-preview-tall ws-gallery-preview-pressure ws-gallery-preview-dark">
+              <GradientBlinds
+                gradientColors={["#FF9FFC", "#5227FF"]}
+                angle={0}
+                noise={0.3}
+                blindCount={12}
+                blindMinWidth={50}
+                spotlightRadius={0.5}
+                spotlightSoftness={1}
+                spotlightOpacity={1}
+                mouseDampening={0.15}
+                distortAmount={0}
+                shineDirection="left"
+                mixBlendMode="lighten"
+              />
+            </div>
+            <CodeBlock language="tsx" code={SNIPPETS.gradientBlinds} />
           </article>
         </section>
       </SiteShell>

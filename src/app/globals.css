@@ -3277,3 +3277,19 @@ button, input, textarea, select { font: inherit; }
 [dir="rtl"] .ws-bc-network::before {
   background: linear-gradient(270deg, var(--bc-primary), var(--bc-accent));
 }
+
+/* StickerPeel preview container */
+.ws-gallery-preview-sticker {
+  background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.04) 0 8px, transparent 8px 16px), var(--bg);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ws-sticker-peel {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  touch-action: none;
+}
