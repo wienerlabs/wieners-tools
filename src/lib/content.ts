@@ -158,7 +158,7 @@ export const content: Record<Locale, SiteContent> = {
       privacyNote: "Görselleriniz sunucumuza gönderilmez. Tüm işleme tarayıcınızda gerçekleşir."
     },
     contact: {
-      email: "hello@wienerlabs.xyz",
+      email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
     }
   },
@@ -248,7 +248,7 @@ export const content: Record<Locale, SiteContent> = {
       privacyNote: "Your files never reach our servers. All processing happens in your browser."
     },
     contact: {
-      email: "hello@wienerlabs.xyz",
+      email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
     }
   },
@@ -338,7 +338,7 @@ export const content: Record<Locale, SiteContent> = {
       privacyNote: "Ihre Dateien erreichen unsere Server nicht. Alle Verarbeitung erfolgt im Browser."
     },
     contact: {
-      email: "hello@wienerlabs.xyz",
+      email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
     }
   },
@@ -428,7 +428,7 @@ export const content: Record<Locale, SiteContent> = {
       privacyNote: "ملفاتك لا تصل إلى خوادمنا. كل المعالجة تتم في متصفحك."
     },
     contact: {
-      email: "hello@wienerlabs.xyz",
+      email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
     }
   }

@@ -4,7 +4,7 @@
     "provider": "Wiener Labs",
     "delivery": "Static web app (Cloudflare Pages)",
     "technologies": ["Next.js", "TypeScript", "WebAssembly", "WebGPU", "Web Workers"],
-    "contactEmail": "hello@wienerlabs.xyz",
+    "contactEmail": "baturalp@wienerlabs.com",
     "github": "https://github.com/wienerlabs/wieners-tools"
   }
 }

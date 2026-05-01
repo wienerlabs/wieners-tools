@@ -89,7 +89,7 @@ export default function UpscaleImageTool({
     <>
       <Dropzone locale={locale} accept={tool.accept} multiple={tool.multiple} files={files} onChange={setFiles} />
 
-      <p className="ws-tool-privacy" style={{ background: "rgba(200, 162, 71, 0.1)", color: "var(--copper)" }}>
+      <p className="ws-tool-privacy">
         {modelHint}
       </p>
 

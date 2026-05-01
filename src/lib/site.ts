@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/i18n";
 export const siteUrl = "https://wienerstools.com";
 export const siteName = "Wiener’s Tools";
 export const siteShort = "wieners-tools";
-export const orgEmail = "hello@wienerlabs.xyz";
+export const orgEmail = "baturalp@wienerlabs.com";
 export const githubUrl = "https://github.com/wienerlabs/wieners-tools";
 
 export const localePathLabels: Record<Locale, string> = {
@@ -76,7 +76,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Wiener Labs",
-    url: "https://wienerlabs.xyz",
+    url: "https://wienerlabs.com",
     email: orgEmail,
     sameAs: [githubUrl]
   };

@@ -1,23 +1,18 @@
 @import "tailwindcss";
 
 /* ----------------------------------------------------------------------------
-   Wiener's Tools — design system
+   Wiener's Tools — single-tone design system
+   Background: #fff4dd, text: black, accents: black.
    ----------------------------------------------------------------------------*/
 
 :root {
-  --ink: #050505;
-  --paper: #ffffff;
-  --canvas: #f7f3ec;
-  --canvas-2: #efe9df;
-  --gold: #c8a247;
-  --copper: #a06636;
-  --red: #b63a3a;
-  --wine: #5b1f27;
-  --text: #181614;
-  --muted: #6f6a66;
-  --line: rgba(24, 22, 20, 0.14);
-  --line-strong: rgba(24, 22, 20, 0.32);
-  --soft: rgba(24, 22, 20, 0.04);
+  --bg: #fff4dd;
+  --ink: #000000;
+  --text: #000000;
+  --muted: rgba(0, 0, 0, 0.55);
+  --line: rgba(0, 0, 0, 0.14);
+  --line-strong: rgba(0, 0, 0, 0.32);
+  --soft: rgba(0, 0, 0, 0.04);
 }
 
 * {
@@ -26,14 +21,14 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--ink);
+  background: var(--bg);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background: var(--ink);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font-host), system-ui, sans-serif;
   letter-spacing: 0;
@@ -41,33 +36,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
+button, input, textarea, select { font: inherit; }
 
-::selection {
-  background: var(--gold);
-  color: var(--ink);
-}
+::selection { background: var(--ink); color: var(--bg); }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
 /* ----------------------------------------------------------------------------
@@ -76,73 +53,65 @@ select {
 
 .ws-shell {
   min-height: 100vh;
-  padding: 8px;
-  background: var(--ink);
+  background: var(--bg);
 }
 
 .ws-canvas {
-  background: var(--canvas);
-  border: 10px solid var(--ink);
-  border-radius: 26px;
+  background: var(--bg);
   position: relative;
-  overflow: clip;
-  min-height: calc(100svh - 16px);
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
 
-.ws-shell.is-compact .ws-canvas {
-  min-height: 0;
-}
+.ws-shell.is-compact .ws-canvas { min-height: 0; }
 
 .ws-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 18px 22px;
+  gap: 24px;
+  padding: 18px 32px;
   border-bottom: 1px solid var(--line);
-  background: var(--canvas);
-  position: relative;
-  z-index: 5;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .ws-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-host), system-ui, sans-serif;
-  font-size: 19px;
-  font-weight: 700;
+  gap: 12px;
   color: var(--text);
+  flex-shrink: 0;
 }
 
-.ws-brand-mark {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  background: var(--ink);
-}
-
-.ws-brand-mark > span {
+.ws-brand-logo {
   display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background: var(--gold);
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+}
+
+.ws-brand-text {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--text);
 }
 
 .ws-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .ws-nav-link {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--muted);
   transition: color 200ms;
 }
@@ -152,9 +121,86 @@ select {
 }
 
 @media (max-width: 720px) {
-  .ws-nav-link {
-    display: none;
-  }
+  .ws-header { padding: 14px 16px; gap: 12px; }
+  .ws-nav { gap: 14px; }
+  .ws-nav-link { font-size: 13px; }
+  .ws-nav-link[href*="#tools"] { display: none; }
+}
+
+/* Language switcher */
+
+.ws-lang {
+  position: relative;
+}
+
+.ws-lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+  transition: background 180ms, border-color 180ms;
+}
+
+.ws-lang-trigger:hover {
+  border-color: var(--ink);
+}
+
+.ws-lang-caret {
+  font-size: 9px;
+  transition: transform 180ms;
+}
+
+.ws-lang-caret.is-open {
+  transform: rotate(180deg);
+}
+
+.ws-lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  display: grid;
+  gap: 2px;
+  min-width: 140px;
+  padding: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+}
+
+[dir="rtl"] .ws-lang-menu {
+  right: auto;
+  left: 0;
+}
+
+.ws-lang-option {
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 180ms;
+}
+
+.ws-lang-option:hover {
+  background: var(--soft);
+}
+
+[dir="rtl"] .ws-lang-option {
+  text-align: right;
 }
 
 /* ----------------------------------------------------------------------------
@@ -169,11 +215,11 @@ select {
 
 .ws-hero-eyebrow {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 24px;
+  margin: 0 0 24px;
 }
 
 .ws-hero-title {
@@ -203,34 +249,16 @@ select {
 }
 
 .ws-hero-proof {
-  margin-top: 64px;
+  margin-top: 56px;
   display: flex;
   gap: 32px;
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-
-/* ----------------------------------------------------------------------------
-   Stripe band
-   ----------------------------------------------------------------------------*/
-
-.ws-stripes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.ws-stripe {
-  height: 28px;
-}
-
-.ws-stripe-gold { background: var(--gold); }
-.ws-stripe-copper { background: var(--copper); }
-.ws-stripe-red { background: var(--red); }
-.ws-stripe-wine { background: var(--wine); }
 
 /* ----------------------------------------------------------------------------
    Section + Category
@@ -238,7 +266,8 @@ select {
 
 .ws-section {
   padding: 80px 32px 64px;
-  background: var(--paper);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
 }
 
 .ws-section-head {
@@ -249,11 +278,11 @@ select {
 
 .ws-section-eyebrow {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
+  color: var(--muted);
+  margin: 0 0 12px;
 }
 
 .ws-section-title {
@@ -292,7 +321,7 @@ select {
 
 .ws-category-head h3 {
   font-family: var(--font-host), system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0;
 }
@@ -306,9 +335,7 @@ select {
   min-width: 200px;
 }
 
-[dir="rtl"] .ws-category-head p {
-  text-align: left;
-}
+[dir="rtl"] .ws-category-head p { text-align: left; }
 
 .ws-card-grid {
   display: grid;
@@ -323,21 +350,20 @@ select {
 .ws-tool-card {
   display: block;
   padding: 18px;
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid var(--line);
-  background: var(--paper);
-  transition: transform 180ms, border-color 180ms, background 180ms;
+  background: var(--bg);
+  transition: transform 180ms, border-color 180ms;
   position: relative;
 }
 
 .ws-tool-card:hover:not(.is-soon) {
   transform: translateY(-2px);
   border-color: var(--ink);
-  background: #fafaf7;
 }
 
 .ws-tool-card.is-soon {
-  opacity: 0.55;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -355,7 +381,7 @@ select {
   height: 32px;
   border-radius: 8px;
   background: var(--ink);
-  color: var(--canvas);
+  color: var(--bg);
 }
 
 .ws-tool-status {
@@ -364,14 +390,6 @@ select {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-}
-
-.ws-tool-card[data-status="ready"] .ws-tool-status {
-  color: var(--gold);
-}
-
-.ws-tool-card[data-status="beta"] .ws-tool-status {
-  color: var(--copper);
 }
 
 .ws-tool-name {
@@ -404,28 +422,24 @@ select {
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 999px;
-  background: var(--soft);
+  background: transparent;
   color: var(--muted);
+  border: 1px solid var(--line);
 }
 
 .ws-badge-ai {
   background: var(--ink);
-  color: var(--gold);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
-.ws-badge-new {
-  background: var(--gold);
-  color: var(--ink);
-}
-
-.ws-badge-fast {
-  background: var(--canvas-2);
+.ws-badge-new,
+.ws-badge-fast,
+.ws-badge-clientside,
+.ws-badge-beta {
+  background: transparent;
   color: var(--text);
-}
-
-.ws-badge-clientside {
-  background: var(--wine);
-  color: var(--canvas);
+  border: 1px solid var(--line-strong);
 }
 
 /* ----------------------------------------------------------------------------
@@ -451,16 +465,14 @@ select {
   margin-bottom: 22px;
 }
 
-.ws-tool-back:hover {
-  color: var(--text);
-}
+.ws-tool-back:hover { color: var(--text); }
 
 .ws-tool-category {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--muted);
   margin: 0 0 8px;
 }
 
@@ -488,8 +500,9 @@ select {
   gap: 6px;
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: var(--copper);
-  background: rgba(160, 102, 54, 0.08);
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--line);
   padding: 6px 12px;
   border-radius: 999px;
   margin: 0;
@@ -504,19 +517,16 @@ select {
    Dropzone
    ----------------------------------------------------------------------------*/
 
-.ws-dropzone-wrap {
-  display: grid;
-  gap: 12px;
-}
+.ws-dropzone-wrap { display: grid; gap: 12px; }
 
 .ws-dropzone {
   border: 1.5px dashed var(--line-strong);
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 48px 20px;
   text-align: center;
-  background: var(--paper);
+  background: var(--bg);
   cursor: pointer;
-  transition: border-color 180ms, background 180ms, transform 180ms;
+  transition: border-color 180ms, transform 180ms;
   display: grid;
   gap: 8px;
   justify-items: center;
@@ -525,16 +535,11 @@ select {
 .ws-dropzone:hover,
 .ws-dropzone.is-active {
   border-color: var(--ink);
-  background: #fafaf7;
 }
 
-.ws-dropzone.is-active {
-  transform: scale(0.998);
-}
+.ws-dropzone.is-active { transform: scale(0.998); }
 
-.ws-dropzone svg {
-  color: var(--muted);
-}
+.ws-dropzone svg { color: var(--muted); }
 
 .ws-dropzone-title {
   font-family: var(--font-host), system-ui, sans-serif;
@@ -553,17 +558,13 @@ select {
 .ws-dropzone-error {
   margin: 0;
   padding: 8px 12px;
-  border-radius: 10px;
-  background: rgba(182, 58, 58, 0.08);
-  color: var(--red);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--bg);
   font-size: 13px;
 }
 
-/* file list */
-.ws-file-list {
-  display: grid;
-  gap: 4px;
-}
+.ws-file-list { display: grid; gap: 4px; }
 
 .ws-file-row {
   display: grid;
@@ -572,15 +573,13 @@ select {
   align-items: center;
   padding: 10px 14px;
   border-radius: 10px;
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
   font-size: 13px;
 }
 
 .ws-file-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 
 .ws-file-size {
@@ -590,26 +589,22 @@ select {
 }
 
 .ws-file-remove {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border: 0;
-  background: transparent;
+  display: grid; place-items: center;
+  width: 26px; height: 26px;
+  border: 0; background: transparent;
   color: var(--muted);
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 6px; cursor: pointer;
 }
 
 .ws-file-remove:hover {
   background: var(--soft);
-  color: var(--red);
+  color: var(--text);
 }
 
 .ws-file-add {
   font-size: 13px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--text);
   background: transparent;
   border: 0;
   padding: 8px 0;
@@ -620,14 +615,16 @@ select {
   gap: 6px;
 }
 
+.ws-file-add:hover { opacity: 0.7; }
+
 /* ----------------------------------------------------------------------------
    Options
    ----------------------------------------------------------------------------*/
 
 .ws-options {
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 20px;
 }
 
@@ -646,10 +643,7 @@ select {
   gap: 16px;
 }
 
-.ws-field {
-  display: grid;
-  gap: 6px;
-}
+.ws-field { display: grid; gap: 6px; }
 
 .ws-field-label {
   font-size: 12px;
@@ -659,16 +653,9 @@ select {
   text-transform: uppercase;
 }
 
-.ws-field-control {
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-}
+.ws-field-control { min-height: 36px; display: flex; align-items: center; }
 
-.ws-field-hint {
-  font-size: 11px;
-  color: var(--muted);
-}
+.ws-field-hint { font-size: 11px; color: var(--muted); }
 
 .ws-slider {
   display: flex;
@@ -696,7 +683,7 @@ select {
   padding: 0 10px;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--bg);
   color: var(--text);
   font-size: 14px;
 }
@@ -708,7 +695,7 @@ select {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 6px 14px 6px 6px;
-  background: var(--paper);
+  background: var(--bg);
   cursor: pointer;
   font-size: 13px;
   color: var(--text);
@@ -724,7 +711,7 @@ select {
 }
 
 .ws-toggle.is-on .ws-toggle-knob {
-  background: var(--gold);
+  background: var(--ink);
   transform: translateX(2px);
 }
 
@@ -735,7 +722,7 @@ select {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0 10px;
-  background: var(--paper);
+  background: var(--bg);
   height: 36px;
   width: 100%;
 }
@@ -776,7 +763,8 @@ select {
   padding: 0 12px;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--bg);
+  color: var(--text);
 }
 
 .ws-textarea {
@@ -784,22 +772,19 @@ select {
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--bg);
+  color: var(--text);
   resize: vertical;
 }
 
-.ws-chip-row {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
+.ws-chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
 
 .ws-chip {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 4px 12px;
   font-size: 12px;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--muted);
   cursor: pointer;
   font-weight: 600;
@@ -807,7 +792,7 @@ select {
 
 .ws-chip.is-selected {
   background: var(--ink);
-  color: var(--gold);
+  color: var(--bg);
   border-color: var(--ink);
 }
 
@@ -837,7 +822,7 @@ select {
 
 .ws-button-primary {
   background: var(--ink);
-  color: var(--canvas);
+  color: var(--bg);
 }
 
 .ws-button-primary:hover:not(:disabled) {
@@ -845,12 +830,12 @@ select {
 }
 
 .ws-button-primary:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .ws-button-ghost {
-  background: var(--paper);
+  background: transparent;
   border-color: var(--line);
   color: var(--text);
 }
@@ -872,9 +857,9 @@ select {
    ----------------------------------------------------------------------------*/
 
 .ws-result {
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 20px;
 }
 
@@ -903,7 +888,8 @@ select {
   display: grid;
   gap: 10px;
   border-radius: 12px;
-  background: var(--canvas-2);
+  border: 1px solid var(--line);
+  background: var(--bg);
   padding: 12px;
 }
 
@@ -911,7 +897,8 @@ select {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  background: #ffffff;
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -931,9 +918,7 @@ select {
 }
 
 .ws-result-info {
-  display: grid;
-  gap: 2px;
-  min-width: 0;
+  display: grid; gap: 2px; min-width: 0;
 }
 
 .ws-result-name {
@@ -952,31 +937,28 @@ select {
 }
 
 /* ----------------------------------------------------------------------------
-   QR preview, ASCII output, palette
+   QR / ASCII / palette
    ----------------------------------------------------------------------------*/
 
 .ws-qr-preview {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
-.ws-qr-preview img {
-  max-width: 100%;
-  height: auto;
-}
+.ws-qr-preview img { max-width: 100%; height: auto; }
 
 .ws-ascii-output {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-size: 8px;
   line-height: 1;
   background: var(--ink);
-  color: var(--canvas);
+  color: var(--bg);
   padding: 16px;
-  border-radius: 14px;
+  border-radius: 12px;
   white-space: pre;
   overflow: auto;
   max-height: 60vh;
@@ -985,9 +967,9 @@ select {
 .ws-palette {
   display: grid;
   gap: 16px;
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 16px;
 }
 
@@ -1005,7 +987,7 @@ select {
 }
 
 .ws-palette-swatch {
-  border: 0;
+  border: 1px solid var(--line);
   border-radius: 12px;
   height: 88px;
   cursor: pointer;
@@ -1016,7 +998,7 @@ select {
 .ws-palette-swatch span {
   position: absolute;
   inset: auto 0 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.7);
   color: #ffffff;
   font-family: ui-monospace, monospace;
   font-size: 11px;
@@ -1025,16 +1007,14 @@ select {
   letter-spacing: 0.08em;
 }
 
-/* ----------------------------------------------------------------------------
-   "Soon" banner
-   ----------------------------------------------------------------------------*/
+/* "Soon" + loader */
 
 .ws-soon {
   text-align: center;
   padding: 64px 24px;
-  background: var(--paper);
+  background: var(--bg);
   border: 1px dashed var(--line-strong);
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
 .ws-soon-icon {
@@ -1043,8 +1023,8 @@ select {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--canvas-2);
-  color: var(--copper);
+  background: var(--ink);
+  color: var(--bg);
   margin-bottom: 14px;
 }
 
@@ -1118,9 +1098,9 @@ select {
 }
 
 .ws-doc-card {
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 24px;
 }
 
@@ -1170,9 +1150,9 @@ select {
    ----------------------------------------------------------------------------*/
 
 .ws-footer {
-  background: var(--ink);
-  color: var(--canvas);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid var(--line);
 }
 
 .ws-footer-shell {
@@ -1188,7 +1168,7 @@ select {
   flex-wrap: wrap;
   gap: 20px;
   padding-bottom: 36px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line);
 }
 
 .ws-footer-hero h2 {
@@ -1197,14 +1177,18 @@ select {
   font-weight: 700;
   letter-spacing: -0.025em;
   margin: 0;
-  color: var(--canvas);
+  color: var(--text);
 }
 
 .ws-footer-mail {
   font-size: 18px;
-  color: var(--gold);
+  color: var(--text);
   letter-spacing: 0.02em;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line-strong);
 }
+
+.ws-footer-mail:hover { opacity: 0.7; }
 
 .ws-footer-links {
   display: grid;
@@ -1215,10 +1199,10 @@ select {
 
 .ws-footer-column h3 {
   font-family: var(--font-host), system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--muted);
   margin: 0 0 14px;
 }
 
@@ -1229,19 +1213,19 @@ select {
 
 .ws-footer-list a {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 180ms;
+  color: var(--text);
+  transition: opacity 180ms;
 }
 
 .ws-footer-list a:hover {
-  color: var(--canvas);
+  opacity: 0.6;
 }
 
 .ws-footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--line);
   padding-top: 24px;
   flex-wrap: wrap;
   gap: 16px;
@@ -1249,22 +1233,26 @@ select {
 
 .ws-footer-wordmark {
   font-family: var(--font-host), system-ui, sans-serif;
-  font-size: clamp(24px, 4vw, 40px);
+  font-size: clamp(28px, 5vw, 56px);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.18);
+  color: var(--text);
+  opacity: 0.18;
 }
 
 .ws-footer-meta {
   display: flex;
   gap: 24px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--muted);
   align-items: center;
 }
 
 .ws-footer-meta a {
-  color: var(--gold);
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
 }
 
 [dir="rtl"] body {
@@ -1272,11 +1260,11 @@ select {
 }
 
 /* ----------------------------------------------------------------------------
-   Tool-specific layouts (added in v0.2)
+   Tool-specific layouts
    ----------------------------------------------------------------------------*/
 
 .ws-crop-stage {
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 12px;
@@ -1285,9 +1273,7 @@ select {
   overflow: auto;
 }
 
-.ws-crop-stage .ReactCrop {
-  max-width: 100%;
-}
+.ws-crop-stage .ReactCrop { max-width: 100%; }
 
 .ws-blur-stage {
   position: relative;
@@ -1297,7 +1283,7 @@ select {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--bg);
   max-width: 100%;
 }
 
@@ -1310,19 +1296,18 @@ select {
 
 .ws-blur-region {
   position: absolute;
-  border: 2px dashed var(--gold);
-  background: rgba(200, 162, 71, 0.15);
+  border: 2px dashed var(--ink);
+  background: rgba(0, 0, 0, 0.1);
   pointer-events: none;
 }
 
 .ws-blur-region.is-active {
   border-style: solid;
-  border-color: var(--ink);
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .ws-color-stage {
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 8px;
@@ -1354,15 +1339,13 @@ select {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 10px 14px;
-  background: var(--paper);
+  background: var(--bg);
   cursor: pointer;
   font-family: ui-monospace, monospace;
   font-size: 13px;
 }
 
-.ws-color-row:hover {
-  background: #fafaf7;
-}
+.ws-color-row:hover { border-color: var(--ink); }
 
 .ws-color-row span {
   color: var(--muted);
@@ -1405,7 +1388,7 @@ select {
   gap: 12px;
   padding: 8px 12px;
   border-radius: 8px;
-  background: var(--canvas-2);
+  border: 1px solid var(--line);
   font-size: 12px;
 }
 
@@ -1423,4 +1406,64 @@ select {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Cookie banner */
+.ws-cookie-wrap {
+  position: fixed;
+  inset-inline: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+}
+
+.ws-cookie {
+  width: 100%;
+  max-width: 880px;
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.ws-cookie-text {
+  flex: 1;
+  min-width: 240px;
+}
+
+.ws-cookie-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.ws-cookie-body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.ws-cookie-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.ws-cookie-link:hover { opacity: 0.7; }
+
+.ws-cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }

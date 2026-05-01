@@ -71,7 +71,7 @@ const tr: LegalUi = {
       {
         title: "İletişim ve haklar",
         paragraphs: [
-          "Verilerinizle ilgili soru veya talepleriniz için hello@wienerlabs.xyz adresine e-posta atabilirsiniz. KVKK ve GDPR kapsamındaki temel haklarınız (erişim, düzeltme, silme, itiraz) saklıdır."
+          "Verilerinizle ilgili soru veya talepleriniz için baturalp@wienerlabs.com adresine e-posta atabilirsiniz. KVKK ve GDPR kapsamındaki temel haklarınız (erişim, düzeltme, silme, itiraz) saklıdır."
         ]
       }
     ]
@@ -145,7 +145,7 @@ const en: LegalUi = {
       {
         title: "Contact and rights",
         paragraphs: [
-          "Reach out at hello@wienerlabs.xyz for any privacy question. Your GDPR/KVKK rights (access, rectification, erasure, objection) remain in effect."
+          "Reach out at baturalp@wienerlabs.com for any privacy question. Your GDPR/KVKK rights (access, rectification, erasure, objection) remain in effect."
         ]
       }
     ]
@@ -219,7 +219,7 @@ const de: LegalUi = {
       {
         title: "Kontakt und Rechte",
         paragraphs: [
-          "Datenschutzfragen an hello@wienerlabs.xyz. Ihre Rechte nach DSGVO/KVKK (Auskunft, Berichtigung, Löschung, Widerspruch) bestehen weiterhin."
+          "Datenschutzfragen an baturalp@wienerlabs.com. Ihre Rechte nach DSGVO/KVKK (Auskunft, Berichtigung, Löschung, Widerspruch) bestehen weiterhin."
         ]
       }
     ]
@@ -293,7 +293,7 @@ const ar: LegalUi = {
       {
         title: "التواصل والحقوق",
         paragraphs: [
-          "للأسئلة: hello@wienerlabs.xyz. حقوقك بموجب GDPR/KVKK (الوصول، التصحيح، الحذف، الاعتراض) محفوظة."
+          "للأسئلة: baturalp@wienerlabs.com. حقوقك بموجب GDPR/KVKK (الوصول، التصحيح، الحذف، الاعتراض) محفوظة."
         ]
       }
     ]

@@ -35,11 +35,9 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
   return (
     <header className="ws-header" dir="ltr">
-      <Link href={`/${locale}/`} className="ws-brand" aria-label="Wiener's Tools home">
-        <span className="ws-brand-mark" aria-hidden="true">
-          <span />
-        </span>
-        wieners-tools
+      <Link href={`/${locale}/`} className="ws-brand" aria-label="Wiener home">
+        <img src="/logo.svg" alt="" className="ws-brand-logo" width={32} height={32} />
+        <span className="ws-brand-text">WIENER</span>
       </Link>
 
       <nav className="ws-nav" aria-label="Primary">
@@ -54,7 +52,6 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </Link>
         <LanguageSwitcher currentLabel={localeNames[locale]} options={languageOptions} />
       </nav>
-      {/* keep ui referenced for typings */}
       <span className="sr-only">{ui.toolsSection.eyebrow}</span>
     </header>
   );

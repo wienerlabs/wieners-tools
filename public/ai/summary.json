@@ -13,7 +13,7 @@
   "languages": ["tr", "de", "en", "ar"],
   "privacy": "All processing happens in the user's browser via WebAssembly + WebGPU + Web Workers. No file is uploaded.",
   "contact": {
-    "email": "hello@wienerlabs.xyz",
+    "email": "baturalp@wienerlabs.com",
     "github": "https://github.com/wienerlabs/wieners-tools"
   }
 }

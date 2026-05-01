@@ -59,13 +59,6 @@ export default async function LocaleHome({ params }: PageProps) {
           </div>
         </section>
 
-        <div className="ws-stripes" aria-hidden="true">
-          <span className="ws-stripe ws-stripe-gold" />
-          <span className="ws-stripe ws-stripe-copper" />
-          <span className="ws-stripe ws-stripe-red" />
-          <span className="ws-stripe ws-stripe-wine" />
-        </div>
-
         <section id="tools" className="ws-section">
           <header className="ws-section-head">
             <p className="ws-section-eyebrow">{page.toolsSection.eyebrow}</p>
