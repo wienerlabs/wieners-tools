@@ -452,6 +452,62 @@ export const tools: ToolDefinition[] = [
     status: "ready",
     accept: "",
     badges: ["new", "clientside"]
+  },
+
+  // ------------- Media (video + audio)
+  {
+    slug: "video-compress",
+    category: "media",
+    icon: "Video",
+    status: "ready",
+    accept: "video/*",
+    maxSizeMB: 500,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "video-trim",
+    category: "media",
+    icon: "Scissors",
+    status: "ready",
+    accept: "video/*",
+    maxSizeMB: 500,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "video-to-gif",
+    category: "media",
+    icon: "Film",
+    status: "ready",
+    accept: "video/*",
+    maxSizeMB: 200,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "extract-audio",
+    category: "media",
+    icon: "Music",
+    status: "ready",
+    accept: "video/*",
+    maxSizeMB: 500,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "audio-convert",
+    category: "media",
+    icon: "AudioLines",
+    status: "ready",
+    accept: "audio/*",
+    maxSizeMB: 200,
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "mute-video",
+    category: "media",
+    icon: "VolumeX",
+    status: "ready",
+    accept: "video/*",
+    maxSizeMB: 500,
+    badges: ["new", "clientside"]
   }
 ];
 

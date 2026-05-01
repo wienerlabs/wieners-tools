@@ -226,5 +226,13 @@ export const toolsDE: ToolI18nBundle = {
   "box-shadow": { name: "Box-Shadow-Builder", short: "Mehrere Schatten", description: "CSS box-shadow mit Offset, Blur, Spread und mehreren Layern.", keywords: ["shadow", "css"] },
   "border-radius": { name: "Border-Radius-Builder", short: "Pro-Ecke-Radius", description: "Pro Ecke Radius einstellen und CSS kopieren.", keywords: ["border-radius", "css"] },
   "cubic-bezier": { name: "Cubic-Bezier-Editor", short: "Easing-Kurve", description: "Zwei Kontrollpunkte ziehen, Bewegung vorschau.", keywords: ["bezier", "easing"] },
-  "contrast-checker": { name: "Kontrast-Checker", short: "WCAG AA/AAA", description: "Kontrastverhältnis zweier Farben mit WCAG-AA/AAA-Verdikt.", keywords: ["kontrast", "wcag"] }
+  "contrast-checker": { name: "Kontrast-Checker", short: "WCAG AA/AAA", description: "Kontrastverhältnis zweier Farben mit WCAG-AA/AAA-Verdikt.", keywords: ["kontrast", "wcag"] },
+
+  // ------------- Medien
+  "video-compress": { name: "Video-Kompressor", short: "MP4/MOV/WebM verkleinern", description: "Video lokal mit ffmpeg.wasm komprimieren.", keywords: ["video", "ffmpeg"], options: { crf: "Qualität (CRF)", maxHeight: "Max-Höhe", preset: "Preset" } },
+  "video-trim": { name: "Video-Trimmer", short: "Clip extrahieren", description: "Start/Ende wählen, Clip extrahieren — wenn möglich ohne Re-Encode.", keywords: ["video", "trim"], options: { start: "Start", end: "Ende" } },
+  "video-to-gif": { name: "Video → GIF", short: "Loop-GIF aus Clip", description: "Videoabschnitt in Loop-GIF wandeln. FPS, Breite und Fenster einstellbar.", keywords: ["video", "gif"], options: { fps: "FPS", width: "Breite", start: "Start", duration: "Dauer" } },
+  "extract-audio": { name: "Audio extrahieren", short: "Tonspur eines Videos", description: "Tonspur eines Videos als MP3 oder WAV speichern.", keywords: ["audio", "mp3"], options: { format: "Format" } },
+  "audio-convert": { name: "Audio-Konverter", short: "MP3 / WAV / OGG", description: "Audiodatei zwischen MP3, WAV und OGG transkodieren.", keywords: ["audio", "mp3"], options: { format: "Format", bitrate: "Bitrate" } },
+  "mute-video": { name: "Video stummschalten", short: "Tonspur entfernen", description: "Tonspur entfernen, stille Datei herunterladen.", keywords: ["video", "mute"] }
 };

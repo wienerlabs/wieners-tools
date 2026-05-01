@@ -9,7 +9,8 @@ export type CategoryId =
   | "metadata"
   | "developer"
   | "pdf"
-  | "design";
+  | "design"
+  | "media";
 
 export type ToolStatus = "ready" | "beta" | "soon";
 

@@ -417,5 +417,48 @@ export const toolsTR: ToolI18nBundle = {
     short: "WCAG AA/AAA kararı",
     description: "İki renk arasındaki kontrast oranını kontrol et, normal ve büyük metin için WCAG AA / AAA kararını gör.",
     keywords: ["kontrast", "wcag", "erişilebilirlik"]
+  },
+
+  // ------------- Medya
+  "video-compress": {
+    name: "Video Sıkıştırıcı",
+    short: "MP4 / MOV / WebM küçült",
+    description: "ffmpeg.wasm ile video'yu yerelinde sıkıştır. CRF ve çözünürlük seç; encoder cihazında çalışır.",
+    keywords: ["video", "sıkıştır", "mp4", "ffmpeg"],
+    options: { crf: "Kalite (CRF)", maxHeight: "Maks yükseklik", preset: "Preset" }
+  },
+  "video-trim": {
+    name: "Video Kesici",
+    short: "Klip al",
+    description: "Başlangıç ve bitiş zamanı seç, mümkünse re-encode olmadan klip çıkart.",
+    keywords: ["video", "kes", "trim"],
+    options: { start: "Başlangıç", end: "Bitiş" }
+  },
+  "video-to-gif": {
+    name: "Video → GIF",
+    short: "Klip'ten döngü GIF",
+    description: "Video parçasını döngü GIF'e çevir. FPS, genişlik ve trim penceresini ayarla.",
+    keywords: ["video", "gif", "dönüştür"],
+    options: { fps: "FPS", width: "Genişlik", start: "Başlangıç", duration: "Süre" }
+  },
+  "extract-audio": {
+    name: "Ses Ayıkla",
+    short: "Video'dan ses al",
+    description: "Bir video'nun ses kanalını MP3 veya WAV olarak kaydet.",
+    keywords: ["ses", "ayıkla", "mp3"],
+    options: { format: "Format" }
+  },
+  "audio-convert": {
+    name: "Ses Dönüştürücü",
+    short: "MP3 / WAV / OGG",
+    description: "Ses dosyasını MP3, WAV ve OGG arasında çevir; bitrate ayarlanabilir.",
+    keywords: ["ses", "dönüştür", "mp3"],
+    options: { format: "Format", bitrate: "Bitrate" }
+  },
+  "mute-video": {
+    name: "Video Sustur",
+    short: "Ses kanalını kaldır",
+    description: "Video'nun ses kanalını sil, sessiz dosyayı indir.",
+    keywords: ["video", "sustur", "ses"]
   }
 };

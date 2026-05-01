@@ -9,6 +9,7 @@ export const categoryOrder: CategoryId[] = [
   "generation",
   "metadata",
   "pdf",
+  "media",
   "design",
   "developer"
 ];
@@ -58,6 +59,11 @@ const tr: CategoryBundle = {
     name: "Tasarım Yardımcıları",
     short: "Gradient, gölge, kontrast",
     description: "Gradient / box-shadow / radius / cubic-bezier üret, WCAG kontrast & renk körlüğü simülasyonu."
+  },
+  media: {
+    name: "Video & Ses",
+    short: "ffmpeg.wasm tarayıcıda",
+    description: "Video sıkıştır, kırp, GIF'e dönüştür; ses ayıkla, sesi mp3'e çevir — hepsi ffmpeg.wasm ile cihazında."
   }
 };
 
@@ -106,6 +112,11 @@ const en: CategoryBundle = {
     name: "Design Helpers",
     short: "Gradient, shadow, contrast",
     description: "Generate gradients, box shadows, radii and cubic-beziers; check WCAG contrast and simulate colour blindness."
+  },
+  media: {
+    name: "Video & Audio",
+    short: "ffmpeg.wasm in your browser",
+    description: "Compress video, trim, convert to GIF; extract audio, transcode to mp3 — all via ffmpeg.wasm on-device."
   }
 };
 
@@ -154,6 +165,11 @@ const de: CategoryBundle = {
     name: "Design-Helfer",
     short: "Gradient, Schatten, Kontrast",
     description: "Gradient / Box-Shadow / Radius / Cubic-Bezier erzeugen, WCAG-Kontrast & Farbenblindheit simulieren."
+  },
+  media: {
+    name: "Video & Audio",
+    short: "ffmpeg.wasm im Browser",
+    description: "Video komprimieren, schneiden, in GIF wandeln; Audio extrahieren oder als mp3 transkodieren — alles via ffmpeg.wasm."
   }
 };
 
@@ -202,6 +218,11 @@ const ar: CategoryBundle = {
     name: "مساعدات التصميم",
     short: "تدرج، ظل، تباين",
     description: "توليد تدرجات / ظلال / نصف قطر / cubic-bezier، فحص تباين WCAG ومحاكاة عمى الألوان."
+  },
+  media: {
+    name: "فيديو وصوت",
+    short: "ffmpeg.wasm في المتصفح",
+    description: "ضغط الفيديو، قصّ، تحويل إلى GIF؛ استخراج الصوت أو تحويله إلى mp3 — كل ذلك عبر ffmpeg.wasm على جهازك."
   }
 };
 

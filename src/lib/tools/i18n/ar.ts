@@ -225,5 +225,13 @@ export const toolsAR: ToolI18nBundle = {
   "box-shadow": { name: "بناء Box Shadow", short: "ظلال متعددة", description: "تأليف CSS box-shadow بـ offset وblur وspread وطبقات متعددة.", keywords: ["shadow", "css"] },
   "border-radius": { name: "بناء Border Radius", short: "نصف قطر لكل زاوية", description: "ضبط نصف قطر كل زاوية ونسخ CSS.", keywords: ["border-radius", "css"] },
   "cubic-bezier": { name: "محرر Cubic Bezier", short: "منحنى easing", description: "اسحب نقطتي التحكم لتصميم cubic-bezier() ومعاينة الحركة.", keywords: ["bezier", "easing"] },
-  "contrast-checker": { name: "فاحص التباين", short: "حكم WCAG AA/AAA", description: "فحص نسبة التباين بين لونين مع حكم WCAG AA / AAA.", keywords: ["contrast", "wcag"] }
+  "contrast-checker": { name: "فاحص التباين", short: "حكم WCAG AA/AAA", description: "فحص نسبة التباين بين لونين مع حكم WCAG AA / AAA.", keywords: ["contrast", "wcag"] },
+
+  // ------------- وسائط
+  "video-compress": { name: "ضاغط الفيديو", short: "تصغير MP4/MOV/WebM", description: "ضغط الفيديو محلياً عبر ffmpeg.wasm.", keywords: ["video", "ffmpeg"], options: { crf: "الجودة (CRF)", maxHeight: "أقصى ارتفاع", preset: "Preset" } },
+  "video-trim": { name: "قاص الفيديو", short: "اقتطاع مقطع", description: "اختر بداية ونهاية لاستخراج مقطع.", keywords: ["video", "trim"], options: { start: "البداية", end: "النهاية" } },
+  "video-to-gif": { name: "فيديو → GIF", short: "GIF متكرر من مقطع", description: "حوّل مقطع فيديو إلى GIF متكرر. FPS وعرض ونافذة.", keywords: ["video", "gif"], options: { fps: "FPS", width: "العرض", start: "البداية", duration: "المدة" } },
+  "extract-audio": { name: "استخراج الصوت", short: "صوت من فيديو", description: "احفظ المسار الصوتي للفيديو كـ MP3 أو WAV.", keywords: ["audio"], options: { format: "الصيغة" } },
+  "audio-convert": { name: "محوّل الصوت", short: "MP3 / WAV / OGG", description: "تحويل ملف صوتي بين MP3 وWAV وOGG.", keywords: ["audio"], options: { format: "الصيغة", bitrate: "Bitrate" } },
+  "mute-video": { name: "كتم الفيديو", short: "إزالة المسار الصوتي", description: "إزالة المسار الصوتي وتنزيل ملف صامت.", keywords: ["video", "mute"] }
 };

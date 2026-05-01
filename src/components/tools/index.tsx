@@ -83,7 +83,15 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "box-shadow": dynamic(() => import("./box-shadow"), { ssr: false, loading: Loader }),
   "border-radius": dynamic(() => import("./border-radius"), { ssr: false, loading: Loader }),
   "cubic-bezier": dynamic(() => import("./cubic-bezier"), { ssr: false, loading: Loader }),
-  "contrast-checker": dynamic(() => import("./contrast-checker"), { ssr: false, loading: Loader })
+  "contrast-checker": dynamic(() => import("./contrast-checker"), { ssr: false, loading: Loader }),
+
+  // Media (video + audio via ffmpeg.wasm)
+  "video-compress": dynamic(() => import("./video-compress"), { ssr: false, loading: Loader }),
+  "video-trim": dynamic(() => import("./video-trim"), { ssr: false, loading: Loader }),
+  "video-to-gif": dynamic(() => import("./video-to-gif"), { ssr: false, loading: Loader }),
+  "extract-audio": dynamic(() => import("./extract-audio"), { ssr: false, loading: Loader }),
+  "audio-convert": dynamic(() => import("./audio-convert"), { ssr: false, loading: Loader }),
+  "mute-video": dynamic(() => import("./mute-video"), { ssr: false, loading: Loader })
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

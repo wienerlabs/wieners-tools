@@ -417,5 +417,48 @@ export const toolsEN: ToolI18nBundle = {
     short: "WCAG AA/AAA verdict",
     description: "Check the contrast ratio between two colours and see WCAG AA / AAA verdicts for normal and large text.",
     keywords: ["contrast", "wcag", "a11y"]
+  },
+
+  // ------------- Media
+  "video-compress": {
+    name: "Video Compressor",
+    short: "Shrink MP4 / MOV / WebM",
+    description: "Compress video locally with ffmpeg.wasm. Pick a CRF and resolution; the encoder runs on your device.",
+    keywords: ["video", "compress", "mp4", "ffmpeg"],
+    options: { crf: "Quality (CRF)", maxHeight: "Max height", preset: "Preset" }
+  },
+  "video-trim": {
+    name: "Video Trimmer",
+    short: "Cut a clip from a video",
+    description: "Pick start and end timestamps to extract a clip without re-encoding when possible.",
+    keywords: ["video", "trim", "cut"],
+    options: { start: "Start", end: "End" }
+  },
+  "video-to-gif": {
+    name: "Video → GIF",
+    short: "Loopable GIF from a clip",
+    description: "Convert a video segment into a looping GIF. Adjust fps, width and the trim window.",
+    keywords: ["video", "gif", "convert"],
+    options: { fps: "FPS", width: "Width", start: "Start", duration: "Duration" }
+  },
+  "extract-audio": {
+    name: "Extract Audio",
+    short: "Pull audio out of a video",
+    description: "Save the audio track of a video as MP3 or WAV.",
+    keywords: ["audio", "extract", "mp3"],
+    options: { format: "Format" }
+  },
+  "audio-convert": {
+    name: "Audio Converter",
+    short: "MP3 / WAV / OGG",
+    description: "Transcode an audio file between MP3, WAV and OGG with adjustable bitrate.",
+    keywords: ["audio", "convert", "mp3"],
+    options: { format: "Format", bitrate: "Bitrate" }
+  },
+  "mute-video": {
+    name: "Mute Video",
+    short: "Strip the audio track",
+    description: "Remove the audio track from a video and download the silent file.",
+    keywords: ["video", "mute"]
   }
 };

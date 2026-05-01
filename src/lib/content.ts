@@ -216,9 +216,9 @@ export const content: Record<Locale, SiteContent> = {
           label: "Araçlar",
           links: [
             { label: "Tüm araçlar", href: "/tr/#tools" },
-            { label: "Sıkıştırma", href: "/tr/#compression" },
             { label: "AI", href: "/tr/#ai" },
             { label: "PDF", href: "/tr/#pdf" },
+            { label: "Video & Ses", href: "/tr/#media" },
             { label: "Tasarım", href: "/tr/#design" },
             { label: "Geliştirici", href: "/tr/#developer" }
           ]
@@ -362,9 +362,9 @@ export const content: Record<Locale, SiteContent> = {
           label: "Tools",
           links: [
             { label: "All tools", href: "/en/#tools" },
-            { label: "Compression", href: "/en/#compression" },
             { label: "AI", href: "/en/#ai" },
             { label: "PDF", href: "/en/#pdf" },
+            { label: "Video & Audio", href: "/en/#media" },
             { label: "Design", href: "/en/#design" },
             { label: "Developer", href: "/en/#developer" }
           ]
@@ -508,9 +508,9 @@ export const content: Record<Locale, SiteContent> = {
           label: "Werkzeuge",
           links: [
             { label: "Alle Werkzeuge", href: "/de/#tools" },
-            { label: "Komprimierung", href: "/de/#compression" },
             { label: "KI", href: "/de/#ai" },
             { label: "PDF", href: "/de/#pdf" },
+            { label: "Video & Audio", href: "/de/#media" },
             { label: "Design", href: "/de/#design" },
             { label: "Entwickler", href: "/de/#developer" }
           ]
@@ -654,9 +654,9 @@ export const content: Record<Locale, SiteContent> = {
           label: "الأدوات",
           links: [
             { label: "كل الأدوات", href: "/ar/#tools" },
-            { label: "الضغط", href: "/ar/#compression" },
             { label: "الذكاء الاصطناعي", href: "/ar/#ai" },
             { label: "PDF", href: "/ar/#pdf" },
+            { label: "فيديو وصوت", href: "/ar/#media" },
             { label: "التصميم", href: "/ar/#design" },
             { label: "المطورون", href: "/ar/#developer" }
           ]
