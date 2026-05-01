@@ -1933,3 +1933,348 @@ button, input, textarea, select { font: inherit; }
   .ws-gallery-preview { min-height: 180px; padding: 16px; }
   .ws-gallery-preview-tall { min-height: 280px; }
 }
+
+/* ============================================================
+   CardNav — sticky header with expandable card panel
+   ============================================================ */
+
+.ws-cardnav {
+  --cn-base: var(--bg);
+  --cn-menu: var(--ink);
+  --cn-cta-bg: var(--ink);
+  --cn-cta-text: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cn-base);
+  border-bottom: 1px solid var(--line);
+  display: block;
+}
+
+.ws-cardnav.is-open {
+  border-bottom-color: var(--ink);
+}
+
+.ws-cardnav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 32px;
+  min-height: 72px;
+}
+
+.ws-cardnav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.ws-cardnav-brand img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+}
+
+.ws-cardnav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.ws-cardnav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cn-cta-bg);
+  color: var(--cn-cta-text);
+  border-radius: 999px;
+  padding: 9px 16px 9px 18px;
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.ws-cardnav-cta:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.ws-cardnav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 9px 16px 9px 14px;
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.ws-cardnav-toggle:hover,
+.ws-cardnav.is-open .ws-cardnav-toggle {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.ws-cardnav-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ws-cardnav-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: var(--cn-base);
+}
+
+.ws-cardnav.is-open .ws-cardnav-panel {
+  grid-template-rows: 1fr;
+  border-top: 1px solid var(--line);
+}
+
+.ws-cardnav-grid {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 0 32px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ws-cardnav.is-open .ws-cardnav-grid {
+  padding-top: 24px;
+}
+
+.ws-cardnav-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  border-radius: 18px;
+  padding: 22px 24px;
+  min-height: 220px;
+  background: var(--ink);
+  color: var(--bg);
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.ws-cardnav.is-open .ws-cardnav-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ws-cardnav-card-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.ws-cardnav-card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ws-cardnav-card-links li { margin: 0; }
+
+.ws-cardnav-card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 4px 0;
+  opacity: 0.82;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.ws-cardnav-card-links a:hover {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.ws-cardnav-card-links a svg {
+  flex-shrink: 0;
+  opacity: 0.65;
+}
+
+@media (max-width: 860px) {
+  .ws-cardnav-bar { padding: 14px 20px; min-height: 64px; }
+  .ws-cardnav-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 20px 20px;
+  }
+  .ws-cardnav.is-open .ws-cardnav-grid { padding-top: 16px; }
+  .ws-cardnav-card { min-height: 160px; padding: 18px 20px; }
+  .ws-cardnav-card-title { font-size: 24px; }
+  .ws-cardnav-cta span { display: none; }
+  .ws-cardnav-cta { padding: 9px 12px; }
+}
+
+@media (max-width: 520px) {
+  .ws-cardnav-toggle-label { display: none; }
+  .ws-cardnav-toggle { padding: 9px 12px; }
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] .ws-cardnav-card-links a:hover { transform: translateX(-2px); }
+
+/* ============================================================
+   Components CTA banner — large attention-grabbing card on home
+   ============================================================ */
+
+.ws-components-cta {
+  padding: 64px 32px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ws-components-cta-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 24px;
+  padding: 40px 44px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 280ms ease;
+}
+
+.ws-components-cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 244, 221, 0.04) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+}
+
+.ws-components-cta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.35);
+}
+
+.ws-components-cta-card:hover::before {
+  opacity: 1;
+}
+
+.ws-components-cta-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.ws-components-cta-eyebrow {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 221, 0.65);
+  margin: 0;
+}
+
+.ws-components-cta-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.ws-components-cta-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 244, 221, 0.78);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.ws-components-cta-note {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 244, 221, 0.5);
+  margin: 4px 0 0;
+}
+
+.ws-components-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 18px 26px 18px 30px;
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  transition: transform 280ms ease, gap 280ms ease;
+}
+
+.ws-components-cta-card:hover .ws-components-cta-button {
+  transform: translateX(4px);
+  gap: 18px;
+}
+
+.ws-components-cta-button svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .ws-components-cta { padding: 40px 20px 0; }
+  .ws-components-cta-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+  .ws-components-cta-button {
+    padding: 14px 20px 14px 24px;
+    align-self: flex-start;
+  }
+}
+
+[dir="rtl"] .ws-components-cta-card:hover .ws-components-cta-button {
+  transform: translateX(-4px);
+}

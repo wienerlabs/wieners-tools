@@ -7,6 +7,8 @@ import FallingText from "@/components/falling-text";
 import MagnetLines from "@/components/magnet-lines";
 import Cubes from "@/components/cubes";
 import TypewriterTitle from "@/components/typewriter-title";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { buildPageMetadata, organizationSchema, webApplicationSchema, websiteSchema } from "@/lib/site";
@@ -81,6 +83,23 @@ export default async function LocaleHome({ params }: PageProps) {
               baseAngle={-10}
             />
           </div>
+        </section>
+
+        <section className="ws-components-cta" aria-labelledby="components-cta-heading">
+          <Link href={`/${locale}/components/`} className="ws-components-cta-card">
+            <div className="ws-components-cta-body">
+              <p className="ws-components-cta-eyebrow">{page.componentsCta.eyebrow}</p>
+              <h2 id="components-cta-heading" className="ws-components-cta-title">
+                {page.componentsCta.title}
+              </h2>
+              <p className="ws-components-cta-text">{page.componentsCta.body}</p>
+              <p className="ws-components-cta-note">{page.componentsCta.note}</p>
+            </div>
+            <span className="ws-components-cta-button" aria-hidden="true">
+              <span>{page.componentsCta.ctaLabel}</span>
+              <ArrowUpRight size={28} strokeWidth={1.6} />
+            </span>
+          </Link>
         </section>
 
         <section id="tools" className="ws-section">

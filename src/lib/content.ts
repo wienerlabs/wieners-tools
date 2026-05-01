@@ -79,6 +79,24 @@ export type SiteContent = {
     codeLabel: string;
     audience: string;
   };
+  cardNav: {
+    menuLabel: string;
+    closeLabel: string;
+    ctaLabel: string;
+    items: Array<{
+      label: string;
+      bgColor?: string;
+      textColor?: string;
+      links: Array<{ label: string; href: string; ariaLabel?: string }>;
+    }>;
+  };
+  componentsCta: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    ctaLabel: string;
+    note: string;
+  };
   contact: {
     email: string;
     githubUrl: string;
@@ -189,6 +207,44 @@ export const content: Record<Locale, SiteContent> = {
       codeLabel: "Kullanım",
       audience: "Yalnızca Wiener Labs ekipleri için referans katalog."
     },
+    cardNav: {
+      menuLabel: "Menü",
+      closeLabel: "Kapat",
+      ctaLabel: "Komponentler",
+      items: [
+        {
+          label: "Araçlar",
+          links: [
+            { label: "Tüm araçlar", href: "/tr/#tools" },
+            { label: "Sıkıştırma", href: "/tr/#compression" },
+            { label: "Dönüştürme", href: "/tr/#conversion" },
+            { label: "AI", href: "/tr/#ai" }
+          ]
+        },
+        {
+          label: "Komponentler",
+          links: [
+            { label: "Galeri", href: "/tr/components/" },
+            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools GitHub" }
+          ]
+        },
+        {
+          label: "Stüdyo",
+          links: [
+            { label: "Hakkında", href: "/tr/about/" },
+            { label: "Geri bildirim", href: "/tr/feedback/" },
+            { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
+          ]
+        }
+      ]
+    },
+    componentsCta: {
+      eyebrow: "İç kullanım · Yeni",
+      title: "Frontend ekibi için komponent galerisi",
+      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText ve CodeBlock — hepsi monokrom palette canlı önizleme ve kopyala-yapıştır kod ile.",
+      ctaLabel: "Galeriyi aç",
+      note: "6 komponent · canlı önizleme · TypeScript snippet"
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -294,6 +350,44 @@ export const content: Record<Locale, SiteContent> = {
       previewLabel: "Live preview",
       codeLabel: "Usage",
       audience: "Reference catalog for Wiener Labs teams."
+    },
+    cardNav: {
+      menuLabel: "Menu",
+      closeLabel: "Close",
+      ctaLabel: "Components",
+      items: [
+        {
+          label: "Tools",
+          links: [
+            { label: "All tools", href: "/en/#tools" },
+            { label: "Compression", href: "/en/#compression" },
+            { label: "Conversion", href: "/en/#conversion" },
+            { label: "AI", href: "/en/#ai" }
+          ]
+        },
+        {
+          label: "Components",
+          links: [
+            { label: "Gallery", href: "/en/components/" },
+            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools on GitHub" }
+          ]
+        },
+        {
+          label: "Studio",
+          links: [
+            { label: "About", href: "/en/about/" },
+            { label: "Feedback", href: "/en/feedback/" },
+            { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
+          ]
+        }
+      ]
+    },
+    componentsCta: {
+      eyebrow: "Internal · New",
+      title: "Component gallery for the frontend team",
+      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText and CodeBlock — all in our monochrome palette with live previews and copy-paste code.",
+      ctaLabel: "Open gallery",
+      note: "6 components · live previews · TypeScript snippets"
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -401,6 +495,44 @@ export const content: Record<Locale, SiteContent> = {
       codeLabel: "Verwendung",
       audience: "Referenz-Katalog für Wiener Labs Teams."
     },
+    cardNav: {
+      menuLabel: "Menü",
+      closeLabel: "Schließen",
+      ctaLabel: "Komponenten",
+      items: [
+        {
+          label: "Werkzeuge",
+          links: [
+            { label: "Alle Werkzeuge", href: "/de/#tools" },
+            { label: "Komprimierung", href: "/de/#compression" },
+            { label: "Konvertierung", href: "/de/#conversion" },
+            { label: "KI", href: "/de/#ai" }
+          ]
+        },
+        {
+          label: "Komponenten",
+          links: [
+            { label: "Galerie", href: "/de/components/" },
+            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools auf GitHub" }
+          ]
+        },
+        {
+          label: "Studio",
+          links: [
+            { label: "Über", href: "/de/about/" },
+            { label: "Feedback", href: "/de/feedback/" },
+            { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
+          ]
+        }
+      ]
+    },
+    componentsCta: {
+      eyebrow: "Intern · Neu",
+      title: "Komponentengalerie für das Frontend-Team",
+      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText und CodeBlock — alles in unserer monochromen Palette mit Live-Vorschauen und Code zum Kopieren.",
+      ctaLabel: "Galerie öffnen",
+      note: "6 Komponenten · Live-Vorschauen · TypeScript-Snippets"
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -506,6 +638,44 @@ export const content: Record<Locale, SiteContent> = {
       previewLabel: "معاينة حية",
       codeLabel: "الاستخدام",
       audience: "كتالوج مرجعي لفرق Wiener Labs."
+    },
+    cardNav: {
+      menuLabel: "القائمة",
+      closeLabel: "إغلاق",
+      ctaLabel: "المكونات",
+      items: [
+        {
+          label: "الأدوات",
+          links: [
+            { label: "كل الأدوات", href: "/ar/#tools" },
+            { label: "الضغط", href: "/ar/#compression" },
+            { label: "التحويل", href: "/ar/#conversion" },
+            { label: "الذكاء الاصطناعي", href: "/ar/#ai" }
+          ]
+        },
+        {
+          label: "المكونات",
+          links: [
+            { label: "المعرض", href: "/ar/components/" },
+            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools على GitHub" }
+          ]
+        },
+        {
+          label: "الاستوديو",
+          links: [
+            { label: "حول", href: "/ar/about/" },
+            { label: "تعليقات", href: "/ar/feedback/" },
+            { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
+          ]
+        }
+      ]
+    },
+    componentsCta: {
+      eyebrow: "داخلي · جديد",
+      title: "معرض المكونات لفريق الواجهة",
+      body: "PixelBlast وTypewriterTitle وMagnetLines وCubes وFallingText وCodeBlock — جميعها بلوحتنا أحادية اللون مع معاينات حية وكود قابل للنسخ.",
+      ctaLabel: "افتح المعرض",
+      note: "6 مكونات · معاينات حية · مقتطفات TypeScript"
     },
     contact: {
       email: "baturalp@wienerlabs.com",

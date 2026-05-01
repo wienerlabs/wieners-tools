@@ -4,6 +4,7 @@ import { localeLabels, localeNames, locales } from "@/lib/i18n";
 import { content } from "@/lib/content";
 import { getLegalLinks } from "@/lib/legal";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import CardNav from "@/components/card-nav";
 
 type SiteShellProps = {
   locale: Locale;
@@ -12,6 +13,7 @@ type SiteShellProps = {
 };
 
 export function SiteHeader({ locale }: { locale: Locale }) {
+  const ui = content[locale];
   const languageOptions = locales
     .filter((item) => item !== locale)
     .map((item) => ({
@@ -19,43 +21,18 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       label: localeNames[item]
     }));
 
-  const ui = content[locale];
-  const navLabels = {
-    tools: locale === "tr" ? "Araçlar" : locale === "de" ? "Werkzeuge" : locale === "ar" ? "الأدوات" : "Tools",
-    about: locale === "tr" ? "Hakkında" : locale === "de" ? "Über" : locale === "ar" ? "حول" : "About",
-    feedback:
-      locale === "tr"
-        ? "Geri bildirim"
-        : locale === "de"
-          ? "Feedback"
-          : locale === "ar"
-            ? "تعليقات"
-            : "Feedback"
-  };
-
   return (
-    <header className="ws-header" dir="ltr">
-      <Link href={`/${locale}/`} className="ws-brand" aria-label="Wiener home">
-        <img src="/logo.jpg" alt="Wiener Tools" className="ws-brand-logo" width={32} height={32} />
-      </Link>
-
-      <nav className="ws-nav" aria-label="Primary">
-        <Link href={`/${locale}/#tools`} className="ws-nav-link">
-          {navLabels.tools}
-        </Link>
-        <Link href={`/${locale}/components/`} className="ws-nav-link">
-          {ui.gallery.nav}
-        </Link>
-        <Link href={`/${locale}/about/`} className="ws-nav-link">
-          {navLabels.about}
-        </Link>
-        <Link href={`/${locale}/feedback/`} className="ws-nav-link">
-          {navLabels.feedback}
-        </Link>
-        <LanguageSwitcher currentLabel={localeNames[locale]} options={languageOptions} />
-      </nav>
-      <span className="sr-only">{ui.toolsSection.eyebrow}</span>
-    </header>
+    <CardNav
+      logo="/logo.jpg"
+      logoAlt="Wiener Tools"
+      logoHref={`/${locale}/`}
+      items={ui.cardNav.items}
+      ctaLabel={ui.cardNav.ctaLabel}
+      ctaHref={`/${locale}/components/`}
+      menuLabel={ui.cardNav.menuLabel}
+      closeLabel={ui.cardNav.closeLabel}
+      rightSlot={<LanguageSwitcher currentLabel={localeNames[locale]} options={languageOptions} />}
+    />
   );
 }
 
