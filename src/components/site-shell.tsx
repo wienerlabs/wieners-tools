@@ -37,7 +37,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     <header className="ws-header" dir="ltr">
       <Link href={`/${locale}/`} className="ws-brand" aria-label="Wiener home">
         <img src="/logo.svg" alt="" className="ws-brand-logo" width={32} height={32} />
-        <span className="ws-brand-text">WIENER</span>
+        <span className="ws-brand-text">WIENER TOOLS</span>
       </Link>
 
       <nav className="ws-nav" aria-label="Primary">
