@@ -1,0 +1,20 @@
+{
+  "faq": [
+    {
+      "question": "What does Wiener's Tools do?",
+      "answer": "It is a collection of browser-native tools for compressing, converting, editing and generating images. All operations run on the user's device."
+    },
+    {
+      "question": "Are my images uploaded to a server?",
+      "answer": "No. Files are processed entirely on the device through WebAssembly, WebGPU, and Web Workers. No image is ever uploaded."
+    },
+    {
+      "question": "Which languages are supported?",
+      "answer": "Turkish, German, English and Arabic."
+    },
+    {
+      "question": "Is it free?",
+      "answer": "Yes. There is no signup, paywall or advertising."
+    }
+  ]
+}

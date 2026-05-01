@@ -1,0 +1,143 @@
+import type { ToolI18nBundle } from "../types";
+
+export const toolsAR: ToolI18nBundle = {
+  "compress-image": {
+    name: "ضاغط الصور",
+    short: "تصغير JPEG/PNG/WebP/AVIF",
+    description: "اضغط الصور في المتصفح حسب الحجم أو الجودة. متعدد الملفات، بعرض أقصى مخصص، مع خيار الإبقاء على EXIF.",
+    keywords: ["ضغط", "تصغير", "صورة"],
+    cta: "إضافة صورة",
+    options: {
+      targetSize: "الحجم المستهدف (ميغا)",
+      maxWidth: "أقصى عرض (px)",
+      quality: "الجودة",
+      format: "صيغة الإخراج",
+      keepEXIF: "الإبقاء على EXIF",
+      keepOriginalFormat: "الصيغة الأصلية"
+    }
+  },
+  "optimize-svg": { name: "محسّن SVG", short: "تصغير SVG", description: "تنظيف عبر SVGO.", keywords: ["svg"] },
+  "compress-pdf": { name: "ضاغط PDF", short: "تصغير PDF", description: "إعادة عيّنة الصور لتقليص الحجم.", keywords: ["pdf"] },
+  "convert-format": {
+    name: "محوّل الصيغ",
+    short: "PNG ↔ JPG ↔ WebP ↔ AVIF",
+    description: "تحويل بين PNG وJPEG وWebP وAVIF داخل المتصفح.",
+    keywords: ["تحويل", "صيغة"],
+    options: { format: "الصيغة الهدف", quality: "الجودة (JPEG/WebP/AVIF)" }
+  },
+  "heic-to-jpg": { name: "HEIC → JPG", short: "تحويل HEIC من iPhone", description: "تحويل HEIC/HEIF إلى JPEG/PNG.", keywords: ["heic"] },
+  "image-to-pdf": { name: "صورة → PDF", short: "صور متعددة في PDF واحد", description: "دمج عدة صور في ملف PDF واحد.", keywords: ["pdf"] },
+  "pdf-to-image": { name: "PDF → صورة", short: "صفحات بصيغة PNG", description: "إخراج كل صفحة كـ PNG/JPG.", keywords: ["pdf"] },
+  "svg-to-png": { name: "SVG → PNG", short: "تنقيط المتجه", description: "SVG إلى PNG بأي حجم.", keywords: ["svg"] },
+  "png-to-svg": { name: "PNG → SVG", short: "تحويل النقطة إلى متجه", description: "تتبع Potrace أبيض/أسود.", keywords: ["svg"] },
+  "favicon-generator": {
+    name: "مولد Favicon",
+    short: "كل الأحجام من صورة واحدة",
+    description: "حزمة Favicon بأحجام 16/32/48/64/96/128/192/256/512 px.",
+    keywords: ["favicon"],
+    options: { sizes: "الأحجام" }
+  },
+  "resize-image": {
+    name: "أداة تغيير الحجم",
+    short: "تعيين العرض/الارتفاع",
+    description: "تغيير الحجم بالبكسل أو النسبة أو قوالب وسائل التواصل.",
+    keywords: ["تغيير حجم"],
+    options: {
+      mode: "الوضع",
+      width: "العرض",
+      height: "الارتفاع",
+      keepAspect: "الحفاظ على النسبة",
+      preset: "قالب",
+      modePixel: "بكسل",
+      modePercent: "نسبة",
+      modePreset: "قالب"
+    }
+  },
+  "crop-image": { name: "أداة القص", short: "قص بمقابض", description: "واجهة سحب وقص.", keywords: ["قص"] },
+  "rotate-flip": {
+    name: "تدوير وعكس",
+    short: "90°/180°/270° + مرآة",
+    description: "تدوير أو عكس أفقي/عمودي.",
+    keywords: ["تدوير"],
+    options: { rotation: "الزاوية", flipX: "عكس أفقي", flipY: "عكس عمودي" }
+  },
+  pixelart: {
+    name: "صانع بكسل آرت",
+    short: "صورة إلى بكسل",
+    description: "تخفيض الدقة لشبكة بكسل وتطبيق لوحة ألوان.",
+    keywords: ["بكسل"],
+    options: {
+      pixelSize: "حجم البكسل",
+      palette: "اللوحة",
+      paletteFull: "كاملة (256)",
+      palette16: "16 لون",
+      palette8: "8 ألوان",
+      palette4: "4 ألوان",
+      paletteGameboy: "Gameboy"
+    }
+  },
+  "adjust-color": {
+    name: "ضبط الألوان",
+    short: "السطوع/التباين/التشبع",
+    description: "السطوع والتباين والتشبع والصبغة.",
+    keywords: ["لون"],
+    options: { brightness: "السطوع", contrast: "التباين", saturation: "التشبع", hue: "الصبغة" }
+  },
+  "apply-filter": {
+    name: "تطبيق فلتر",
+    short: "Vintage / Duotone / B&W",
+    description: "فلاتر جاهزة: تدرج رمادي، sepia، vintage، duotone، بارد، دافئ.",
+    keywords: ["فلتر"],
+    options: {
+      preset: "الفلتر",
+      presetNone: "بدون",
+      presetGrayscale: "تدرج رمادي",
+      presetSepia: "Sepia",
+      presetVintage: "Vintage",
+      presetCold: "بارد",
+      presetWarm: "دافئ",
+      presetInvert: "سلبي"
+    }
+  },
+  "add-watermark": { name: "علامة مائية", short: "نص/صورة", description: "زاوية أو متكرر.", keywords: ["علامة"] },
+  "blur-region": { name: "تمويه منطقة", short: "تمويه الوجوه/النص", description: "Blur أو Pixelate.", keywords: ["تمويه"] },
+  "collage-maker": { name: "صانع كولاج", short: "دمج عدة صور", description: "شبكة أو حر.", keywords: ["كولاج"] },
+  "image-splitter": { name: "مقسّم الصور", short: "Instagram puzzle", description: "تقسيم صورة على شبكة.", keywords: ["تقسيم"] },
+  "remove-background": { name: "إزالة الخلفية", short: "ذكاء اصطناعي شفاف", description: "نموذج ONNX داخل المتصفح.", keywords: ["خلفية"] },
+  "upscale-image": { name: "رفع جودة الصورة", short: "ذكاء 2x/4x", description: "Real-ESRGAN ONNX.", keywords: ["upscale"] },
+  "image-ocr": { name: "OCR من الصورة", short: "استخراج النص", description: "OCR متعدد اللغات.", keywords: ["ocr"] },
+  "qr-generator": {
+    name: "مولد QR",
+    short: "قابل لتضمين شعار",
+    description: "QR لرابط ونص وبطاقة وهاتف وبريد، مع ألوان وتصحيح خطأ ولوغو.",
+    keywords: ["qr"],
+    options: {
+      content: "المحتوى",
+      level: "تصحيح الخطأ",
+      size: "الحجم",
+      foreground: "اللون الأمامي",
+      background: "الخلفية",
+      margin: "الهامش"
+    }
+  },
+  "palette-extractor": {
+    name: "مستخرج اللوحة",
+    short: "لوحة ألوان من صورة",
+    description: "استخراج لوحة من 5-12 لون مهيمن.",
+    keywords: ["لوحة"],
+    options: { count: "عدد الألوان" }
+  },
+  "color-picker": { name: "ملتقط الألوان", short: "Hex/RGB من صورة", description: "اختيار لون من الصورة.", keywords: ["لون"] },
+  "mockup-generator": { name: "مولد Mockup", short: "إطارات الأجهزة", description: "iPhone وMacBook وbrowser.", keywords: ["mockup"] },
+  "og-image-generator": { name: "مولد صورة OG", short: "بطاقة Twitter/OG", description: "تصميم بطاقة مشاركة.", keywords: ["og"] },
+  "ascii-art": {
+    name: "ASCII Art",
+    short: "صورة إلى أحرف",
+    description: "تحويل الصورة إلى كتلة أحرف monospace.",
+    keywords: ["ascii"],
+    options: { width: "عرض الأحرف", charset: "مجموعة الأحرف", colored: "HTML ملوّن" }
+  },
+  "exif-viewer": { name: "عارض EXIF", short: "بيانات الصورة", description: "عرض أو تنظيف EXIF.", keywords: ["exif"] },
+  "gif-maker": { name: "صانع GIF", short: "رسم متحرك من إطارات", description: "GIF متحرك من سلسلة إطارات.", keywords: ["gif"] },
+  "gif-extractor": { name: "مستخرج GIF", short: "استخراج الإطارات", description: "كل إطار GIF بصيغة PNG.", keywords: ["gif"] }
+};

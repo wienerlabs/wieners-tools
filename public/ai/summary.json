@@ -1,0 +1,19 @@
+{
+  "name": "Wiener's Tools",
+  "url": "https://wienerstools.com",
+  "description": "Browser-native image toolkit — compress, convert, edit, generate. 100% client-side.",
+  "categories": [
+    "Image compression",
+    "Format conversion",
+    "Editing",
+    "AI tools",
+    "Generation",
+    "Metadata"
+  ],
+  "languages": ["tr", "de", "en", "ar"],
+  "privacy": "All processing happens in the user's browser via WebAssembly + WebGPU + Web Workers. No file is uploaded.",
+  "contact": {
+    "email": "hello@wienerlabs.xyz",
+    "github": "https://github.com/wienerlabs/wieners-tools"
+  }
+}

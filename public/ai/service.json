@@ -1,0 +1,10 @@
+{
+  "service": {
+    "name": "Browser-native image toolkit",
+    "provider": "Wiener Labs",
+    "delivery": "Static web app (Cloudflare Pages)",
+    "technologies": ["Next.js", "TypeScript", "WebAssembly", "WebGPU", "Web Workers"],
+    "contactEmail": "hello@wienerlabs.xyz",
+    "github": "https://github.com/wienerlabs/wieners-tools"
+  }
+}

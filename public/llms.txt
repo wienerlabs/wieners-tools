@@ -1,0 +1,47 @@
+# Wiener's Tools
+
+> Browser-native image toolkit — compress, convert, edit, generate. 100% client-side.
+
+## Primary Pages
+
+- https://wienerstools.com/en/
+- https://wienerstools.com/tr/
+- https://wienerstools.com/de/
+- https://wienerstools.com/ar/
+- https://wienerstools.com/en/about/
+- https://wienerstools.com/en/feedback/
+
+## Tools (selected)
+
+- https://wienerstools.com/en/tools/compress-image/
+- https://wienerstools.com/en/tools/convert-format/
+- https://wienerstools.com/en/tools/resize-image/
+- https://wienerstools.com/en/tools/rotate-flip/
+- https://wienerstools.com/en/tools/pixelart/
+- https://wienerstools.com/en/tools/adjust-color/
+- https://wienerstools.com/en/tools/apply-filter/
+- https://wienerstools.com/en/tools/favicon-generator/
+- https://wienerstools.com/en/tools/qr-generator/
+- https://wienerstools.com/en/tools/palette-extractor/
+- https://wienerstools.com/en/tools/ascii-art/
+
+## Capabilities
+
+- Image compression (JPEG/PNG/WebP/AVIF)
+- Format conversion (PNG/JPEG/WebP/AVIF)
+- Resize with social media presets
+- Rotate, flip, pixelart, color adjust, filters
+- Favicon set generator
+- QR code generator
+- Palette extraction (k-means)
+- ASCII art generator
+- Privacy-first: no image is ever uploaded
+
+## Stack
+
+Next.js 16, TypeScript, Tailwind CSS v4, statically exported. Hosted on Cloudflare Pages.
+
+## Contact
+
+- Email: hello@wienerlabs.xyz
+- GitHub: https://github.com/wienerlabs/wieners-tools
