@@ -105,6 +105,7 @@ export type SiteContent = {
     title: string;
     intro: string;
     audience: string;
+    vibeBadges: string[];
     agentic: {
       eyebrow: string;
       title: string;
@@ -117,10 +118,23 @@ export type SiteContent = {
       brandKit: string;
       docs: string;
       visitSite: string;
+      brandKitTitle: string;
+      brandKitNote: string;
+      downloadLabel: string;
+      sectionsTitle: string;
+      whyVibe: string;
+      install: string;
+      example: string;
+      promptHeading: string;
+      promptHelp: string;
+      copyPrompt: string;
+      copied: string;
+      openLink: string;
+      openDocs: string;
     };
     networkOverrides: {
-      base: { tagline: string; about: string };
-      solana: { tagline: string; about: string };
+      base: { tagline: string; about: string; vibePitch: string };
+      solana: { tagline: string; about: string; vibePitch: string };
     };
     sectionLabels: Record<
       "starters" | "wallets" | "dex" | "defi" | "infra" | "data" | "ai" | "agentic",
@@ -285,13 +299,19 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Blockchain",
       metaTitle: "Blockchain Entegrasyonu — Wiener's Tools",
       metaDescription:
-        "Solana ve Base üzerinde geliştirme yapan ekipler için: scaffold CLI'ları, cüzdanlar, DEX'ler, lending protokolleri, RPC sağlayıcılar, AI agent toolkit'leri ve agentic payments — tek bir referans sayfada.",
-      eyebrow: "Geliştiriciler için",
+        "Vibe coding yapan blockchaincilere özel: Base ve Solana üzerinde build ettirecek SDK'lar, cüzdanlar, DEX'ler, lending, RPC, AI agent toolkit'leri — her biri için Claude Opus 4.7 entegrasyon promptu hazır.",
+      eyebrow: "Vibe-coding · Onchain",
       title: "Blockchain entegrasyonu",
       intro:
-        "Kendi ürününe onchain bir katman ekliyorsan, başlangıç için iki ağa baktık: Base ve Solana. Her biri için scaffold CLI'larından AI agent toolkit'lerine kadar gerçekten kullandığımız kaynakları listeledik.",
+        "Cursor ya da Claude Code aç, modülü seç, entegrasyon promptunu kopyala, AI'a yapıştır. Base ve Solana'da scaffold CLI'lardan AI agent toolkit'lerine kadar 47 modül — hepsi kanıtlanmış SDK'lar, hepsi tek tıkla entegre.",
       audience:
-        "Bu sayfa Wiener Labs ekiplerinin ortak referansıdır — bir araç burada listelendiyse en az bir prod ürünümüzde denenmiştir.",
+        "Bu sayfa Wiener Labs ekiplerinin ortak vibe-coding referansıdır — bir araç burada listelendiyse en az bir prod ürünümüzde denenmiş, prompt'u test edilmiştir.",
+      vibeBadges: [
+        "47 entegre-edilebilir modül",
+        "Her modülün altında Opus 4.7 promptu",
+        "11 brand asset · indir & kullan",
+        "Single-prompt deploy"
+      ],
       agentic: {
         eyebrow: "Yeni paradigma",
         title: "Agentic payments — agent'lar para gönderir",
@@ -305,18 +325,35 @@ export const content: Record<Locale, SiteContent> = {
       networkLabels: {
         brandKit: "Brand kit",
         docs: "Dokümantasyon",
-        visitSite: "Ekosistem"
+        visitSite: "Ekosistem",
+        brandKitTitle: "Brand assets — indir & kullan",
+        brandKitNote: "Resmi dağıtım — atıf gerektirir.",
+        downloadLabel: "İndir",
+        sectionsTitle: "Modüller & entegrasyon promptları",
+        whyVibe: "Vibe coder için",
+        install: "Kurulum",
+        example: "Hızlı örnek",
+        promptHeading: "Claude Opus 4.7 entegrasyon promptu",
+        promptHelp: "Cursor / Claude Code'a yapıştır, AI senin yerine kursun.",
+        copyPrompt: "Promptu kopyala",
+        copied: "Kopyalandı",
+        openLink: "Site",
+        openDocs: "Dokümanlar"
       },
       networkOverrides: {
         base: {
-          tagline: "Coinbase'in EVM L2 ağı — düşük ücret, hızlı bilgilendirme.",
+          tagline: "Coinbase'in EVM L2'si — düşük ücret, hızlı bilgilendirme, smart wallet ile gasless onboarding.",
           about:
-            "Base, Optimism'in OP Stack'i üzerine kurulu, Coinbase tarafından inkübe edilen bir Ethereum L2'sidir. EVM uyumlu, Solidity ile çalışır, Coinbase ürünleriyle native entegrasyon sağlar."
+            "Base, Optimism'in OP Stack'i üzerine kurulu, Coinbase tarafından inkübe edilmiş bir Ethereum L2'sidir. EVM uyumlu, Solidity ile yazılır, Coinbase ürünleriyle native entegrasyon ve smart wallet (passkey + paymaster) ile sıfır-gas onboarding sağlar.",
+          vibePitch:
+            "Tek bir paketle (OnchainKit) wallet + transaction + identity tek-satır API gibi gelir. Smart Wallet sayesinde kullanıcılar passkey ile bağlanır, ilk işlemleri için gas ödemezler. Vibe coder için: prompt yaz, AI komponenti yaz, deploy et, kullanıcıyı 30 saniyede onboard et."
         },
         solana: {
-          tagline: "Yüksek throughput, düşük gecikme L1 — tek global state.",
+          tagline: "~400ms slot süresi L1 — sub-cent ücretler, tek global state, paralel execution.",
           about:
-            "Solana ~400ms slot süresi ile çalışan paralel L1. Rust ve Anchor framework'ü ile yazılır, sub-cent ücretler + tek global state ile hızlı UX'in temelidir."
+            "Solana ~400ms slot süresi ile çalışan paralel L1. Rust ve Anchor framework'ü ile yazılır, sub-cent ücretler + tek global state ile hızlı UX'in temelidir.",
+          vibePitch:
+            "Tek bir RPC çağrısıyla 50 hesap okuyabilirsin, sub-cent ücret demek mikro-payment ekonomisinin canlandığı tek L1. solana.new ile AI-ready bir scaffold tek satır, sonra Cursor + Claude'a 'add a Jupiter swap' demek bütün TWAP execution'ı kurar."
         }
       },
       sectionLabels: {
@@ -484,13 +521,19 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Blockchain",
       metaTitle: "Blockchain Integration — Wiener's Tools",
       metaDescription:
-        "For teams shipping on-chain: scaffold CLIs, wallets, DEXes, lending protocols, RPC providers, AI agent toolkits and agentic payments — across Base and Solana, in one reference page.",
-      eyebrow: "For builders",
+        "For vibe-coding builders: 47 SDKs, wallets, DEXes, lending, RPC, AI agent toolkits across Base + Solana — every module ships with a Claude Opus 4.7 integration prompt.",
+      eyebrow: "Vibe-coding · Onchain",
       title: "Blockchain integration",
       intro:
-        "If you're adding an on-chain layer to a product, here are the two networks we keep coming back to: Base and Solana. For each, we listed the resources we actually use — from scaffold CLIs to AI agent toolkits.",
+        "Open Cursor or Claude Code, pick a module, copy the integration prompt, paste. Forty-seven battle-tested modules across Base and Solana — every one with a ready prompt that scaffolds the integration end-to-end.",
       audience:
-        "Internal reference for Wiener Labs teams. If a tool is listed here, we've shipped at least one production product on top of it.",
+        "Internal vibe-coding reference for Wiener Labs teams. If a tool is listed here we've shipped at least one production product on top of it and tested the integration prompt.",
+      vibeBadges: [
+        "47 integration-ready modules",
+        "Opus 4.7 prompt under each",
+        "11 brand assets · drop-in download",
+        "Single-prompt deploy"
+      ],
       agentic: {
         eyebrow: "New paradigm",
         title: "Agentic payments — agents pay for themselves",
@@ -504,18 +547,35 @@ export const content: Record<Locale, SiteContent> = {
       networkLabels: {
         brandKit: "Brand kit",
         docs: "Docs",
-        visitSite: "Ecosystem"
+        visitSite: "Ecosystem",
+        brandKitTitle: "Brand assets — download & ship",
+        brandKitNote: "Official distribution — attribution required.",
+        downloadLabel: "Download",
+        sectionsTitle: "Modules & integration prompts",
+        whyVibe: "Why vibe coders care",
+        install: "Install",
+        example: "Quick example",
+        promptHeading: "Claude Opus 4.7 integration prompt",
+        promptHelp: "Paste into Cursor or Claude Code — the AI scaffolds it for you.",
+        copyPrompt: "Copy prompt",
+        copied: "Copied",
+        openLink: "Site",
+        openDocs: "Docs"
       },
       networkOverrides: {
         base: {
-          tagline: "Coinbase's EVM L2 — cheap fees, fast confirmations.",
+          tagline: "Coinbase's EVM L2 — cheap fees, fast confirmations, gasless onboarding via smart wallet.",
           about:
-            "Base is an Ethereum L2 built on Optimism's OP Stack and incubated by Coinbase. EVM-compatible, written in Solidity, with native integration into Coinbase products."
+            "Base is an Ethereum L2 built on Optimism's OP Stack and incubated by Coinbase. EVM-compatible, written in Solidity, with native integration into Coinbase products and smart wallet (passkey + paymaster) for zero-gas onboarding.",
+          vibePitch:
+            "One package (OnchainKit) gives you wallet + transaction + identity as one-line APIs. Smart Wallet means users connect with a passkey and pay no gas on their first txs. For vibe coders: write a prompt, ship a component, deploy, onboard a user in 30 seconds."
         },
         solana: {
-          tagline: "High-throughput, low-latency L1 — one global state.",
+          tagline: "~400ms slot L1 — sub-cent fees, single global state, parallel execution.",
           about:
-            "Solana is a parallel L1 with ~400ms slot times. Programs are written in Rust + Anchor; sub-cent fees and a single global state keep UX fast."
+            "Solana is a parallel L1 with ~400ms slot times. Programs are written in Rust + Anchor; sub-cent fees and a single global state keep UX fast.",
+          vibePitch:
+            "One RPC call reads 50 accounts, sub-cent fees mean micro-payments are economically viable. solana.new bootstraps an AI-ready stack in one line; then telling Cursor + Claude to 'add a Jupiter swap' wires the whole TWAP execution."
         }
       },
       sectionLabels: {
@@ -683,13 +743,19 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Blockchain",
       metaTitle: "Blockchain-Integration — Wiener's Tools",
       metaDescription:
-        "Für Teams, die on-chain bauen: Scaffold-CLIs, Wallets, DEXes, Lending, RPCs, AI-Agent-Toolkits und Agentic Payments — für Base und Solana, eine Referenzseite.",
-      eyebrow: "Für Builder",
+        "Für Vibe-Coding-Builder: 47 SDKs, Wallets, DEXes, Lending, RPC, AI-Agent-Toolkits für Base + Solana — jedes Modul mit Claude-Opus-4.7-Integrationsprompt.",
+      eyebrow: "Vibe-Coding · Onchain",
       title: "Blockchain-Integration",
       intro:
-        "Wenn du eine On-Chain-Schicht in dein Produkt einbaust, sind das die zwei Netzwerke, zu denen wir immer wieder zurückkehren: Base und Solana. Pro Netzwerk haben wir die Werkzeuge gelistet, die wir tatsächlich nutzen.",
+        "Cursor oder Claude Code öffnen, Modul wählen, Integrationsprompt kopieren, einfügen. 47 erprobte Module für Base und Solana — jedes mit fertigem Prompt, das die Integration End-to-End baut.",
       audience:
-        "Interne Referenz für Wiener-Labs-Teams. Was hier steht, haben wir mindestens in einem Produkt eingesetzt.",
+        "Interne Vibe-Coding-Referenz für Wiener-Labs-Teams. Alles hier wurde in mindestens einem Produkt eingesetzt; alle Prompts sind getestet.",
+      vibeBadges: [
+        "47 integrationsfähige Module",
+        "Opus-4.7-Prompt unter jedem",
+        "11 Brand-Assets · Drop-in",
+        "Single-Prompt-Deploy"
+      ],
       agentic: {
         eyebrow: "Neues Paradigma",
         title: "Agentic Payments — Agenten zahlen selbst",
@@ -703,18 +769,35 @@ export const content: Record<Locale, SiteContent> = {
       networkLabels: {
         brandKit: "Brand-Kit",
         docs: "Doku",
-        visitSite: "Ökosystem"
+        visitSite: "Ökosystem",
+        brandKitTitle: "Brand-Assets — herunterladen & verwenden",
+        brandKitNote: "Offizielle Verteilung — Attribution nötig.",
+        downloadLabel: "Download",
+        sectionsTitle: "Module & Integrationsprompts",
+        whyVibe: "Für Vibe-Coder",
+        install: "Installation",
+        example: "Schnellbeispiel",
+        promptHeading: "Claude-Opus-4.7-Integrationsprompt",
+        promptHelp: "In Cursor oder Claude Code einfügen — die KI baut es für dich.",
+        copyPrompt: "Prompt kopieren",
+        copied: "Kopiert",
+        openLink: "Site",
+        openDocs: "Docs"
       },
       networkOverrides: {
         base: {
-          tagline: "Coinbases EVM-L2 — niedrige Gebühren, schnelle Bestätigungen.",
+          tagline: "Coinbases EVM-L2 — niedrige Gebühren, schnelle Bestätigungen, gasloses Onboarding via Smart Wallet.",
           about:
-            "Base ist ein Ethereum-L2 auf Optimisms OP-Stack, inkubiert von Coinbase. EVM-kompatibel, Solidity, native Integration in Coinbase-Produkte."
+            "Base ist ein Ethereum-L2 auf Optimisms OP-Stack, inkubiert von Coinbase. EVM-kompatibel, Solidity, native Integration in Coinbase-Produkte und Smart Wallet (Passkey + Paymaster) für Zero-Gas-Onboarding.",
+          vibePitch:
+            "Ein Paket (OnchainKit) liefert Wallet + Transaction + Identity als Einzeiler-API. Smart Wallet bedeutet: User connecten mit Passkey, zahlen für ihre erste Tx kein Gas. Für Vibe-Coder: Prompt schreiben, Komponente schreiben lassen, deployen, User in 30 Sek. onboarden."
         },
         solana: {
-          tagline: "Hoher Durchsatz, niedrige Latenz L1 — ein globaler Zustand.",
+          tagline: "~400 ms Slot-L1 — Sub-Cent-Gebühren, ein globaler Zustand, parallele Execution.",
           about:
-            "Solana ist eine parallele L1 mit ~400 ms Slot-Zeit. Programme in Rust + Anchor; Sub-Cent-Gebühren und ein einziger globaler Zustand halten die UX schnell."
+            "Solana ist eine parallele L1 mit ~400 ms Slot-Zeit. Programme in Rust + Anchor; Sub-Cent-Gebühren und ein einziger globaler Zustand halten die UX schnell.",
+          vibePitch:
+            "Ein RPC-Call liest 50 Accounts, Sub-Cent-Gebühren machen Mikro-Payments wirtschaftlich. solana.new bootstrappt einen AI-ready Stack in einer Zeile; Cursor + Claude bauen dann auf Zuruf z. B. einen Jupiter-Swap."
         }
       },
       sectionLabels: {
@@ -882,13 +965,19 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Blockchain",
       metaTitle: "تكامل Blockchain — Wiener's Tools",
       metaDescription:
-        "للفرق التي تطوّر on-chain: scaffold CLIs، محافظ، DEXes، بروتوكولات إقراض، RPC، أدوات AI agent، ومدفوعات agentic — لشبكتي Base وSolana في صفحة مرجعية واحدة.",
-      eyebrow: "للمطورين",
+        "لمطوري الـ vibe-coding: 47 وحدة SDK ومحافظ وDEX وlending وRPC وأدوات AI agent على Base وSolana — كل وحدة مع برومبت تكامل لـ Claude Opus 4.7.",
+      eyebrow: "Vibe-coding · Onchain",
       title: "تكامل Blockchain",
       intro:
-        "إذا كنت تضيف طبقة on-chain إلى منتج، فهاتان الشبكتان نعود إليهما دائماً: Base وSolana. لكل منهما أدرجنا الأدوات التي نستخدمها فعلاً.",
+        "افتح Cursor أو Claude Code، اختر الوحدة، انسخ برومبت التكامل والصقه. 47 وحدة مجرّبة لـ Base وSolana — كل واحدة مع برومبت جاهز يبني التكامل من البداية للنهاية.",
       audience:
-        "مرجع داخلي لفرق Wiener Labs. ما يُذكر هنا استخدمناه في منتج إنتاجي واحد على الأقل.",
+        "مرجع داخلي لـ vibe-coding لفرق Wiener Labs. كل أداة هنا استُخدمت في منتج إنتاجي واحد على الأقل واختُبر برومبتها.",
+      vibeBadges: [
+        "47 وحدة قابلة للتكامل",
+        "برومبت Opus 4.7 تحت كل واحدة",
+        "11 brand asset · تنزيل وجاهز",
+        "نشر بأمر واحد"
+      ],
       agentic: {
         eyebrow: "نموذج جديد",
         title: "Agentic payments — العملاء يدفعون بأنفسهم",
@@ -902,22 +991,39 @@ export const content: Record<Locale, SiteContent> = {
       networkLabels: {
         brandKit: "Brand kit",
         docs: "الوثائق",
-        visitSite: "النظام البيئي"
+        visitSite: "النظام البيئي",
+        brandKitTitle: "Brand assets — تنزيل واستخدام",
+        brandKitNote: "توزيع رسمي — يتطلب الإسناد.",
+        downloadLabel: "تنزيل",
+        sectionsTitle: "الوحدات وبرومبتات التكامل",
+        whyVibe: "لمطوّري vibe",
+        install: "التثبيت",
+        example: "مثال سريع",
+        promptHeading: "برومبت تكامل Claude Opus 4.7",
+        promptHelp: "ألصق في Cursor أو Claude Code — الذكاء الاصطناعي يبنيه لك.",
+        copyPrompt: "انسخ البرومبت",
+        copied: "تم النسخ",
+        openLink: "الموقع",
+        openDocs: "الوثائق"
       },
       networkOverrides: {
         base: {
-          tagline: "L2 من Coinbase على EVM — رسوم منخفضة وتأكيدات سريعة.",
+          tagline: "L2 من Coinbase على EVM — رسوم منخفضة وتأكيدات سريعة وonboarding بدون gas عبر Smart Wallet.",
           about:
-            "Base هي L2 لـ Ethereum مبنية على OP Stack من Optimism، باحتضان من Coinbase. متوافقة مع EVM، تُكتب بـ Solidity، وتتكامل أصلياً مع منتجات Coinbase."
+            "Base هي L2 لـ Ethereum مبنية على OP Stack من Optimism، باحتضان من Coinbase. متوافقة مع EVM، تُكتب بـ Solidity، وتتكامل أصلياً مع منتجات Coinbase وSmart Wallet (passkey + paymaster) لـ onboarding بصفر gas.",
+          vibePitch:
+            "حزمة واحدة (OnchainKit) تعطيك wallet + transaction + identity كـ API بسطر واحد. Smart Wallet يعني المستخدمون يتصلون بـ passkey ولا يدفعون gas لأول معاملة. لـ vibe coder: اكتب برومبت، AI يبني المكوّن، انشر، onboard مستخدم في 30 ثانية."
         },
         solana: {
-          tagline: "L1 عالية الإنتاجية ومنخفضة الزمن — حالة عالمية واحدة.",
+          tagline: "L1 بزمن slot ~400 مللي ثانية — رسوم دون السنت، حالة عالمية واحدة، تنفيذ متوازٍ.",
           about:
-            "Solana هي L1 متوازية بزمن slot ~400 مللي ثانية. تُكتب البرامج بـ Rust وAnchor؛ الرسوم دون السنت والحالة العالمية الواحدة تُبقي تجربة المستخدم سريعة."
+            "Solana هي L1 متوازية بزمن slot ~400 مللي ثانية. تُكتب البرامج بـ Rust وAnchor؛ الرسوم دون السنت والحالة العالمية الواحدة تُبقي تجربة المستخدم سريعة.",
+          vibePitch:
+            "RPC call واحد يقرأ 50 حساباً، الرسوم دون السنت تعني المدفوعات الصغيرة مجدية اقتصادياً. solana.new يبدأ stack جاهز للذكاء الاصطناعي بأمر واحد؛ ثم تطلب من Cursor + Claude 'add a Jupiter swap' فيُبنى تنفيذ TWAP الكامل."
         }
       },
       sectionLabels: {
-        starters: "البداية وSscaffold",
+        starters: "البداية والـ scaffold",
         wallets: "محافظ والمصادقة",
         dex: "DEX وswap",
         defi: "بروتوكولات DeFi",

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Download, Sparkles, Zap } from "lucide-react";
 import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
+import { BlockchainResourceCard } from "@/components/blockchain-resource-card";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 import { absoluteUrl, breadcrumbSchema, buildPageMetadata } from "@/lib/site";
@@ -44,6 +45,18 @@ export default async function BlockchainPage({ params }: PageProps) {
     { name: bp.title, url: absoluteUrl(`/${locale}/blockchain/`) }
   ]);
 
+  const cardLabels = {
+    whyVibe: bp.networkLabels.whyVibe,
+    install: bp.networkLabels.install,
+    example: bp.networkLabels.example,
+    promptHeading: bp.networkLabels.promptHeading,
+    promptHelp: bp.networkLabels.promptHelp,
+    copyPrompt: bp.networkLabels.copyPrompt,
+    copied: bp.networkLabels.copied,
+    openLink: bp.networkLabels.openLink,
+    openDocs: bp.networkLabels.openDocs
+  };
+
   return (
     <>
       <SeoJsonLd data={breadcrumbs} />
@@ -52,6 +65,14 @@ export default async function BlockchainPage({ params }: PageProps) {
           <p className="ws-bc-hero-eyebrow">{bp.eyebrow}</p>
           <h1 className="ws-bc-hero-title">{bp.title}</h1>
           <p className="ws-bc-hero-intro">{bp.intro}</p>
+          <ul className="ws-bc-hero-badges">
+            {bp.vibeBadges.map((b) => (
+              <li key={b} className="ws-bc-hero-badge">
+                <Zap size={12} aria-hidden="true" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
           <p className="ws-bc-hero-audience">{bp.audience}</p>
         </section>
 
@@ -119,6 +140,11 @@ export default async function BlockchainPage({ params }: PageProps) {
 
                 <p className="ws-bc-network-about">{overrides.about}</p>
 
+                <div className="ws-bc-network-vibe">
+                  <span className="ws-bc-network-vibe-tag">⚡ {bp.networkLabels.whyVibe}</span>
+                  <p>{overrides.vibePitch}</p>
+                </div>
+
                 <div className="ws-bc-network-logo-strip">
                   <img
                     src={network.logoSrc}
@@ -127,34 +153,54 @@ export default async function BlockchainPage({ params }: PageProps) {
                   />
                 </div>
 
-                <div className="ws-bc-sections">
+                <section className="ws-bc-brand-kit">
+                  <header className="ws-bc-brand-kit-head">
+                    <h3>{bp.networkLabels.brandKitTitle}</h3>
+                    <p>{bp.networkLabels.brandKitNote}</p>
+                  </header>
+                  <ul className="ws-bc-brand-kit-grid">
+                    {network.brandAssets.map((asset) => (
+                      <li
+                        key={asset.filename}
+                        className={`ws-bc-brand-kit-card ws-bc-brand-kit-bg-${asset.bg}`}
+                      >
+                        <div className="ws-bc-brand-kit-thumb">
+                          <img src={asset.src} alt={asset.label} />
+                        </div>
+                        <div className="ws-bc-brand-kit-meta">
+                          <span className="ws-bc-brand-kit-label">{asset.label}</span>
+                          <span className="ws-bc-brand-kit-file">{asset.filename}</span>
+                          <a
+                            href={asset.src}
+                            download={asset.filename}
+                            className="ws-bc-brand-kit-dl"
+                          >
+                            <Download size={12} />
+                            <span>{bp.networkLabels.downloadLabel}</span>
+                          </a>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="ws-bc-modules">
+                  <h3 className="ws-bc-modules-title">{bp.networkLabels.sectionsTitle}</h3>
                   {network.sections.map((section) => (
-                    <section key={section.id} className="ws-bc-section">
-                      <h3 className="ws-bc-section-title">{bp.sectionLabels[section.id]}</h3>
-                      <ul className="ws-bc-section-list">
+                    <div key={section.id} className="ws-bc-modules-section">
+                      <h4 className="ws-bc-modules-section-title">{bp.sectionLabels[section.id]}</h4>
+                      <div className="ws-bc-modules-list">
                         {section.resources.map((resource) => (
-                          <li key={resource.url} className="ws-bc-resource">
-                            <a
-                              href={resource.url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="ws-bc-resource-link"
-                            >
-                              <div className="ws-bc-resource-head">
-                                <span className="ws-bc-resource-name">{resource.name}</span>
-                                {resource.badge ? (
-                                  <span className="ws-bc-resource-badge">{resource.badge}</span>
-                                ) : null}
-                                <ArrowUpRight size={14} className="ws-bc-resource-arrow" />
-                              </div>
-                              <p className="ws-bc-resource-blurb">{resource.blurb}</p>
-                            </a>
-                          </li>
+                          <BlockchainResourceCard
+                            key={resource.url + resource.name}
+                            resource={resource}
+                            labels={cardLabels}
+                          />
                         ))}
-                      </ul>
-                    </section>
+                      </div>
+                    </div>
                   ))}
-                </div>
+                </section>
               </article>
             );
           })}
