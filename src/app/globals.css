@@ -2818,3 +2818,55 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 720px) {
   .ws-contrast-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   AI extension — smart-crop + photo-restore stages
+   ============================================================ */
+
+.ws-smart-crop-stage {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.ws-smart-crop-canvas {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.ws-restore-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ws-restore-grid figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws-restore-grid figcaption {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.ws-restore-canvas {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+@media (max-width: 720px) {
+  .ws-restore-grid { grid-template-columns: 1fr; }
+}

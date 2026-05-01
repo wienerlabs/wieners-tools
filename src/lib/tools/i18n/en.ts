@@ -460,5 +460,33 @@ export const toolsEN: ToolI18nBundle = {
     short: "Strip the audio track",
     description: "Remove the audio track from a video and download the silent file.",
     keywords: ["video", "mute"]
+  },
+
+  // ------------- AI extension
+  "smart-crop": {
+    name: "Smart Crop",
+    short: "Saliency-based focal crop",
+    description: "Auto-crop to the most visually interesting region using a saliency heatmap. No model download — runs on canvas.",
+    keywords: ["crop", "smart", "saliency"],
+    options: { aspect: "Aspect", padding: "Padding" }
+  },
+  "photo-restore": {
+    name: "Photo Restore",
+    short: "Denoise + sharpen + auto-levels",
+    description: "Lift contrast, smooth grain and sharpen detail with an in-browser convolution pipeline.",
+    keywords: ["restore", "sharpen", "denoise"],
+    options: { strength: "Strength" }
+  },
+  "face-anonymizer": {
+    name: "Face Anonymizer",
+    short: "Auto-blur faces in photos",
+    description: "Detect faces with a tiny on-device model and blur them. Coming soon — model weights are downloaded only on demand.",
+    keywords: ["face", "blur", "privacy"]
+  },
+  "object-detection": {
+    name: "Object Detection",
+    short: "YOLO in your browser",
+    description: "Detect everyday objects with a small YOLO-style model. Coming soon — heavy model weights are gated behind explicit opt-in.",
+    keywords: ["detect", "yolo", "object"]
   }
 };

@@ -234,5 +234,11 @@ export const toolsDE: ToolI18nBundle = {
   "video-to-gif": { name: "Video → GIF", short: "Loop-GIF aus Clip", description: "Videoabschnitt in Loop-GIF wandeln. FPS, Breite und Fenster einstellbar.", keywords: ["video", "gif"], options: { fps: "FPS", width: "Breite", start: "Start", duration: "Dauer" } },
   "extract-audio": { name: "Audio extrahieren", short: "Tonspur eines Videos", description: "Tonspur eines Videos als MP3 oder WAV speichern.", keywords: ["audio", "mp3"], options: { format: "Format" } },
   "audio-convert": { name: "Audio-Konverter", short: "MP3 / WAV / OGG", description: "Audiodatei zwischen MP3, WAV und OGG transkodieren.", keywords: ["audio", "mp3"], options: { format: "Format", bitrate: "Bitrate" } },
-  "mute-video": { name: "Video stummschalten", short: "Tonspur entfernen", description: "Tonspur entfernen, stille Datei herunterladen.", keywords: ["video", "mute"] }
+  "mute-video": { name: "Video stummschalten", short: "Tonspur entfernen", description: "Tonspur entfernen, stille Datei herunterladen.", keywords: ["video", "mute"] },
+
+  // ------------- KI-Erweiterung
+  "smart-crop": { name: "Smart Crop", short: "Saliency-Crop", description: "Auto-Zuschnitt auf den visuell interessantesten Bereich.", keywords: ["crop", "saliency"], options: { aspect: "Verhältnis", padding: "Padding" } },
+  "photo-restore": { name: "Foto-Restauration", short: "Entrauschen + Schärfen", description: "Kontrast / Korn / Schärfe via In-Browser-Convolution.", keywords: ["restore", "schärfen"], options: { strength: "Stärke" } },
+  "face-anonymizer": { name: "Gesichts-Anonymizer", short: "Gesichter blurren", description: "Gesichter erkennen und blurren. Bald verfügbar — Modell wird nur on-demand geladen.", keywords: ["face", "blur"] },
+  "object-detection": { name: "Objekterkennung", short: "YOLO im Browser", description: "Alltagsobjekte mit kleinem YOLO-Modell erkennen. Bald verfügbar — Modell wird nur opt-in geladen.", keywords: ["yolo", "objekt"] }
 };

@@ -460,5 +460,33 @@ export const toolsTR: ToolI18nBundle = {
     short: "Ses kanalını kaldır",
     description: "Video'nun ses kanalını sil, sessiz dosyayı indir.",
     keywords: ["video", "sustur", "ses"]
+  },
+
+  // ------------- AI genişletme
+  "smart-crop": {
+    name: "Akıllı Kırpma",
+    short: "Saliency tabanlı odak",
+    description: "Saliency haritası ile en ilgi çekici bölgeye otomatik kırp. Model indirme yok — canvas üzerinde çalışır.",
+    keywords: ["kırp", "akıllı", "saliency"],
+    options: { aspect: "Oran", padding: "Boşluk" }
+  },
+  "photo-restore": {
+    name: "Fotoğraf Restorasyonu",
+    short: "Gürültü + keskinleştirme",
+    description: "Tarayıcı içi convolution boru hattı ile kontrast, gren ve keskinlik iyileştir.",
+    keywords: ["restore", "keskinleştir", "denoise"],
+    options: { strength: "Güç" }
+  },
+  "face-anonymizer": {
+    name: "Yüz Bulanıklaştırıcı",
+    short: "Yüzleri otomatik bulanıklaştır",
+    description: "Cihazda küçük bir model ile yüzleri tespit et ve bulanıklaştır. Yakında — model ağırlıkları yalnızca talep üzerine indirilir.",
+    keywords: ["yüz", "bulanıklaştır", "gizlilik"]
+  },
+  "object-detection": {
+    name: "Nesne Tespiti",
+    short: "Tarayıcıda YOLO",
+    description: "Küçük YOLO tarzı modelle gündelik nesneleri tespit et. Yakında — büyük model dosyaları sadece onaydan sonra indirilir.",
+    keywords: ["tespit", "yolo", "nesne"]
   }
 };

@@ -233,5 +233,11 @@ export const toolsAR: ToolI18nBundle = {
   "video-to-gif": { name: "فيديو → GIF", short: "GIF متكرر من مقطع", description: "حوّل مقطع فيديو إلى GIF متكرر. FPS وعرض ونافذة.", keywords: ["video", "gif"], options: { fps: "FPS", width: "العرض", start: "البداية", duration: "المدة" } },
   "extract-audio": { name: "استخراج الصوت", short: "صوت من فيديو", description: "احفظ المسار الصوتي للفيديو كـ MP3 أو WAV.", keywords: ["audio"], options: { format: "الصيغة" } },
   "audio-convert": { name: "محوّل الصوت", short: "MP3 / WAV / OGG", description: "تحويل ملف صوتي بين MP3 وWAV وOGG.", keywords: ["audio"], options: { format: "الصيغة", bitrate: "Bitrate" } },
-  "mute-video": { name: "كتم الفيديو", short: "إزالة المسار الصوتي", description: "إزالة المسار الصوتي وتنزيل ملف صامت.", keywords: ["video", "mute"] }
+  "mute-video": { name: "كتم الفيديو", short: "إزالة المسار الصوتي", description: "إزالة المسار الصوتي وتنزيل ملف صامت.", keywords: ["video", "mute"] },
+
+  // ------------- توسعة الذكاء الاصطناعي
+  "smart-crop": { name: "قص ذكي", short: "قص بناءً على البروز", description: "قص تلقائي إلى أبرز منطقة عبر خريطة saliency.", keywords: ["crop"], options: { aspect: "النسبة", padding: "التبطين" } },
+  "photo-restore": { name: "ترميم الصور", short: "تقليل الضوضاء + الحدّة", description: "تحسين التباين والحبيبات والحدة عبر convolution داخل المتصفح.", keywords: ["restore"], options: { strength: "القوة" } },
+  "face-anonymizer": { name: "تشويش الوجوه", short: "تشويش الوجوه تلقائياً", description: "تحديد الوجوه على الجهاز وتشويشها. قريباً — تنزيل النموذج عند الطلب.", keywords: ["face", "blur"] },
+  "object-detection": { name: "كشف الكائنات", short: "YOLO في المتصفح", description: "كشف كائنات يومية بنموذج YOLO صغير. قريباً — تنزيل النموذج بعد الموافقة.", keywords: ["yolo"] }
 };

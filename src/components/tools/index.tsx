@@ -91,7 +91,12 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "video-to-gif": dynamic(() => import("./video-to-gif"), { ssr: false, loading: Loader }),
   "extract-audio": dynamic(() => import("./extract-audio"), { ssr: false, loading: Loader }),
   "audio-convert": dynamic(() => import("./audio-convert"), { ssr: false, loading: Loader }),
-  "mute-video": dynamic(() => import("./mute-video"), { ssr: false, loading: Loader })
+  "mute-video": dynamic(() => import("./mute-video"), { ssr: false, loading: Loader }),
+
+  // AI extension
+  "smart-crop": dynamic(() => import("./smart-crop"), { ssr: false, loading: Loader }),
+  "photo-restore": dynamic(() => import("./photo-restore"), { ssr: false, loading: Loader })
+  // face-anonymizer + object-detection are status:soon → workbench placeholder
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

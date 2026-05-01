@@ -508,6 +508,40 @@ export const tools: ToolDefinition[] = [
     accept: "video/*",
     maxSizeMB: 500,
     badges: ["new", "clientside"]
+  },
+
+  // ------------- AI extension
+  {
+    slug: "smart-crop",
+    category: "ai",
+    icon: "Crop",
+    status: "ready",
+    accept: "image/*",
+    badges: ["ai", "new", "clientside"]
+  },
+  {
+    slug: "photo-restore",
+    category: "ai",
+    icon: "Wand2",
+    status: "ready",
+    accept: "image/*",
+    badges: ["ai", "new", "clientside"]
+  },
+  {
+    slug: "face-anonymizer",
+    category: "ai",
+    icon: "EyeOff",
+    status: "soon",
+    accept: "image/*",
+    badges: ["ai", "beta", "clientside"]
+  },
+  {
+    slug: "object-detection",
+    category: "ai",
+    icon: "ScanSearch",
+    status: "soon",
+    accept: "image/*",
+    badges: ["ai", "beta", "clientside"]
   }
 ];
 
