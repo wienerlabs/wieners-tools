@@ -40,11 +40,11 @@ void main() {
   vec3 p = vec3(cos(a) * r, aPos.y, sin(a) * r);
 
   if (uRepEnabled > 0.5) {
-    vec2 dir = p.xy - uMouse * 4.0;
+    vec2 dir = p.xz - uMouse * 4.0;
     float d = length(dir) + 0.001;
-    float push = uRepStrength * 0.6 / (d * d);
-    push = clamp(push, 0.0, 0.6);
-    p.xy += normalize(dir) * push;
+    float push = uRepStrength * 0.4 / (d * d);
+    push = clamp(push, 0.0, 0.5);
+    p.xz += normalize(dir) * push;
   }
 
   gl_Position = uProj * uView * vec4(p, 1.0);
@@ -54,7 +54,7 @@ void main() {
   vSeed = aSeed;
 
   float dist = -gl_Position.z;
-  gl_PointSize = aSize * (240.0 / max(dist, 0.5));
+  gl_PointSize = aSize * (24.0 / max(dist, 0.5));
 }
 `;
 
@@ -199,25 +199,25 @@ export default function Galaxy({
     gl.useProgram(prog);
 
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
-    const N = Math.floor(2400 * Math.max(0.2, density));
+    const N = Math.floor(900 * Math.max(0.2, density));
     const positions = new Float32Array(N * 3);
     const sizes = new Float32Array(N);
     const seeds = new Float32Array(N);
     const ARMS = 4;
     for (let i = 0; i < N; i++) {
       const t = Math.random();
-      const r = Math.pow(t, 0.7) * 4 + 0.2;
+      const r = Math.pow(t, 0.55) * 5.5 + 0.4;
       const arm = Math.floor(Math.random() * ARMS);
       const armAngle = (arm / ARMS) * Math.PI * 2;
       const spiral = r * 0.7;
-      const ang = armAngle + spiral + (Math.random() - 0.5) * 0.6;
+      const ang = armAngle + spiral + (Math.random() - 0.5) * 0.5;
       const yJit = (Math.random() - 0.5) * 0.4 * (1 - t * 0.6);
       positions[i * 3] = Math.cos(ang) * r;
       positions[i * 3 + 1] = yJit;
       positions[i * 3 + 2] = Math.sin(ang) * r;
-      sizes[i] = 1 + Math.random() * 3;
+      sizes[i] = 0.6 + Math.random() * Math.random() * 3.5;
       seeds[i] = Math.random();
     }
 
