@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { ToolCard } from "@/components/tool-card";
+import FallingText from "@/components/falling-text";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { buildPageMetadata, organizationSchema, webApplicationSchema, websiteSchema } from "@/lib/site";
@@ -83,6 +84,27 @@ export default async function LocaleHome({ params }: PageProps) {
               </section>
             );
           })}
+        </section>
+
+        <section className="ws-section ws-falling-section">
+          <header className="ws-section-head">
+            <p className="ws-section-eyebrow">{page.fallingHero.eyebrow}</p>
+            <h2 className="ws-section-title">{page.about.title}</h2>
+            <p className="ws-section-intro">{page.fallingHero.hint}</p>
+          </header>
+          <div className="ws-falling-stage">
+            <FallingText
+              text={page.fallingHero.text}
+              highlightWords={page.fallingHero.highlightWords}
+              highlightClass="ft-highlighted"
+              trigger="hover"
+              backgroundColor="transparent"
+              wireframes={false}
+              gravity={0.56}
+              fontSize="2rem"
+              mouseConstraintStiffness={0.9}
+            />
+          </div>
         </section>
       </SiteShell>
     </>

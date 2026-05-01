@@ -63,6 +63,12 @@ export type SiteContent = {
     soonText: string;
     privacyNote: string;
   };
+  fallingHero: {
+    eyebrow: string;
+    text: string;
+    highlightWords: string[];
+    hint: string;
+  };
   contact: {
     email: string;
     githubUrl: string;
@@ -157,6 +163,12 @@ export const content: Record<Locale, SiteContent> = {
         "Foundation hazır, implementasyon önümüzdeki sürümlerde. GitHub'dan ilerlemeyi takip edebilirsiniz.",
       privacyNote: "Görselleriniz sunucumuza gönderilmez. Tüm işleme tarayıcınızda gerçekleşir."
     },
+    fallingHero: {
+      eyebrow: "Hakkımızda",
+      text: "Wiener Tools tarayıcınızda çalışan bir görsel atölyesidir. 32 araç altı kategoride toplandı. Hiçbir foto sunucumuza ulaşmaz çünkü hepsi cihazınızda çalışır. Sıkıştır dönüştür düzenle üret hepsi tek yerde.",
+      highlightWords: ["Wiener", "Tools", "tarayıcınızda", "atölyesidir", "32", "altı", "sunucumuza", "cihazınızda", "tek"],
+      hint: "Üzerine gelince yere düşer."
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -246,6 +258,12 @@ export const content: Record<Locale, SiteContent> = {
       soonText:
         "The foundation is ready, implementation lands in upcoming releases. Track progress on GitHub.",
       privacyNote: "Your files never reach our servers. All processing happens in your browser."
+    },
+    fallingHero: {
+      eyebrow: "About",
+      text: "Wiener Tools is a browser-native image workshop. Thirty-two tools spread across six categories. No file ever reaches our servers because everything runs on your device. Compress convert edit generate all in one place.",
+      highlightWords: ["Wiener", "Tools", "browser-native", "workshop", "Thirty-two", "six", "servers", "device", "one"],
+      hint: "Hover to drop."
     },
     contact: {
       email: "baturalp@wienerlabs.com",
@@ -337,6 +355,12 @@ export const content: Record<Locale, SiteContent> = {
         "Die Grundlage steht, die Umsetzung folgt in einer kommenden Version. Fortschritt auf GitHub.",
       privacyNote: "Ihre Dateien erreichen unsere Server nicht. Alle Verarbeitung erfolgt im Browser."
     },
+    fallingHero: {
+      eyebrow: "Über uns",
+      text: "Wiener Tools ist eine Bildwerkstatt im Browser. Zweiunddreißig Werkzeuge in sechs Kategorien. Keine Datei erreicht unsere Server denn alles läuft auf Ihrem Gerät. Komprimieren konvertieren bearbeiten erzeugen alles an einem Ort.",
+      highlightWords: ["Wiener", "Tools", "Browser", "Bildwerkstatt", "Zweiunddreißig", "sechs", "Server", "Gerät", "einem"],
+      hint: "Hover lässt es fallen."
+    },
     contact: {
       email: "baturalp@wienerlabs.com",
       githubUrl: "https://github.com/wienerlabs/wieners-tools"
@@ -426,6 +450,12 @@ export const content: Record<Locale, SiteContent> = {
       soonText:
         "الأساس جاهز، التنفيذ في إصدارات قادمة. تابع التقدم على GitHub.",
       privacyNote: "ملفاتك لا تصل إلى خوادمنا. كل المعالجة تتم في متصفحك."
+    },
+    fallingHero: {
+      eyebrow: "حول",
+      text: "Wiener Tools ورشة صور تعمل داخل المتصفح. اثنتان وثلاثون أداة موزعة على ست فئات. لا ملف يصل إلى خوادمنا لأن كل شيء يعمل على جهازك. اضغط حوّل عدّل أنتج كله في مكان واحد.",
+      highlightWords: ["Wiener", "Tools", "المتصفح", "ورشة", "وثلاثون", "ست", "خوادمنا", "جهازك", "واحد"],
+      hint: "مرر فوقها لتسقط."
     },
     contact: {
       email: "baturalp@wienerlabs.com",
