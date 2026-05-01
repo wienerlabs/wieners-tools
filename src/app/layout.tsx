@@ -1,17 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Sans_Arabic, Space_Grotesk } from "next/font/google";
+import { Host_Grotesk, Noto_Sans_Arabic } from "next/font/google";
 import { siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap"
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space",
+const hostGrotesk = Host_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-host",
   display: "swap"
 });
 
@@ -53,10 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${notoSansArabic.variable}`}
-    >
+    <html lang="en" className={`${hostGrotesk.variable} ${notoSansArabic.variable}`}>
       <body>{children}</body>
     </html>
   );
