@@ -140,5 +140,76 @@ export const toolsDE: ToolI18nBundle = {
   },
   "exif-viewer": { name: "EXIF-Viewer", short: "Foto-Metadaten", description: "EXIF lesen oder entfernen.", keywords: ["exif"] },
   "gif-maker": { name: "GIF-Maker", short: "Animation aus Frames", description: "Animiertes GIF aus Frames.", keywords: ["gif"] },
-  "gif-extractor": { name: "GIF-Extraktor", short: "Frames extrahieren", description: "GIF-Frames als PNG.", keywords: ["gif"] }
+  "gif-extractor": { name: "GIF-Extraktor", short: "Frames extrahieren", description: "GIF-Frames als PNG.", keywords: ["gif"] },
+
+  // ------------- Entwickler
+  "json-formatter": {
+    name: "JSON-Formatierer",
+    short: "JSON formatieren / minimieren",
+    description: "JSON validieren, verschönern oder minimieren. Syntaxfehler mit Zeile/Spalte.",
+    keywords: ["json", "format", "minify"],
+    options: { indent: "Einrückung", sortKeys: "Schlüssel sortieren", action: "Aktion" }
+  },
+  "base64-encoder": {
+    name: "Base64-Kodierer",
+    short: "Text/Datei ↔ Base64",
+    description: "Text oder Datei in Base64 kodieren oder zurück. URL-safe Variante.",
+    keywords: ["base64"],
+    options: { mode: "Modus", urlSafe: "URL-safe", input: "Eingabe" }
+  },
+  "url-encoder": {
+    name: "URL-Kodierer",
+    short: "encodeURIComponent / decode",
+    description: "Prozentkodierung für URLs oder umgekehrt.",
+    keywords: ["url", "uri"],
+    options: { mode: "Modus", scope: "Bereich" }
+  },
+  "jwt-decoder": {
+    name: "JWT-Decoder",
+    short: "JWT inspizieren",
+    description: "Header und Payload eines JWT dekodieren. Zeigt Ablauf, Algorithmus und Claims. Signatur wird nicht geprüft.",
+    keywords: ["jwt", "token"]
+  },
+  "hash-generator": {
+    name: "Hash-Generator",
+    short: "MD5 / SHA-1 / SHA-256 / SHA-512",
+    description: "Hash für Text oder Datei lokal via Web Crypto. SHA-1 / 256 / 384 / 512 plus MD5.",
+    keywords: ["hash", "sha", "md5"],
+    options: { algorithm: "Algorithmus", input: "Eingabe" }
+  },
+  "uuid-generator": {
+    name: "UUID-Generator",
+    short: "Bulk UUID v4 / nanoid",
+    description: "UUID-v4-Stapel oder kurze nanoid-Style-IDs. Länge und Alphabet einstellbar.",
+    keywords: ["uuid", "guid", "nanoid"],
+    options: { count: "Anzahl", kind: "Typ", length: "Länge" }
+  },
+  "lorem-ipsum": {
+    name: "Lorem-Ipsum-Generator",
+    short: "Platzhaltertext",
+    description: "Wörter, Sätze oder Absätze klassisches Lorem Ipsum. Optional in <p> verpackt.",
+    keywords: ["lorem", "ipsum"],
+    options: { unit: "Einheit", count: "Anzahl", html: "Mit <p> umhüllen" }
+  },
+  "regex-tester": {
+    name: "Regex-Tester",
+    short: "JS-Regex testen",
+    description: "Regex gegen Testtext probieren. Markiert Treffer, Captures und Gruppen.",
+    keywords: ["regex"],
+    options: { pattern: "Muster", flags: "Flags", subject: "Testtext" }
+  },
+  "color-converter": {
+    name: "Farbkonvertierer",
+    short: "hex ↔ rgb ↔ hsl ↔ oklch",
+    description: "Farbe zwischen hex, rgb, hsl und oklch umwandeln. Inkl. Kontrast vs. Weiß/Schwarz.",
+    keywords: ["color", "farbe"],
+    options: { input: "Eingabe" }
+  },
+  "diff-viewer": {
+    name: "Text-Diff",
+    short: "Zwei Texte vergleichen",
+    description: "Side-by-side Diff zweier Texte — Zeilen- und Wortebene. Kein Upload, alles im Browser.",
+    keywords: ["diff", "vergleich"],
+    options: { left: "Links", right: "Rechts", mode: "Modus" }
+  }
 };

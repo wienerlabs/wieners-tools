@@ -56,7 +56,19 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   // Metadata & Animation
   "exif-viewer": dynamic(() => import("./exif-viewer"), { ssr: false, loading: Loader }),
   "gif-maker": dynamic(() => import("./gif-maker"), { ssr: false, loading: Loader }),
-  "gif-extractor": dynamic(() => import("./gif-extractor"), { ssr: false, loading: Loader })
+  "gif-extractor": dynamic(() => import("./gif-extractor"), { ssr: false, loading: Loader }),
+
+  // Developer
+  "json-formatter": dynamic(() => import("./json-formatter"), { ssr: false, loading: Loader }),
+  "base64-encoder": dynamic(() => import("./base64-encoder"), { ssr: false, loading: Loader }),
+  "url-encoder": dynamic(() => import("./url-encoder"), { ssr: false, loading: Loader }),
+  "jwt-decoder": dynamic(() => import("./jwt-decoder"), { ssr: false, loading: Loader }),
+  "hash-generator": dynamic(() => import("./hash-generator"), { ssr: false, loading: Loader }),
+  "uuid-generator": dynamic(() => import("./uuid-generator"), { ssr: false, loading: Loader }),
+  "lorem-ipsum": dynamic(() => import("./lorem-ipsum"), { ssr: false, loading: Loader }),
+  "regex-tester": dynamic(() => import("./regex-tester"), { ssr: false, loading: Loader }),
+  "color-converter": dynamic(() => import("./color-converter"), { ssr: false, loading: Loader }),
+  "diff-viewer": dynamic(() => import("./diff-viewer"), { ssr: false, loading: Loader })
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

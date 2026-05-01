@@ -7,7 +7,8 @@ export const categoryOrder: CategoryId[] = [
   "editing",
   "ai",
   "generation",
-  "metadata"
+  "metadata",
+  "developer"
 ];
 
 const tr: CategoryBundle = {
@@ -40,6 +41,11 @@ const tr: CategoryBundle = {
     name: "Meta & Animasyon",
     short: "EXIF ve GIF",
     description: "EXIF okuma/temizleme, GIF üretme/parçalama."
+  },
+  developer: {
+    name: "Geliştirici",
+    short: "JSON, Base64, hash, regex",
+    description: "JSON formatla, Base64 / URL / JWT decode et, hash & UUID üret, regex test et, renkleri çevir."
   }
 };
 
@@ -73,6 +79,11 @@ const en: CategoryBundle = {
     name: "Meta & Animation",
     short: "EXIF and GIF",
     description: "Inspect/strip EXIF, build/extract animated GIFs."
+  },
+  developer: {
+    name: "Developer",
+    short: "JSON, Base64, hash, regex",
+    description: "Format JSON, decode Base64 / URL / JWT, hash & UUID, test regex, convert colors."
   }
 };
 
@@ -106,6 +117,11 @@ const de: CategoryBundle = {
     name: "Meta & Animation",
     short: "EXIF und GIF",
     description: "EXIF lesen/entfernen, animierte GIFs erstellen/zerlegen."
+  },
+  developer: {
+    name: "Entwickler",
+    short: "JSON, Base64, Hash, Regex",
+    description: "JSON formatieren, Base64 / URL / JWT dekodieren, Hash & UUID, Regex testen, Farben konvertieren."
   }
 };
 
@@ -139,6 +155,11 @@ const ar: CategoryBundle = {
     name: "الميتا والرسوم",
     short: "EXIF وGIF",
     description: "قراءة/تنظيف EXIF، إنشاء/تفكيك GIF متحرك."
+  },
+  developer: {
+    name: "أدوات المطورين",
+    short: "JSON وBase64 وHash وRegex",
+    description: "تنسيق JSON، فك Base64 / URL / JWT، Hash وUUID، اختبار Regex، تحويل الألوان."
   }
 };
 

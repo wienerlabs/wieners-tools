@@ -218,7 +218,8 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Tüm araçlar", href: "/tr/#tools" },
             { label: "Sıkıştırma", href: "/tr/#compression" },
             { label: "Dönüştürme", href: "/tr/#conversion" },
-            { label: "AI", href: "/tr/#ai" }
+            { label: "AI", href: "/tr/#ai" },
+            { label: "Geliştirici", href: "/tr/#developer" }
           ]
         },
         {
@@ -362,7 +363,8 @@ export const content: Record<Locale, SiteContent> = {
             { label: "All tools", href: "/en/#tools" },
             { label: "Compression", href: "/en/#compression" },
             { label: "Conversion", href: "/en/#conversion" },
-            { label: "AI", href: "/en/#ai" }
+            { label: "AI", href: "/en/#ai" },
+            { label: "Developer", href: "/en/#developer" }
           ]
         },
         {
@@ -506,7 +508,8 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Alle Werkzeuge", href: "/de/#tools" },
             { label: "Komprimierung", href: "/de/#compression" },
             { label: "Konvertierung", href: "/de/#conversion" },
-            { label: "KI", href: "/de/#ai" }
+            { label: "KI", href: "/de/#ai" },
+            { label: "Entwickler", href: "/de/#developer" }
           ]
         },
         {
@@ -650,7 +653,8 @@ export const content: Record<Locale, SiteContent> = {
             { label: "كل الأدوات", href: "/ar/#tools" },
             { label: "الضغط", href: "/ar/#compression" },
             { label: "التحويل", href: "/ar/#conversion" },
-            { label: "الذكاء الاصطناعي", href: "/ar/#ai" }
+            { label: "الذكاء الاصطناعي", href: "/ar/#ai" },
+            { label: "المطورون", href: "/ar/#developer" }
           ]
         },
         {

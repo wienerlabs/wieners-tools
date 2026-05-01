@@ -113,7 +113,7 @@ export default async function LocaleHome({ params }: PageProps) {
             const cat = localizedCategory(locale, catId);
             const items = tools.filter((t) => t.category === catId);
             return (
-              <section key={catId} className="ws-category">
+              <section key={catId} id={catId} className="ws-category">
                 <header className="ws-category-head">
                   <h3>{cat.name}</h3>
                   <p>{cat.description}</p>

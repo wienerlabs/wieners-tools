@@ -273,5 +273,76 @@ export const toolsTR: ToolI18nBundle = {
     short: "Frame'leri çıkart",
     description: "GIF'in karelerini PNG olarak çıkartır.",
     keywords: ["gif", "frame"]
+  },
+
+  // ------------- Geliştirici
+  "json-formatter": {
+    name: "JSON Düzenleyici",
+    short: "JSON formatla / küçült",
+    description: "JSON'u doğrula, güzelleştir veya küçült. Sözdizimi hatalarını satır/sütun ile gösterir.",
+    keywords: ["json", "format", "minify", "düzenle", "doğrula"],
+    options: { indent: "Girinti (boşluk)", sortKeys: "Anahtarları sırala", action: "İşlem" }
+  },
+  "base64-encoder": {
+    name: "Base64 Kodlayıcı",
+    short: "Metin / dosya ↔ Base64",
+    description: "Metni veya herhangi bir dosyayı Base64'e çevir veya geri çöz. URL-safe varyant destekli.",
+    keywords: ["base64", "kodla", "çöz"],
+    options: { mode: "Mod", urlSafe: "URL-safe", input: "Girdi" }
+  },
+  "url-encoder": {
+    name: "URL Kodlayıcı",
+    short: "encodeURIComponent / decode",
+    description: "URL'lerde kullanmak için yüzde işaretiyle kodla, ya da geri çöz.",
+    keywords: ["url", "uri", "yüzde", "kodla"],
+    options: { mode: "Mod", scope: "Kapsam" }
+  },
+  "jwt-decoder": {
+    name: "JWT Çözücü",
+    short: "JWT incele",
+    description: "JSON Web Token başlık ve payload'unu çöz. Süre, algoritma ve claim'leri gösterir. İmza doğrulanmaz.",
+    keywords: ["jwt", "token", "çöz"]
+  },
+  "hash-generator": {
+    name: "Hash Üretici",
+    short: "MD5 / SHA-1 / SHA-256 / SHA-512",
+    description: "Web Crypto ile metin veya dosya hash'i. SHA-1 / 256 / 384 / 512 + MD5.",
+    keywords: ["hash", "sha", "md5", "checksum"],
+    options: { algorithm: "Algoritma", input: "Girdi" }
+  },
+  "uuid-generator": {
+    name: "UUID Üretici",
+    short: "Toplu UUID v4 / nanoid",
+    description: "UUID v4 paketleri veya kısa nanoid tarzı ID'ler üret. Uzunluk ve alfabe özelleştirilebilir.",
+    keywords: ["uuid", "guid", "nanoid", "id"],
+    options: { count: "Adet", kind: "Tür", length: "Uzunluk" }
+  },
+  "lorem-ipsum": {
+    name: "Lorem Ipsum Üretici",
+    short: "Yer tutucu metin",
+    description: "Klasik Lorem Ipsum'dan kelime, cümle veya paragraf üret. Opsiyonel HTML sarımı.",
+    keywords: ["lorem", "ipsum", "yer tutucu"],
+    options: { unit: "Birim", count: "Adet", html: "<p> ile sar" }
+  },
+  "regex-tester": {
+    name: "Regex Test Aracı",
+    short: "JS regex dene",
+    description: "Bir düzenli ifadeyi test girdisine karşı dene. Eşleşmeleri, capture'ları ve grupları işaretler.",
+    keywords: ["regex", "regexp", "eşleşme", "test"],
+    options: { pattern: "Desen", flags: "Bayraklar", subject: "Test metni" }
+  },
+  "color-converter": {
+    name: "Renk Dönüştürücü",
+    short: "hex ↔ rgb ↔ hsl ↔ oklch",
+    description: "Bir rengi hex / rgb / hsl / oklch arasında çevir. Beyaz/siyah'a göre kontrast oranını gösterir.",
+    keywords: ["renk", "hex", "rgb", "hsl", "oklch"],
+    options: { input: "Girdi" }
+  },
+  "diff-viewer": {
+    name: "Metin Karşılaştırıcı",
+    short: "İki metni karşılaştır",
+    description: "İki metnin yan yana farkı — satır ve kelime düzeyinde. Yükleme yok, hepsi tarayıcıda.",
+    keywords: ["diff", "karşılaştır", "metin"],
+    options: { left: "Sol", right: "Sağ", mode: "Mod" }
   }
 };

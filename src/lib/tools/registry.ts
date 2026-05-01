@@ -277,6 +277,88 @@ export const tools: ToolDefinition[] = [
     status: "ready",
     accept: ".gif,image/gif",
     badges: ["new", "clientside"]
+  },
+
+  // ------------- Developer
+  {
+    slug: "json-formatter",
+    category: "developer",
+    icon: "Braces",
+    status: "ready",
+    accept: ".json,application/json,text/plain",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "base64-encoder",
+    category: "developer",
+    icon: "Binary",
+    status: "ready",
+    accept: "*",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "url-encoder",
+    category: "developer",
+    icon: "Link",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "jwt-decoder",
+    category: "developer",
+    icon: "KeyRound",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "hash-generator",
+    category: "developer",
+    icon: "Fingerprint",
+    status: "ready",
+    accept: "*",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "uuid-generator",
+    category: "developer",
+    icon: "Hash",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "lorem-ipsum",
+    category: "developer",
+    icon: "AlignLeft",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "regex-tester",
+    category: "developer",
+    icon: "SearchCode",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "color-converter",
+    category: "developer",
+    icon: "Pipette",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["fast", "clientside"]
+  },
+  {
+    slug: "diff-viewer",
+    category: "developer",
+    icon: "GitCompare",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["new", "clientside"]
   }
 ];
 

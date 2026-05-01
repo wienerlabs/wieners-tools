@@ -139,5 +139,76 @@ export const toolsAR: ToolI18nBundle = {
   },
   "exif-viewer": { name: "عارض EXIF", short: "بيانات الصورة", description: "عرض أو تنظيف EXIF.", keywords: ["exif"] },
   "gif-maker": { name: "صانع GIF", short: "رسم متحرك من إطارات", description: "GIF متحرك من سلسلة إطارات.", keywords: ["gif"] },
-  "gif-extractor": { name: "مستخرج GIF", short: "استخراج الإطارات", description: "كل إطار GIF بصيغة PNG.", keywords: ["gif"] }
+  "gif-extractor": { name: "مستخرج GIF", short: "استخراج الإطارات", description: "كل إطار GIF بصيغة PNG.", keywords: ["gif"] },
+
+  // ------------- المطورون
+  "json-formatter": {
+    name: "منسّق JSON",
+    short: "تنسيق / تصغير JSON",
+    description: "تحقق من JSON أو نسّقه أو صغّره. يبرز أخطاء الصياغة بالسطر والعمود.",
+    keywords: ["json", "تنسيق"],
+    options: { indent: "المسافات", sortKeys: "ترتيب المفاتيح", action: "العملية" }
+  },
+  "base64-encoder": {
+    name: "محوّل Base64",
+    short: "نص / ملف ↔ Base64",
+    description: "تحويل النص أو أي ملف إلى Base64 أو فك التشفير. متغير URL-safe مدعوم.",
+    keywords: ["base64"],
+    options: { mode: "الوضع", urlSafe: "URL-safe", input: "المدخل" }
+  },
+  "url-encoder": {
+    name: "محوّل URL",
+    short: "encodeURIComponent / فك",
+    description: "ترميز نص للـ URL أو عكسه.",
+    keywords: ["url"],
+    options: { mode: "الوضع", scope: "النطاق" }
+  },
+  "jwt-decoder": {
+    name: "فك JWT",
+    short: "تفقّد JWT",
+    description: "فك header وpayload لرمز JWT. يعرض الانتهاء والخوارزمية والـ claims. التوقيع لا يُتحقق منه.",
+    keywords: ["jwt"]
+  },
+  "hash-generator": {
+    name: "مولّد Hash",
+    short: "MD5 / SHA-1 / SHA-256 / SHA-512",
+    description: "حساب hash للنص أو الملفات محلياً عبر Web Crypto.",
+    keywords: ["hash", "sha", "md5"],
+    options: { algorithm: "الخوارزمية", input: "المدخل" }
+  },
+  "uuid-generator": {
+    name: "مولّد UUID",
+    short: "دفعات UUID v4 / nanoid",
+    description: "توليد UUID v4 أو معرّفات قصيرة بنمط nanoid. الطول والأبجدية قابلة للتعديل.",
+    keywords: ["uuid", "guid", "nanoid"],
+    options: { count: "العدد", kind: "النوع", length: "الطول" }
+  },
+  "lorem-ipsum": {
+    name: "مولّد Lorem Ipsum",
+    short: "نص حشو",
+    description: "كلمات أو جمل أو فقرات من Lorem Ipsum الكلاسيكي. مع خيار غلاف <p>.",
+    keywords: ["lorem", "ipsum"],
+    options: { unit: "الوحدة", count: "العدد", html: "غلّف بـ <p>" }
+  },
+  "regex-tester": {
+    name: "مختبر Regex",
+    short: "تجربة JS regex",
+    description: "تجربة تعبير منتظم على نص اختبار. يبرز التطابقات والمجموعات.",
+    keywords: ["regex"],
+    options: { pattern: "النمط", flags: "الأعلام", subject: "النص" }
+  },
+  "color-converter": {
+    name: "محوّل ألوان",
+    short: "hex ↔ rgb ↔ hsl ↔ oklch",
+    description: "تحويل لون بين hex وrgb وhsl وoklch. مع نسبة التباين مع الأبيض/الأسود.",
+    keywords: ["color", "لون"],
+    options: { input: "المدخل" }
+  },
+  "diff-viewer": {
+    name: "مقارن النصوص",
+    short: "قارن نصين",
+    description: "فروق جنباً إلى جنب بين نصين — على مستوى السطر والكلمة. بدون رفع.",
+    keywords: ["diff"],
+    options: { left: "يسار", right: "يمين", mode: "الوضع" }
+  }
 };

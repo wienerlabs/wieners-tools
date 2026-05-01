@@ -273,5 +273,76 @@ export const toolsEN: ToolI18nBundle = {
     short: "Extract frames",
     description: "Pull every frame of a GIF as PNG.",
     keywords: ["gif", "frame"]
+  },
+
+  // ------------- Developer
+  "json-formatter": {
+    name: "JSON Formatter",
+    short: "Pretty-print or minify JSON",
+    description: "Validate, beautify or minify JSON. Highlights syntax errors with line/column.",
+    keywords: ["json", "format", "minify", "pretty", "validate"],
+    options: { indent: "Indent (spaces)", sortKeys: "Sort keys", action: "Action" }
+  },
+  "base64-encoder": {
+    name: "Base64 Encoder/Decoder",
+    short: "Text or file ↔ Base64",
+    description: "Encode text or any file to Base64, or decode a Base64 string back. URL-safe variant supported.",
+    keywords: ["base64", "encode", "decode"],
+    options: { mode: "Mode", urlSafe: "URL-safe", input: "Input" }
+  },
+  "url-encoder": {
+    name: "URL Encoder/Decoder",
+    short: "encodeURIComponent / decode",
+    description: "Percent-encode a string for use in URLs, or reverse it.",
+    keywords: ["url", "uri", "percent", "encode"],
+    options: { mode: "Mode", scope: "Scope" }
+  },
+  "jwt-decoder": {
+    name: "JWT Decoder",
+    short: "Inspect a JWT",
+    description: "Decode the header and payload of a JSON Web Token. Shows expiry, algorithm and claims. Signatures are not verified.",
+    keywords: ["jwt", "token", "decode"]
+  },
+  "hash-generator": {
+    name: "Hash Generator",
+    short: "MD5 / SHA-1 / SHA-256 / SHA-512",
+    description: "Hash text or files locally via Web Crypto. SHA-1 / 256 / 384 / 512 plus MD5.",
+    keywords: ["hash", "sha", "md5", "checksum"],
+    options: { algorithm: "Algorithm", input: "Input" }
+  },
+  "uuid-generator": {
+    name: "UUID Generator",
+    short: "Bulk UUID v4 / nanoid",
+    description: "Generate UUID v4 batches or short nanoid-style IDs. Customisable length and alphabet.",
+    keywords: ["uuid", "guid", "nanoid", "id"],
+    options: { count: "Count", kind: "Type", length: "Length" }
+  },
+  "lorem-ipsum": {
+    name: "Lorem Ipsum Generator",
+    short: "Placeholder copy",
+    description: "Words, sentences or paragraphs of classic Lorem Ipsum. Optional HTML wrapping.",
+    keywords: ["lorem", "ipsum", "placeholder"],
+    options: { unit: "Unit", count: "Count", html: "Wrap with <p>" }
+  },
+  "regex-tester": {
+    name: "Regex Tester",
+    short: "Test a JS regex",
+    description: "Try a regular expression against test input. Highlights matches, captures and groups.",
+    keywords: ["regex", "regexp", "match", "test"],
+    options: { pattern: "Pattern", flags: "Flags", subject: "Subject" }
+  },
+  "color-converter": {
+    name: "Color Converter",
+    short: "hex ↔ rgb ↔ hsl ↔ oklch",
+    description: "Convert a colour between hex, rgb, hsl and oklch. Includes contrast vs. white/black.",
+    keywords: ["color", "hex", "rgb", "hsl", "oklch"],
+    options: { input: "Input" }
+  },
+  "diff-viewer": {
+    name: "Text Diff",
+    short: "Compare two strings",
+    description: "Side-by-side diff of two strings — line and word level. No upload, all in your browser.",
+    keywords: ["diff", "compare", "text"],
+    options: { left: "Left", right: "Right", mode: "Mode" }
   }
 };
