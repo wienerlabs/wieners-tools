@@ -4,6 +4,9 @@ import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { ToolCard } from "@/components/tool-card";
 import FallingText from "@/components/falling-text";
+import MagnetLines from "@/components/magnet-lines";
+import Cubes from "@/components/cubes";
+import TypewriterTitle from "@/components/typewriter-title";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { buildPageMetadata, organizationSchema, webApplicationSchema, websiteSchema } from "@/lib/site";
@@ -43,7 +46,16 @@ export default async function LocaleHome({ params }: PageProps) {
       <SiteShell locale={locale}>
         <section className="ws-hero">
           <p className="ws-hero-eyebrow">{page.hero.eyebrow}</p>
-          <h1 className="ws-hero-title">{page.hero.title}</h1>
+          <h1 className="ws-hero-title ws-hero-title-typewriter">
+            <TypewriterTitle
+              sequences={page.hero.typewriter.map((text, idx, arr) => ({
+                text,
+                deleteAfter: idx < arr.length - 1 ? true : true
+              }))}
+              autoLoop
+              naturalVariance
+            />
+          </h1>
           <p className="ws-hero-subtitle">{page.hero.subtitle}</p>
           <div className="ws-hero-ctas">
             <a href="#tools" className="ws-button ws-button-primary">
@@ -57,6 +69,17 @@ export default async function LocaleHome({ params }: PageProps) {
             {page.hero.proof.map((item) => (
               <span key={item}>{item}</span>
             ))}
+          </div>
+          <div className="ws-hero-magnet" aria-hidden="true">
+            <MagnetLines
+              rows={10}
+              columns={12}
+              containerSize="min(420px, 80vw)"
+              lineColor="rgba(0, 0, 0, 0.55)"
+              lineWidth="2px"
+              lineHeight="22px"
+              baseAngle={-10}
+            />
           </div>
         </section>
 
@@ -84,6 +107,28 @@ export default async function LocaleHome({ params }: PageProps) {
               </section>
             );
           })}
+        </section>
+
+        <section className="ws-section ws-cubes-section">
+          <header className="ws-section-head">
+            <p className="ws-section-eyebrow">{page.toolsSection.eyebrow}</p>
+            <h2 className="ws-section-title">{page.hero.subtitle}</h2>
+            <p className="ws-section-intro">{page.toolsSection.intro}</p>
+          </header>
+          <div className="ws-cubes-frame">
+            <Cubes
+              gridSize={8}
+              maxAngle={28}
+              radius={3}
+              borderStyle="1px solid rgba(0, 0, 0, 0.18)"
+              faceColor="#000000"
+              rippleColor="#fff4dd"
+              rippleSpeed={1.5}
+              autoAnimate
+              rippleOnClick
+              cellSize={48}
+            />
+          </div>
         </section>
 
         <section className="ws-section ws-falling-section">

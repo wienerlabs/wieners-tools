@@ -12,6 +12,7 @@ export type SiteContent = {
     primaryCta: string;
     secondaryCta: string;
     proof: string[];
+    typewriter: string[];
   };
   toolsSection: {
     eyebrow: string;
@@ -91,7 +92,8 @@ export const content: Record<Locale, SiteContent> = {
         "Görselleri sıkıştırın, dönüştürün, düzenleyin ve üretin. Hepsi tarayıcınızda — fotoğraflarınız asla sunucumuza gitmez.",
       primaryCta: "Araçları gör",
       secondaryCta: "Hakkında",
-      proof: SHARED_PROOF
+      proof: SHARED_PROOF,
+      typewriter: ["sıkıştır.", "dönüştür.", "düzenle.", "üret."]
     },
     toolsSection: {
       eyebrow: "Araçlar",
@@ -187,7 +189,8 @@ export const content: Record<Locale, SiteContent> = {
         "Compress, convert, edit and generate images. Everything in your browser — your photos never reach our servers.",
       primaryCta: "Browse tools",
       secondaryCta: "About",
-      proof: SHARED_PROOF
+      proof: SHARED_PROOF,
+      typewriter: ["compress.", "convert.", "edit.", "generate."]
     },
     toolsSection: {
       eyebrow: "Tools",
@@ -283,7 +286,8 @@ export const content: Record<Locale, SiteContent> = {
         "Bilder komprimieren, konvertieren, bearbeiten und erzeugen — komplett im Browser, ohne Upload.",
       primaryCta: "Werkzeuge",
       secondaryCta: "Über",
-      proof: SHARED_PROOF
+      proof: SHARED_PROOF,
+      typewriter: ["komprimieren.", "konvertieren.", "bearbeiten.", "erzeugen."]
     },
     toolsSection: {
       eyebrow: "Werkzeuge",
@@ -379,7 +383,8 @@ export const content: Record<Locale, SiteContent> = {
         "اضغط، حوّل، عدّل، وأنشئ — كل ذلك داخل متصفحك. صورك لا تصل إلى خوادمنا أبداً.",
       primaryCta: "تصفح الأدوات",
       secondaryCta: "حول",
-      proof: SHARED_PROOF
+      proof: SHARED_PROOF,
+      typewriter: ["اضغط.", "حوّل.", "عدّل.", "أنتج."]
     },
     toolsSection: {
       eyebrow: "الأدوات",

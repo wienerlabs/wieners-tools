@@ -1538,3 +1538,180 @@ button, input, textarea, select { font: inherit; }
   .ws-falling-stage { height: 380px; }
   .ft-target { padding: 18px 20px; gap: 6px 10px; }
 }
+
+/* ----------------------------------------------------------------------------
+   Typewriter (hero h1)
+   ----------------------------------------------------------------------------*/
+
+.ws-hero-title-typewriter {
+  margin: 0;
+}
+
+.ws-typewriter {
+  display: flex;
+  justify-content: center;
+}
+
+.ws-typewriter-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.ws-typewriter-text {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: clamp(64px, 12vw, 168px);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  min-height: 1.05em;
+  min-width: 0.6em;
+  display: inline-block;
+}
+
+.ws-typewriter-caret {
+  display: inline-block;
+  width: clamp(4px, 0.6vw, 8px);
+  height: clamp(56px, 10vw, 140px);
+  background: var(--ink);
+  align-self: center;
+}
+
+/* ----------------------------------------------------------------------------
+   MagnetLines
+   ----------------------------------------------------------------------------*/
+
+.ws-hero-magnet {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.ws-hero {
+  isolation: isolate;
+}
+
+.ws-hero > *:not(.ws-hero-magnet) {
+  position: relative;
+  z-index: 1;
+}
+
+.ws-magnet-lines {
+  display: grid;
+  place-items: center;
+  color: var(--text);
+}
+
+.ws-magnet-lines span {
+  display: block;
+  width: var(--mline-width, 2px);
+  height: var(--mline-height, 30px);
+  background: var(--mline-color, currentColor);
+  margin: auto;
+  transform: rotate(var(--mline-rotate, 0deg));
+  transform-origin: center;
+  transition: transform 220ms ease-out;
+  will-change: transform;
+}
+
+@media (max-width: 720px) {
+  .ws-hero-magnet { opacity: 0.12; }
+}
+
+/* ----------------------------------------------------------------------------
+   Cubes
+   ----------------------------------------------------------------------------*/
+
+.ws-cubes-section {
+  padding-bottom: 96px;
+}
+
+.ws-cubes-frame {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+}
+
+.ws-cubes-stage {
+  display: grid;
+  place-items: center;
+  perspective: 1100px;
+}
+
+.ws-cubes-board {
+  display: grid;
+  gap: calc(var(--cube-size, 48px) * 0.18);
+  transform-style: preserve-3d;
+  transition: transform 220ms ease-out;
+}
+
+.ws-cube {
+  width: var(--cube-size, 48px);
+  height: var(--cube-size, 48px);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.ws-cube-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-22deg) rotateY(28deg);
+  display: block;
+}
+
+.ws-cube-face {
+  position: absolute;
+  inset: 0;
+  background: var(--cube-face, #000);
+  border: var(--cube-border, 1px solid rgba(0,0,0,0.2));
+  box-sizing: border-box;
+}
+
+.ws-cube-face.is-front  { transform: translateZ(var(--cube-half)); }
+.ws-cube-face.is-back   { transform: rotateY(180deg) translateZ(var(--cube-half)); }
+.ws-cube-face.is-right  { transform: rotateY(90deg)  translateZ(var(--cube-half)); }
+.ws-cube-face.is-left   { transform: rotateY(-90deg) translateZ(var(--cube-half)); }
+.ws-cube-face.is-top    { transform: rotateX(90deg)  translateZ(var(--cube-half)); }
+.ws-cube-face.is-bottom { transform: rotateX(-90deg) translateZ(var(--cube-half)); }
+
+.ws-cube-inner.is-rippling {
+  animation: ws-cube-ripple 700ms ease-out forwards;
+}
+
+@keyframes ws-cube-ripple {
+  0%   { transform: rotateX(-22deg) rotateY(28deg) scale(1); }
+  35%  { transform: rotateX(-22deg) rotateY(28deg) scale(1.18); }
+  100% { transform: rotateX(-22deg) rotateY(28deg) scale(1); }
+}
+
+.ws-cube-inner.is-rippling .ws-cube-face {
+  animation: ws-cube-flash 700ms ease-out forwards;
+  animation-delay: inherit;
+}
+
+@keyframes ws-cube-flash {
+  0%   { background: var(--cube-face, #000); }
+  35%  { background: var(--cube-ripple, #fff4dd); }
+  100% { background: var(--cube-face, #000); }
+}
+
+@media (max-width: 720px) {
+  .ws-cubes-frame { padding: 16px; }
+  .ws-cube { width: 36px; height: 36px; }
+}
