@@ -4080,3 +4080,244 @@ button, input, textarea, select { font: inherit; }
   .ws-bc-resource-links { padding-top: 8px; }
   .ws-bc-brand-kit-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
 }
+
+/* ============================================================
+   /library — UI & developer libraries directory
+   ============================================================ */
+
+.ws-lib-hero {
+  padding: 64px 32px 32px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ws-lib-hero-eyebrow {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.ws-lib-hero-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.ws-lib-hero-intro {
+  margin: 0 auto 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 620px;
+}
+
+.ws-lib-hero-count {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 18px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.ws-lib-hero-count strong { font-weight: 700; }
+
+.ws-lib-hero-audience {
+  margin: 8px auto 0;
+  max-width: 540px;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.ws-lib-list {
+  padding: 16px 32px 56px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.ws-lib-group {
+  scroll-margin-top: 96px;
+}
+
+.ws-lib-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.ws-lib-group-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ws-lib-group-count {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.ws-lib-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.ws-lib-card-li { margin: 0; }
+
+.ws-lib-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  height: 100%;
+}
+
+.ws-lib-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ink);
+  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.35);
+}
+
+.ws-lib-card-thumb {
+  aspect-ratio: 16 / 9;
+  background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0 8px, transparent 8px 16px), var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.ws-lib-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 320ms ease;
+}
+
+.ws-lib-card:hover .ws-lib-card-thumb img { transform: scale(1.04); }
+
+.ws-lib-card-fallback {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  opacity: 0.85;
+}
+
+.ws-lib-card-meta {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.ws-lib-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ws-lib-card-title {
+  font-family: var(--font-host), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ws-lib-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.ws-lib-card:hover .ws-lib-card-cta {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: rotate(-12deg);
+}
+
+.ws-lib-card-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+  flex-grow: 1;
+}
+
+.ws-lib-card-domain {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+
+.ws-lib-attribution {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 48px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+.ws-lib-attribution a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .ws-lib-hero { padding: 48px 20px 24px; }
+  .ws-lib-list { padding: 16px 20px 48px; gap: 36px; }
+  .ws-lib-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+}

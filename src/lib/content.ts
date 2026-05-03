@@ -98,6 +98,19 @@ export type SiteContent = {
     ctaLabel: string;
     note: string;
   };
+  libraryPage: {
+    nav: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    audience: string;
+    visit: string;
+    attribution: string;
+    countSuffix: string;
+    sectionLabels: Record<"ui" | "ai" | "design" | "tools" | "services" | "social", string>;
+  };
   blockchainPage: {
     nav: string;
     metaTitle: string;
@@ -283,6 +296,7 @@ export const content: Record<Locale, SiteContent> = {
           label: "Stüdyo",
           links: [
             { label: "Blockchain", href: "/tr/blockchain/" },
+            { label: "Kütüphane", href: "/tr/library/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -296,6 +310,29 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText ve CodeBlock — hepsi monokrom palette canlı önizleme ve kopyala-yapıştır kod ile.",
       ctaLabel: "Galeriyi aç",
       note: "6 komponent · canlı önizleme · TypeScript snippet"
+    },
+    libraryPage: {
+      nav: "Kütüphane",
+      metaTitle: "UI & Geliştirici Kütüphaneleri — Wiener's Tools",
+      metaDescription:
+        "Vibe coding yapan ekipler için tek katalog: shadcn'den v0'a, Cursor'dan Linear'a 130+ UI kütüphanesi, AI aracı, tasarım kaynağı, geliştirici platformu — hepsi tek sayfada görsellerle birlikte.",
+      eyebrow: "Katalog",
+      title: "UI & geliştirici kütüphaneleri",
+      intro:
+        "Vibe coding yaparken aynı 30 sekme arasında dolaşmamak için yaptığım iç katalog. UI komponent kütüphaneleri, AI araçları, tasarım kaynakları, geliştirici servisleri, ödeme + auth platformları — her biri tek tıkla aç, görsel ile tanı.",
+      audience:
+        "İç referans. Listelenen her aracı en az bir prototipte ya da prod ürününde denedik. Eksik ya da güncel olmayan bir şey görürsen bana yaz.",
+      visit: "Aç",
+      attribution: "Curate edilen liste ilhamı arca.directory'den.",
+      countSuffix: "kaynak",
+      sectionLabels: {
+        ui: "UI komponent kütüphaneleri",
+        ai: "AI araçları",
+        design: "Tasarım kaynakları",
+        tools: "Geliştirici araçları",
+        services: "Servisler & platformlar",
+        social: "Topluluk & yayın"
+      }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -506,6 +543,7 @@ export const content: Record<Locale, SiteContent> = {
           label: "Studio",
           links: [
             { label: "Blockchain", href: "/en/blockchain/" },
+            { label: "Library", href: "/en/library/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -519,6 +557,29 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText and CodeBlock — all in our monochrome palette with live previews and copy-paste code.",
       ctaLabel: "Open gallery",
       note: "6 components · live previews · TypeScript snippets"
+    },
+    libraryPage: {
+      nav: "Library",
+      metaTitle: "UI & developer libraries — Wiener's Tools",
+      metaDescription:
+        "One catalog for vibe-coding teams: 130+ UI libraries, AI tools, design resources, dev services and platforms — all in one page with previews.",
+      eyebrow: "Catalogue",
+      title: "UI & developer libraries",
+      intro:
+        "Internal catalogue I keep open while vibe-coding so I'm not bouncing between 30 tabs. UI component libraries, AI tools, design resources, dev services, payment + auth platforms — each one opens in a new tab with a thumbnail to recognise it.",
+      audience:
+        "Internal reference. Every tool here has been tried in at least one prototype or production product. If something looks stale or missing, ping me.",
+      visit: "Open",
+      attribution: "Curated list inspired by arca.directory.",
+      countSuffix: "resources",
+      sectionLabels: {
+        ui: "UI component libraries",
+        ai: "AI tools",
+        design: "Design resources",
+        tools: "Developer tools",
+        services: "Services & platforms",
+        social: "Community & publishing"
+      }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -729,6 +790,7 @@ export const content: Record<Locale, SiteContent> = {
           label: "Studio",
           links: [
             { label: "Blockchain", href: "/de/blockchain/" },
+            { label: "Bibliothek", href: "/de/library/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -742,6 +804,29 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText und CodeBlock — alles in unserer monochromen Palette mit Live-Vorschauen und Code zum Kopieren.",
       ctaLabel: "Galerie öffnen",
       note: "6 Komponenten · Live-Vorschauen · TypeScript-Snippets"
+    },
+    libraryPage: {
+      nav: "Bibliothek",
+      metaTitle: "UI- & Entwickler-Bibliotheken — Wiener's Tools",
+      metaDescription:
+        "Ein Katalog für Vibe-Coding-Teams: 130+ UI-Bibliotheken, AI-Tools, Design-Ressourcen, Dev-Services und Plattformen — alles auf einer Seite mit Vorschauen.",
+      eyebrow: "Katalog",
+      title: "UI- & Entwickler-Bibliotheken",
+      intro:
+        "Interner Katalog, den ich beim Vibe-Coding offen halte. UI-Komponenten, AI-Tools, Design-Quellen, Dev-Services und Auth/Payment-Plattformen — jedes mit Vorschau und 1-Klick-Öffnen.",
+      audience:
+        "Interne Referenz. Jedes gelistete Tool wurde mindestens einmal in einem Prototyp oder Produkt eingesetzt.",
+      visit: "Öffnen",
+      attribution: "Kuratierte Liste, inspiriert von arca.directory.",
+      countSuffix: "Ressourcen",
+      sectionLabels: {
+        ui: "UI-Komponentenbibliotheken",
+        ai: "AI-Tools",
+        design: "Design-Ressourcen",
+        tools: "Entwickler-Tools",
+        services: "Services & Plattformen",
+        social: "Community & Publishing"
+      }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -952,6 +1037,7 @@ export const content: Record<Locale, SiteContent> = {
           label: "الاستوديو",
           links: [
             { label: "Blockchain", href: "/ar/blockchain/" },
+            { label: "المكتبة", href: "/ar/library/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
@@ -965,6 +1051,29 @@ export const content: Record<Locale, SiteContent> = {
       body: "PixelBlast وTypewriterTitle وMagnetLines وCubes وFallingText وCodeBlock — جميعها بلوحتنا أحادية اللون مع معاينات حية وكود قابل للنسخ.",
       ctaLabel: "افتح المعرض",
       note: "6 مكونات · معاينات حية · مقتطفات TypeScript"
+    },
+    libraryPage: {
+      nav: "المكتبة",
+      metaTitle: "مكتبات UI ومطورين — Wiener's Tools",
+      metaDescription:
+        "كتالوج واحد لفرق vibe-coding: أكثر من 130 مكتبة UI، أدوات AI، موارد تصميم، خدمات مطورين ومنصات — كلها في صفحة واحدة مع معاينات.",
+      eyebrow: "كتالوج",
+      title: "مكتبات UI والمطورين",
+      intro:
+        "كتالوج داخلي أبقيه مفتوحاً أثناء vibe-coding. مكتبات مكونات UI، أدوات AI، موارد تصميم، خدمات مطورين ومنصات Auth/Payment — كل واحد مع معاينة وفتح بنقرة.",
+      audience:
+        "مرجع داخلي. كل أداة مدرجة هنا جُرّبت في prototype أو منتج إنتاجي على الأقل.",
+      visit: "فتح",
+      attribution: "قائمة منسّقة بإلهام من arca.directory.",
+      countSuffix: "مورد",
+      sectionLabels: {
+        ui: "مكتبات مكونات UI",
+        ai: "أدوات AI",
+        design: "موارد التصميم",
+        tools: "أدوات المطورين",
+        services: "خدمات ومنصات",
+        social: "مجتمع ونشر"
+      }
     },
     blockchainPage: {
       nav: "Blockchain",
