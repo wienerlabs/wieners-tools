@@ -266,5 +266,10 @@ export const toolsAR: ToolI18nBundle = {
   "ip-cidr": { name: "حاسبة IP / CIDR", short: "Subnet، broadcast، عدد الأجهزة", description: "IPv4 مع CIDR (مثلاً 10.0.0.0/24). Network، broadcast، أول/آخر host، mask.", keywords: ["ip", "cidr"] },
   "dns-lookup": { name: "بحث DNS (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS عبر HTTPS من Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "نوع السجل" } },
   "cron-builder": { name: "باني Cron", short: "بناء + شرح cron", description: "تأليف cron من 5 حقول، معناه بالنص، الـ 5 تشغيلات التالية.", keywords: ["cron"], options: { expression: "Cron expression" } },
-  "timestamp": { name: "محوّل Timestamp", short: "Unix ↔ ISO ↔ نسبي", description: "تحويل بين Unix epoch (s/ms)، ISO 8601، RFC 1123 ووقت نسبي مقروء.", keywords: ["timestamp", "unix"], options: { input: "المدخل" } }
+  "timestamp": { name: "محوّل Timestamp", short: "Unix ↔ ISO ↔ نسبي", description: "تحويل بين Unix epoch (s/ms)، ISO 8601، RFC 1123 ووقت نسبي مقروء.", keywords: ["timestamp", "unix"], options: { input: "المدخل" } },
+  "token-counter": { name: "عدّاد Tokens", short: "تقدير tokens + التكلفة بالـ USD", description: "ألصق برومبت واحصل على عدد tokens تقريبي + تكلفة لـ Claude / GPT / Gemini.", keywords: ["token", "تكلفة", "llm"] },
+  "llm-compare": { name: "LLM جنباً إلى جنب", short: "برومبت واحد لعدة نماذج", description: "قارن مخرجات Claude / GPT / Gemini. قريباً — بمفاتيح API الخاصة بك.", keywords: ["llm"] },
+  "mcp-tester": { name: "فاحص MCP", short: "تحقق JSON لـ Model Context Protocol", description: "ألصق إعداد MCP server؛ تحقق هيكلي + ملخص.", keywords: ["mcp"] },
+  "json-schema": { name: "مولّد JSON Schema", short: "اشتق Schema من عينة", description: "ألصق JSON واحصل على Draft 2020-12 schema.", keywords: ["json", "schema"] },
+  "openapi-viewer": { name: "متصفح OpenAPI", short: "Paths + methods + parameters", description: "ألصق OpenAPI 3 YAML/JSON واحصل على جدول endpoints مع parameters وresponses.", keywords: ["openapi", "swagger"] }
 };

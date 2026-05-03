@@ -123,7 +123,14 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "ip-cidr": dynamic(() => import("./ip-cidr"), { ssr: false, loading: Loader }),
   "dns-lookup": dynamic(() => import("./dns-lookup"), { ssr: false, loading: Loader }),
   "cron-builder": dynamic(() => import("./cron-builder"), { ssr: false, loading: Loader }),
-  "timestamp": dynamic(() => import("./timestamp"), { ssr: false, loading: Loader })
+  "timestamp": dynamic(() => import("./timestamp"), { ssr: false, loading: Loader }),
+
+  // AI mini-tools
+  "token-counter": dynamic(() => import("./token-counter"), { ssr: false, loading: Loader }),
+  "mcp-tester": dynamic(() => import("./mcp-tester"), { ssr: false, loading: Loader }),
+  "json-schema": dynamic(() => import("./json-schema"), { ssr: false, loading: Loader }),
+  "openapi-viewer": dynamic(() => import("./openapi-viewer"), { ssr: false, loading: Loader })
+  // llm-compare — status:soon, workbench placeholder
 };
 
 export function getToolComponent(slug: string): ComponentType<ToolComponentProps> | null {

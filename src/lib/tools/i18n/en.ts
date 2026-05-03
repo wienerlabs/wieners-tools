@@ -624,5 +624,35 @@ export const toolsEN: ToolI18nBundle = {
     description: "Convert between Unix epoch (s/ms), ISO 8601, RFC 1123, and a human-readable relative time.",
     keywords: ["timestamp", "unix", "epoch", "date"],
     options: { input: "Input" }
+  },
+  "token-counter": {
+    name: "Token Counter",
+    short: "Estimate tokens + USD cost across models",
+    description: "Paste any prompt and get an approximate token count + USD cost for Claude, GPT, and Gemini.",
+    keywords: ["token", "cost", "llm", "tokenizer"]
+  },
+  "llm-compare": {
+    name: "LLM Side-by-side",
+    short: "Send one prompt to multiple models",
+    description: "Compare Claude / GPT / Gemini outputs side by side. Coming soon — bring your own API keys.",
+    keywords: ["llm", "compare", "claude", "gpt"]
+  },
+  "mcp-tester": {
+    name: "MCP Config Tester",
+    short: "Validate Model Context Protocol JSON",
+    description: "Paste a Claude or Cursor MCP server config; get structural validation, env-var diff, and a readable summary.",
+    keywords: ["mcp", "claude", "cursor", "config"]
+  },
+  "json-schema": {
+    name: "JSON Schema Generator",
+    short: "Infer a JSON Schema from a sample",
+    description: "Paste a JSON document, get a Draft 2020-12 schema you can use for validation.",
+    keywords: ["json", "schema", "validate", "draft"]
+  },
+  "openapi-viewer": {
+    name: "OpenAPI Explorer",
+    short: "Browse paths + methods + params",
+    description: "Paste an OpenAPI 3 YAML or JSON spec; get a clean per-endpoint table with parameters and responses.",
+    keywords: ["openapi", "swagger", "api", "spec"]
   }
 };

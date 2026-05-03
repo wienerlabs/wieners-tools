@@ -360,6 +360,46 @@ export const tools: ToolDefinition[] = [
     accept: "text/plain",
     badges: ["new", "clientside"]
   },
+  {
+    slug: "token-counter",
+    category: "developer",
+    icon: "Hash",
+    status: "ready",
+    accept: "text/plain",
+    badges: ["ai", "new", "clientside"]
+  },
+  {
+    slug: "llm-compare",
+    category: "developer",
+    icon: "GitCompareArrows",
+    status: "soon",
+    accept: "text/plain",
+    badges: ["ai", "beta", "clientside"]
+  },
+  {
+    slug: "mcp-tester",
+    category: "developer",
+    icon: "Plug",
+    status: "ready",
+    accept: ".json,application/json,text/plain",
+    badges: ["ai", "new", "clientside"]
+  },
+  {
+    slug: "json-schema",
+    category: "developer",
+    icon: "Braces",
+    status: "ready",
+    accept: ".json,application/json,text/plain",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "openapi-viewer",
+    category: "developer",
+    icon: "Workflow",
+    status: "ready",
+    accept: ".yaml,.yml,.json,text/plain",
+    badges: ["new", "clientside"]
+  },
 
   // ------------- PDF
   {

@@ -267,5 +267,10 @@ export const toolsDE: ToolI18nBundle = {
   "ip-cidr": { name: "IP / CIDR-Rechner", short: "Subnet, Broadcast, Host-Anzahl", description: "IPv4 mit CIDR (z. B. 10.0.0.0/24). Network, Broadcast, erster/letzter Host, Maske.", keywords: ["ip", "cidr"] },
   "dns-lookup": { name: "DNS-Lookup (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS über HTTPS via Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "Record-Typ" } },
   "cron-builder": { name: "Cron-Builder", short: "Cron erstellen + erklären", description: "5-Feld-Cron komponieren, Klartext-Bedeutung, nächste 5 Trigger-Zeiten.", keywords: ["cron"], options: { expression: "Cron-Expression" } },
-  "timestamp": { name: "Timestamp-Konverter", short: "Unix ↔ ISO ↔ relativ", description: "Zwischen Unix-Epoch (s/ms), ISO 8601, RFC 1123 und relativer Zeit umrechnen.", keywords: ["timestamp", "unix"], options: { input: "Eingabe" } }
+  "timestamp": { name: "Timestamp-Konverter", short: "Unix ↔ ISO ↔ relativ", description: "Zwischen Unix-Epoch (s/ms), ISO 8601, RFC 1123 und relativer Zeit umrechnen.", keywords: ["timestamp", "unix"], options: { input: "Eingabe" } },
+  "token-counter": { name: "Token-Zähler", short: "Token + USD-Kosten schätzen", description: "Prompt einfügen, ungefähre Tokenzahl + Kosten für Claude / GPT / Gemini.", keywords: ["token", "kosten", "llm"] },
+  "llm-compare": { name: "LLM Side-by-side", short: "Ein Prompt, mehrere Modelle", description: "Claude / GPT / Gemini nebeneinander vergleichen. Bald — eigene API-Keys.", keywords: ["llm", "vergleich"] },
+  "mcp-tester": { name: "MCP-Config-Tester", short: "Model Context Protocol JSON validieren", description: "MCP-Server-Config einfügen; Validierung, Env-Var-Diff, lesbare Zusammenfassung.", keywords: ["mcp", "claude", "cursor"] },
+  "json-schema": { name: "JSON-Schema-Generator", short: "Schema aus Beispiel ableiten", description: "JSON-Beispiel einfügen, Draft-2020-12-Schema bekommen.", keywords: ["json", "schema"] },
+  "openapi-viewer": { name: "OpenAPI-Explorer", short: "Pfade + Methoden + Parameter", description: "OpenAPI-3-YAML/JSON einfügen; Endpoint-Tabelle mit Parametern und Responses.", keywords: ["openapi", "swagger"] }
 };

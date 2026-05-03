@@ -624,5 +624,35 @@ export const toolsTR: ToolI18nBundle = {
     description: "Unix epoch (s/ms), ISO 8601, RFC 1123 ve insan-okur göreceli zaman arasında çevir.",
     keywords: ["timestamp", "unix", "epoch", "tarih"],
     options: { input: "Girdi" }
+  },
+  "token-counter": {
+    name: "Token Sayacı",
+    short: "Token + USD maliyet tahmini",
+    description: "Promptu yapıştır, Claude / GPT / Gemini için yaklaşık token sayısı + USD maliyetini al.",
+    keywords: ["token", "maliyet", "llm", "tokenizer"]
+  },
+  "llm-compare": {
+    name: "LLM Yan Yana",
+    short: "Aynı promptu birden fazla modele",
+    description: "Claude / GPT / Gemini çıktılarını yan yana karşılaştır. Yakında — kendi API key'lerinle çalışır.",
+    keywords: ["llm", "karşılaştır", "claude", "gpt"]
+  },
+  "mcp-tester": {
+    name: "MCP Config Doğrulayıcı",
+    short: "Model Context Protocol JSON doğrula",
+    description: "Claude / Cursor MCP server config'ini yapıştır; yapısal doğrulama, env-var diff ve okunabilir özet al.",
+    keywords: ["mcp", "claude", "cursor", "config"]
+  },
+  "json-schema": {
+    name: "JSON Schema Üretici",
+    short: "Örnekten JSON Schema çıkart",
+    description: "Bir JSON dökümanı yapıştır, Draft 2020-12 schema al.",
+    keywords: ["json", "schema", "doğrula"]
+  },
+  "openapi-viewer": {
+    name: "OpenAPI Explorer",
+    short: "Path + method + parameter göz at",
+    description: "OpenAPI 3 YAML/JSON spec yapıştır; endpoint başına temiz tablo (parametre + response) al.",
+    keywords: ["openapi", "swagger", "api"]
   }
 };
