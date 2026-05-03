@@ -121,6 +121,17 @@ export type SiteContent = {
     audience: string;
     countSuffix: string;
   };
+  glossaryPage: {
+    nav: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    countSuffix: string;
+    jumpLabel: string;
+    relatedLabel: string;
+  };
   catalogLabels: {
     copy: string;
     copied: string;
@@ -327,6 +338,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Blockchain", href: "/tr/blockchain/" },
             { label: "Kütüphane", href: "/tr/library/" },
             { label: "Kataloglar", href: "/tr/catalog/" },
+            { label: "Sözlük", href: "/tr/glossary/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -373,6 +385,17 @@ export const content: Record<Locale, SiteContent> = {
       intro: "Vibe coding sırasında elimde tutuğum hızlı erişim kaynakları. Her katalogda kopyala-yapıştır snippet'lar, kısa açıklamalar ve çıkış linkleri.",
       audience: "İç referans. Bir araç ya da snippet burada listelendiyse en az bir prototipte denenmiştir.",
       countSuffix: "kayıt"
+    },
+    glossaryPage: {
+      nav: "Sözlük",
+      metaTitle: "Vibe Coding Sözlüğü — Wiener's Tools",
+      metaDescription: "AI ve vibe-coding terimlerinin kısa ve anlaşılır A-Z sözlüğü: agent, RAG, MCP, embedding, fine-tuning ve 60+ terim daha.",
+      eyebrow: "Sözlük",
+      title: "Vibe coding sözlüğü",
+      intro: "Vibe coderların günlük dilini A-Z açıkladım. Her terim 1-2 cümle, ilişkili terimlere bağlantı ve gerektiğinde dış referans.",
+      countSuffix: "terim",
+      jumpLabel: "Harfe atla",
+      relatedLabel: "İlgili"
     },
     catalogLabels: {
       copy: "Kopyala",
@@ -609,6 +632,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Blockchain", href: "/en/blockchain/" },
             { label: "Library", href: "/en/library/" },
             { label: "Catalogs", href: "/en/catalog/" },
+            { label: "Glossary", href: "/en/glossary/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -655,6 +679,17 @@ export const content: Record<Locale, SiteContent> = {
       intro: "Quick-reference catalogs I keep open while vibe-coding. Each ships copy-paste snippets, short notes, and outbound links.",
       audience: "Internal reference. If a tool or snippet is listed here it has been tried in at least one prototype.",
       countSuffix: "entries"
+    },
+    glossaryPage: {
+      nav: "Glossary",
+      metaTitle: "Vibe Coding Glossary — Wiener's Tools",
+      metaDescription: "Plain-English A-Z glossary of AI and vibe-coding terms: agent, RAG, MCP, embedding, fine-tuning and 60+ more.",
+      eyebrow: "Glossary",
+      title: "Vibe coding glossary",
+      intro: "The everyday vocabulary of vibe coders, A to Z. Each entry is one or two sentences with links to related terms and a reference where useful.",
+      countSuffix: "terms",
+      jumpLabel: "Jump to letter",
+      relatedLabel: "Related"
     },
     catalogLabels: {
       copy: "Copy",
@@ -891,6 +926,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Blockchain", href: "/de/blockchain/" },
             { label: "Bibliothek", href: "/de/library/" },
             { label: "Kataloge", href: "/de/catalog/" },
+            { label: "Glossar", href: "/de/glossary/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -937,6 +973,17 @@ export const content: Record<Locale, SiteContent> = {
       intro: "Schnellreferenz-Kataloge, die ich beim Vibe-Coding offen halte. Jeder mit Copy-Paste-Snippets, kurzen Notizen, Outbound-Links.",
       audience: "Interne Referenz. Was hier steht, wurde mindestens in einem Prototyp eingesetzt.",
       countSuffix: "Einträge"
+    },
+    glossaryPage: {
+      nav: "Glossar",
+      metaTitle: "Vibe-Coding-Glossar — Wiener's Tools",
+      metaDescription: "Klar verständliches A-Z-Glossar für AI und Vibe-Coding: Agent, RAG, MCP, Embedding, Fine-Tuning und 60+ weitere Begriffe.",
+      eyebrow: "Glossar",
+      title: "Vibe-Coding-Glossar",
+      intro: "Das tägliche Vokabular von Vibe-Codern, A bis Z. Jeder Eintrag ein bis zwei Sätze, mit Verweisen auf verwandte Begriffe und Referenzen.",
+      countSuffix: "Begriffe",
+      jumpLabel: "Zu Buchstabe springen",
+      relatedLabel: "Verwandt"
     },
     catalogLabels: {
       copy: "Kopieren",
@@ -1173,6 +1220,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Blockchain", href: "/ar/blockchain/" },
             { label: "المكتبة", href: "/ar/library/" },
             { label: "الكتالوجات", href: "/ar/catalog/" },
+            { label: "المعجم", href: "/ar/glossary/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
@@ -1219,6 +1267,17 @@ export const content: Record<Locale, SiteContent> = {
       intro: "كتالوجات سريعة أبقيها مفتوحة أثناء vibe-coding. كل واحد مع snippets قابلة للنسخ ووصلات.",
       audience: "مرجع داخلي. ما يُذكر هنا جُرّب في prototype واحد على الأقل.",
       countSuffix: "إدخال"
+    },
+    glossaryPage: {
+      nav: "المعجم",
+      metaTitle: "معجم Vibe Coding — Wiener's Tools",
+      metaDescription: "معجم A-Z مبسّط لمصطلحات AI و vibe-coding: agent، RAG، MCP، embedding، fine-tuning و 60+ مصطلحاً آخر.",
+      eyebrow: "المعجم",
+      title: "معجم Vibe Coding",
+      intro: "مفردات vibe coders اليومية من A إلى Z. كل مدخل جملة أو اثنتان، مع روابط للمصطلحات ذات الصلة.",
+      countSuffix: "مصطلح",
+      jumpLabel: "اقفز إلى الحرف",
+      relatedLabel: "ذات صلة"
     },
     catalogLabels: {
       copy: "نسخ",
