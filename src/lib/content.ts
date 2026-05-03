@@ -111,6 +111,35 @@ export type SiteContent = {
     countSuffix: string;
     sectionLabels: Record<"ui" | "ai" | "design" | "tools" | "services" | "social", string>;
   };
+  catalogIndexPage: {
+    nav: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    audience: string;
+    countSuffix: string;
+  };
+  catalogLabels: {
+    copy: string;
+    copied: string;
+    install: string;
+    config: string;
+    visit: string;
+    back: string;
+    open: string;
+  };
+  catalogs: Record<
+    "rules" | "mcp" | "prompts" | "starters" | "eval" | "hosting" | "databases" | "auth" | "feeds" | "hackathons",
+    {
+      nav: string;
+      title: string;
+      intro: string;
+      audience?: string;
+      sectionLabels: Record<string, string>;
+    }
+  >;
   blockchainPage: {
     nav: string;
     metaTitle: string;
@@ -297,6 +326,7 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Blockchain", href: "/tr/blockchain/" },
             { label: "Kütüphane", href: "/tr/library/" },
+            { label: "Kataloglar", href: "/tr/catalog/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -333,6 +363,37 @@ export const content: Record<Locale, SiteContent> = {
         services: "Servisler & platformlar",
         social: "Topluluk & yayın"
       }
+    },
+    catalogIndexPage: {
+      nav: "Kataloglar",
+      metaTitle: "Kataloglar — Wiener's Tools",
+      metaDescription: "Vibe-coding ekiplerinin günlük çalışma kaynakları: Cursor rules, MCP server'ları, prompt kütüphanesi, starter'lar, eval, hosting, db, auth, feed ve hackathonlar.",
+      eyebrow: "Kataloglar",
+      title: "10 katalog, tek sayfa",
+      intro: "Vibe coding sırasında elimde tutuğum hızlı erişim kaynakları. Her katalogda kopyala-yapıştır snippet'lar, kısa açıklamalar ve çıkış linkleri.",
+      audience: "İç referans. Bir araç ya da snippet burada listelendiyse en az bir prototipte denenmiştir.",
+      countSuffix: "kayıt"
+    },
+    catalogLabels: {
+      copy: "Kopyala",
+      copied: "Kopyalandı",
+      install: "Kurulum",
+      config: "Yapılandırma",
+      visit: "Aç",
+      back: "Tüm kataloglar",
+      open: "Aç"
+    },
+    catalogs: {
+      rules: { nav: "Cursor Rules", title: "Cursor & Claude Code rules", intro: "Framework başına hazır .cursorrules / CLAUDE.md kuralları. Kopyala, repo'na koy, AI senin stack'ini öğrensin.", sectionLabels: { frontend: "Frontend & UI", backend: "Backend & API", blockchain: "Blockchain", data: "Data & ORM" } },
+      mcp: { nav: "MCP Servers", title: "Model Context Protocol servers", intro: "Claude / Cursor için resmi + topluluk MCP sunucuları. Her birinin altında install komutu + config snippet var.", sectionLabels: { official: "Resmi", community: "Topluluk" } },
+      prompts: { nav: "Promptlar", title: "AI prompt kütüphanesi", intro: "Code review, refactor, debug, doc gen, agent loop, ship süreci için kopyala-yapıştır promptlar.", sectionLabels: { review: "Kod review", refactor: "Refactor", debug: "Debug & triage", doc: "Dokümantasyon", design: "API & sistem tasarımı", agent: "Agent / araç loop'u", ship: "Ship & ops" } },
+      starters: { nav: "Starter'lar", title: "Boilerplate & scaffold koleksiyonu", intro: "SaaS, AI, blockchain için kanıtlanmış starter'lar. Fork, klonla, ilk deploy'a 5 dakikada git.", sectionLabels: { saas: "SaaS", ai: "AI", blockchain: "Blockchain" } },
+      eval: { nav: "AI Eval", title: "AI observability & eval", intro: "LLM ürünü production'a alıyorsan: tracing, prompt versioning, scoring, regression eval kaynakları.", sectionLabels: { observability: "Observability", evals: "Eval & test" } },
+      hosting: { nav: "Hosting", title: "Deployment platformları", intro: "Full-stack hosting, edge runtimes, self-host PaaS — ne nereye uygun.", sectionLabels: { fullstack: "Full-stack PaaS", edge: "Edge runtimes", "self-host": "Self-host PaaS" } },
+      databases: { nav: "Databases", title: "Database sağlayıcıları", intro: "Postgres, edge SQLite, reactive backend, OLAP / search — workload bazlı.", sectionLabels: { postgres: "Postgres", "edge-sqlite": "Edge SQLite", reactive: "Reactive backend", "olap-search": "OLAP & search" } },
+      auth: { nav: "Auth", title: "Auth sağlayıcıları", intro: "Drop-in SaaS auth ve self-host OSS framework'ler. Geliştirici DX vs kontrol.", sectionLabels: { saas: "SaaS", "open-source": "Open source" } },
+      feeds: { nav: "Feeds", title: "Newsletter, podcast, YouTube", intro: "Sektörü takip etmek için aktif tuttuğum kaynaklar.", sectionLabels: { newsletters: "Newsletter'lar", podcasts: "Podcastler", youtube: "YouTube" } },
+      hackathons: { nav: "Hackathonlar", title: "Hackathonlar & launch platformları", intro: "Aktif hackathon takvimleri ve launch board'ları — distribution + ödül için.", sectionLabels: { platforms: "Hackathon platformları", showcases: "Launch & showcase" } }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -544,6 +605,7 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Blockchain", href: "/en/blockchain/" },
             { label: "Library", href: "/en/library/" },
+            { label: "Catalogs", href: "/en/catalog/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -580,6 +642,37 @@ export const content: Record<Locale, SiteContent> = {
         services: "Services & platforms",
         social: "Community & publishing"
       }
+    },
+    catalogIndexPage: {
+      nav: "Catalogs",
+      metaTitle: "Catalogs — Wiener's Tools",
+      metaDescription: "Daily working catalogs for vibe-coding teams: Cursor rules, MCP servers, prompt library, starters, eval, hosting, db, auth, feeds and hackathons.",
+      eyebrow: "Catalogs",
+      title: "10 catalogs, one page",
+      intro: "Quick-reference catalogs I keep open while vibe-coding. Each ships copy-paste snippets, short notes, and outbound links.",
+      audience: "Internal reference. If a tool or snippet is listed here it has been tried in at least one prototype.",
+      countSuffix: "entries"
+    },
+    catalogLabels: {
+      copy: "Copy",
+      copied: "Copied",
+      install: "Install",
+      config: "Config",
+      visit: "Open",
+      back: "All catalogs",
+      open: "Open"
+    },
+    catalogs: {
+      rules: { nav: "Cursor Rules", title: "Cursor & Claude Code rules", intro: "Per-framework .cursorrules and CLAUDE.md packs. Copy, drop into your repo, the AI learns your stack.", sectionLabels: { frontend: "Frontend & UI", backend: "Backend & API", blockchain: "Blockchain", data: "Data & ORM" } },
+      mcp: { nav: "MCP Servers", title: "Model Context Protocol servers", intro: "Official + community MCP servers for Claude / Cursor. Each card shows install command and config snippet.", sectionLabels: { official: "Official", community: "Community" } },
+      prompts: { nav: "Prompts", title: "AI prompt library", intro: "Copy-paste prompts for code review, refactor, debug, doc gen, agent loops, and ship process.", sectionLabels: { review: "Code review", refactor: "Refactor", debug: "Debug & triage", doc: "Documentation", design: "API & system design", agent: "Agent / tool loop", ship: "Ship & ops" } },
+      starters: { nav: "Starters", title: "Boilerplates & scaffolds", intro: "Battle-tested starters for SaaS, AI, and blockchain. Fork, clone, ship the first deploy in 5 minutes.", sectionLabels: { saas: "SaaS", ai: "AI", blockchain: "Blockchain" } },
+      eval: { nav: "AI Eval", title: "AI observability & eval", intro: "Shipping an LLM product? Tracing, prompt versioning, scorers, and regression eval tools.", sectionLabels: { observability: "Observability", evals: "Eval & test" } },
+      hosting: { nav: "Hosting", title: "Deployment platforms", intro: "Full-stack hosting, edge runtimes, self-host PaaS — what fits where.", sectionLabels: { fullstack: "Full-stack PaaS", edge: "Edge runtimes", "self-host": "Self-host PaaS" } },
+      databases: { nav: "Databases", title: "Database providers", intro: "Postgres, edge SQLite, reactive backends, OLAP / search — picked by workload.", sectionLabels: { postgres: "Postgres", "edge-sqlite": "Edge SQLite", reactive: "Reactive backend", "olap-search": "OLAP & search" } },
+      auth: { nav: "Auth", title: "Auth providers", intro: "Drop-in SaaS auth and self-hostable OSS frameworks. DX vs control.", sectionLabels: { saas: "SaaS", "open-source": "Open source" } },
+      feeds: { nav: "Feeds", title: "Newsletters, podcasts, YouTube", intro: "The feeds I keep active to track the ecosystem.", sectionLabels: { newsletters: "Newsletters", podcasts: "Podcasts", youtube: "YouTube" } },
+      hackathons: { nav: "Hackathons", title: "Hackathons & launch platforms", intro: "Active hackathon calendars and launch boards — for distribution + prizes.", sectionLabels: { platforms: "Hackathon platforms", showcases: "Launch & showcase" } }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -791,6 +884,7 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Blockchain", href: "/de/blockchain/" },
             { label: "Bibliothek", href: "/de/library/" },
+            { label: "Kataloge", href: "/de/catalog/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -827,6 +921,37 @@ export const content: Record<Locale, SiteContent> = {
         services: "Services & Plattformen",
         social: "Community & Publishing"
       }
+    },
+    catalogIndexPage: {
+      nav: "Kataloge",
+      metaTitle: "Kataloge — Wiener's Tools",
+      metaDescription: "Tägliche Arbeits-Kataloge für Vibe-Coding-Teams: Cursor Rules, MCP-Server, Prompt-Library, Starter, Eval, Hosting, DB, Auth, Feeds, Hackathons.",
+      eyebrow: "Kataloge",
+      title: "10 Kataloge, eine Seite",
+      intro: "Schnellreferenz-Kataloge, die ich beim Vibe-Coding offen halte. Jeder mit Copy-Paste-Snippets, kurzen Notizen, Outbound-Links.",
+      audience: "Interne Referenz. Was hier steht, wurde mindestens in einem Prototyp eingesetzt.",
+      countSuffix: "Einträge"
+    },
+    catalogLabels: {
+      copy: "Kopieren",
+      copied: "Kopiert",
+      install: "Installation",
+      config: "Konfig",
+      visit: "Öffnen",
+      back: "Alle Kataloge",
+      open: "Öffnen"
+    },
+    catalogs: {
+      rules: { nav: "Cursor Rules", title: "Cursor & Claude Code rules", intro: "Pro Framework .cursorrules / CLAUDE.md Packs. Kopieren, ins Repo legen, die KI lernt deinen Stack.", sectionLabels: { frontend: "Frontend & UI", backend: "Backend & API", blockchain: "Blockchain", data: "Data & ORM" } },
+      mcp: { nav: "MCP-Server", title: "Model Context Protocol Server", intro: "Offizielle + Community-MCP-Server für Claude / Cursor. Mit Install-Befehl und Config-Snippet.", sectionLabels: { official: "Offiziell", community: "Community" } },
+      prompts: { nav: "Prompts", title: "AI-Prompt-Library", intro: "Copy-Paste-Prompts für Code-Review, Refactor, Debug, Doc-Gen, Agent-Loops, Ship-Prozess.", sectionLabels: { review: "Code-Review", refactor: "Refactor", debug: "Debug & Triage", doc: "Doku", design: "API- & Systemdesign", agent: "Agent / Tool-Loop", ship: "Ship & Ops" } },
+      starters: { nav: "Starter", title: "Boilerplates & Scaffolds", intro: "Erprobte Starter für SaaS, AI, Blockchain. Fork, klonen, in 5 Min. zum ersten Deploy.", sectionLabels: { saas: "SaaS", ai: "AI", blockchain: "Blockchain" } },
+      eval: { nav: "AI Eval", title: "AI-Observability & Eval", intro: "LLM-Produkt in Prod: Tracing, Prompt-Versioning, Scorer, Regressions-Eval.", sectionLabels: { observability: "Observability", evals: "Eval & Test" } },
+      hosting: { nav: "Hosting", title: "Deployment-Plattformen", intro: "Full-stack Hosting, Edge-Runtimes, Self-Host-PaaS — was wofür passt.", sectionLabels: { fullstack: "Full-stack PaaS", edge: "Edge-Runtimes", "self-host": "Self-host PaaS" } },
+      databases: { nav: "Datenbanken", title: "Datenbank-Anbieter", intro: "Postgres, Edge-SQLite, reaktive Backends, OLAP / Search — nach Workload.", sectionLabels: { postgres: "Postgres", "edge-sqlite": "Edge-SQLite", reactive: "Reactive Backend", "olap-search": "OLAP & Search" } },
+      auth: { nav: "Auth", title: "Auth-Anbieter", intro: "Drop-in SaaS-Auth und self-hostbare OSS-Frameworks. DX vs Kontrolle.", sectionLabels: { saas: "SaaS", "open-source": "Open Source" } },
+      feeds: { nav: "Feeds", title: "Newsletter, Podcasts, YouTube", intro: "Die Feeds, mit denen ich das Ökosystem verfolge.", sectionLabels: { newsletters: "Newsletter", podcasts: "Podcasts", youtube: "YouTube" } },
+      hackathons: { nav: "Hackathons", title: "Hackathons & Launch-Plattformen", intro: "Aktive Hackathon-Kalender und Launch-Boards für Distribution + Preise.", sectionLabels: { platforms: "Hackathon-Plattformen", showcases: "Launch & Showcase" } }
     },
     blockchainPage: {
       nav: "Blockchain",
@@ -1038,6 +1163,7 @@ export const content: Record<Locale, SiteContent> = {
           links: [
             { label: "Blockchain", href: "/ar/blockchain/" },
             { label: "المكتبة", href: "/ar/library/" },
+            { label: "الكتالوجات", href: "/ar/catalog/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
@@ -1074,6 +1200,37 @@ export const content: Record<Locale, SiteContent> = {
         services: "خدمات ومنصات",
         social: "مجتمع ونشر"
       }
+    },
+    catalogIndexPage: {
+      nav: "الكتالوجات",
+      metaTitle: "الكتالوجات — Wiener's Tools",
+      metaDescription: "كتالوجات يومية لفرق vibe-coding: Cursor rules وMCP وبرومبتات وstarter وeval وhosting وdb وauth وfeeds وhackathons.",
+      eyebrow: "الكتالوجات",
+      title: "10 كتالوجات في صفحة واحدة",
+      intro: "كتالوجات سريعة أبقيها مفتوحة أثناء vibe-coding. كل واحد مع snippets قابلة للنسخ ووصلات.",
+      audience: "مرجع داخلي. ما يُذكر هنا جُرّب في prototype واحد على الأقل.",
+      countSuffix: "إدخال"
+    },
+    catalogLabels: {
+      copy: "نسخ",
+      copied: "تم النسخ",
+      install: "التثبيت",
+      config: "الإعداد",
+      visit: "فتح",
+      back: "كل الكتالوجات",
+      open: "فتح"
+    },
+    catalogs: {
+      rules: { nav: "Cursor Rules", title: "قواعد Cursor و Claude Code", intro: ".cursorrules و CLAUDE.md جاهزة لكل framework.", sectionLabels: { frontend: "Frontend & UI", backend: "Backend & API", blockchain: "Blockchain", data: "Data & ORM" } },
+      mcp: { nav: "MCP Servers", title: "خوادم Model Context Protocol", intro: "خوادم MCP رسمية ومجتمعية لـ Claude / Cursor.", sectionLabels: { official: "رسمي", community: "مجتمعي" } },
+      prompts: { nav: "البرومبتات", title: "مكتبة برومبتات AI", intro: "برومبتات قابلة للنسخ لمراجعة الكود، refactor، debug، تكوين الوثائق، agent loops، النشر.", sectionLabels: { review: "مراجعة الكود", refactor: "Refactor", debug: "تشخيص الأخطاء", doc: "الوثائق", design: "تصميم API ونظام", agent: "Agent / حلقة أدوات", ship: "نشر وعمليات" } },
+      starters: { nav: "Starters", title: "قوالب جاهزة", intro: "قوالب مجرّبة لـ SaaS و AI و blockchain. fork، clone، أول deploy في 5 دقائق.", sectionLabels: { saas: "SaaS", ai: "AI", blockchain: "Blockchain" } },
+      eval: { nav: "AI Eval", title: "Observability وEval لـ AI", intro: "إذا كنت تنشر منتج LLM: tracing، إصدار البرومبتات، scoring، regression eval.", sectionLabels: { observability: "Observability", evals: "Eval واختبار" } },
+      hosting: { nav: "Hosting", title: "منصات النشر", intro: "Full-stack hosting، edge runtimes، self-host PaaS — ما يناسب ماذا.", sectionLabels: { fullstack: "Full-stack PaaS", edge: "Edge runtimes", "self-host": "Self-host PaaS" } },
+      databases: { nav: "Databases", title: "موفرو قواعد البيانات", intro: "Postgres، edge SQLite، reactive backends، OLAP / search — حسب workload.", sectionLabels: { postgres: "Postgres", "edge-sqlite": "Edge SQLite", reactive: "Reactive backend", "olap-search": "OLAP & search" } },
+      auth: { nav: "Auth", title: "موفرو المصادقة", intro: "Drop-in SaaS auth وأطر OSS قابلة للاستضافة الذاتية.", sectionLabels: { saas: "SaaS", "open-source": "Open source" } },
+      feeds: { nav: "Feeds", title: "Newsletters وpodcasts وYouTube", intro: "المصادر التي أتابعها لمواكبة النظام البيئي.", sectionLabels: { newsletters: "Newsletters", podcasts: "Podcasts", youtube: "YouTube" } },
+      hackathons: { nav: "Hackathons", title: "Hackathons ومنصات الإطلاق", intro: "تقاويم hackathon نشطة ومنصات إطلاق — للتوزيع والجوائز.", sectionLabels: { platforms: "منصات Hackathon", showcases: "Launch & showcase" } }
     },
     blockchainPage: {
       nav: "Blockchain",
