@@ -1,6 +1,9 @@
 import { rulesCatalog } from "./rules";
 import { mcpCatalog } from "./mcp";
 import { promptsCatalog } from "./prompts";
+import { snippetsCatalog } from "./snippets";
+import { cheatsheetsCatalog } from "./cheatsheets";
+import { decisionsCatalog } from "./decisions";
 import { startersCatalog } from "./starters";
 import { evalCatalog } from "./eval";
 import { hostingCatalog } from "./hosting";
@@ -17,6 +20,9 @@ const REGISTRY: Record<CatalogId, CatalogData> = {
   rules: rulesCatalog,
   mcp: mcpCatalog,
   prompts: promptsCatalog,
+  snippets: snippetsCatalog,
+  cheatsheets: cheatsheetsCatalog,
+  decisions: decisionsCatalog,
   starters: startersCatalog,
   eval: evalCatalog,
   hosting: hostingCatalog,

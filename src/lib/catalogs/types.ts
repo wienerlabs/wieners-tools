@@ -2,6 +2,9 @@ export type CatalogId =
   | "rules"
   | "mcp"
   | "prompts"
+  | "snippets"
+  | "cheatsheets"
+  | "decisions"
   | "starters"
   | "eval"
   | "hosting"
@@ -37,6 +40,9 @@ export const CATALOG_ORDER: CatalogId[] = [
   "rules",
   "mcp",
   "prompts",
+  "snippets",
+  "cheatsheets",
+  "decisions",
   "starters",
   "eval",
   "hosting",
