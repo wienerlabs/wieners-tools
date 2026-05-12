@@ -4908,3 +4908,242 @@ button, input, textarea, select { font: inherit; }
   .ws-glossary-list { padding: 16px 16px 48px; }
   .ws-glossary-jump { top: 64px; }
 }
+
+/* Fonts page ---------------------------------------------------------- */
+.ws-fonts-hero {
+  padding: 40px 24px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ws-fonts-hero-eyebrow {
+  margin: 0 0 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ws-fonts-hero-title {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.ws-fonts-hero-intro {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 720px;
+  color: var(--text);
+}
+
+.ws-fonts-hero-count {
+  margin: 0 0 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.ws-fonts-hero-count strong {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin-right: 6px;
+}
+
+.ws-fonts-hero-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ws-fonts-jump {
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 24px;
+  margin: 0 auto 24px;
+  max-width: 1100px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.ws-fonts-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  background: transparent;
+  text-decoration: none;
+  transition: border-color 180ms, color 180ms, background 180ms;
+}
+
+.ws-fonts-jump-link:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+
+.ws-fonts-jump-count {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.ws-fonts-list {
+  padding: 0 24px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ws-fonts-group { padding: 32px 0; border-top: 1px solid var(--line); }
+.ws-fonts-group:first-child { border-top: none; padding-top: 8px; }
+
+.ws-fonts-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.ws-fonts-group-title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ws-fonts-group-count {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ws-fonts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ws-fonts-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ink) 2%, transparent);
+  transition: border-color 180ms, background 180ms;
+}
+
+.ws-fonts-card:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+
+.ws-fonts-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ws-fonts-card-name {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.ws-fonts-card-actions {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.ws-fonts-sample {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 140px;
+  overflow: hidden;
+}
+
+.ws-fonts-sample-big {
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ws-fonts-sample-line {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.ws-fonts-sample-alpha,
+.ws-fonts-sample-num {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ws-fonts-card-blurb {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.ws-fonts-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.ws-fonts-card-meta strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ws-fonts-attribution {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .ws-fonts-hero { padding: 28px 16px 16px; }
+  .ws-fonts-list { padding: 0 16px 32px; }
+  .ws-fonts-jump { top: 64px; padding: 8px 16px; }
+  .ws-fonts-grid { grid-template-columns: 1fr; }
+  .ws-fonts-sample-big { font-size: 26px; }
+}

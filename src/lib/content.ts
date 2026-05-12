@@ -132,6 +132,23 @@ export type SiteContent = {
     jumpLabel: string;
     relatedLabel: string;
   };
+  fontsPage: {
+    nav: string;
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    note: string;
+    countSuffix: string;
+    jumpLabel: string;
+    foundryLabel: string;
+    designerLabel: string;
+    licenseLabel: string;
+    weightsLabel: string;
+    attribution: string;
+    categoryLabels: Record<"mono" | "sans" | "serif" | "display" | "pixel", string>;
+  };
   catalogLabels: {
     copy: string;
     copied: string;
@@ -339,6 +356,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Kütüphane", href: "/tr/library/" },
             { label: "Kataloglar", href: "/tr/catalog/" },
             { label: "Sözlük", href: "/tr/glossary/" },
+            { label: "Fontlar", href: "/tr/fonts/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -396,6 +414,29 @@ export const content: Record<Locale, SiteContent> = {
       countSuffix: "terim",
       jumpLabel: "Harfe atla",
       relatedLabel: "İlgili"
+    },
+    fontsPage: {
+      nav: "Fontlar",
+      metaTitle: "Font Kütüphanesi — Wiener's Tools",
+      metaDescription: "Vibe coderlar için canlı önizlemeli font kataloğu: 40+ mono, sans, serif, display ve pixel font, hepsi tek sayfada.",
+      eyebrow: "Tipografi",
+      title: "Font kütüphanesi",
+      intro: "Daily-driver code editor'ın yanından landing page hero'sunun ana tipografisine kadar kullandığım fontlar. Her kart canlı önizleme, link ve metadata ile.",
+      note: "Google Fonts CDN'inden link'leniyor; commercial olanlar foundry sayfasına bağlanır.",
+      countSuffix: "font",
+      jumpLabel: "Kategoriye atla",
+      foundryLabel: "Foundry",
+      designerLabel: "Tasarımcı",
+      licenseLabel: "Lisans",
+      weightsLabel: "Ağırlıklar",
+      attribution: "Önizlemeler Google Fonts ve foundry CDN'leri üzerinden render edilir.",
+      categoryLabels: {
+        mono: "Mono · Kod",
+        sans: "Sans · UI",
+        serif: "Serif · Editorial",
+        display: "Display · Hero",
+        pixel: "Pixel · Retro"
+      }
     },
     catalogLabels: {
       copy: "Kopyala",
@@ -633,6 +674,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Library", href: "/en/library/" },
             { label: "Catalogs", href: "/en/catalog/" },
             { label: "Glossary", href: "/en/glossary/" },
+            { label: "Fonts", href: "/en/fonts/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -690,6 +732,29 @@ export const content: Record<Locale, SiteContent> = {
       countSuffix: "terms",
       jumpLabel: "Jump to letter",
       relatedLabel: "Related"
+    },
+    fontsPage: {
+      nav: "Fonts",
+      metaTitle: "Font library — Wiener's Tools",
+      metaDescription: "Live preview font catalog for vibe coders: 40+ mono, sans, serif, display and pixel typefaces, all on one page.",
+      eyebrow: "Typography",
+      title: "Font library",
+      intro: "From your daily-driver code editor face to landing-page hero typefaces. Each card has a live preview, link, and metadata.",
+      note: "Embedded via Google Fonts CDN; commercial faces link out to the foundry.",
+      countSuffix: "fonts",
+      jumpLabel: "Jump to category",
+      foundryLabel: "Foundry",
+      designerLabel: "Designer",
+      licenseLabel: "License",
+      weightsLabel: "Weights",
+      attribution: "Previews render via Google Fonts and foundry CDNs.",
+      categoryLabels: {
+        mono: "Mono · Code",
+        sans: "Sans · UI",
+        serif: "Serif · Editorial",
+        display: "Display · Hero",
+        pixel: "Pixel · Retro"
+      }
     },
     catalogLabels: {
       copy: "Copy",
@@ -927,6 +992,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Bibliothek", href: "/de/library/" },
             { label: "Kataloge", href: "/de/catalog/" },
             { label: "Glossar", href: "/de/glossary/" },
+            { label: "Schriften", href: "/de/fonts/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -984,6 +1050,29 @@ export const content: Record<Locale, SiteContent> = {
       countSuffix: "Begriffe",
       jumpLabel: "Zu Buchstabe springen",
       relatedLabel: "Verwandt"
+    },
+    fontsPage: {
+      nav: "Schriften",
+      metaTitle: "Schrift-Bibliothek — Wiener's Tools",
+      metaDescription: "Schriftkatalog mit Live-Vorschau für Vibe-Coder: 40+ Mono-, Sans-, Serif-, Display- und Pixel-Schriften auf einer Seite.",
+      eyebrow: "Typografie",
+      title: "Schrift-Bibliothek",
+      intro: "Vom Daily-Driver-Code-Editor bis zur Hero-Typo der Landing-Page. Jede Karte mit Live-Vorschau, Link und Metadaten.",
+      note: "Eingebunden über Google-Fonts-CDN; kommerzielle Schriften verlinken zur Foundry.",
+      countSuffix: "Schriften",
+      jumpLabel: "Zur Kategorie",
+      foundryLabel: "Foundry",
+      designerLabel: "Designer",
+      licenseLabel: "Lizenz",
+      weightsLabel: "Schnitte",
+      attribution: "Vorschauen über Google Fonts und Foundry-CDNs gerendert.",
+      categoryLabels: {
+        mono: "Mono · Code",
+        sans: "Sans · UI",
+        serif: "Serif · Editorial",
+        display: "Display · Hero",
+        pixel: "Pixel · Retro"
+      }
     },
     catalogLabels: {
       copy: "Kopieren",
@@ -1221,6 +1310,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "المكتبة", href: "/ar/library/" },
             { label: "الكتالوجات", href: "/ar/catalog/" },
             { label: "المعجم", href: "/ar/glossary/" },
+            { label: "الخطوط", href: "/ar/fonts/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
@@ -1278,6 +1368,29 @@ export const content: Record<Locale, SiteContent> = {
       countSuffix: "مصطلح",
       jumpLabel: "اقفز إلى الحرف",
       relatedLabel: "ذات صلة"
+    },
+    fontsPage: {
+      nav: "الخطوط",
+      metaTitle: "مكتبة الخطوط — Wiener's Tools",
+      metaDescription: "كتالوج خطوط بمعاينة حية لمطوّري vibe coding: 40+ خطاً مونوسبيس وسانس وسريف وديسبلاي وبكسل في صفحة واحدة.",
+      eyebrow: "الطباعة",
+      title: "مكتبة الخطوط",
+      intro: "من خط محرر الكود اليومي إلى تايبفيس بطل صفحة الهبوط. كل بطاقة فيها معاينة حية ورابط وبيانات وصفية.",
+      note: "مضمّنة عبر CDN الخاص بـ Google Fonts؛ التجارية منها ترتبط بصفحة الـ foundry.",
+      countSuffix: "خط",
+      jumpLabel: "اقفز إلى الفئة",
+      foundryLabel: "Foundry",
+      designerLabel: "المصمّم",
+      licenseLabel: "الترخيص",
+      weightsLabel: "الأوزان",
+      attribution: "المعاينات تُعرض عبر Google Fonts و CDNs الـ foundry.",
+      categoryLabels: {
+        mono: "Mono · كود",
+        sans: "Sans · UI",
+        serif: "Serif · تحريري",
+        display: "Display · هيرو",
+        pixel: "Pixel · ريترو"
+      }
     },
     catalogLabels: {
       copy: "نسخ",
