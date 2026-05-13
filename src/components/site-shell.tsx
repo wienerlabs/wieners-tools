@@ -75,6 +75,12 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <h3>{sitemapTitle}</h3>
             <div className="ws-footer-list">
               <Link href={`/${locale}/`}>{ui.toolsSection.eyebrow}</Link>
+              <Link href={`/${locale}/components/`}>{ui.cardNav.ctaLabel}</Link>
+              <Link href={`/${locale}/blockchain/`}>{ui.blockchainPage.nav}</Link>
+              <Link href={`/${locale}/library/`}>{ui.libraryPage.nav}</Link>
+              <Link href={`/${locale}/catalog/`}>{ui.catalogIndexPage.nav}</Link>
+              <Link href={`/${locale}/glossary/`}>{ui.glossaryPage.nav}</Link>
+              <Link href={`/${locale}/fonts/`}>{ui.fontsPage.nav}</Link>
               <Link href={`/${locale}/about/`}>{ui.about.title}</Link>
               <Link href={`/${locale}/feedback/`}>{ui.feedback.title}</Link>
             </div>
