@@ -357,6 +357,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Kataloglar", href: "/tr/catalog/" },
             { label: "Sözlük", href: "/tr/glossary/" },
             { label: "Fontlar", href: "/tr/fonts/" },
+            { label: "Architect", href: "/tr/tools/architect/" },
             { label: "Hakkında", href: "/tr/about/" },
             { label: "Geri bildirim", href: "/tr/feedback/" },
             { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
@@ -675,6 +676,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Catalogs", href: "/en/catalog/" },
             { label: "Glossary", href: "/en/glossary/" },
             { label: "Fonts", href: "/en/fonts/" },
+            { label: "Architect", href: "/en/tools/architect/" },
             { label: "About", href: "/en/about/" },
             { label: "Feedback", href: "/en/feedback/" },
             { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
@@ -993,6 +995,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "Kataloge", href: "/de/catalog/" },
             { label: "Glossar", href: "/de/glossary/" },
             { label: "Schriften", href: "/de/fonts/" },
+            { label: "Architect", href: "/de/tools/architect/" },
             { label: "Über", href: "/de/about/" },
             { label: "Feedback", href: "/de/feedback/" },
             { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
@@ -1311,6 +1314,7 @@ export const content: Record<Locale, SiteContent> = {
             { label: "الكتالوجات", href: "/ar/catalog/" },
             { label: "المعجم", href: "/ar/glossary/" },
             { label: "الخطوط", href: "/ar/fonts/" },
+            { label: "Architect", href: "/ar/tools/architect/" },
             { label: "حول", href: "/ar/about/" },
             { label: "تعليقات", href: "/ar/feedback/" },
             { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }

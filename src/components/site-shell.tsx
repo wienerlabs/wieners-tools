@@ -81,6 +81,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               <Link href={`/${locale}/catalog/`}>{ui.catalogIndexPage.nav}</Link>
               <Link href={`/${locale}/glossary/`}>{ui.glossaryPage.nav}</Link>
               <Link href={`/${locale}/fonts/`}>{ui.fontsPage.nav}</Link>
+              <Link href={`/${locale}/tools/architect/`}>Architect</Link>
               <Link href={`/${locale}/about/`}>{ui.about.title}</Link>
               <Link href={`/${locale}/feedback/`}>{ui.feedback.title}</Link>
             </div>
