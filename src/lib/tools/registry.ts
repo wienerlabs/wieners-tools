@@ -605,6 +605,7 @@ export const tools: ToolDefinition[] = [
   { slug: "slug-generator",    category: "developer", icon: "Type",        status: "ready", accept: "text/plain",                       badges: ["fast", "clientside"] },
   { slug: "case-converter",    category: "developer", icon: "TextCursorInput", status: "ready", accept: "text/plain",                   badges: ["fast", "clientside"] },
   { slug: "architect",         category: "developer", icon: "Network",         status: "ready", accept: "",                              badges: ["ai", "new"] },
+  { slug: "video-downloader",  category: "media",     icon: "Download",        status: "ready", accept: "",                              badges: ["new"] },
 
   // ------------- Network & sysadmin
   { slug: "ip-cidr",           category: "network", icon: "Network",       status: "ready", accept: "", badges: ["fast", "clientside"] },

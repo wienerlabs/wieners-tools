@@ -132,7 +132,10 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "openapi-viewer": dynamic(() => import("./openapi-viewer"), { ssr: false, loading: Loader }),
 
   // Architect — AI-powered Mermaid diagram generator (calls Claude Haiku via architect-api proxy)
-  architect: dynamic(() => import("./architect"), { ssr: false, loading: Loader })
+  architect: dynamic(() => import("./architect"), { ssr: false, loading: Loader }),
+
+  // Video Downloader — landing page for the wiener-dl-mac native app
+  "video-downloader": dynamic(() => import("./video-downloader"), { ssr: false, loading: Loader })
   // llm-compare — status:soon, workbench placeholder
 };
 

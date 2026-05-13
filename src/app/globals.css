@@ -5481,3 +5481,164 @@ button, input, textarea, select { font: inherit; }
   .ws-architect-controls { order: 1; }
   .ws-architect-canvas { order: 2; min-height: 500px; }
 }
+
+/* Video Downloader landing -------------------------------------------- */
+.ws-vdl {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 720px;
+}
+
+.ws-vdl-tagline {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.ws-vdl-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+}
+
+.ws-vdl-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 160ms, transform 160ms;
+}
+
+.ws-vdl-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ws-vdl-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 160ms, color 160ms;
+}
+
+.ws-vdl-secondary:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.ws-vdl-size {
+  margin: 4px 0 0;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ws-vdl-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ws-vdl-heading {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.ws-vdl-heading-small {
+  margin: 0 0 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ws-vdl-steps {
+  margin: 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.ws-vdl-steps a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ws-vdl-bundle {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ws-vdl-bundle li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  color: var(--text);
+}
+
+.ws-vdl-aside {
+  padding: 14px 16px;
+  border-left: 2px solid var(--ink);
+  background: color-mix(in srgb, var(--ink) 2%, transparent);
+  border-radius: 0 8px 8px 0;
+}
+
+.ws-vdl-aside p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .ws-vdl-bundle { grid-template-columns: 1fr; }
+  .ws-vdl-tagline { font-size: 16px; }
+}

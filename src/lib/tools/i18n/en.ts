@@ -655,6 +655,38 @@ export const toolsEN: ToolI18nBundle = {
     description: "Paste an OpenAPI 3 YAML or JSON spec; get a clean per-endpoint table with parameters and responses.",
     keywords: ["openapi", "swagger", "api", "spec"]
   },
+  "video-downloader": {
+    name: "Video Downloader (macOS)",
+    short: "Paste URL, get MP4",
+    description:
+      "Download videos from YouTube, TikTok, Instagram, Twitter, Reddit and 1800+ sites. A small native macOS app — yt-dlp + ffmpeg bundled, everything stays on your Mac, no server.",
+    keywords: ["video", "download", "youtube", "tiktok", "instagram", "mp4", "yt-dlp", "macos"],
+    options: {
+      tagline: "Paste URL → MP4. Not in your browser — in a tiny native macOS app.",
+      whyNotBrowser: "Why isn't this just a web page?",
+      whyNotBrowserBody:
+        "YouTube/TikTok/Instagram block your browser's fetch requests via CORS. And the URL you paste isn't the video itself — the actual MP4 lives behind cipher-signed manifests. Decoding that is ~5000 lines of Python in yt-dlp. So Wiener DL ships as a tiny native app instead.",
+      installTitle: "Install",
+      step1: "↓ Download the .dmg",
+      step2: "Open it, drag Wiener DL.app into Applications",
+      step3: "First launch: right-click → Open → Open (the app isn't notarized yet)",
+      step4: "Paste a URL, hit Download.",
+      cta: "Download Wiener DL.app",
+      ctaSecondary: "Source on GitHub",
+      whatsInside: "What's inside",
+      bundleYtdlp: "yt-dlp (1800+ sites supported)",
+      bundleFfmpeg: "ffmpeg + ffprobe (codec conversion)",
+      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleNoServer: "Zero servers, zero telemetry",
+      sizeHint: "~135 MB · Apple Silicon and Intel · macOS 11+",
+      privacyTitle: "Privacy",
+      privacyBody:
+        "URLs, video data, anything — nothing ever leaves your Mac. Wiener Labs only ships the .dmg via GitHub Releases.",
+      licenseTitle: "License & responsible use",
+      licenseBody:
+        "App code is MIT. yt-dlp is Unlicense, ffmpeg is LGPL. This tool is not for ripping and redistributing copyrighted content — doing so is both illegal and unethical."
+    }
+  },
   architect: {
     name: "Architect",
     short: "Turn a description into a system diagram",

@@ -272,6 +272,38 @@ export const toolsAR: ToolI18nBundle = {
   "mcp-tester": { name: "فاحص MCP", short: "تحقق JSON لـ Model Context Protocol", description: "ألصق إعداد MCP server؛ تحقق هيكلي + ملخص.", keywords: ["mcp"] },
   "json-schema": { name: "مولّد JSON Schema", short: "اشتق Schema من عينة", description: "ألصق JSON واحصل على Draft 2020-12 schema.", keywords: ["json", "schema"] },
   "openapi-viewer": { name: "متصفح OpenAPI", short: "Paths + methods + parameters", description: "ألصق OpenAPI 3 YAML/JSON واحصل على جدول endpoints مع parameters وresponses.", keywords: ["openapi", "swagger"] },
+  "video-downloader": {
+    name: "محمّل الفيديو (macOS)",
+    short: "ألصق رابطاً، احصل على MP4",
+    description:
+      "حمّل الفيديو من YouTube و TikTok و Instagram و Twitter و Reddit و1800+ موقع. تطبيق macOS صغير — yt-dlp + ffmpeg مضمّنين، كل شيء يبقى على Mac الخاص بك، بدون سيرفر.",
+    keywords: ["فيديو", "تحميل", "youtube", "tiktok", "mp4", "yt-dlp", "macos"],
+    options: {
+      tagline: "ألصق الرابط → MP4. ليس في المتصفح — في تطبيق macOS صغير.",
+      whyNotBrowser: "لماذا ليس في المتصفح مباشرة؟",
+      whyNotBrowserBody:
+        "YouTube و TikTok و Instagram تحجب طلبات fetch من المتصفح عبر CORS. الرابط الذي تلصقه ليس الفيديو نفسه — الـ MP4 الفعلي خلف manifests موقّعة بالتشفير. حلّ ذلك يحتاج ~5000 سطر Python في yt-dlp. لذلك Wiener DL تطبيق native صغير.",
+      installTitle: "التثبيت",
+      step1: "↓ حمّل ملف .dmg",
+      step2: "افتحه، اسحب Wiener DL.app إلى Applications",
+      step3: "أول تشغيل: انقر باليمين → فتح → فتح (التطبيق غير موثّق notarized بعد)",
+      step4: "ألصق الرابط، اضغط تحميل.",
+      cta: "تحميل Wiener DL.app",
+      ctaSecondary: "الكود المصدري على GitHub",
+      whatsInside: "ما بداخله",
+      bundleYtdlp: "yt-dlp (دعم 1800+ موقع)",
+      bundleFfmpeg: "ffmpeg + ffprobe (تحويل codec)",
+      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleNoServer: "بدون سيرفرات، بدون telemetry",
+      sizeHint: "~135 MB · Apple Silicon و Intel · macOS 11+",
+      privacyTitle: "الخصوصية",
+      privacyBody:
+        "الروابط، بيانات الفيديو، أي شيء — لا شيء يغادر Mac الخاص بك. Wiener Labs فقط يخدم الـ .dmg عبر GitHub Releases.",
+      licenseTitle: "الترخيص والاستخدام المسؤول",
+      licenseBody:
+        "كود التطبيق MIT. yt-dlp بترخيص Unlicense، ffmpeg LGPL. هذه الأداة ليست لإعادة نشر محتوى محمي بحقوق الطبع — ذلك غير قانوني وغير أخلاقي."
+    }
+  },
   architect: {
     name: "Architect",
     short: "حوّل وصف النص إلى مخطط معماري",

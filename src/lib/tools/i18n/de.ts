@@ -273,6 +273,38 @@ export const toolsDE: ToolI18nBundle = {
   "mcp-tester": { name: "MCP-Config-Tester", short: "Model Context Protocol JSON validieren", description: "MCP-Server-Config einfügen; Validierung, Env-Var-Diff, lesbare Zusammenfassung.", keywords: ["mcp", "claude", "cursor"] },
   "json-schema": { name: "JSON-Schema-Generator", short: "Schema aus Beispiel ableiten", description: "JSON-Beispiel einfügen, Draft-2020-12-Schema bekommen.", keywords: ["json", "schema"] },
   "openapi-viewer": { name: "OpenAPI-Explorer", short: "Pfade + Methoden + Parameter", description: "OpenAPI-3-YAML/JSON einfügen; Endpoint-Tabelle mit Parametern und Responses.", keywords: ["openapi", "swagger"] },
+  "video-downloader": {
+    name: "Video-Downloader (macOS)",
+    short: "URL einfügen, MP4 erhalten",
+    description:
+      "Lade Videos von YouTube, TikTok, Instagram, Twitter, Reddit und 1800+ Seiten herunter. Eine kleine native macOS-App — yt-dlp + ffmpeg gebündelt, alles bleibt auf deinem Mac, kein Server.",
+    keywords: ["video", "download", "youtube", "tiktok", "mp4", "yt-dlp", "macos"],
+    options: {
+      tagline: "URL einfügen → MP4. Nicht im Browser, sondern in einer kleinen nativen macOS-App.",
+      whyNotBrowser: "Warum nicht direkt im Browser?",
+      whyNotBrowserBody:
+        "YouTube/TikTok/Instagram blockieren Browser-fetch-Anfragen via CORS. Und die URL die du einfügst ist nicht das Video selbst — der echte MP4-Stream liegt hinter signierten Manifesten. Das aufzulösen sind ~5000 Zeilen Python in yt-dlp. Deshalb ist Wiener DL eine kleine native App.",
+      installTitle: "Installation",
+      step1: "↓ .dmg herunterladen",
+      step2: "Öffnen, Wiener DL.app in Programme ziehen",
+      step3: "Erster Start: Rechtsklick → Öffnen → Öffnen (App ist noch nicht notarisiert)",
+      step4: "URL einfügen, Download drücken.",
+      cta: "Wiener DL.app herunterladen",
+      ctaSecondary: "Quellcode auf GitHub",
+      whatsInside: "Was steckt drin",
+      bundleYtdlp: "yt-dlp (1800+ Seiten unterstützt)",
+      bundleFfmpeg: "ffmpeg + ffprobe (Codec-Konvertierung)",
+      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleNoServer: "Null Server, null Telemetrie",
+      sizeHint: "~135 MB · Apple Silicon und Intel · macOS 11+",
+      privacyTitle: "Datenschutz",
+      privacyBody:
+        "URLs, Videodaten, gar nichts verlässt deinen Mac. Wiener Labs liefert nur die .dmg über GitHub Releases.",
+      licenseTitle: "Lizenz & verantwortlicher Gebrauch",
+      licenseBody:
+        "App-Code MIT. yt-dlp Unlicense, ffmpeg LGPL. Dieses Tool ist nicht dazu da, urheberrechtlich geschützte Inhalte herunterzuladen und weiterzuverbreiten — das ist illegal und unethisch."
+    }
+  },
   architect: {
     name: "Architect",
     short: "Text in Architekturdiagramm umwandeln",

@@ -655,6 +655,38 @@ export const toolsTR: ToolI18nBundle = {
     description: "OpenAPI 3 YAML/JSON spec yapıştır; endpoint başına temiz tablo (parametre + response) al.",
     keywords: ["openapi", "swagger", "api"]
   },
+  "video-downloader": {
+    name: "Video İndirici (macOS)",
+    short: "URL yapıştır, MP4 al",
+    description:
+      "YouTube, TikTok, Instagram, Twitter, Reddit ve 1800+ siteden video indir. Küçük bir macOS .app — yt-dlp + ffmpeg bundle edilmiş, her şey Mac'inde çalışıyor, sunucu yok.",
+    keywords: ["video", "indir", "youtube", "tiktok", "instagram", "mp4", "yt-dlp", "macos"],
+    options: {
+      tagline: "URL yapıştır → MP4 indir. Tarayıcıdan değil, native macOS app'ten.",
+      whyNotBrowser: "Neden tarayıcı içinde olmuyor?",
+      whyNotBrowserBody:
+        "YouTube/TikTok/Instagram tarayıcının fetch çağrılarını CORS ile bloke ediyor. Üstelik yapıştırdığın URL videonun kendisi değil — gerçek MP4 imza şifreli, gizli bir manifest'in arkasında. Bunu çözmek yt-dlp'nin 5000 satır Python kodu. Bu yüzden Wiener DL'i ayrı bir .app olarak yapıyoruz.",
+      installTitle: "Kurulum",
+      step1: "↓ .dmg dosyasını indir",
+      step2: "Aç, Wiener DL.app'i Applications klasörüne sürükle",
+      step3: "İlk açılışta macOS uyarısı çıkarsa: sağ tık → Aç → Aç",
+      step4: "URL yapıştır, indirme tuşuna bas.",
+      cta: "İndir Wiener DL.app",
+      ctaSecondary: "GitHub'da kaynak",
+      whatsInside: "İçinde ne var?",
+      bundleYtdlp: "yt-dlp (1800+ site desteği)",
+      bundleFfmpeg: "ffmpeg + ffprobe (codec dönüşümü)",
+      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleNoServer: "Sıfır sunucu, sıfır telemetri",
+      sizeHint: "~135 MB · Apple Silicon ve Intel · macOS 11+",
+      privacyTitle: "Gizlilik",
+      privacyBody:
+        "URL, video verisi, ya da herhangi bir şey hiçbir zaman sunucumuza gitmez. Wiener Labs'ın tek görevi .dmg'yi GitHub Releases'ten servis etmek.",
+      licenseTitle: "Lisans & sorumlu kullanım",
+      licenseBody:
+        "App kodu MIT. yt-dlp Unlicense, ffmpeg LGPL. Bu araç telif haklı içeriği indirip yeniden yayınlamak için değildir — bunu yapmak hem yasadışı hem etik dışı."
+    }
+  },
   architect: {
     name: "Architect",
     short: "Metni mimari diyagrama çevir",
