@@ -11,8 +11,6 @@ type Props = {
 };
 
 const RELEASES_LATEST = "https://github.com/wienerlabs/wiener-dl-mac/releases/latest";
-const RELEASES_DMG_PATTERN =
-  "https://github.com/wienerlabs/wiener-dl-mac/releases/latest/download/Wiener.DL_aarch64.dmg";
 const SOURCE_REPO = "https://github.com/wienerlabs/wiener-dl-mac";
 
 export default function VideoDownloaderTool({ i18n }: Props) {
@@ -40,7 +38,7 @@ export default function VideoDownloaderTool({ i18n }: Props) {
         <h3 className="ws-vdl-heading">{t("installTitle", "Install")}</h3>
         <ol className="ws-vdl-steps">
           <li>
-            <a href={RELEASES_DMG_PATTERN} target="_blank" rel="noreferrer">
+            <a href={RELEASES_LATEST} target="_blank" rel="noreferrer">
               {t("step1", "Download the .dmg")} <ArrowUpRight size={12} />
             </a>
           </li>
