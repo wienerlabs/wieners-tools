@@ -654,5 +654,47 @@ export const toolsEN: ToolI18nBundle = {
     short: "Browse paths + methods + params",
     description: "Paste an OpenAPI 3 YAML or JSON spec; get a clean per-endpoint table with parameters and responses.",
     keywords: ["openapi", "swagger", "api", "spec"]
+  },
+  architect: {
+    name: "Architect",
+    short: "Turn a description into a system diagram",
+    description:
+      "Describe your system in plain text; AI produces a clean, hierarchical Mermaid diagram. C4 / flowchart / sequence / ER / state modes, live preview, SVG/PNG export.",
+    keywords: ["architecture", "diagram", "mermaid", "ai", "c4", "flowchart", "sequence"],
+    options: {
+      describe: "Describe the system",
+      stack: "Tech stack",
+      scale: "Scale / constraints",
+      kind: "Diagram type",
+      generate: "Generate",
+      refine: "Refine",
+      simpler: "Simpler",
+      addMonitoring: "Add monitoring",
+      addFailure: "Add failure paths",
+      reformat: "Clean up Mermaid",
+      editSource: "Edit source",
+      copyMermaid: "Copy Mermaid",
+      downloadSvg: "Download SVG",
+      downloadPng: "Download PNG",
+      preview: "Preview",
+      diagramAuto: "Auto",
+      diagramFlowchart: "Flowchart",
+      diagramC4: "C4 Container",
+      diagramSequence: "Sequence",
+      diagramEr: "ER",
+      diagramState: "State",
+      diagramDeployment: "Deployment",
+      placeholderDescribe:
+        "e.g. 'Solana TWAP execution app. Next.js frontend with Solflare wallet. DFlow swap routing, Kamino lending vault deposit/withdraw, Quicknode RPC + Streams for price feed and tx confirmation. User picks a 30m-2h window; split into 3-6 slices and execute each via Kamino withdraw + DFlow swap.'",
+      placeholderStack: "Next.js · TypeScript · Solana web3.js · Tailwind",
+      placeholderScale: "10k DAU, 500 concurrent executions",
+      emptyTitle: "No diagram yet",
+      emptyHint: "Describe your system on the left, hit Generate. AI returns Mermaid and we render it here.",
+      streaming: "Generating…",
+      rateLimit: "Rate limit reached. Try again in a few minutes.",
+      errorGeneric: "Something went wrong.",
+      sourceTitle: "Mermaid source",
+      copied: "Copied"
+    }
   }
 };

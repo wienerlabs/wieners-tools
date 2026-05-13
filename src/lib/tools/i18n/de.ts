@@ -272,5 +272,47 @@ export const toolsDE: ToolI18nBundle = {
   "llm-compare": { name: "LLM Side-by-side", short: "Ein Prompt, mehrere Modelle", description: "Claude / GPT / Gemini nebeneinander vergleichen. Bald — eigene API-Keys.", keywords: ["llm", "vergleich"] },
   "mcp-tester": { name: "MCP-Config-Tester", short: "Model Context Protocol JSON validieren", description: "MCP-Server-Config einfügen; Validierung, Env-Var-Diff, lesbare Zusammenfassung.", keywords: ["mcp", "claude", "cursor"] },
   "json-schema": { name: "JSON-Schema-Generator", short: "Schema aus Beispiel ableiten", description: "JSON-Beispiel einfügen, Draft-2020-12-Schema bekommen.", keywords: ["json", "schema"] },
-  "openapi-viewer": { name: "OpenAPI-Explorer", short: "Pfade + Methoden + Parameter", description: "OpenAPI-3-YAML/JSON einfügen; Endpoint-Tabelle mit Parametern und Responses.", keywords: ["openapi", "swagger"] }
+  "openapi-viewer": { name: "OpenAPI-Explorer", short: "Pfade + Methoden + Parameter", description: "OpenAPI-3-YAML/JSON einfügen; Endpoint-Tabelle mit Parametern und Responses.", keywords: ["openapi", "swagger"] },
+  architect: {
+    name: "Architect",
+    short: "Text in Architekturdiagramm umwandeln",
+    description:
+      "Beschreibe dein System; AI erzeugt ein sauberes, hierarchisches Mermaid-Diagramm. C4 / Flowchart / Sequence / ER / State Modi, Live-Vorschau, SVG/PNG-Export.",
+    keywords: ["architektur", "diagramm", "mermaid", "ai", "c4", "flowchart"],
+    options: {
+      describe: "System beschreiben",
+      stack: "Tech-Stack",
+      scale: "Skalierung / Einschränkungen",
+      kind: "Diagrammtyp",
+      generate: "Generieren",
+      refine: "Verfeinern",
+      simpler: "Einfacher",
+      addMonitoring: "Monitoring hinzufügen",
+      addFailure: "Fehlerpfade hinzufügen",
+      reformat: "Mermaid aufräumen",
+      editSource: "Quelle bearbeiten",
+      copyMermaid: "Mermaid kopieren",
+      downloadSvg: "SVG herunterladen",
+      downloadPng: "PNG herunterladen",
+      preview: "Vorschau",
+      diagramAuto: "Auto",
+      diagramFlowchart: "Flowchart",
+      diagramC4: "C4 Container",
+      diagramSequence: "Sequence",
+      diagramEr: "ER",
+      diagramState: "State",
+      diagramDeployment: "Deployment",
+      placeholderDescribe:
+        "z.B. 'Solana TWAP-Execution-App. Next.js-Frontend mit Solflare-Wallet. DFlow-Swap-Routing, Kamino Lending-Vault Deposit/Withdraw, Quicknode RPC + Streams für Price-Feed und TX-Confirmation. User wählt 30min-2h Window, in 3-6 Slices aufteilen und je Slice Kamino-Withdraw + DFlow-Swap.'",
+      placeholderStack: "Next.js · TypeScript · Solana web3.js · Tailwind",
+      placeholderScale: "10k DAU, 500 gleichzeitige Executions",
+      emptyTitle: "Noch kein Diagramm",
+      emptyHint: "Beschreibe links dein System und drücke Generieren. AI liefert Mermaid, hier rendert es.",
+      streaming: "Generiert…",
+      rateLimit: "Rate-Limit erreicht. In wenigen Minuten erneut versuchen.",
+      errorGeneric: "Etwas ist schiefgelaufen.",
+      sourceTitle: "Mermaid-Quelle",
+      copied: "Kopiert"
+    }
+  }
 };

@@ -129,7 +129,10 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "token-counter": dynamic(() => import("./token-counter"), { ssr: false, loading: Loader }),
   "mcp-tester": dynamic(() => import("./mcp-tester"), { ssr: false, loading: Loader }),
   "json-schema": dynamic(() => import("./json-schema"), { ssr: false, loading: Loader }),
-  "openapi-viewer": dynamic(() => import("./openapi-viewer"), { ssr: false, loading: Loader })
+  "openapi-viewer": dynamic(() => import("./openapi-viewer"), { ssr: false, loading: Loader }),
+
+  // Architect — AI-powered Mermaid diagram generator (calls Claude Haiku via architect-api proxy)
+  architect: dynamic(() => import("./architect"), { ssr: false, loading: Loader })
   // llm-compare — status:soon, workbench placeholder
 };
 

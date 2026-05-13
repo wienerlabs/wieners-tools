@@ -654,5 +654,47 @@ export const toolsTR: ToolI18nBundle = {
     short: "Path + method + parameter göz at",
     description: "OpenAPI 3 YAML/JSON spec yapıştır; endpoint başına temiz tablo (parametre + response) al.",
     keywords: ["openapi", "swagger", "api"]
+  },
+  architect: {
+    name: "Architect",
+    short: "Metni mimari diyagrama çevir",
+    description:
+      "Sistemini anlat; AI temiz, hiyerarşik bir Mermaid diyagramı üretir. C4 / flowchart / sequence / ER / state modları, canlı önizleme, SVG/PNG export.",
+    keywords: ["mimari", "diyagram", "mermaid", "ai", "c4", "akış", "flowchart"],
+    options: {
+      describe: "Sistemi anlat",
+      stack: "Teknoloji stack'i",
+      scale: "Ölçek / kısıtlar",
+      kind: "Diyagram tipi",
+      generate: "Üret",
+      refine: "İyileştir",
+      simpler: "Daha sade",
+      addMonitoring: "Monitoring ekle",
+      addFailure: "Hata yolları ekle",
+      reformat: "Mermaid'i temizle",
+      editSource: "Kaynağı düzenle",
+      copyMermaid: "Mermaid'i kopyala",
+      downloadSvg: "SVG indir",
+      downloadPng: "PNG indir",
+      preview: "Önizleme",
+      diagramAuto: "Otomatik",
+      diagramFlowchart: "Flowchart",
+      diagramC4: "C4 Container",
+      diagramSequence: "Sequence",
+      diagramEr: "ER",
+      diagramState: "State",
+      diagramDeployment: "Deployment",
+      placeholderDescribe:
+        "Örn. 'Solana üzerinde TWAP execution app. Frontend Next.js + Solflare wallet. DFlow swap routing, Kamino lending vault deposit/withdraw, Quicknode RPC + Streams ile fiyat feed ve transaction confirmation. Kullanıcı 30dk-2sa execution window seçer, 3-6 dilime böl ve her dilim öncesi Kamino'dan çek + DFlow swap yap.'",
+      placeholderStack: "Next.js · TypeScript · Solana web3.js · Tailwind",
+      placeholderScale: "10k DAU, 500 concurrent execution",
+      emptyTitle: "Henüz diyagram yok",
+      emptyHint: "Solda sistemi anlat, Üret'e bas. AI Mermaid üretir, burada render olur.",
+      streaming: "Üretiliyor…",
+      rateLimit: "İstek limitine ulaştın. Birkaç dakika sonra tekrar dene.",
+      errorGeneric: "Bir şeyler ters gitti.",
+      sourceTitle: "Mermaid kaynağı",
+      copied: "Kopyalandı"
+    }
   }
 };

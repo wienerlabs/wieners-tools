@@ -271,5 +271,47 @@ export const toolsAR: ToolI18nBundle = {
   "llm-compare": { name: "LLM جنباً إلى جنب", short: "برومبت واحد لعدة نماذج", description: "قارن مخرجات Claude / GPT / Gemini. قريباً — بمفاتيح API الخاصة بك.", keywords: ["llm"] },
   "mcp-tester": { name: "فاحص MCP", short: "تحقق JSON لـ Model Context Protocol", description: "ألصق إعداد MCP server؛ تحقق هيكلي + ملخص.", keywords: ["mcp"] },
   "json-schema": { name: "مولّد JSON Schema", short: "اشتق Schema من عينة", description: "ألصق JSON واحصل على Draft 2020-12 schema.", keywords: ["json", "schema"] },
-  "openapi-viewer": { name: "متصفح OpenAPI", short: "Paths + methods + parameters", description: "ألصق OpenAPI 3 YAML/JSON واحصل على جدول endpoints مع parameters وresponses.", keywords: ["openapi", "swagger"] }
+  "openapi-viewer": { name: "متصفح OpenAPI", short: "Paths + methods + parameters", description: "ألصق OpenAPI 3 YAML/JSON واحصل على جدول endpoints مع parameters وresponses.", keywords: ["openapi", "swagger"] },
+  architect: {
+    name: "Architect",
+    short: "حوّل وصف النص إلى مخطط معماري",
+    description:
+      "صف نظامك؛ يولّد الذكاء الاصطناعي مخطط Mermaid هرمي ونظيف. أوضاع C4 / flowchart / sequence / ER / state، معاينة حية، تصدير SVG/PNG.",
+    keywords: ["معمارية", "مخطط", "mermaid", "ai", "c4", "تدفق"],
+    options: {
+      describe: "صف النظام",
+      stack: "Tech stack",
+      scale: "الحجم / القيود",
+      kind: "نوع المخطط",
+      generate: "توليد",
+      refine: "تحسين",
+      simpler: "أبسط",
+      addMonitoring: "إضافة Monitoring",
+      addFailure: "إضافة مسارات الفشل",
+      reformat: "تنظيف Mermaid",
+      editSource: "تعديل المصدر",
+      copyMermaid: "نسخ Mermaid",
+      downloadSvg: "تحميل SVG",
+      downloadPng: "تحميل PNG",
+      preview: "معاينة",
+      diagramAuto: "تلقائي",
+      diagramFlowchart: "Flowchart",
+      diagramC4: "C4 Container",
+      diagramSequence: "Sequence",
+      diagramEr: "ER",
+      diagramState: "State",
+      diagramDeployment: "Deployment",
+      placeholderDescribe:
+        "مثال: 'تطبيق TWAP execution على Solana. واجهة Next.js مع محفظة Solflare. DFlow swap routing، إيداع/سحب Kamino lending vault، Quicknode RPC + Streams لـ price feed وتأكيد المعاملات. يختار المستخدم نافذة 30د-2س ويُقسَّم إلى 3-6 شرائح، كل شريحة: سحب من Kamino + DFlow swap.'",
+      placeholderStack: "Next.js · TypeScript · Solana web3.js · Tailwind",
+      placeholderScale: "10k DAU، 500 execution متزامن",
+      emptyTitle: "لا يوجد مخطط بعد",
+      emptyHint: "صف النظام على اليسار واضغط توليد. يعيد الذكاء الاصطناعي Mermaid ويُعرَض هنا.",
+      streaming: "جارٍ التوليد…",
+      rateLimit: "تم بلوغ حد الطلبات. حاول بعد دقائق.",
+      errorGeneric: "حدث خطأ.",
+      sourceTitle: "مصدر Mermaid",
+      copied: "تم النسخ"
+    }
+  }
 };
