@@ -616,6 +616,53 @@ Steps:
 
 This is a new standard (2025) — keep an eye on x402.org for protocol updates. Don't fork the middleware; pin to a specific version.`,
             badge: "Agentic"
+          },
+          {
+            name: "Base MCP",
+            tagline: "MCP gateway — AI agent'larına Base DeFi tool'larını ver.",
+            blurb: "Coinbase'in 26 Mayıs 2026'da açıkladığı resmi MCP server. Claude, ChatGPT ve Cursor'ı OAuth 2.1 ile kullanıcının Base hesabına bağlar; private key paylaşmadan Uniswap, Morpho, Aerodrome, Moonwell ve Avantis üzerinde swap, borçlanma ve LP açma aksiyonları sunar.",
+            whyVibeCoder: "Agent'a 'Bu kullanıcı adına 0.1 ETH swap et' dedirtmek istiyorsan: Base MCP'yi kur, skill plugin yaz, tamamdır. DeFi entegrasyonunu sıfırdan kodlamak yok.",
+            url: "https://github.com/base/base-mcp",
+            docsUrl: "https://docs.base.org/cookbook/launch-ai-agents",
+            installCmd: "npm install -g base-mcp",
+            codeSnippet: "// Claude Desktop / Cursor MCP config\n// ~/.claude/claude_desktop_config.json\n{\n  \"mcpServers\": {\n    \"base-mcp\": {\n      \"command\": \"base-mcp\",\n      \"env\": {\n        \"CDP_API_KEY_NAME\": \"...\",\n        \"CDP_API_KEY_PRIVATE_KEY\": \"...\"\n      }\n    }\n  }\n}",
+            integrationPrompt: `${PROMPT_CONTEXT}
+
+Goal: wire Base MCP so AI agents (Claude, ChatGPT, Cursor) can propose and execute onchain DeFi transactions on behalf of users via their Base Account.
+
+Steps:
+1. Install base-mcp globally: \`npm install -g base-mcp\`.
+2. Register it in your AI tool's MCP config (Claude Desktop: ~/.claude/claude_desktop_config.json; Cursor: .cursor/mcp.json). Pass CDP_API_KEY_NAME and CDP_API_KEY_PRIVATE_KEY from .env.
+3. For programmatic use (Next.js API route), import @modelcontextprotocol/sdk and spawn the Base MCP server as a child process, pipe tool calls through your own /api/agent endpoint.
+4. Add a custom skill plugin (a markdown .md file in the skills/ directory) to expose your dApp's own contract actions — spec format is documented at docs.base.org.
+5. Before each transaction, Base MCP returns a simulation diff (asset changes) for the user to confirm — surface this in your UI via a "Review & sign" modal.
+6. Add CDP_API_KEY_NAME and CDP_API_KEY_PRIVATE_KEY to .env.example.
+
+Never expose CDP credentials to the client. All MCP tool calls must flow through a server-side process.`,
+            badge: "AI"
+          },
+          {
+            name: "Virtuals Protocol (GAME SDK)",
+            tagline: "Tokenized AI agent'lar — GAME framework ile Base'de deploy et.",
+            blurb: "Virtuals Protocol, AI agent'ları Base'de tokenize etmenin altyapısı. GAME (Goal-Action-Mind-Engine) SDK — Llama 3.3 / DeepSeek / Qwen üstüne oturur; agent'a hedef ve tool tanımla, planlama + execution otomatik. GAME Cloud (low-code) veya açık kaynak GAME SDK ile geliştirilir.",
+            whyVibeCoder: "Kendi AI agent'ını Base'de çıkarmak ve kullanıcıların ona token satın almasını sağlamak istiyorsan: GAME SDK'yı kur, action plugin'lerini yaz, Virtuals'ta deploy et.",
+            url: "https://github.com/Virtual-Protocol/game-sdk",
+            docsUrl: "https://docs.virtualprotocol.io/",
+            installCmd: "npm install @virtuals-protocol/game",
+            integrationPrompt: `${PROMPT_CONTEXT}
+
+Goal: deploy an AI agent on Base using Virtuals Protocol's GAME SDK and expose it as a callable service.
+
+Steps:
+1. Install @virtuals-protocol/game.
+2. Create lib/virtuals-agent.ts: instantiate a GameAgent with a name, goal, and description. Define GameWorker plugins for the actions the agent should take (e.g. token swap via Uniswap, read contract state).
+3. Build app/api/virtuals/route.ts: POST endpoint that accepts a user prompt, runs the agent via agent.run(prompt, workers), streams the action log back as SSE.
+4. Build components/AgentRunner.tsx — "use client" component that sends prompts to /api/virtuals and renders the streamed action steps.
+5. To tokenize the agent on Virtuals, use the Virtuals Protocol dashboard at app.virtuals.io to register the agent — point the agent endpoint to your /api/virtuals URL.
+6. Document VIRTUALS_API_KEY (if required by your model endpoint) in .env.example.
+
+GAME SDK is model-agnostic — plug in your own API key for Llama, DeepSeek, or any OpenAI-compatible endpoint. Keep all agent keys server-side only.`,
+            badge: "AI"
           }
         ]
       }
@@ -723,7 +770,7 @@ Don't generate code yet — this step is education only.`,
             tagline: "Modern, modüler Solana RPC client'ı.",
             blurb: "Anza ekibinin yeni nesil web3.js. Tree-shakeable, viem-stili composable API. Eski v1.x yerine yeni projeler için bunu kullan.",
             whyVibeCoder: "Bundle boyutu kritikse v1'den v2'ye geç — gereken kadar import et, RPC type-safe.",
-            url: "https://github.com/anza-xyz/solana-web3.js",
+            url: "https://github.com/anza-xyz/kit",
             docsUrl: "https://github.com/anza-xyz/kit",
             installCmd: "npm install @solana/kit",
             integrationPrompt: `${PROMPT_CONTEXT}
@@ -863,7 +910,7 @@ Do NOT write a custom router — Jupiter wins. For limit orders, use the Jupiter
             blurb: "DFlow, retail order flow'u market maker'lara yönlendirir, price improvement + MEV koruması sağlar. Quote endpoint baseline + DFlow quote döner — fark bps cinsinden ölçülebilir kullanıcı geliri.",
             whyVibeCoder: "Slippage hassas / MEV-conscious bir trade UI yapıyorsan: DFlow quote alıp baseline ile karşılaştır, kullanıcıya '+X bps tasarruf' göster.",
             url: "https://www.dflow.net/",
-            docsUrl: "https://docs.dflow.net/",
+            docsUrl: "https://pond.dflow.net/introduction",
             integrationPrompt: `${PROMPT_CONTEXT}
 
 Goal: integrate DFlow MEV-protected swap routing into my Solana dApp.
@@ -988,6 +1035,29 @@ Steps:
 6. Show a small explainer: "stake earns ~7% APY, mSOL is liquid and can be used in DeFi".
 
 Default to liquid unstake with a clear "fee shown" note.`
+          },
+          {
+            name: "Jupiter Lend",
+            tagline: "Solana'nın en hızlı büyüyen isolated lending protokolü.",
+            blurb: "Jupiter'in isolated lending market'ı — mainnet çıkışından 24 saat içinde $500M, 2026 başında $1.6B TVL'ye ulaştı. TypeScript SDK ile deposit, borrow, repay ve CPI instruction interface'leri tek satırda. JupUSD stablecoin desteği entegre.",
+            whyVibeCoder: "Solana'da lending UI yazıyorsan: Jupiter Lend SDK Kamino'ya kıyasla daha sade ABI, Jupiter'in devasa kullanıcı tabanına doğal erişim.",
+            url: "https://jup.ag/lend",
+            docsUrl: "https://developers.jup.ag/docs/lend",
+            installCmd: "npm install @jup-ag/lend-sdk",
+            integrationPrompt: `${PROMPT_CONTEXT}
+
+Goal: let users supply and borrow assets via Jupiter Lend on Solana.
+
+Steps:
+1. Install @jup-ag/lend-sdk and @solana/web3.js (or @solana/kit).
+2. Create lib/jup-lend.ts: initialize a LendClient with your connection and a supported market address. Export supply(token, amount, user), borrow(token, amount, user), repay(token, amount, user), and withdraw(token, amount, user) helpers.
+3. Build <SupplyForm /> — token select + amount input → call supply() → sign with useWallet().sendTransaction.
+4. Build <BorrowForm /> — shows available collateral, health factor preview → calls borrow().
+5. Show the user's live health factor using client.getObligation(user) — warn at <1.2, block action at <1.05 to prevent liquidation surprises.
+6. For JupUSD: treat it as a first-class collateral asset in the UI — show the exchange rate and allow direct deposit.
+
+Do NOT implement borrow flow without a clear health factor UI — users can be liquidated silently without one.`,
+            badge: "New"
           }
         ]
       },
@@ -1075,6 +1145,29 @@ Steps:
 5. For on-chain consumption (e.g. inside a Solana program), pass the latest signed price update to the program instruction (Pyth requires you to forward the update).
 
 Don't store stale prices. The whole point of Pyth is sub-second freshness — invalidate aggressively.`
+          },
+          {
+            name: "Solana Developer Platform (SDP)",
+            tagline: "Solana Foundation'ın unified API gateway'i — 20+ sağlayıcı tek arayüzde.",
+            blurb: "Solana Foundation'ın Mart 2026'da başlattığı enterprise API platformu. Helius, QuickNode, Triton ve daha fazlasını tek arayüzde toplar; tokenized deposit / stablecoin issuance, fiat + stablecoin payments ve (yakında) trading modülleri sunar. Mastercard, Worldpay ve Western Union ilk kullanıcılar.",
+            whyVibeCoder: "Stablecoin, tokenized RWA veya kurumsal ödeme sistemi kuruyorsan: SDP issuance + payments modülleri altyapı montajını ortadan kaldırır. Claude Code ile 'out of the box' entegre.",
+            url: "https://platform.solana.com/",
+            docsUrl: "https://platform.solana.com/docs/what-is-solana-developer-platform",
+            installCmd: "# REST API — SDP_API_KEY from platform.solana.com",
+            integrationPrompt: `${PROMPT_CONTEXT}
+
+Goal: use Solana Developer Platform (SDP) to issue a stablecoin or tokenized asset and route payments on Solana.
+
+Steps:
+1. Sign up at https://platform.solana.com, create a project, and obtain a scoped SDP API key.
+2. Add SDP_API_KEY to .env.example (server-side only — never NEXT_PUBLIC_*).
+3. Create app/api/sdp/issuance/route.ts: POST handler that calls SDP's Issuance module to mint tokens to a specified wallet. Use the Prepare endpoint first to dry-run (inspect compute units + program logs) before executing.
+4. Create app/api/sdp/payments/route.ts: handles fiat on-ramp + stablecoin transfer flows using SDP's Payments module. Return unsigned tx bytes; let the user sign via their wallet.
+5. Generate separate API keys per environment (tokens:read / tokens:write scopes) and rotate without downtime.
+6. Stub app/api/sdp/trading/route.ts now — the Trading module (atomic swaps, vaults, onchain FX) ships later in 2026.
+
+NOTE: SDP targets fintech and institutional builders. For standard dApp development, Helius or QuickNode remain the simpler choice.`,
+            badge: "New"
           }
         ]
       },
