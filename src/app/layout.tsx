@@ -1,20 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Host_Grotesk, Noto_Sans_Arabic } from "next/font/google";
 import { siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
-
-const hostGrotesk = Host_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-host",
-  display: "swap"
-});
-
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-arabic",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,24 +8,25 @@ export const metadata: Metadata = {
     default: siteName,
     template: `%s · ${siteName}`
   },
-  description: "Browser-native image toolkit. 100% client-side.",
+  description: "Free tools that run in your browser. Your files never leave your device.",
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/logo.jpg"
+    icon: "/icon.svg",
+    apple: "/apple-icon.png"
   },
   openGraph: {
     siteName,
     type: "website"
   },
   twitter: {
-    card: "summary_large_image"
+    card: "summary"
   }
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#050505"
+  themeColor: "#f3f4f6"
 };
 
 export default function RootLayout({
@@ -48,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${hostGrotesk.variable} ${notoSansArabic.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossOrigin="" />
+      </head>
       <body>{children}</body>
     </html>
   );

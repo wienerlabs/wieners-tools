@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 
-export const siteUrl = "https://wienerstools.com";
-export const siteName = "Wiener’s Tools";
+export const siteUrl = "https://tools.wienerlabs.xyz";
+export const siteName = "Wiener Tools";
 export const siteShort = "wieners-tools";
 export const orgEmail = "baturalp@wienerlabs.com";
 export const githubUrl = "https://github.com/wienerlabs/wieners-tools";
@@ -22,9 +22,9 @@ export function absoluteUrl(path: string) {
   return new URL(path, siteUrl).toString();
 }
 
-export function buildAlternates(slug = "") {
+export function buildAlternates(locale: Locale, slug = "") {
   return {
-    canonical: localizedPath("en", slug),
+    canonical: localizedPath(locale, slug),
     languages: {
       tr: localizedPath("tr", slug),
       de: localizedPath("de", slug),
@@ -54,7 +54,7 @@ export function buildPageMetadata({
     title: title === siteName ? { absolute: title } : title,
     description,
     keywords,
-    alternates: buildAlternates(slug),
+    alternates: buildAlternates(locale, slug),
     openGraph: {
       title,
       description,
@@ -76,7 +76,7 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Wiener Labs",
-    url: "https://wienerlabs.com",
+    url: "https://wienerlabs.xyz",
     email: orgEmail,
     sameAs: [githubUrl]
   };

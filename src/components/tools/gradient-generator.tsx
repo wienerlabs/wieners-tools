@@ -21,7 +21,7 @@ export default function GradientGeneratorTool({
   const [angle, setAngle] = useState(135);
   const [stops, setStops] = useState<Stop[]>([
     { color: "#000000", pos: 0 },
-    { color: "#fff4dd", pos: 100 }
+    { color: "#f3f4f6", pos: 100 }
   ]);
   const [copied, setCopied] = useState(false);
 

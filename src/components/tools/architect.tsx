@@ -41,17 +41,17 @@ function loadMermaid(): Promise<MermaidApi> {
       api.initialize({
         startOnLoad: false,
         theme: "base",
-        fontFamily: '"Host Grotesk", system-ui, sans-serif',
+        fontFamily: '"Sora", system-ui, sans-serif',
         themeVariables: {
-          background: "#fff4dd",
-          primaryColor: "#fff4dd",
+          background: "#ffffff",
+          primaryColor: "#ffffff",
           primaryTextColor: "#0a0a0a",
           primaryBorderColor: "#0a0a0a",
           lineColor: "#0a0a0a",
           secondaryColor: "#0a0a0a",
-          tertiaryColor: "#fff4dd",
-          edgeLabelBackground: "#fff4dd",
-          mainBkg: "#fff4dd",
+          tertiaryColor: "#ffffff",
+          edgeLabelBackground: "#ffffff",
+          mainBkg: "#ffffff",
           nodeBorder: "#0a0a0a",
           clusterBkg: "transparent",
           clusterBorder: "#0a0a0a",
@@ -230,7 +230,7 @@ export default function ArchitectTool({ i18n }: Props) {
       canvas.height = height;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
-      ctx.fillStyle = "#fff4dd";
+      ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, width, height);
       ctx.drawImage(img, 0, 0, width, height);
       canvas.toBlob((blob) => {

@@ -1,7 +1,7 @@
 import { SiteShell } from "@/components/site-shell";
 import type { Locale } from "@/lib/i18n";
-import { content } from "@/lib/content";
 import { legalContent } from "@/lib/legal";
+import { siteName } from "@/lib/site";
 
 export function LegalDocument({
   locale,
@@ -11,12 +11,11 @@ export function LegalDocument({
   kind: "privacy" | "cookies";
 }) {
   const doc = legalContent[locale][kind];
-  const page = content[locale];
 
   return (
     <SiteShell locale={locale} variant="compact">
       <article className="ws-doc">
-        <p className="ws-doc-eyebrow">{page.hero.eyebrow}</p>
+        <p className="ws-doc-eyebrow">{siteName}</p>
         <h1>{doc.title}</h1>
         <p className="ws-doc-intro">{doc.description}</p>
         <p className="ws-doc-meta">{doc.updatedAt}</p>

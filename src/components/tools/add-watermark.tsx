@@ -23,7 +23,7 @@ export default function AddWatermarkTool({
 }) {
   const ui = content[locale].workbench;
   const [files, setFiles] = useState<File[]>([]);
-  const [text, setText] = useState("© Wiener's Tools");
+  const [text, setText] = useState("© Wiener Tools");
   const [size, setSize] = useState(48);
   const [opacity, setOpacity] = useState(0.6);
   const [color, setColor] = useState("#ffffff");

@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { localeLabels, localeNames, locales } from "@/lib/i18n";
 import { content } from "@/lib/content";
 import { getLegalLinks } from "@/lib/legal";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import CardNav from "@/components/card-nav";
+import { navFor, type NavGroup } from "@/lib/nav";
+import { siteName } from "@/lib/site";
+import { BrandMark } from "@/components/brand-mark";
+import { SiteNav } from "@/components/site-nav";
 
 type SiteShellProps = {
   locale: Locale;
@@ -12,122 +15,97 @@ type SiteShellProps = {
   variant?: "wide" | "compact";
 };
 
+function languageOption(locale: Locale) {
+  return { code: locale, label: localeLabels[locale], name: localeNames[locale] };
+}
+
 export function SiteHeader({ locale }: { locale: Locale }) {
   const ui = content[locale];
-  const languageOptions = locales
-    .filter((item) => item !== locale)
-    .map((item) => ({
-      href: `/${item}/`,
-      label: localeNames[item]
-    }));
+  const nav = navFor(locale);
 
   return (
-    <CardNav
-      logo="/logo.jpg"
-      logoAlt="Wiener Tools"
-      logoHref={`/${locale}/`}
-      items={ui.cardNav.items}
-      ctaLabel={ui.cardNav.ctaLabel}
-      ctaHref={`/${locale}/components/`}
-      secondaryCtaLabel={ui.cardNav.secondaryCtaLabel}
-      secondaryCtaHref={`/${locale}/blockchain/`}
-      menuLabel={ui.cardNav.menuLabel}
-      closeLabel={ui.cardNav.closeLabel}
-      rightSlot={<LanguageSwitcher currentLabel={localeNames[locale]} options={languageOptions} />}
+    <SiteNav
+      homeHref={`/${locale}/`}
+      brand={siteName}
+      primary={nav.primary}
+      groups={[nav.tools, nav.resources, nav.more]}
+      menuLabel={ui.nav.menu}
+      closeLabel={ui.nav.close}
+      language={languageOption(locale)}
+      languages={locales.filter((item) => item !== locale).map(languageOption)}
     />
+  );
+}
+
+function FooterColumn({ group }: { group: NavGroup }) {
+  return (
+    <div className="ws-foot-col">
+      <p className="ws-foot-head">{group.title}</p>
+      <ul>
+        {group.links.map((link) => (
+          <li key={link.href}>
+            {link.external ? (
+              <a href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+                <ArrowUpRight size={12} aria-hidden="true" />
+              </a>
+            ) : (
+              <Link href={link.href}>{link.label}</Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const ui = content[locale];
-  const legalLinks = getLegalLinks(locale);
-
-  const footerCta =
-    locale === "tr"
-      ? "Geri bildirim mi?"
-      : locale === "de"
-        ? "Feedback?"
-        : locale === "ar"
-          ? "تعليقات؟"
-          : "Got feedback?";
-
-  const sitemapTitle =
-    locale === "tr" ? "Site haritası" : locale === "de" ? "Sitemap" : locale === "ar" ? "خريطة الموقع" : "Sitemap";
-
-  const langTitle =
-    locale === "tr" ? "Diller" : locale === "de" ? "Sprachen" : locale === "ar" ? "اللغات" : "Languages";
-
-  const backLabel =
-    locale === "tr" ? "Başa dön" : locale === "de" ? "Nach oben" : locale === "ar" ? "للأعلى" : "Back to top";
+  const nav = navFor(locale);
+  const legal = getLegalLinks(locale);
+  const languages: NavGroup = {
+    title: ui.footer.languages,
+    links: locales.map((item) => ({ label: localeNames[item], href: `/${item}/` }))
+  };
 
   return (
-    <footer id="footer" className="ws-footer" dir="ltr">
-      <div className="ws-footer-shell">
-        <div className="ws-footer-hero">
-          <h2>{footerCta}</h2>
-          <a href={`mailto:${ui.contact.email}`} className="ws-footer-mail">
-            {ui.contact.email}
-          </a>
-        </div>
-
-        <div className="ws-footer-links">
-          <div className="ws-footer-column">
-            <h3>{sitemapTitle}</h3>
-            <div className="ws-footer-list">
-              <Link href={`/${locale}/`}>{ui.toolsSection.eyebrow}</Link>
-              <Link href={`/${locale}/components/`}>{ui.cardNav.ctaLabel}</Link>
-              <Link href={`/${locale}/blockchain/`}>{ui.blockchainPage.nav}</Link>
-              <Link href={`/${locale}/library/`}>{ui.libraryPage.nav}</Link>
-              <Link href={`/${locale}/catalog/`}>{ui.catalogIndexPage.nav}</Link>
-              <Link href={`/${locale}/glossary/`}>{ui.glossaryPage.nav}</Link>
-              <Link href={`/${locale}/fonts/`}>{ui.fontsPage.nav}</Link>
-              <Link href={`/${locale}/tools/architect/`}>Architect</Link>
-              <Link href={`/${locale}/tools/video-downloader/`}>Wiener DL</Link>
-              <Link href={`/${locale}/about/`}>{ui.about.title}</Link>
-              <Link href={`/${locale}/feedback/`}>{ui.feedback.title}</Link>
-            </div>
+    <footer className="ws-foot">
+      <div className="ws-foot-inner">
+        <div className="ws-foot-top">
+          <div className="ws-foot-brand">
+            <Link href={`/${locale}/`} className="ws-foot-logo">
+              <BrandMark className="ws-foot-mark" />
+              <span>{siteName}</span>
+            </Link>
+            <p className="ws-foot-tagline">{ui.footer.tagline}</p>
+            <a href={`mailto:${ui.contact.email}`} className="ws-button ws-button-primary">
+              {ui.footer.feedbackCta}
+            </a>
           </div>
 
-          <div className="ws-footer-column">
-            <h3>{ui.feedback.title}</h3>
-            <div className="ws-footer-list">
-              <a href={`mailto:${ui.contact.email}`}>{ui.contact.email}</a>
-              <a href={ui.contact.githubUrl} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </div>
-          </div>
-
-          <div className="ws-footer-column">
-            <h3>{langTitle}</h3>
-            <div className="ws-footer-list">
-              {locales.map((item) => (
-                <Link key={item} href={`/${item}/`}>
-                  {localeLabels[item]}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="ws-footer-column">
-            <h3>{legalLinks.title}</h3>
-            <div className="ws-footer-list">
-              {legalLinks.items.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+          <div className="ws-foot-cols">
+            <FooterColumn group={{ ...nav.tools, links: nav.tools.links.slice(0, 7) }} />
+            <FooterColumn group={nav.resources} />
+            <FooterColumn group={nav.more} />
+            <FooterColumn group={languages} />
           </div>
         </div>
 
-        <div className="ws-footer-bottom">
-          <div className="ws-footer-wordmark">WIENER&rsquo;S TOOLS</div>
-          <div className="ws-footer-meta">
-            <a href="#top">{backLabel} ↑</a>
-            <p>© Wiener Labs · 2026</p>
-          </div>
+        <div className="ws-foot-bottom">
+          <p>© 2026 Wiener Labs</p>
+          <ul>
+            {legal.items.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
+      </div>
+
+      <div className="ws-foot-wordmark" aria-hidden="true">
+        <BrandMark className="ws-foot-wordmark-mark" />
+        <span>{siteName}</span>
       </div>
     </footer>
   );
@@ -135,12 +113,10 @@ export function SiteFooter({ locale }: { locale: Locale }) {
 
 export function SiteShell({ locale, children, variant = "wide" }: SiteShellProps) {
   return (
-    <main className={`ws-shell ${variant === "compact" ? "is-compact" : ""}`} id="top">
-      <div className="ws-canvas">
-        <SiteHeader locale={locale} />
-        {children}
-      </div>
+    <div className={`ws-shell ${variant === "compact" ? "is-compact" : ""}`} id="top">
+      <SiteHeader locale={locale} />
+      <main className="ws-canvas">{children}</main>
       <SiteFooter locale={locale} />
-    </main>
+    </div>
   );
 }

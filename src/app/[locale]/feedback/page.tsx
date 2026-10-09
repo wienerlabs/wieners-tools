@@ -5,7 +5,7 @@ import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
-import { absoluteUrl, breadcrumbSchema, buildPageMetadata } from "@/lib/site";
+import { absoluteUrl, breadcrumbSchema, buildPageMetadata, siteName } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export default async function FeedbackPage({ params }: PageProps) {
       <SeoJsonLd data={breadcrumbs} />
       <SiteShell locale={locale} variant="compact">
         <article className="ws-doc">
-          <p className="ws-doc-eyebrow">{page.hero.eyebrow}</p>
+          <p className="ws-doc-eyebrow">{siteName}</p>
           <h1>{page.feedback.title}</h1>
           <p className="ws-doc-intro">{page.feedback.intro}</p>
 

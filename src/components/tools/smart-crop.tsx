@@ -149,7 +149,7 @@ export default function SmartCropTool({
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.clearRect(b.x * scale, b.y * scale, b.w * scale, b.h * scale);
     ctx.drawImage(im, b.x, b.y, b.w, b.h, b.x * scale, b.y * scale, b.w * scale, b.h * scale);
-    ctx.strokeStyle = "#fff4dd";
+    ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 2;
     ctx.strokeRect(b.x * scale, b.y * scale, b.w * scale, b.h * scale);
   };

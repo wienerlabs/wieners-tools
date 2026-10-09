@@ -44,7 +44,7 @@ const tr: LegalUi = {
   privacy: {
     title: "Gizlilik bildirimi",
     description:
-      "Wiener's Tools tüm görsel/PDF işlemlerini cihazınızda yapar. Bu sayfa, hangi minimum verilerin işlenebileceğini açıklar.",
+      "Wiener Tools tüm görsel/PDF işlemlerini cihazınızda yapar. Bu sayfa, hangi minimum verilerin işlenebileceğini açıklar.",
     updatedAt: "1 Mayıs 2026",
     sections: [
       {
@@ -118,7 +118,7 @@ const en: LegalUi = {
   privacy: {
     title: "Privacy notice",
     description:
-      "Wiener's Tools performs all image/PDF processing on your device. This page explains the minimum data that may be processed.",
+      "Wiener Tools performs all image/PDF processing on your device. This page explains the minimum data that may be processed.",
     updatedAt: "May 1, 2026",
     sections: [
       {
@@ -192,7 +192,7 @@ const de: LegalUi = {
   privacy: {
     title: "Datenschutzhinweis",
     description:
-      "Wiener's Tools führt alle Bild-/PDF-Operationen auf Ihrem Gerät aus. Diese Seite beschreibt die minimal verarbeiteten Daten.",
+      "Wiener Tools führt alle Bild-/PDF-Operationen auf Ihrem Gerät aus. Diese Seite beschreibt die minimal verarbeiteten Daten.",
     updatedAt: "1. Mai 2026",
     sections: [
       {
@@ -266,7 +266,7 @@ const ar: LegalUi = {
   privacy: {
     title: "إشعار الخصوصية",
     description:
-      "Wiener's Tools يعالج كل عمليات الصور/PDF داخل جهازك. توضّح هذه الصفحة الحد الأدنى من البيانات.",
+      "Wiener Tools يعالج كل عمليات الصور/PDF داخل جهازك. توضّح هذه الصفحة الحد الأدنى من البيانات.",
     updatedAt: "1 مايو 2026",
     sections: [
       {

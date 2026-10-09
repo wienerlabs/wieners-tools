@@ -40,7 +40,7 @@ export default function ContrastCheckerTool({}: {
   i18n: ToolI18n;
 }) {
   const [fg, setFg] = useState("#000000");
-  const [bg, setBg] = useState("#fff4dd");
+  const [bg, setBg] = useState("#f3f4f6");
 
   const { r, vNormal, vLarge } = useMemo(() => {
     const r = ratio(fg, bg);

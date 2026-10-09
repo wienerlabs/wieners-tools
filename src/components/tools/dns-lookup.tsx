@@ -22,7 +22,7 @@ export default function DnsLookupTool({
   i18n: ToolI18n;
 }) {
   const opt = i18n.options ?? {};
-  const [name, setName] = useState("wienerstools.com");
+  const [name, setName] = useState("wienerlabs.xyz");
   const [type, setType] = useState<RType>("A");
   const [busy, setBusy] = useState(false);
   const [resp, setResp] = useState<{ Status: number; Answer?: Answer[]; Authority?: Answer[] } | null>(null);

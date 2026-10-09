@@ -1,29 +1,29 @@
-# Wiener's Tools
+# Wiener Tools
 
 > Browser-native image toolkit — compress, convert, edit, generate. 100% client-side.
 
 ## Primary Pages
 
-- https://wienerstools.com/en/
-- https://wienerstools.com/tr/
-- https://wienerstools.com/de/
-- https://wienerstools.com/ar/
-- https://wienerstools.com/en/about/
-- https://wienerstools.com/en/feedback/
+- https://tools.wienerlabs.xyz/en/
+- https://tools.wienerlabs.xyz/tr/
+- https://tools.wienerlabs.xyz/de/
+- https://tools.wienerlabs.xyz/ar/
+- https://tools.wienerlabs.xyz/en/about/
+- https://tools.wienerlabs.xyz/en/feedback/
 
 ## Tools (selected)
 
-- https://wienerstools.com/en/tools/compress-image/
-- https://wienerstools.com/en/tools/convert-format/
-- https://wienerstools.com/en/tools/resize-image/
-- https://wienerstools.com/en/tools/rotate-flip/
-- https://wienerstools.com/en/tools/pixelart/
-- https://wienerstools.com/en/tools/adjust-color/
-- https://wienerstools.com/en/tools/apply-filter/
-- https://wienerstools.com/en/tools/favicon-generator/
-- https://wienerstools.com/en/tools/qr-generator/
-- https://wienerstools.com/en/tools/palette-extractor/
-- https://wienerstools.com/en/tools/ascii-art/
+- https://tools.wienerlabs.xyz/en/tools/compress-image/
+- https://tools.wienerlabs.xyz/en/tools/convert-format/
+- https://tools.wienerlabs.xyz/en/tools/resize-image/
+- https://tools.wienerlabs.xyz/en/tools/rotate-flip/
+- https://tools.wienerlabs.xyz/en/tools/pixelart/
+- https://tools.wienerlabs.xyz/en/tools/adjust-color/
+- https://tools.wienerlabs.xyz/en/tools/apply-filter/
+- https://tools.wienerlabs.xyz/en/tools/favicon-generator/
+- https://tools.wienerlabs.xyz/en/tools/qr-generator/
+- https://tools.wienerlabs.xyz/en/tools/palette-extractor/
+- https://tools.wienerlabs.xyz/en/tools/ascii-art/
 
 ## Capabilities
 

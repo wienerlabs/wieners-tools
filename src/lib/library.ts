@@ -1,4 +1,4 @@
-export type LibraryCategoryId = "ui" | "ai" | "design" | "tools" | "services" | "social";
+export type LibraryCategoryId = "kit" | "ui" | "ai" | "design" | "tools" | "services" | "social";
 
 export type Library = {
   slug: string;
@@ -15,6 +15,36 @@ export type LibraryCategoryGroup = {
 
 export const libraryGroups: LibraryCategoryGroup[] = [
   {
+    id: "kit",
+    resources: [
+      { slug: "jiro", name: "Jiro", url: "https://jiro.build/", description: "Design prompt library with 1,200+ AI-ready prompts for building beautiful websites fast.", image: "/lib-thumbs/kit/jiro.webp" },
+      { slug: "minimal-gallery", name: "Minimal Gallery", url: "https://minimal.gallery/", description: "Curated high-end websites to feed your agent as reference.", image: "/lib-thumbs/kit/minimal-gallery.webp" },
+      { slug: "kage", name: "Kage", url: "https://kage.design/", description: "Real UI inspiration mapped directly to prompts.", image: "/lib-thumbs/kit/kage.webp" },
+      { slug: "refero-styles", name: "Refero Styles", url: "https://styles.refero.design/", description: "2,000+ real product styles, typography included.", image: "/lib-thumbs/kit/refero-styles.webp" },
+      { slug: "component-gallery", name: "Component Gallery", url: "https://component.gallery/", description: "2,600+ examples of how top design systems solve the same element.", image: "/lib-thumbs/kit/component-gallery.webp" },
+      { slug: "appshot-gallery", name: "AppShot Gallery", url: "https://www.appshot.gallery/", description: "Real app screenshots for mobile.", image: "/lib-thumbs/kit/appshot-gallery.webp" },
+      { slug: "designmd", name: "DESIGNmd", url: "https://designmd.ai/", description: "Design systems in markdown your agent can read.", image: "/lib-thumbs/kit/designmd.webp" },
+      { slug: "vibeprompt", name: "VibePrompt", url: "https://vibeprompts.dev/", description: "Ready prompts for dashboards and landing pages.", image: "/lib-thumbs/kit/vibeprompt.webp" },
+      { slug: "21st", name: "21st.dev", url: "https://21st.dev/", description: "Component registry that plugs into agents through MCP.", image: "/lib-thumbs/kit/21st.webp" },
+      { slug: "kinetics", name: "Kinetics", url: "https://kinetics.colorion.co/", description: "150+ motion effects with React code and prompts.", image: "/lib-thumbs/kit/kinetics.webp" },
+      { slug: "shadcn-ui", name: "shadcn/ui", url: "https://ui.shadcn.com/", description: "Still the gold standard for clean, reusable UI.", image: "/lib-thumbs/kit/shadcn-ui.webp" },
+      { slug: "aceternity", name: "Aceternity UI", url: "https://ui.aceternity.com/", description: "200+ animated React and Tailwind components.", image: "/lib-thumbs/kit/aceternity.webp" },
+      { slug: "magic-ui", name: "Magic UI", url: "https://magicui.design/", description: "Beautifully designed components for modern web apps.", image: "/lib-thumbs/kit/magic-ui.webp" },
+      { slug: "motion-primitives", name: "Motion Primitives", url: "https://motion-primitives.com/", description: "Ready-to-use animation and interaction components.", image: "/lib-thumbs/kit/motion-primitives.webp" },
+      { slug: "uiverse", name: "Uiverse", url: "https://uiverse.io/", description: "Community-made UI elements and interactive components.", image: "/lib-thumbs/kit/uiverse.webp" },
+      { slug: "uiable", name: "UIAble", url: "https://uiable.com/", description: "A collection of ready-to-use UI components.", image: "/lib-thumbs/kit/uiable.webp" },
+      { slug: "mapcn", name: "mapcn", url: "https://www.mapcn.dev/", description: "Map components with markers, routes and popups.", image: "/lib-thumbs/kit/mapcn.webp" },
+      { slug: "microkit", name: "MicroKit UI", url: "https://microkit.co/", description: "Small micro-interactions that make interfaces feel polished.", image: "/lib-thumbs/kit/microkit.webp" },
+      { slug: "liquid-glass", name: "Liquid Glass", url: "https://glass.samasante.com/", description: "Glass refraction components and effects.", image: "/lib-thumbs/kit/liquid-glass.webp" },
+      { slug: "css-text-effects", name: "CSS Text Effects", url: "https://text-effects.colorion.co/", description: "Creative CSS text animations and effects.", image: "/lib-thumbs/kit/css-text-effects.webp" },
+      { slug: "circle-loaders", name: "Circle Loaders", url: "https://circleloaders.dominikakissi.com/", description: "Creative loading animations and loaders.", image: "/lib-thumbs/kit/circle-loaders.webp" },
+      { slug: "gradient-buttons", name: "Gradient Buttons", url: "https://gradientbuttons.colorion.co/", description: "Gradient button styles and effects.", image: "/lib-thumbs/kit/gradient-buttons.webp" },
+      { slug: "kitbitz", name: "Kitbitz", url: "https://kitbitz.art/", description: "2,000+ hand-drawn illustrations.", image: "/lib-thumbs/kit/kitbitz.webp" },
+      { slug: "3dicons", name: "3Dicons", url: "https://3dicons.co/", description: "Free 3D icon library for modern interfaces.", image: "/lib-thumbs/kit/3dicons.webp" },
+      { slug: "animejs", name: "Anime.js", url: "https://animejs.com/", description: "Lightweight JavaScript animation library for the web.", image: "/lib-thumbs/kit/animejs.webp" }
+    ]
+  },
+  {
     id: "ui",
     resources: [
       { slug: "kokonutui",          name: "KokonutUI",          url: "https://kokonutui.com",                description: "Open-source UI components for React and Next.js.", image: "/lib-thumbs/ui/kokonutui.png" },
@@ -26,8 +56,6 @@ export const libraryGroups: LibraryCategoryGroup[] = [
       { slug: "cmdk",               name: "cmdk",               url: "https://cmdk.paco.me/",                description: "Fast, composable, unstyled command menu for React.", image: "/lib-thumbs/ui/cmdk.jpeg" },
       { slug: "daisyui",            name: "DaisyUI",            url: "https://daisyui.com/",                 description: "Free open-source component library for Tailwind CSS.", image: "/lib-thumbs/ui/daisy-ui.png" },
       { slug: "handyarrows",        name: "Handyarrows",        url: "https://handyarrows.com/",             description: "Drop-in arrow assets for diagrams and UI." },
-      { slug: "shadcn-ui",          name: "shadcn/ui",          url: "https://ui.shadcn.com/",               description: "Copy-paste accessible components built on Radix + Tailwind.", image: "/lib-thumbs/ui/shadcn.png" },
-      { slug: "aceternity",         name: "Aceternity",         url: "https://ui.aceternity.com/",           description: "Premium Next.js + Tailwind + Framer Motion components.", image: "/lib-thumbs/ui/aceternity.jpeg" },
       { slug: "numberflow",         name: "NumberFlow",         url: "https://number-flow.barvian.me/",      description: "Animated number component, dependency-free and accessible." },
       { slug: "blendy",             name: "Blendy",             url: "https://blendy.tahazsh.com/",          description: "Framework-agnostic morph between two elements.", image: "/lib-thumbs/ui/blendy.png" },
       { slug: "shader-gradient",    name: "Shader Gradient",    url: "https://www.shadergradient.com/",      description: "Animated WebGL gradient backgrounds.", image: "/lib-thumbs/ui/shader-gradient.png" },
@@ -35,8 +63,6 @@ export const libraryGroups: LibraryCategoryGroup[] = [
       { slug: "fancy-components",   name: "Fancy Components",   url: "https://www.fancycomponents.dev/",     description: "Growing library of React micro-interactions.", image: "/lib-thumbs/ui/fancy-components.png" },
       { slug: "luxe-ui",            name: "LuxeUI",             url: "https://www.luxeui.com/",              description: "Copy-and-paste polished UI components.", image: "/lib-thumbs/ui/luxe-ui.png" },
       { slug: "kokonutui-pro",      name: "KokonutUI Pro",      url: "https://kokonutui.pro",                description: "100+ premium components for marketing sites and apps.", image: "/lib-thumbs/ui/kokonutui-pro.png" },
-      { slug: "21st",               name: "21st",               url: "https://21st.dev",                     description: "Discover and remix UI components from top design engineers.", image: "/lib-thumbs/ui/21st.png" },
-      { slug: "uiverse",            name: "Uiverse",            url: "https://uiverse.io",                   description: "Massive open-source UI element catalog.", image: "/lib-thumbs/ui/uiverse.png" },
       { slug: "supahero",           name: "Supahero",           url: "https://www.supahero.io/",             description: "Curated collection of beautiful hero sections.", image: "/lib-thumbs/ui/supahero.png" }
     ]
   },

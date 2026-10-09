@@ -61,6 +61,15 @@ export default async function LibraryPage({ params }: PageProps) {
           <p className="ws-lib-hero-audience">{lp.audience}</p>
         </section>
 
+        <nav className="ws-jump" aria-label={lp.jumpLabel}>
+          {libraryGroups.map((group) => (
+            <a key={group.id} href={`#${group.id}`} className="ws-jump-link">
+              {lp.sectionLabels[group.id]}
+              <span className="ws-jump-count">{group.resources.length}</span>
+            </a>
+          ))}
+        </nav>
+
         <section className="ws-lib-list">
           {libraryGroups.map((group) => (
             <section key={group.id} id={group.id} className="ws-lib-group">

@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { ToolCard } from "@/components/tool-card";
-import FallingText from "@/components/falling-text";
-import MagnetLines from "@/components/magnet-lines";
-import Cubes from "@/components/cubes";
-import TypewriterTitle from "@/components/typewriter-title";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ToolExplorer } from "@/components/tool-explorer";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { totalLibraryCount } from "@/lib/library";
+import { CATALOG_ORDER, catalogResourceCount } from "@/lib/catalogs";
+import { totalGlossaryTerms } from "@/lib/glossary";
+import { totalFontCount } from "@/lib/fonts";
+import { normalizeSearch } from "@/lib/search";
 import { buildPageMetadata, organizationSchema, webApplicationSchema, websiteSchema } from "@/lib/site";
 import { categoryOrder, localizedCategory } from "@/lib/tools/categories";
 import { tools } from "@/lib/tools/registry";
-import { getBundle } from "@/lib/tools/i18n";
+import { getToolI18n } from "@/lib/tools/i18n";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -33,142 +35,95 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     locale,
     title: page.meta.title,
     description: page.meta.description,
-    keywords: ["image tools", "browser image", "compress", "convert", "pixelart", "qr code"]
+    keywords: ["online tools", "browser tools", "image compressor", "pdf tools", "developer tools", "privacy"]
   });
 }
 
 export default async function LocaleHome({ params }: PageProps) {
   const locale = await getLocale(params);
   const page = content[locale];
-  const bundle = getBundle(locale);
+  const available = tools.filter((tool) => tool.status !== "soon");
+
+  const index = available.map((tool) => {
+    const local = getToolI18n(tool.slug, locale);
+    const english = getToolI18n(tool.slug, "en");
+    const text = [local.name, local.short, local.description, ...local.keywords, english.name, ...english.keywords, tool.slug.replace(/-/g, " ")].join(" ");
+    return { slug: tool.slug, category: tool.category, text: normalizeSearch(text) };
+  });
+
+  const categories = categoryOrder.map((id) => ({
+    id,
+    name: localizedCategory(locale, id).name,
+    count: available.filter((tool) => tool.category === id).length
+  }));
+
+  const catalogEntries = CATALOG_ORDER.reduce((sum, id) => sum + catalogResourceCount(id), 0);
+
+  const resources = [
+    { key: "library", label: page.libraryPage.nav, href: `/${locale}/library/`, meta: `${totalLibraryCount} ${page.libraryPage.countSuffix}` },
+    { key: "catalog", label: page.catalogIndexPage.nav, href: `/${locale}/catalog/`, meta: `${catalogEntries} ${page.catalogIndexPage.countSuffix}` },
+    { key: "blockchain", label: page.blockchainPage.nav, href: `/${locale}/blockchain/` },
+    { key: "fonts", label: page.fontsPage.nav, href: `/${locale}/fonts/`, meta: `${totalFontCount} ${page.fontsPage.countSuffix}` },
+    { key: "glossary", label: page.glossaryPage.nav, href: `/${locale}/glossary/`, meta: `${totalGlossaryTerms} ${page.glossaryPage.countSuffix}` },
+    { key: "components", label: page.gallery.nav, href: `/${locale}/components/` }
+  ] as const;
 
   return (
     <>
       <SeoJsonLd data={[organizationSchema(), websiteSchema(), webApplicationSchema(locale)]} />
       <SiteShell locale={locale}>
-        <section className="ws-hero">
-          <p className="ws-hero-eyebrow">{page.hero.eyebrow}</p>
-          <h1 className="ws-hero-title ws-hero-title-typewriter">
-            <TypewriterTitle
-              sequences={page.hero.typewriter.map((text, idx, arr) => ({
-                text,
-                deleteAfter: idx < arr.length - 1 ? true : true
-              }))}
-              autoLoop
-              naturalVariance
-            />
-          </h1>
-          <p className="ws-hero-subtitle">{page.hero.subtitle}</p>
-          <div className="ws-hero-ctas">
-            <a href="#tools" className="ws-button ws-button-primary">
-              {page.hero.primaryCta}
-            </a>
-            <a href={`/${locale}/about/`} className="ws-button ws-button-ghost">
-              {page.hero.secondaryCta}
-            </a>
-          </div>
-          <div className="ws-hero-proof">
-            {page.hero.proof.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-          <div className="ws-hero-magnet" aria-hidden="true">
-            <MagnetLines
-              rows={10}
-              columns={12}
-              containerSize="min(420px, 80vw)"
-              lineColor="rgba(0, 0, 0, 0.55)"
-              lineWidth="2px"
-              lineHeight="22px"
-              baseAngle={-10}
-            />
-          </div>
+        <section className="ws-page-hero ws-home-hero">
+          <p className="ws-eyebrow">{page.hero.eyebrow.replace("{count}", String(available.length))}</p>
+          <h1 className="ws-display">{page.hero.title}</h1>
+          <p className="ws-lead">{page.hero.subtitle}</p>
         </section>
 
-        <section className="ws-components-cta" aria-labelledby="components-cta-heading">
-          <Link href={`/${locale}/components/`} className="ws-components-cta-card">
-            <div className="ws-components-cta-body">
-              <p className="ws-components-cta-eyebrow">{page.componentsCta.eyebrow}</p>
-              <h2 id="components-cta-heading" className="ws-components-cta-title">
-                {page.componentsCta.title}
-              </h2>
-              <p className="ws-components-cta-text">{page.componentsCta.body}</p>
-              <p className="ws-components-cta-note">{page.componentsCta.note}</p>
-            </div>
-            <span className="ws-components-cta-button" aria-hidden="true">
-              <span>{page.componentsCta.ctaLabel}</span>
-              <ArrowUpRight size={28} strokeWidth={1.6} />
-            </span>
-          </Link>
-        </section>
-
-        <section id="tools" className="ws-section">
-          <header className="ws-section-head">
-            <p className="ws-section-eyebrow">{page.toolsSection.eyebrow}</p>
-            <h2 className="ws-section-title">{page.toolsSection.title}</h2>
-            <p className="ws-section-intro">{page.toolsSection.intro}</p>
-          </header>
-
-          {categoryOrder.map((catId) => {
-            const cat = localizedCategory(locale, catId);
-            const items = tools.filter((t) => t.category === catId);
+        <ToolExplorer
+          categories={categories}
+          tools={index}
+          labels={{ search: page.toolsSection.searchPlaceholder, all: page.toolsSection.all, empty: page.toolsSection.empty }}
+        >
+          {categoryOrder.map((id) => {
+            const category = localizedCategory(locale, id);
             return (
-              <section key={catId} id={catId} className="ws-category">
+              <section key={id} id={id} className="ws-category" data-category={id}>
                 <header className="ws-category-head">
-                  <h3>{cat.name}</h3>
-                  <p>{cat.description}</p>
+                  <h2>{category.name}</h2>
+                  <p>{category.description}</p>
                 </header>
-                <div className="ws-card-grid">
-                  {items.map((tool) => (
-                    <ToolCard key={tool.slug} locale={locale} tool={tool} i18n={bundle[tool.slug]} />
-                  ))}
-                </div>
+                <ul className="ws-card-grid">
+                  {available
+                    .filter((tool) => tool.category === id)
+                    .map((tool) => (
+                      <li key={tool.slug} data-slug={tool.slug}>
+                        <ToolCard locale={locale} tool={tool} i18n={getToolI18n(tool.slug, locale)} />
+                      </li>
+                    ))}
+                </ul>
               </section>
             );
           })}
-        </section>
+        </ToolExplorer>
 
-        <section className="ws-section ws-cubes-section">
-          <header className="ws-section-head">
-            <p className="ws-section-eyebrow">{page.toolsSection.eyebrow}</p>
-            <h2 className="ws-section-title">{page.hero.subtitle}</h2>
-            <p className="ws-section-intro">{page.toolsSection.intro}</p>
+        <section className="ws-home-resources" aria-labelledby="resources-title">
+          <header className="ws-home-resources-head">
+            <p className="ws-eyebrow">{page.home.resourcesEyebrow}</p>
+            <h2 id="resources-title">{page.home.resourcesTitle}</h2>
           </header>
-          <div className="ws-cubes-frame">
-            <Cubes
-              gridSize={8}
-              maxAngle={28}
-              radius={3}
-              borderStyle="1px solid rgba(0, 0, 0, 0.18)"
-              faceColor="#000000"
-              rippleColor="#fff4dd"
-              rippleSpeed={1.5}
-              autoAnimate
-              rippleOnClick
-              cellSize={48}
-            />
-          </div>
-        </section>
-
-        <section className="ws-section ws-falling-section">
-          <header className="ws-section-head">
-            <p className="ws-section-eyebrow">{page.fallingHero.eyebrow}</p>
-            <h2 className="ws-section-title">{page.about.title}</h2>
-            <p className="ws-section-intro">{page.fallingHero.hint}</p>
-          </header>
-          <div className="ws-falling-stage">
-            <FallingText
-              text={page.fallingHero.text}
-              highlightWords={page.fallingHero.highlightWords}
-              highlightClass="ft-highlighted"
-              trigger="hover"
-              backgroundColor="transparent"
-              wireframes={false}
-              gravity={0.56}
-              fontSize="2rem"
-              mouseConstraintStiffness={0.9}
-            />
-          </div>
+          <ul className="ws-resource-grid">
+            {resources.map((item) => (
+              <li key={item.key}>
+                <Link href={item.href} className="ws-resource-card">
+                  <span className="ws-resource-top">
+                    <span className="ws-resource-name">{item.label}</span>
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </span>
+                  <span className="ws-resource-desc">{page.home.resources[item.key]}</span>
+                  {"meta" in item ? <span className="ws-resource-count">{item.meta}</span> : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </SiteShell>
     </>

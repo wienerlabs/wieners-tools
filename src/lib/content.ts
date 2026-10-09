@@ -9,23 +9,34 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     subtitle: string;
-    primaryCta: string;
-    secondaryCta: string;
-    proof: string[];
-    typewriter: string[];
   };
   toolsSection: {
     eyebrow: string;
-    title: string;
-    intro: string;
-    statusReady: string;
-    statusBeta: string;
-    statusSoon: string;
+    searchPlaceholder: string;
+    all: string;
+    empty: string;
+    related: string;
     badgeAi: string;
     badgeBeta: string;
     badgeNew: string;
-    badgeFast: string;
-    badgeClientSide: string;
+  };
+  nav: {
+    menu: string;
+    close: string;
+    allTools: string;
+    resources: string;
+    more: string;
+    about: string;
+  };
+  home: {
+    resourcesEyebrow: string;
+    resourcesTitle: string;
+    resources: Record<"library" | "catalog" | "blockchain" | "fonts" | "glossary" | "components", string>;
+  };
+  footer: {
+    tagline: string;
+    feedbackCta: string;
+    languages: string;
   };
   about: {
     title: string;
@@ -79,25 +90,6 @@ export type SiteContent = {
     codeLabel: string;
     audience: string;
   };
-  cardNav: {
-    menuLabel: string;
-    closeLabel: string;
-    ctaLabel: string;
-    secondaryCtaLabel: string;
-    items: Array<{
-      label: string;
-      bgColor?: string;
-      textColor?: string;
-      links: Array<{ label: string; href: string; ariaLabel?: string }>;
-    }>;
-  };
-  componentsCta: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    ctaLabel: string;
-    note: string;
-  };
   libraryPage: {
     nav: string;
     metaTitle: string;
@@ -109,7 +101,8 @@ export type SiteContent = {
     visit: string;
     attribution: string;
     countSuffix: string;
-    sectionLabels: Record<"ui" | "ai" | "design" | "tools" | "services" | "social", string>;
+    jumpLabel: string;
+    sectionLabels: Record<"kit" | "ui" | "ai" | "design" | "tools" | "services" | "social", string>;
   };
   catalogIndexPage: {
     nav: string;
@@ -218,43 +211,58 @@ export type SiteContent = {
   };
 };
 
-const SHARED_PROOF = ["tr / de / en / ar", "100% in your browser", "open source ready"];
-
 export const content: Record<Locale, SiteContent> = {
   tr: {
     meta: {
-      title: "Wiener's Tools — Tarayıcıda görsel atölyesi",
+      title: "Tarayıcıda çalışan ücretsiz araçlar",
       description:
-        "32 araç, 4 dil, %100 tarayıcıda. Sıkıştır, dönüştür, yeniden boyutlandır, pixelart üret, palet çıkart — fotoğrafların asla sunucumuza gitmez."
+        "Görsel, PDF ve videoyu sıkıştırın, dönüştürün ve düzenleyin; geliştirici, API ve güvenlik araçlarını kullanın. Hepsi tarayıcınızda çalışır, dosyalarınız cihazınızdan çıkmaz."
     },
     hero: {
-      eyebrow: "Tarayıcıda görsel atölyesi",
-      title: "wieners-tools",
+      eyebrow: "{count} ücretsiz araç · kayıt yok · yükleme yok",
+      title: "Her şey tarayıcınızda çalışır.",
       subtitle:
-        "Görselleri sıkıştırın, dönüştürün, düzenleyin ve üretin. Hepsi tarayıcınızda — fotoğraflarınız asla sunucumuza gitmez.",
-      primaryCta: "Araçları gör",
-      secondaryCta: "Hakkında",
-      proof: SHARED_PROOF,
-      typewriter: ["sıkıştır.", "dönüştür.", "düzenle.", "üret."]
+        "Görsel, PDF ve videoyu sıkıştırın, dönüştürün ve düzenleyin ya da geliştirici, API ve güvenlik araçlarına uzanın. Dosyalarınız cihazınızda kalır."
     },
     toolsSection: {
       eyebrow: "Araçlar",
-      title: "32 araç, 6 kategori, sıfır yükleme.",
-      intro:
-        "Hiçbir görsel sunucumuza ulaşmaz. Tüm sıkıştırma, dönüştürme ve AI işleri WebAssembly ile cihazınızda çalışır.",
-      statusReady: "Hazır",
-      statusBeta: "Beta",
-      statusSoon: "Yakında",
+      searchPlaceholder: "Araç ara",
+      all: "Tümü",
+      empty: "Bu aramayla eşleşen araç yok.",
+      related: "{category} kategorisinde diğer araçlar",
       badgeAi: "AI",
       badgeBeta: "Beta",
-      badgeNew: "Yeni",
-      badgeFast: "Hızlı",
-      badgeClientSide: "Client-side"
+      badgeNew: "Yeni"
+    },
+    nav: {
+      menu: "Menü",
+      close: "Kapat",
+      allTools: "Tüm araçlar",
+      resources: "Kaynaklar",
+      more: "Daha fazla",
+      about: "Hakkında"
+    },
+    home: {
+      resourcesEyebrow: "Geliştiriciler için",
+      resourcesTitle: "Ürün geliştirirken açık tuttuğumuz kaynaklar.",
+      resources: {
+        library: "UI kitleri, AI araçları, tasarım kaynakları ve geliştirici servisleri.",
+        catalog: "Cursor kuralları, MCP sunucuları, promptlar, snippet'ler ve cheatsheet'ler.",
+        blockchain: "Her biri entegrasyon promptuyla gelen Base ve Solana modülleri.",
+        fonts: "Canlı önizlemeli mono, sans, serif, display ve pixel yazı tipleri.",
+        glossary: "AI ve vibe coding terimleri, sade bir dille.",
+        components: "Canlı önizleme ve kodla animasyonlu React bileşenleri."
+      }
+    },
+    footer: {
+      tagline: "Tarayıcıda çalışan ücretsiz araçlar. Wiener Labs tarafından geliştirilir.",
+      feedbackCta: "Geri bildirim gönder",
+      languages: "Dil"
     },
     about: {
-      title: "Wiener's Tools nedir?",
+      title: "Wiener Tools nedir?",
       intro:
-        "Wiener's Tools, görsellerle uğraşan herkesin tek tek doğru aracı bulmak için 12 farklı siteye gitmek zorunda kalmaması için yapıldı. Hepsi tarayıcıda, hepsi tek yerde, fotoğrafınız hiç sunucumuza ulaşmadan.",
+        "Wiener Tools, görsellerle uğraşan herkesin tek tek doğru aracı bulmak için 12 farklı siteye gitmek zorunda kalmaması için yapıldı. Hepsi tarayıcıda, hepsi tek yerde, fotoğrafınız hiç sunucumuza ulaşmadan.",
       sections: [
         {
           title: "Tarayıcı tek başına yeter",
@@ -269,7 +277,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           title: "Wiener Labs",
           body:
-            "Wiener's Tools, Wiener Labs (Web3 altyapı laboratuvarı) tarafından sürdürülen ücretsiz bir araç koleksiyonudur. Telif hakkı, kayıt veya abonelik yoktur."
+            "Wiener Tools, Wiener Labs (Web3 altyapı laboratuvarı) tarafından sürdürülen ücretsiz bir araç koleksiyonudur. Telif hakkı, kayıt veya abonelik yoktur."
         }
       ],
       ctaLabel: "GitHub'da incele",
@@ -317,65 +325,14 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Komponentler",
       eyebrow: "İç araç · Frontend",
       title: "Komponent galerisi",
-      intro: "Wiener şirketindeki frontend ekibi için canlı önizleme + kod. Tüm bileşenler bizim tasarım sisteminde, monokrom palette ve Host Grotesk tipografi ile.",
+      intro: "Wiener şirketindeki frontend ekibi için canlı önizleme + kod. Tüm bileşenler bizim tasarım sisteminde, monokrom palette ve Sora tipografi ile.",
       previewLabel: "Canlı önizleme",
       codeLabel: "Kullanım",
       audience: "Yalnızca Wiener Labs ekipleri için referans katalog."
     },
-    cardNav: {
-      menuLabel: "Menü",
-      closeLabel: "Kapat",
-      ctaLabel: "Komponentler",
-      secondaryCtaLabel: "Blockchain",
-      items: [
-        {
-          label: "Araçlar",
-          links: [
-            { label: "Tüm araçlar", href: "/tr/#tools" },
-            { label: "AI", href: "/tr/#ai" },
-            { label: "PDF", href: "/tr/#pdf" },
-            { label: "Video & Ses", href: "/tr/#media" },
-            { label: "Tasarım", href: "/tr/#design" },
-            { label: "Geliştirici", href: "/tr/#developer" },
-            { label: "API & HTTP", href: "/tr/#api" },
-            { label: "Güvenlik", href: "/tr/#security" },
-            { label: "Ağ & Sysadmin", href: "/tr/#network" }
-          ]
-        },
-        {
-          label: "Komponentler",
-          links: [
-            { label: "Galeri", href: "/tr/components/" },
-            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools GitHub" }
-          ]
-        },
-        {
-          label: "Stüdyo",
-          links: [
-            { label: "Blockchain", href: "/tr/blockchain/" },
-            { label: "Kütüphane", href: "/tr/library/" },
-            { label: "Kataloglar", href: "/tr/catalog/" },
-            { label: "Sözlük", href: "/tr/glossary/" },
-            { label: "Fontlar", href: "/tr/fonts/" },
-            { label: "Architect", href: "/tr/tools/architect/" },
-            { label: "Video İndirici", href: "/tr/tools/video-downloader/" },
-            { label: "Hakkında", href: "/tr/about/" },
-            { label: "Geri bildirim", href: "/tr/feedback/" },
-            { label: "E-posta", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs e-postası" }
-          ]
-        }
-      ]
-    },
-    componentsCta: {
-      eyebrow: "İç kullanım · Yeni",
-      title: "Frontend ekibi için komponent galerisi",
-      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText ve CodeBlock — hepsi monokrom palette canlı önizleme ve kopyala-yapıştır kod ile.",
-      ctaLabel: "Galeriyi aç",
-      note: "6 komponent · canlı önizleme · TypeScript snippet"
-    },
     libraryPage: {
       nav: "Kütüphane",
-      metaTitle: "UI & Geliştirici Kütüphaneleri — Wiener's Tools",
+      metaTitle: "UI & Geliştirici Kütüphaneleri",
       metaDescription:
         "Vibe coding yapan ekipler için tek katalog: shadcn'den v0'a, Cursor'dan Linear'a 130+ UI kütüphanesi, AI aracı, tasarım kaynağı, geliştirici platformu — hepsi tek sayfada görsellerle birlikte.",
       eyebrow: "Katalog",
@@ -387,7 +344,9 @@ export const content: Record<Locale, SiteContent> = {
       visit: "Aç",
       attribution: "Curate edilen liste ilhamı arca.directory'den.",
       countSuffix: "kaynak",
+      jumpLabel: "Bölüme git",
       sectionLabels: {
+        kit: "AI ile UI tasarımı",
         ui: "UI komponent kütüphaneleri",
         ai: "AI araçları",
         design: "Tasarım kaynakları",
@@ -398,17 +357,17 @@ export const content: Record<Locale, SiteContent> = {
     },
     catalogIndexPage: {
       nav: "Kataloglar",
-      metaTitle: "Kataloglar — Wiener's Tools",
+      metaTitle: "Kataloglar",
       metaDescription: "Vibe-coding ekiplerinin günlük çalışma kaynakları: Cursor rules, MCP server'ları, prompt kütüphanesi, starter'lar, eval, hosting, db, auth, feed ve hackathonlar.",
       eyebrow: "Kataloglar",
-      title: "10 katalog, tek sayfa",
+      title: "13 katalog, tek sayfa",
       intro: "Vibe coding sırasında elimde tutuğum hızlı erişim kaynakları. Her katalogda kopyala-yapıştır snippet'lar, kısa açıklamalar ve çıkış linkleri.",
       audience: "İç referans. Bir araç ya da snippet burada listelendiyse en az bir prototipte denenmiştir.",
       countSuffix: "kayıt"
     },
     glossaryPage: {
       nav: "Sözlük",
-      metaTitle: "Vibe Coding Sözlüğü — Wiener's Tools",
+      metaTitle: "Vibe Coding Sözlüğü",
       metaDescription: "AI ve vibe-coding terimlerinin kısa ve anlaşılır A-Z sözlüğü: agent, RAG, MCP, embedding, fine-tuning ve 60+ terim daha.",
       eyebrow: "Sözlük",
       title: "Vibe coding sözlüğü",
@@ -419,7 +378,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     fontsPage: {
       nav: "Fontlar",
-      metaTitle: "Font Kütüphanesi — Wiener's Tools",
+      metaTitle: "Font Kütüphanesi",
       metaDescription: "Vibe coderlar için canlı önizlemeli font kataloğu: 40+ mono, sans, serif, display ve pixel font, hepsi tek sayfada.",
       eyebrow: "Tipografi",
       title: "Font kütüphanesi",
@@ -466,7 +425,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     blockchainPage: {
       nav: "Blockchain",
-      metaTitle: "Blockchain Entegrasyonu — Wiener's Tools",
+      metaTitle: "Blockchain Entegrasyonu",
       metaDescription:
         "Vibe coding yapan blockchaincilere özel: Base ve Solana üzerinde build ettirecek SDK'lar, cüzdanlar, DEX'ler, lending, RPC, AI agent toolkit'leri — her biri için Claude Opus 4.7 entegrasyon promptu hazır.",
       eyebrow: "Vibe-coding · Onchain",
@@ -543,38 +502,55 @@ export const content: Record<Locale, SiteContent> = {
   },
   en: {
     meta: {
-      title: "Wiener's Tools — The browser-native image workshop",
+      title: "Free tools that run in your browser",
       description:
-        "32 tools, 4 languages, 100% in your browser. Compress, convert, resize, pixelate, extract palettes — your photos never leave your device."
+        "Compress, convert and edit images, PDFs and video, plus developer, API and security utilities. Everything runs in your browser, so your files never leave your device."
     },
     hero: {
-      eyebrow: "The browser-native image workshop",
-      title: "wieners-tools",
+      eyebrow: "{count} free tools · no sign-up · no uploads",
+      title: "Everything runs in your browser.",
       subtitle:
-        "Compress, convert, edit and generate images. Everything in your browser — your photos never reach our servers.",
-      primaryCta: "Browse tools",
-      secondaryCta: "About",
-      proof: SHARED_PROOF,
-      typewriter: ["compress.", "convert.", "edit.", "generate."]
+        "Compress, convert and edit images, PDFs and video, or reach for developer, API and security utilities. Your files stay on your device."
     },
     toolsSection: {
       eyebrow: "Tools",
-      title: "32 tools, 6 categories, zero uploads.",
-      intro:
-        "No image leaves your device. Compression, conversion and AI all run on your machine via WebAssembly.",
-      statusReady: "Ready",
-      statusBeta: "Beta",
-      statusSoon: "Soon",
+      searchPlaceholder: "Search tools",
+      all: "All",
+      empty: "No tools match that search.",
+      related: "More in {category}",
       badgeAi: "AI",
       badgeBeta: "Beta",
-      badgeNew: "New",
-      badgeFast: "Fast",
-      badgeClientSide: "Client-side"
+      badgeNew: "New"
+    },
+    nav: {
+      menu: "Menu",
+      close: "Close",
+      allTools: "All tools",
+      resources: "Resources",
+      more: "More",
+      about: "About"
+    },
+    home: {
+      resourcesEyebrow: "For builders",
+      resourcesTitle: "References we keep open while building.",
+      resources: {
+        library: "UI kits, AI tools, design resources and developer services.",
+        catalog: "Cursor rules, MCP servers, prompts, snippets and cheatsheets.",
+        blockchain: "Base and Solana modules, each with an integration prompt.",
+        fonts: "Mono, sans, serif, display and pixel typefaces with live previews.",
+        glossary: "AI and vibe coding terms in plain language.",
+        components: "Animated React components with live previews and code."
+      }
+    },
+    footer: {
+      tagline: "Free tools that run in your browser. Built by Wiener Labs.",
+      feedbackCta: "Send feedback",
+      languages: "Language"
     },
     about: {
-      title: "What is Wiener's Tools?",
+      title: "What is Wiener Tools?",
       intro:
-        "Wiener's Tools exists so anyone working with images doesn't have to bounce between 12 different ad-laden sites to find the right tool. Everything in the browser, in one place, with your photos never touching a server.",
+        "Wiener Tools exists so anyone working with images doesn't have to bounce between 12 different ad-laden sites to find the right tool. Everything in the browser, in one place, with your photos never touching a server.",
       sections: [
         {
           title: "Your browser is enough",
@@ -589,7 +565,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           title: "By Wiener Labs",
           body:
-            "Wiener's Tools is a free toolkit maintained by Wiener Labs (a Web3 infrastructure lab). No paywall, no signup, no subscription."
+            "Wiener Tools is a free toolkit maintained by Wiener Labs (a Web3 infrastructure lab). No paywall, no signup, no subscription."
         }
       ],
       ctaLabel: "Browse on GitHub",
@@ -637,65 +613,14 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Components",
       eyebrow: "Internal · Frontend",
       title: "Component gallery",
-      intro: "Live previews and copy-paste snippets for the Wiener frontend team. Every component lives inside our monochrome palette and Host Grotesk type system.",
+      intro: "Live previews and copy-paste snippets for the Wiener frontend team. Every component lives inside our monochrome palette and Sora type system.",
       previewLabel: "Live preview",
       codeLabel: "Usage",
       audience: "Reference catalog for Wiener Labs teams."
     },
-    cardNav: {
-      menuLabel: "Menu",
-      closeLabel: "Close",
-      ctaLabel: "Components",
-      secondaryCtaLabel: "Blockchain",
-      items: [
-        {
-          label: "Tools",
-          links: [
-            { label: "All tools", href: "/en/#tools" },
-            { label: "AI", href: "/en/#ai" },
-            { label: "PDF", href: "/en/#pdf" },
-            { label: "Video & Audio", href: "/en/#media" },
-            { label: "Design", href: "/en/#design" },
-            { label: "Developer", href: "/en/#developer" },
-            { label: "API & HTTP", href: "/en/#api" },
-            { label: "Security", href: "/en/#security" },
-            { label: "Network", href: "/en/#network" }
-          ]
-        },
-        {
-          label: "Components",
-          links: [
-            { label: "Gallery", href: "/en/components/" },
-            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools on GitHub" }
-          ]
-        },
-        {
-          label: "Studio",
-          links: [
-            { label: "Blockchain", href: "/en/blockchain/" },
-            { label: "Library", href: "/en/library/" },
-            { label: "Catalogs", href: "/en/catalog/" },
-            { label: "Glossary", href: "/en/glossary/" },
-            { label: "Fonts", href: "/en/fonts/" },
-            { label: "Architect", href: "/en/tools/architect/" },
-            { label: "Video Downloader", href: "/en/tools/video-downloader/" },
-            { label: "About", href: "/en/about/" },
-            { label: "Feedback", href: "/en/feedback/" },
-            { label: "Email", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Email Wiener Labs" }
-          ]
-        }
-      ]
-    },
-    componentsCta: {
-      eyebrow: "Internal · New",
-      title: "Component gallery for the frontend team",
-      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText and CodeBlock — all in our monochrome palette with live previews and copy-paste code.",
-      ctaLabel: "Open gallery",
-      note: "6 components · live previews · TypeScript snippets"
-    },
     libraryPage: {
       nav: "Library",
-      metaTitle: "UI & developer libraries — Wiener's Tools",
+      metaTitle: "UI & developer libraries",
       metaDescription:
         "One catalog for vibe-coding teams: 130+ UI libraries, AI tools, design resources, dev services and platforms — all in one page with previews.",
       eyebrow: "Catalogue",
@@ -707,7 +632,9 @@ export const content: Record<Locale, SiteContent> = {
       visit: "Open",
       attribution: "Curated list inspired by arca.directory.",
       countSuffix: "resources",
+      jumpLabel: "Jump to section",
       sectionLabels: {
+        kit: "UI design with AI",
         ui: "UI component libraries",
         ai: "AI tools",
         design: "Design resources",
@@ -718,17 +645,17 @@ export const content: Record<Locale, SiteContent> = {
     },
     catalogIndexPage: {
       nav: "Catalogs",
-      metaTitle: "Catalogs — Wiener's Tools",
+      metaTitle: "Catalogs",
       metaDescription: "Daily working catalogs for vibe-coding teams: Cursor rules, MCP servers, prompt library, starters, eval, hosting, db, auth, feeds and hackathons.",
       eyebrow: "Catalogs",
-      title: "10 catalogs, one page",
+      title: "13 catalogs, one page",
       intro: "Quick-reference catalogs I keep open while vibe-coding. Each ships copy-paste snippets, short notes, and outbound links.",
       audience: "Internal reference. If a tool or snippet is listed here it has been tried in at least one prototype.",
       countSuffix: "entries"
     },
     glossaryPage: {
       nav: "Glossary",
-      metaTitle: "Vibe Coding Glossary — Wiener's Tools",
+      metaTitle: "Vibe Coding Glossary",
       metaDescription: "Plain-English A-Z glossary of AI and vibe-coding terms: agent, RAG, MCP, embedding, fine-tuning and 60+ more.",
       eyebrow: "Glossary",
       title: "Vibe coding glossary",
@@ -739,7 +666,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     fontsPage: {
       nav: "Fonts",
-      metaTitle: "Font library — Wiener's Tools",
+      metaTitle: "Font library",
       metaDescription: "Live preview font catalog for vibe coders: 40+ mono, sans, serif, display and pixel typefaces, all on one page.",
       eyebrow: "Typography",
       title: "Font library",
@@ -786,7 +713,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     blockchainPage: {
       nav: "Blockchain",
-      metaTitle: "Blockchain Integration — Wiener's Tools",
+      metaTitle: "Blockchain Integration",
       metaDescription:
         "For vibe-coding builders: 47 SDKs, wallets, DEXes, lending, RPC, AI agent toolkits across Base + Solana — every module ships with a Claude Opus 4.7 integration prompt.",
       eyebrow: "Vibe-coding · Onchain",
@@ -863,38 +790,55 @@ export const content: Record<Locale, SiteContent> = {
   },
   de: {
     meta: {
-      title: "Wiener's Tools — Bildwerkstatt im Browser",
+      title: "Kostenlose Werkzeuge, die im Browser laufen",
       description:
-        "32 Werkzeuge, 4 Sprachen, 100% im Browser. Komprimieren, konvertieren, skalieren, pixelisieren — Ihre Fotos verlassen Ihr Gerät nicht."
+        "Bilder, PDFs und Videos komprimieren, konvertieren und bearbeiten, dazu Entwickler-, API- und Sicherheitswerkzeuge. Alles läuft im Browser, Ihre Dateien verlassen Ihr Gerät nicht."
     },
     hero: {
-      eyebrow: "Bildwerkstatt im Browser",
-      title: "wieners-tools",
+      eyebrow: "{count} kostenlose Werkzeuge · ohne Anmeldung · ohne Upload",
+      title: "Alles läuft in Ihrem Browser.",
       subtitle:
-        "Bilder komprimieren, konvertieren, bearbeiten und erzeugen — komplett im Browser, ohne Upload.",
-      primaryCta: "Werkzeuge",
-      secondaryCta: "Über",
-      proof: SHARED_PROOF,
-      typewriter: ["komprimieren.", "konvertieren.", "bearbeiten.", "erzeugen."]
+        "Bilder, PDFs und Videos komprimieren, konvertieren und bearbeiten oder zu Entwickler-, API- und Sicherheitswerkzeugen greifen. Ihre Dateien bleiben auf Ihrem Gerät."
     },
     toolsSection: {
       eyebrow: "Werkzeuge",
-      title: "32 Werkzeuge, 6 Kategorien, kein Upload.",
-      intro:
-        "Kein Bild verlässt Ihr Gerät. Komprimierung, Konvertierung und KI laufen über WebAssembly lokal.",
-      statusReady: "Bereit",
-      statusBeta: "Beta",
-      statusSoon: "Bald",
+      searchPlaceholder: "Werkzeuge durchsuchen",
+      all: "Alle",
+      empty: "Keine Werkzeuge passen zu dieser Suche.",
+      related: "Mehr aus {category}",
       badgeAi: "KI",
       badgeBeta: "Beta",
-      badgeNew: "Neu",
-      badgeFast: "Schnell",
-      badgeClientSide: "Client-side"
+      badgeNew: "Neu"
+    },
+    nav: {
+      menu: "Menü",
+      close: "Schließen",
+      allTools: "Alle Werkzeuge",
+      resources: "Ressourcen",
+      more: "Mehr",
+      about: "Über uns"
+    },
+    home: {
+      resourcesEyebrow: "Für Builder",
+      resourcesTitle: "Nachschlagewerke, die wir beim Bauen offen halten.",
+      resources: {
+        library: "UI-Kits, KI-Tools, Design-Ressourcen und Entwickler-Services.",
+        catalog: "Cursor-Regeln, MCP-Server, Prompts, Snippets und Cheatsheets.",
+        blockchain: "Base- und Solana-Module, jeweils mit Integrations-Prompt.",
+        fonts: "Mono-, Sans-, Serif-, Display- und Pixel-Schriften mit Live-Vorschau.",
+        glossary: "KI- und Vibe-Coding-Begriffe, einfach erklärt.",
+        components: "Animierte React-Komponenten mit Live-Vorschau und Code."
+      }
+    },
+    footer: {
+      tagline: "Kostenlose Werkzeuge, die im Browser laufen. Entwickelt von Wiener Labs.",
+      feedbackCta: "Feedback senden",
+      languages: "Sprache"
     },
     about: {
-      title: "Was ist Wiener's Tools?",
+      title: "Was ist Wiener Tools?",
       intro:
-        "Wiener's Tools wurde gebaut, damit niemand mehr zwischen 12 werbeüberladenen Seiten springen muss, um das richtige Bildwerkzeug zu finden. Alles im Browser, an einem Ort, ohne dass Fotos jemals einen Server berühren.",
+        "Wiener Tools wurde gebaut, damit niemand mehr zwischen 12 werbeüberladenen Seiten springen muss, um das richtige Bildwerkzeug zu finden. Alles im Browser, an einem Ort, ohne dass Fotos jemals einen Server berühren.",
       sections: [
         {
           title: "Der Browser reicht",
@@ -909,7 +853,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           title: "Von Wiener Labs",
           body:
-            "Wiener's Tools ist ein kostenloses Toolkit von Wiener Labs (Web3-Infrastruktur-Lab). Keine Paywall, keine Registrierung."
+            "Wiener Tools ist ein kostenloses Toolkit von Wiener Labs (Web3-Infrastruktur-Lab). Keine Paywall, keine Registrierung."
         }
       ],
       ctaLabel: "Auf GitHub ansehen",
@@ -957,65 +901,14 @@ export const content: Record<Locale, SiteContent> = {
       nav: "Komponenten",
       eyebrow: "Intern · Frontend",
       title: "Komponentengalerie",
-      intro: "Live-Vorschauen und Code-Snippets für das Wiener Frontend-Team. Alle Komponenten in unserer monochromen Palette und Host Grotesk Typografie.",
+      intro: "Live-Vorschauen und Code-Snippets für das Wiener Frontend-Team. Alle Komponenten in unserer monochromen Palette und Sora Typografie.",
       previewLabel: "Live-Vorschau",
       codeLabel: "Verwendung",
       audience: "Referenz-Katalog für Wiener Labs Teams."
     },
-    cardNav: {
-      menuLabel: "Menü",
-      closeLabel: "Schließen",
-      ctaLabel: "Komponenten",
-      secondaryCtaLabel: "Blockchain",
-      items: [
-        {
-          label: "Werkzeuge",
-          links: [
-            { label: "Alle Werkzeuge", href: "/de/#tools" },
-            { label: "KI", href: "/de/#ai" },
-            { label: "PDF", href: "/de/#pdf" },
-            { label: "Video & Audio", href: "/de/#media" },
-            { label: "Design", href: "/de/#design" },
-            { label: "Entwickler", href: "/de/#developer" },
-            { label: "API & HTTP", href: "/de/#api" },
-            { label: "Sicherheit", href: "/de/#security" },
-            { label: "Netzwerk", href: "/de/#network" }
-          ]
-        },
-        {
-          label: "Komponenten",
-          links: [
-            { label: "Galerie", href: "/de/components/" },
-            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools auf GitHub" }
-          ]
-        },
-        {
-          label: "Studio",
-          links: [
-            { label: "Blockchain", href: "/de/blockchain/" },
-            { label: "Bibliothek", href: "/de/library/" },
-            { label: "Kataloge", href: "/de/catalog/" },
-            { label: "Glossar", href: "/de/glossary/" },
-            { label: "Schriften", href: "/de/fonts/" },
-            { label: "Architect", href: "/de/tools/architect/" },
-            { label: "Video-Downloader", href: "/de/tools/video-downloader/" },
-            { label: "Über", href: "/de/about/" },
-            { label: "Feedback", href: "/de/feedback/" },
-            { label: "E-Mail", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "Wiener Labs E-Mail" }
-          ]
-        }
-      ]
-    },
-    componentsCta: {
-      eyebrow: "Intern · Neu",
-      title: "Komponentengalerie für das Frontend-Team",
-      body: "PixelBlast, TypewriterTitle, MagnetLines, Cubes, FallingText und CodeBlock — alles in unserer monochromen Palette mit Live-Vorschauen und Code zum Kopieren.",
-      ctaLabel: "Galerie öffnen",
-      note: "6 Komponenten · Live-Vorschauen · TypeScript-Snippets"
-    },
     libraryPage: {
       nav: "Bibliothek",
-      metaTitle: "UI- & Entwickler-Bibliotheken — Wiener's Tools",
+      metaTitle: "UI- & Entwickler-Bibliotheken",
       metaDescription:
         "Ein Katalog für Vibe-Coding-Teams: 130+ UI-Bibliotheken, AI-Tools, Design-Ressourcen, Dev-Services und Plattformen — alles auf einer Seite mit Vorschauen.",
       eyebrow: "Katalog",
@@ -1027,7 +920,9 @@ export const content: Record<Locale, SiteContent> = {
       visit: "Öffnen",
       attribution: "Kuratierte Liste, inspiriert von arca.directory.",
       countSuffix: "Ressourcen",
+      jumpLabel: "Zum Abschnitt",
       sectionLabels: {
+        kit: "UI-Design mit KI",
         ui: "UI-Komponentenbibliotheken",
         ai: "AI-Tools",
         design: "Design-Ressourcen",
@@ -1038,17 +933,17 @@ export const content: Record<Locale, SiteContent> = {
     },
     catalogIndexPage: {
       nav: "Kataloge",
-      metaTitle: "Kataloge — Wiener's Tools",
+      metaTitle: "Kataloge",
       metaDescription: "Tägliche Arbeits-Kataloge für Vibe-Coding-Teams: Cursor Rules, MCP-Server, Prompt-Library, Starter, Eval, Hosting, DB, Auth, Feeds, Hackathons.",
       eyebrow: "Kataloge",
-      title: "10 Kataloge, eine Seite",
+      title: "13 Kataloge, eine Seite",
       intro: "Schnellreferenz-Kataloge, die ich beim Vibe-Coding offen halte. Jeder mit Copy-Paste-Snippets, kurzen Notizen, Outbound-Links.",
       audience: "Interne Referenz. Was hier steht, wurde mindestens in einem Prototyp eingesetzt.",
       countSuffix: "Einträge"
     },
     glossaryPage: {
       nav: "Glossar",
-      metaTitle: "Vibe-Coding-Glossar — Wiener's Tools",
+      metaTitle: "Vibe-Coding-Glossar",
       metaDescription: "Klar verständliches A-Z-Glossar für AI und Vibe-Coding: Agent, RAG, MCP, Embedding, Fine-Tuning und 60+ weitere Begriffe.",
       eyebrow: "Glossar",
       title: "Vibe-Coding-Glossar",
@@ -1059,7 +954,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     fontsPage: {
       nav: "Schriften",
-      metaTitle: "Schrift-Bibliothek — Wiener's Tools",
+      metaTitle: "Schrift-Bibliothek",
       metaDescription: "Schriftkatalog mit Live-Vorschau für Vibe-Coder: 40+ Mono-, Sans-, Serif-, Display- und Pixel-Schriften auf einer Seite.",
       eyebrow: "Typografie",
       title: "Schrift-Bibliothek",
@@ -1106,7 +1001,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     blockchainPage: {
       nav: "Blockchain",
-      metaTitle: "Blockchain-Integration — Wiener's Tools",
+      metaTitle: "Blockchain-Integration",
       metaDescription:
         "Für Vibe-Coding-Builder: 47 SDKs, Wallets, DEXes, Lending, RPC, AI-Agent-Toolkits für Base + Solana — jedes Modul mit Claude-Opus-4.7-Integrationsprompt.",
       eyebrow: "Vibe-Coding · Onchain",
@@ -1183,38 +1078,55 @@ export const content: Record<Locale, SiteContent> = {
   },
   ar: {
     meta: {
-      title: "Wiener's Tools — ورشة الصور داخل المتصفح",
+      title: "أدوات مجانية تعمل في متصفحك",
       description:
-        "32 أداة و4 لغات و100% داخل المتصفح. اضغط، حوّل، غيّر الحجم، أنشئ بكسل آرت — صورك لا تغادر جهازك."
+        "اضغط الصور وملفات PDF والفيديو وحوّلها وعدّلها، مع أدوات للمطوّرين وواجهات API والأمان. كل شيء يعمل في متصفحك، فلا تغادر ملفاتك جهازك."
     },
     hero: {
-      eyebrow: "ورشة الصور داخل المتصفح",
-      title: "wieners-tools",
+      eyebrow: "{count} أداة مجانية · دون تسجيل · دون رفع",
+      title: "كل شيء يعمل في متصفحك.",
       subtitle:
-        "اضغط، حوّل، عدّل، وأنشئ — كل ذلك داخل متصفحك. صورك لا تصل إلى خوادمنا أبداً.",
-      primaryCta: "تصفح الأدوات",
-      secondaryCta: "حول",
-      proof: SHARED_PROOF,
-      typewriter: ["اضغط.", "حوّل.", "عدّل.", "أنتج."]
+        "اضغط الصور وملفات PDF والفيديو وحوّلها وعدّلها، أو استخدم أدوات المطوّرين وواجهات API والأمان. تبقى ملفاتك على جهازك."
     },
     toolsSection: {
       eyebrow: "الأدوات",
-      title: "32 أداة، 6 فئات، صفر رفع.",
-      intro:
-        "لا صورة تغادر جهازك. الضغط والتحويل والذكاء الاصطناعي كلها تعمل محلياً عبر WebAssembly.",
-      statusReady: "جاهز",
-      statusBeta: "تجريبي",
-      statusSoon: "قريباً",
+      searchPlaceholder: "ابحث في الأدوات",
+      all: "الكل",
+      empty: "لا توجد أدوات تطابق هذا البحث.",
+      related: "المزيد من {category}",
       badgeAi: "ذكاء",
       badgeBeta: "تجريبي",
-      badgeNew: "جديد",
-      badgeFast: "سريع",
-      badgeClientSide: "في المتصفح"
+      badgeNew: "جديد"
+    },
+    nav: {
+      menu: "القائمة",
+      close: "إغلاق",
+      allTools: "كل الأدوات",
+      resources: "الموارد",
+      more: "المزيد",
+      about: "حول"
+    },
+    home: {
+      resourcesEyebrow: "للمطوّرين",
+      resourcesTitle: "مراجع نبقيها مفتوحة أثناء البناء.",
+      resources: {
+        library: "مكتبات واجهات وأدوات ذكاء اصطناعي وموارد تصميم وخدمات للمطوّرين.",
+        catalog: "قواعد Cursor وخوادم MCP وأوامر ومقتطفات برمجية وأوراق مرجعية.",
+        blockchain: "وحدات Base وSolana، لكل منها أمر تكامل جاهز.",
+        fonts: "خطوط أحادية المسافة وغير مذيّلة ومذيّلة وعرضية وبكسلية مع معاينة حيّة.",
+        glossary: "مصطلحات الذكاء الاصطناعي وvibe coding بلغة بسيطة.",
+        components: "مكونات React متحركة مع معاينة حيّة وشيفرة."
+      }
+    },
+    footer: {
+      tagline: "أدوات مجانية تعمل في متصفحك. من تطوير Wiener Labs.",
+      feedbackCta: "أرسل ملاحظاتك",
+      languages: "اللغة"
     },
     about: {
-      title: "ما هو Wiener's Tools؟",
+      title: "ما هو Wiener Tools؟",
       intro:
-        "أُنشئت Wiener's Tools حتى لا يضطر أي شخص يتعامل مع الصور إلى التنقل بين 12 موقعاً مليئاً بالإعلانات. كل شيء داخل المتصفح، في مكان واحد، مع ضمان أن صورك لا تلامس أي خادم.",
+        "أُنشئت Wiener Tools حتى لا يضطر أي شخص يتعامل مع الصور إلى التنقل بين 12 موقعاً مليئاً بالإعلانات. كل شيء داخل المتصفح، في مكان واحد، مع ضمان أن صورك لا تلامس أي خادم.",
       sections: [
         {
           title: "متصفحك كافٍ",
@@ -1229,7 +1141,7 @@ export const content: Record<Locale, SiteContent> = {
         {
           title: "من Wiener Labs",
           body:
-            "Wiener's Tools حزمة أدوات مجانية تديرها Wiener Labs (مختبر بنية تحتية Web3). دون حواجز ودون تسجيل ودون اشتراكات."
+            "Wiener Tools حزمة أدوات مجانية تديرها Wiener Labs (مختبر بنية تحتية Web3). دون حواجز ودون تسجيل ودون اشتراكات."
         }
       ],
       ctaLabel: "تصفّح على GitHub",
@@ -1277,65 +1189,14 @@ export const content: Record<Locale, SiteContent> = {
       nav: "المكونات",
       eyebrow: "داخلي · Frontend",
       title: "معرض المكونات",
-      intro: "معاينات حية ومقتطفات للنسخ من فريق Wiener للواجهة. كل المكونات تتبع لوحتنا أحادية اللون وخط Host Grotesk.",
+      intro: "معاينات حية ومقتطفات للنسخ من فريق Wiener للواجهة. كل المكونات تتبع لوحتنا أحادية اللون وخط Sora.",
       previewLabel: "معاينة حية",
       codeLabel: "الاستخدام",
       audience: "كتالوج مرجعي لفرق Wiener Labs."
     },
-    cardNav: {
-      menuLabel: "القائمة",
-      closeLabel: "إغلاق",
-      ctaLabel: "المكونات",
-      secondaryCtaLabel: "Blockchain",
-      items: [
-        {
-          label: "الأدوات",
-          links: [
-            { label: "كل الأدوات", href: "/ar/#tools" },
-            { label: "الذكاء الاصطناعي", href: "/ar/#ai" },
-            { label: "PDF", href: "/ar/#pdf" },
-            { label: "فيديو وصوت", href: "/ar/#media" },
-            { label: "التصميم", href: "/ar/#design" },
-            { label: "المطورون", href: "/ar/#developer" },
-            { label: "API و HTTP", href: "/ar/#api" },
-            { label: "الأمان", href: "/ar/#security" },
-            { label: "الشبكة", href: "/ar/#network" }
-          ]
-        },
-        {
-          label: "المكونات",
-          links: [
-            { label: "المعرض", href: "/ar/components/" },
-            { label: "GitHub", href: "https://github.com/wienerlabs/wieners-tools", ariaLabel: "Wiener Tools على GitHub" }
-          ]
-        },
-        {
-          label: "الاستوديو",
-          links: [
-            { label: "Blockchain", href: "/ar/blockchain/" },
-            { label: "المكتبة", href: "/ar/library/" },
-            { label: "الكتالوجات", href: "/ar/catalog/" },
-            { label: "المعجم", href: "/ar/glossary/" },
-            { label: "الخطوط", href: "/ar/fonts/" },
-            { label: "Architect", href: "/ar/tools/architect/" },
-            { label: "محمّل الفيديو", href: "/ar/tools/video-downloader/" },
-            { label: "حول", href: "/ar/about/" },
-            { label: "تعليقات", href: "/ar/feedback/" },
-            { label: "البريد الإلكتروني", href: "mailto:baturalp@wienerlabs.com", ariaLabel: "بريد Wiener Labs" }
-          ]
-        }
-      ]
-    },
-    componentsCta: {
-      eyebrow: "داخلي · جديد",
-      title: "معرض المكونات لفريق الواجهة",
-      body: "PixelBlast وTypewriterTitle وMagnetLines وCubes وFallingText وCodeBlock — جميعها بلوحتنا أحادية اللون مع معاينات حية وكود قابل للنسخ.",
-      ctaLabel: "افتح المعرض",
-      note: "6 مكونات · معاينات حية · مقتطفات TypeScript"
-    },
     libraryPage: {
       nav: "المكتبة",
-      metaTitle: "مكتبات UI ومطورين — Wiener's Tools",
+      metaTitle: "مكتبات UI ومطورين",
       metaDescription:
         "كتالوج واحد لفرق vibe-coding: أكثر من 130 مكتبة UI، أدوات AI، موارد تصميم، خدمات مطورين ومنصات — كلها في صفحة واحدة مع معاينات.",
       eyebrow: "كتالوج",
@@ -1347,7 +1208,9 @@ export const content: Record<Locale, SiteContent> = {
       visit: "فتح",
       attribution: "قائمة منسّقة بإلهام من arca.directory.",
       countSuffix: "مورد",
+      jumpLabel: "انتقل إلى قسم",
       sectionLabels: {
+        kit: "تصميم الواجهات بالذكاء الاصطناعي",
         ui: "مكتبات مكونات UI",
         ai: "أدوات AI",
         design: "موارد التصميم",
@@ -1358,17 +1221,17 @@ export const content: Record<Locale, SiteContent> = {
     },
     catalogIndexPage: {
       nav: "الكتالوجات",
-      metaTitle: "الكتالوجات — Wiener's Tools",
+      metaTitle: "الكتالوجات",
       metaDescription: "كتالوجات يومية لفرق vibe-coding: Cursor rules وMCP وبرومبتات وstarter وeval وhosting وdb وauth وfeeds وhackathons.",
       eyebrow: "الكتالوجات",
-      title: "10 كتالوجات في صفحة واحدة",
+      title: "13 كتالوجاً في صفحة واحدة",
       intro: "كتالوجات سريعة أبقيها مفتوحة أثناء vibe-coding. كل واحد مع snippets قابلة للنسخ ووصلات.",
       audience: "مرجع داخلي. ما يُذكر هنا جُرّب في prototype واحد على الأقل.",
       countSuffix: "إدخال"
     },
     glossaryPage: {
       nav: "المعجم",
-      metaTitle: "معجم Vibe Coding — Wiener's Tools",
+      metaTitle: "معجم Vibe Coding",
       metaDescription: "معجم A-Z مبسّط لمصطلحات AI و vibe-coding: agent، RAG، MCP، embedding، fine-tuning و 60+ مصطلحاً آخر.",
       eyebrow: "المعجم",
       title: "معجم Vibe Coding",
@@ -1379,7 +1242,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     fontsPage: {
       nav: "الخطوط",
-      metaTitle: "مكتبة الخطوط — Wiener's Tools",
+      metaTitle: "مكتبة الخطوط",
       metaDescription: "كتالوج خطوط بمعاينة حية لمطوّري vibe coding: 40+ خطاً مونوسبيس وسانس وسريف وديسبلاي وبكسل في صفحة واحدة.",
       eyebrow: "الطباعة",
       title: "مكتبة الخطوط",
@@ -1426,7 +1289,7 @@ export const content: Record<Locale, SiteContent> = {
     },
     blockchainPage: {
       nav: "Blockchain",
-      metaTitle: "تكامل Blockchain — Wiener's Tools",
+      metaTitle: "تكامل Blockchain",
       metaDescription:
         "لمطوري الـ vibe-coding: 47 وحدة SDK ومحافظ وDEX وlending وRPC وأدوات AI agent على Base وSolana — كل وحدة مع برومبت تكامل لـ Claude Opus 4.7.",
       eyebrow: "Vibe-coding · Onchain",

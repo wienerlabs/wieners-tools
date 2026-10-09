@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronLeft, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { ToolDefinition, ToolI18n } from "@/lib/tools/types";
 import { content } from "@/lib/content";
@@ -15,15 +15,15 @@ type ToolFrameProps = {
 export function ToolFrame({ locale, tool, i18n, children }: ToolFrameProps) {
   const ui = content[locale];
   const category = localizedCategory(locale, tool.category);
-  const back = locale === "tr" ? "Galeriye dön" : locale === "de" ? "Zur Galerie" : locale === "ar" ? "العودة للمعرض" : "Back to gallery";
 
   return (
     <article className="ws-tool-page">
       <div className="ws-tool-head">
-        <Link href={`/${locale}/`} className="ws-tool-back">
-          <ChevronLeft size={16} /> {back}
-        </Link>
-        <p className="ws-tool-category">{category.name}</p>
+        <nav className="ws-crumbs" aria-label={ui.toolsSection.eyebrow}>
+          <Link href={`/${locale}/#tools`}>{ui.toolsSection.eyebrow}</Link>
+          <span aria-hidden="true">/</span>
+          <Link href={`/${locale}/#${tool.category}`}>{category.name}</Link>
+        </nav>
         <h1 className="ws-tool-title">{i18n.name}</h1>
         <p className="ws-tool-description">{i18n.description}</p>
         <p className="ws-tool-privacy">

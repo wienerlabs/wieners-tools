@@ -87,7 +87,7 @@ export default function CircularText({
                 left: "50%",
                 fontSize,
                 letterSpacing: `${letterSpacing}px`,
-                fontFamily: "var(--font-host), system-ui, sans-serif",
+                fontFamily: "var(--font-sans)",
                 fontWeight: 600,
                 transform: `rotate(${angle}deg) translate(0, -${radius}px)`,
                 transformOrigin: "0 0",

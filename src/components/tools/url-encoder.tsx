@@ -19,7 +19,7 @@ export default function UrlEncoderTool({
   const opt = i18n.options ?? {};
   const [mode, setMode] = useState<Mode>("encode");
   const [scope, setScope] = useState<Scope>("component");
-  const [src, setSrc] = useState("https://wienerstools.com/?q=hello world&lang=tr");
+  const [src, setSrc] = useState("https://tools.wienerlabs.xyz/?q=hello world&lang=tr");
   const [copied, setCopied] = useState(false);
 
   const result = useMemo(() => {

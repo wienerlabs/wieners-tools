@@ -58,11 +58,11 @@ export default function OgImageGeneratorTool({
     const padY = 72;
 
     ctx.fillStyle = accent;
-    ctx.font = "600 22px Host Grotesk, system-ui, sans-serif";
+    ctx.font = "500 22px Sora, system-ui, sans-serif";
     ctx.fillText(eyebrow, padX, padY + 22);
 
     ctx.fillStyle = fg;
-    ctx.font = `700 ${titleSize}px Host Grotesk, system-ui, sans-serif`;
+    ctx.font = `600 ${titleSize}px Sora, system-ui, sans-serif`;
     const lines = wrap(ctx, title, width - padX * 2);
     let y = padY + 80;
     for (const line of lines) {
@@ -71,7 +71,7 @@ export default function OgImageGeneratorTool({
     }
 
     ctx.fillStyle = "rgba(255,255,255,0.6)";
-    ctx.font = "400 26px Host Grotesk, system-ui, sans-serif";
+    ctx.font = "400 26px Sora, system-ui, sans-serif";
     const dlines = wrap(ctx, description, width - padX * 2);
     y += 8;
     for (const line of dlines) {

@@ -67,7 +67,7 @@ export default function MockupGeneratorTool({
     ctx.fill();
     ctx.fillStyle = "#9b938b";
     ctx.font = "13px ui-monospace, monospace";
-    ctx.fillText("wienerstools.com", targetW * 0.22, padding.top / 2 + 4);
+    ctx.fillText("tools.wienerlabs.xyz", targetW * 0.22, padding.top / 2 + 4);
 
     const innerW = targetW - padding.sides * 2;
     const innerH = targetH - padding.top - padding.bottom;

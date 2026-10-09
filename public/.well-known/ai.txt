@@ -1,5 +1,5 @@
-site: https://wienerstools.com
-name: Wiener's Tools
+site: https://tools.wienerlabs.xyz
+name: Wiener Tools
 summary: Browser-native image toolkit. 100% client-side. No image ever leaves the browser.
 contact: mailto:baturalp@wienerlabs.com
-llms: https://wienerstools.com/llms.txt
+llms: https://tools.wienerlabs.xyz/llms.txt

@@ -1,3 +1,4 @@
+import { createElement, type ComponentType } from "react";
 import Link from "next/link";
 import * as Icons from "lucide-react";
 import type { ToolDefinition } from "@/lib/tools/types";
@@ -12,61 +13,40 @@ type ToolCardProps = {
 };
 
 const FALLBACK_ICON = "Box";
+const SHOWN_BADGES = ["ai", "new", "beta"] as const;
 
-function getIcon(name: string) {
-  const candidate = (Icons as unknown as Record<string, React.ComponentType<{ size?: number; strokeWidth?: number }>>)[name];
-  if (candidate) return candidate;
-  return (Icons as unknown as Record<string, React.ComponentType<{ size?: number; strokeWidth?: number }>>)[FALLBACK_ICON];
-}
+const ICONS = Icons as unknown as Record<string, ComponentType<{ size?: number; strokeWidth?: number }>>;
 
 export function ToolCard({ locale, tool, i18n }: ToolCardProps) {
-  const Icon = getIcon(tool.icon);
-  const ui = content[locale];
-  const status = tool.status;
-  const disabled = status === "soon";
+  const ui = content[locale].toolsSection;
 
-  const statusLabel =
-    status === "ready"
-      ? ui.toolsSection.statusReady
-      : status === "beta"
-        ? ui.toolsSection.statusBeta
-        : ui.toolsSection.statusSoon;
-
-  const badgeLabel = (b: string) => {
-    if (b === "ai") return ui.toolsSection.badgeAi;
-    if (b === "new") return ui.toolsSection.badgeNew;
-    if (b === "fast") return ui.toolsSection.badgeFast;
-    if (b === "clientside") return ui.toolsSection.badgeClientSide;
-    if (b === "beta") return ui.toolsSection.badgeBeta;
-    return b;
+  const labels = {
+    ai: ui.badgeAi,
+    new: ui.badgeNew,
+    beta: ui.badgeBeta
   };
-
-  const Wrapper = disabled ? "div" : Link;
-  const wrapperProps = disabled ? {} : { href: `/${locale}/tools/${tool.slug}/` };
+  const tags = SHOWN_BADGES.filter((badge) => tool.badges?.includes(badge) || (badge === "beta" && tool.status === "beta")).map(
+    (badge) => labels[badge]
+  );
 
   return (
-    <Wrapper
-      {...(wrapperProps as { href: string })}
-      className={`ws-tool-card ${disabled ? "is-soon" : ""} ws-status-${status}`}
-      data-status={status}
-    >
+    <Link href={`/${locale}/tools/${tool.slug}/`} className="ws-tool-card">
       <div className="ws-tool-card-head">
         <span className="ws-tool-icon" aria-hidden="true">
-          {Icon ? <Icon size={20} strokeWidth={1.6} /> : null}
+          {createElement(ICONS[tool.icon] ?? ICONS[FALLBACK_ICON], { size: 18, strokeWidth: 1.6 })}
         </span>
-        <span className="ws-tool-status">{statusLabel}</span>
+        {tags.length > 0 ? (
+          <span className="ws-tool-tags">
+            {tags.map((tag) => (
+              <span key={tag} className="ws-tool-tag">
+                {tag}
+              </span>
+            ))}
+          </span>
+        ) : null}
       </div>
       <h3 className="ws-tool-name">{i18n.name}</h3>
       <p className="ws-tool-short">{i18n.short}</p>
-      {tool.badges && tool.badges.length > 0 ? (
-        <div className="ws-tool-badges">
-          {tool.badges.map((b) => (
-            <span key={b} className={`ws-badge ws-badge-${b}`}>
-              {badgeLabel(b)}
-            </span>
-          ))}
-        </div>
-      ) : null}
-    </Wrapper>
+    </Link>
   );
 }

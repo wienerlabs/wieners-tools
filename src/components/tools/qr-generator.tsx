@@ -21,7 +21,7 @@ export default function QRGeneratorTool({
 }) {
   const ui = content[locale].workbench;
   const opt = i18n.options ?? {};
-  const [text, setText] = useState("https://wienerstools.com");
+  const [text, setText] = useState("https://tools.wienerlabs.xyz");
   const [size, setSize] = useState(512);
   const [level, setLevel] = useState<Level>("M");
   const [foreground, setForeground] = useState("#050505");

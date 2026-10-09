@@ -4,10 +4,12 @@ import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { ToolFrame } from "@/components/tool-frame";
 import { ToolRunnerHost } from "@/components/tool-runner-host";
+import { ToolCard } from "@/components/tool-card";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 import { absoluteUrl, breadcrumbSchema, buildPageMetadata } from "@/lib/site";
 import { content } from "@/lib/content";
-import { getTool, getAllSlugs } from "@/lib/tools/registry";
+import { getTool, getAllSlugs, tools } from "@/lib/tools/registry";
+import { localizedCategory } from "@/lib/tools/categories";
 import { getToolI18n } from "@/lib/tools/i18n";
 
 type PageProps = {
@@ -43,6 +45,7 @@ export default async function ToolPage({ params }: PageProps) {
   const { locale, slug, tool } = await getParams(params);
   const i18n = getToolI18n(slug, locale);
   const page = content[locale];
+  const related = tools.filter((item) => item.category === tool.category && item.slug !== slug && item.status !== "soon").slice(0, 4);
 
   const breadcrumbs = breadcrumbSchema([
     { name: page.toolsSection.eyebrow, url: absoluteUrl(`/${locale}/`) },
@@ -56,6 +59,19 @@ export default async function ToolPage({ params }: PageProps) {
         <ToolFrame locale={locale} tool={tool} i18n={i18n}>
           <ToolRunnerHost locale={locale} tool={tool} i18n={i18n} />
         </ToolFrame>
+
+        {related.length > 0 ? (
+          <section className="ws-related" aria-labelledby="related-title">
+            <h2 id="related-title">{page.toolsSection.related.replace("{category}", localizedCategory(locale, tool.category).name)}</h2>
+            <ul className="ws-card-grid">
+              {related.map((item) => (
+                <li key={item.slug}>
+                  <ToolCard locale={locale} tool={item} i18n={getToolI18n(item.slug, locale)} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
       </SiteShell>
     </>
   );

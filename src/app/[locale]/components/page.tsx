@@ -89,7 +89,7 @@ const SNIPPETS = {
   radius={3}
   borderStyle="1px solid rgba(0, 0, 0, 0.18)"
   faceColor="#000000"
-  rippleColor="#fff4dd"
+  rippleColor="#ffffff"
   rippleSpeed={1.5}
   autoAnimate
   rippleOnClick
@@ -162,7 +162,7 @@ const SNIPPETS = {
   text="✨ Shiny Text Effect"
   speed={2}
   color="#000000"
-  shineColor="#fff4dd"
+  shineColor="#ffffff"
   spread={120}
   direction="left"
   yoyo={false}
@@ -178,12 +178,12 @@ const SNIPPETS = {
     weight
     italic
     textColor="#000000"
-    strokeColor="#fff4dd"
+    strokeColor="#ffffff"
     minFontSize={36}
   />
 </div>`,
   stickerPeel: `<StickerPeel
-  imageSrc="/logo.jpg"
+  imageSrc="/icon-512.png"
   width={200}
   rotate={0}
   peelBackHoverPct={30}
@@ -363,7 +363,7 @@ export default async function ComponentsPage({ params }: PageProps) {
                 radius={2}
                 borderStyle="1px solid rgba(0, 0, 0, 0.18)"
                 faceColor="#000000"
-                rippleColor="#fff4dd"
+                rippleColor="#ffffff"
                 rippleSpeed={1.4}
                 autoAnimate
                 rippleOnClick
@@ -516,8 +516,8 @@ export default async function ComponentsPage({ params }: PageProps) {
                 <ShinyText
                   text="✨ Shiny Text Effect"
                   speed={2.4}
-                  color="rgba(255, 244, 221, 0.45)"
-                  shineColor="#fff4dd"
+                  color="rgba(255, 255, 255, 0.45)"
+                  shineColor="#ffffff"
                   spread={140}
                   direction="left"
                 />
@@ -541,7 +541,7 @@ export default async function ComponentsPage({ params }: PageProps) {
                 weight
                 italic
                 textColor="#000000"
-                strokeColor="#fff4dd"
+                strokeColor="#ffffff"
                 minFontSize={36}
               />
             </div>
@@ -555,7 +555,7 @@ export default async function ComponentsPage({ params }: PageProps) {
             </header>
             <div className="ws-gallery-preview ws-gallery-preview-center ws-gallery-preview-sticker">
               <StickerPeel
-                imageSrc="/logo.jpg"
+                imageSrc="/icon-512.png"
                 width={200}
                 rotate={-6}
                 peelBackHoverPct={28}

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     locale,
     slug: `/catalog/${slug}/`,
-    title: `${meta.title} — Wiener's Tools`,
+    title: meta.title,
     description: meta.intro
   });
 }

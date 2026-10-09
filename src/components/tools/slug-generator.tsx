@@ -41,7 +41,7 @@ export default function SlugGeneratorTool({
   i18n: ToolI18n;
 }) {
   const opt = i18n.options ?? {};
-  const [text, setText] = useState("Wiener's Tools — Tarayıcıda Görsel Atölyesi (Über uns)");
+  const [text, setText] = useState("Wiener Tools: Tarayıcıda Çalışan Araçlar (Über uns)");
   const [sep, setSep] = useState("-");
   const [lower, setLower] = useState(true);
   const [copied, setCopied] = useState(false);
