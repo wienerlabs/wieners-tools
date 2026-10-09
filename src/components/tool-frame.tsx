@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Shield } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { ToolDefinition, ToolI18n } from "@/lib/tools/types";
@@ -20,9 +19,9 @@ export function ToolFrame({ locale, tool, i18n, children }: ToolFrameProps) {
     <article className="ws-tool-page">
       <div className="ws-tool-head">
         <nav className="ws-crumbs" aria-label={ui.toolsSection.eyebrow}>
-          <Link href={`/${locale}/#tools`}>{ui.toolsSection.eyebrow}</Link>
+          <a href={`/${locale}/#tools`}>{ui.toolsSection.eyebrow}</a>
           <span aria-hidden="true">/</span>
-          <Link href={`/${locale}/#${tool.category}`}>{category.name}</Link>
+          <a href={`/${locale}/#${tool.category}`}>{category.name}</a>
         </nav>
         <h1 className="ws-tool-title">{i18n.name}</h1>
         <p className="ws-tool-description">{i18n.description}</p>

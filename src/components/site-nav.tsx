@@ -27,6 +27,13 @@ function isCurrent(pathname: string, href: string, homeHref: string) {
 }
 
 function MenuLink({ link, onNavigate }: { link: NavLink; onNavigate: () => void }) {
+  if (link.href.includes("#")) {
+    return (
+      <a href={link.href} onClick={onNavigate}>
+        <span>{link.label}</span>
+      </a>
+    );
+  }
   if (link.external) {
     return (
       <a href={link.href} target="_blank" rel="noreferrer" onClick={onNavigate}>
@@ -70,7 +77,7 @@ export function SiteNav({ homeHref, brand, primary, groups, menuLabel, closeLabe
   return (
     <header ref={rootRef} className="ws-nav" data-open={open ? "true" : "false"}>
       <div className="ws-nav-bar">
-        <Link href={homeHref} className="ws-nav-brand" onClick={close}>
+        <Link href={homeHref} className="ws-nav-brand" aria-label={brand} onClick={close}>
           <BrandMark className="ws-nav-mark" />
           <span>{brand}</span>
         </Link>

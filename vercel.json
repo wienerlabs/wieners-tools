@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "wieners-tools.vercel.app" }],
+      "destination": "https://tools.wienerlabs.xyz/$1",
+      "permanent": true
+    }
+  ]
+}

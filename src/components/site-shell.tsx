@@ -49,6 +49,8 @@ function FooterColumn({ group }: { group: NavGroup }) {
                 {link.label}
                 <ArrowUpRight size={12} aria-hidden="true" />
               </a>
+            ) : link.href.includes("#") ? (
+              <a href={link.href}>{link.label}</a>
             ) : (
               <Link href={link.href}>{link.label}</Link>
             )}

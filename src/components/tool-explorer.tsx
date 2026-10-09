@@ -26,7 +26,7 @@ function subscribe(callback: () => void) {
 }
 
 function readHash() {
-  return decodeURIComponent(window.location.hash.slice(1));
+  return window.location.hash.slice(1);
 }
 
 export function ToolExplorer({ categories, tools, labels, children }: ToolExplorerProps) {

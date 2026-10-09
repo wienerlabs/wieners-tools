@@ -111,7 +111,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
   background: var(--page);
 }
 
@@ -944,7 +943,7 @@ button, input, textarea, select { font: inherit; }
   position: fixed;
   inset-inline: 16px;
   bottom: 16px;
-  z-index: 60;
+  z-index: 50;
   display: flex;
   justify-content: center;
 }
@@ -4754,6 +4753,8 @@ button, input, textarea, select { font: inherit; }
 }
 
 .ws-nav-bar {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -5747,8 +5748,8 @@ a.ws-tool-card:hover .ws-tool-icon {
   .ws-chips {
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin-inline: -20px;
-    padding-inline: 20px;
+    margin: 8px -20px -4px;
+    padding: 4px 20px;
     scrollbar-width: none;
   }
 

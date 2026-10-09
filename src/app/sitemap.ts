@@ -7,7 +7,7 @@ import { CATALOG_ORDER } from "@/lib/catalogs";
 export const dynamic = "force-static";
 
 const STATIC_ROUTES = [
-  "",
+  "/",
   "/library/",
   "/catalog/",
   "/blockchain/",
@@ -29,8 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: absoluteUrl(`/${locale}${route}`),
         lastModified: new Date(),
-        changeFrequency: route === "" ? "weekly" : "monthly",
-        priority: route === "" ? 1 : 0.6
+        changeFrequency: route === "/" ? "weekly" : "monthly",
+        priority: route === "/" ? 1 : 0.6
       });
     }
     for (const id of CATALOG_ORDER) {
