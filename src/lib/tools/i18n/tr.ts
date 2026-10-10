@@ -501,7 +501,8 @@ export const toolsTR: ToolI18nBundle = {
     description: "Açılmayan ya da hata veren bozuk bir PDF'i yeniden kurun. qpdf dosya yapısını tarayıcınızda yeniden oluşturur ve neyi düzelttiğini bildirir.",
     keywords: ["pdf", "onar", "bozuk", "düzelt", "repair"],
     options: {
-      fixed: "Dosya yeniden kuruldu, {count} sorun düzeltildi.",
+      fixed: "Dosya hasarlıydı ve yeniden kuruldu. qpdf {count} uyarı verdi; sonucu açıp sayfaları kontrol edin.",
+      details: "Ayrıntılar",
       clean: "Yapısal bir sorun bulunmadı. Dosya temiz biçimde yeniden yazıldı."
     }
   },

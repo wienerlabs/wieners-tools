@@ -6008,6 +6008,30 @@ a.ws-tool-card:hover .ws-tool-icon {
   opacity: 0.8;
 }
 
+.ws-notice-log {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  font-size: 13px;
+}
+
+.ws-notice-log summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.ws-notice-log pre {
+  margin: 0;
+  padding: 0 14px 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
 .ws-sign-pad {
   display: grid;
   gap: 10px;

@@ -503,9 +503,9 @@ export const tools: ToolDefinition[] = [
     slug: "pdf-repair",
     category: "pdf",
     icon: "Wrench",
-    status: "soon",
+    status: "ready",
     accept: ".pdf,application/pdf",
-    badges: ["clientside"]
+    badges: ["new", "clientside"]
   },
 
   // ------------- Design helpers

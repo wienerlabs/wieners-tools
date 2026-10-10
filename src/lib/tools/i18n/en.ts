@@ -501,7 +501,8 @@ export const toolsEN: ToolI18nBundle = {
     description: "Rebuild a damaged PDF that will not open or shows errors. qpdf reconstructs the file structure in your browser and reports what it fixed.",
     keywords: ["pdf", "repair", "fix", "corrupt", "broken"],
     options: {
-      fixed: "Rebuilt the file and fixed {count} problems.",
+      fixed: "The file was damaged and has been rebuilt. qpdf reported {count} warnings; open the result and check the pages.",
+      details: "Details",
       clean: "No structural problems found. The file was rewritten cleanly."
     }
   },

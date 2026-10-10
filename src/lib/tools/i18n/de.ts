@@ -341,7 +341,8 @@ export const toolsDE: ToolI18nBundle = {
     description: "Bauen Sie eine beschädigte PDF neu auf, die sich nicht öffnen lässt oder Fehler zeigt. qpdf rekonstruiert die Dateistruktur im Browser und meldet, was behoben wurde.",
     keywords: ["pdf", "reparieren", "beschädigt", "defekt"],
     options: {
-      fixed: "Datei neu aufgebaut, {count} Probleme behoben.",
+      fixed: "Die Datei war beschädigt und wurde neu aufgebaut. qpdf meldete {count} Warnungen; öffnen Sie das Ergebnis und prüfen Sie die Seiten.",
+      details: "Details",
       clean: "Keine strukturellen Probleme gefunden. Die Datei wurde sauber neu geschrieben."
     }
   },

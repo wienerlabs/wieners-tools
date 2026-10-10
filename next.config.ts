@@ -5,12 +5,6 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  },
-  turbopack: {
-    resolveAlias: {
-      fs: { browser: "./src/lib/empty.ts" },
-      path: { browser: "./src/lib/empty.ts" }
-    }
   }
 };
 
