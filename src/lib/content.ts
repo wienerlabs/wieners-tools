@@ -74,6 +74,11 @@ export type SiteContent = {
     soonTitle: string;
     soonText: string;
     privacyNote: string;
+    encryptedPdf: string;
+    unlockTool: string;
+    wrongPassword: string;
+    failed: string;
+    modelDownload: string;
   };
   fallingHero: {
     eyebrow: string;
@@ -313,7 +318,12 @@ export const content: Record<Locale, SiteContent> = {
       soonTitle: "Bu araç yakında geliyor",
       soonText:
         "Foundation hazır, implementasyon önümüzdeki sürümlerde. GitHub'dan ilerlemeyi takip edebilirsiniz.",
-      privacyNote: "Görselleriniz sunucumuza gönderilmez. Tüm işleme tarayıcınızda gerçekleşir."
+      privacyNote: "Görselleriniz sunucumuza gönderilmez. Tüm işleme tarayıcınızda gerçekleşir.",
+      encryptedPdf: "Bu PDF şifreli. Önce şifresini kaldırın:",
+      unlockTool: "PDF Şifresini Kaldır",
+      wrongPassword: "Şifre yanlış.",
+      failed: "Dosya işlenemedi.",
+      modelDownload: "Model (yaklaşık {size}) yalnız ilk kullanımda iner ve tarayıcı önbelleğinde kalır. Görseliniz cihazınızdan çıkmaz."
     },
     fallingHero: {
       eyebrow: "Hakkımızda",
@@ -601,7 +611,12 @@ export const content: Record<Locale, SiteContent> = {
       soonTitle: "This tool is coming soon",
       soonText:
         "The foundation is ready, implementation lands in upcoming releases. Track progress on GitHub.",
-      privacyNote: "Your files never reach our servers. All processing happens in your browser."
+      privacyNote: "Your files never reach our servers. All processing happens in your browser.",
+      encryptedPdf: "This PDF is password protected. Remove the password first:",
+      unlockTool: "Unlock PDF",
+      wrongPassword: "Wrong password.",
+      failed: "The file could not be processed.",
+      modelDownload: "The model (about {size}) downloads on first use and stays in your browser cache. Your image never leaves your device."
     },
     fallingHero: {
       eyebrow: "About",
@@ -889,7 +904,12 @@ export const content: Record<Locale, SiteContent> = {
       soonTitle: "Dieses Werkzeug kommt bald",
       soonText:
         "Die Grundlage steht, die Umsetzung folgt in einer kommenden Version. Fortschritt auf GitHub.",
-      privacyNote: "Ihre Dateien erreichen unsere Server nicht. Alle Verarbeitung erfolgt im Browser."
+      privacyNote: "Ihre Dateien erreichen unsere Server nicht. Alle Verarbeitung erfolgt im Browser.",
+      encryptedPdf: "Diese PDF ist passwortgeschützt. Entfernen Sie zuerst das Passwort:",
+      unlockTool: "PDF entsperren",
+      wrongPassword: "Falsches Passwort.",
+      failed: "Die Datei konnte nicht verarbeitet werden.",
+      modelDownload: "Das Modell (etwa {size}) wird nur beim ersten Mal geladen und bleibt im Browser-Cache. Ihr Bild verlässt Ihr Gerät nicht."
     },
     fallingHero: {
       eyebrow: "Über uns",
@@ -1177,7 +1197,12 @@ export const content: Record<Locale, SiteContent> = {
       soonTitle: "هذه الأداة قريباً",
       soonText:
         "الأساس جاهز، التنفيذ في إصدارات قادمة. تابع التقدم على GitHub.",
-      privacyNote: "ملفاتك لا تصل إلى خوادمنا. كل المعالجة تتم في متصفحك."
+      privacyNote: "ملفاتك لا تصل إلى خوادمنا. كل المعالجة تتم في متصفحك.",
+      encryptedPdf: "ملف PDF هذا محمي بكلمة مرور. أزل كلمة المرور أولاً:",
+      unlockTool: "فتح قفل PDF",
+      wrongPassword: "كلمة المرور غير صحيحة.",
+      failed: "تعذّرت معالجة الملف.",
+      modelDownload: "يُنزَّل النموذج (حوالي {size}) عند أول استخدام فقط ويبقى في ذاكرة المتصفح المؤقتة. لا تغادر صورتك جهازك."
     },
     fallingHero: {
       eyebrow: "حول",

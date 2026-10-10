@@ -145,18 +145,23 @@ export function ColorInput({ value, onChange }: { value: string; onChange: (valu
 export function TextInput({
   value,
   onChange,
-  placeholder
+  placeholder,
+  type = "text",
+  autoComplete
 }: {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  type?: "text" | "password";
+  autoComplete?: string;
 }) {
   return (
     <input
       className="ws-text-input"
-      type="text"
+      type={type}
       value={value}
       placeholder={placeholder}
+      autoComplete={autoComplete}
       onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value)}
     />
   );

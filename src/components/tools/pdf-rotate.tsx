@@ -7,22 +7,9 @@ import type { ToolDefinition, ToolI18n } from "@/lib/tools/types";
 import { OptionsPanel, FieldRow, Select, TextInput } from "@/components/options-panel";
 import { content } from "@/lib/content";
 import { downloadBlob } from "@/lib/tools/utils";
+import { parsePages } from "@/lib/pdf-tools";
 
 type Angle = "90" | "180" | "270";
-
-function parsePages(input: string, total: number): number[] {
-  if (!input.trim()) return Array.from({ length: total }, (_, i) => i);
-  const set = new Set<number>();
-  for (const part of input.split(",")) {
-    const t = part.trim();
-    if (!t) continue;
-    const [a, b] = t.split("-").map((s) => s.trim());
-    const start = Math.max(1, parseInt(a, 10) || 1);
-    const end = b === undefined ? start : b === "" ? total : Math.min(total, parseInt(b, 10) || total);
-    for (let p = start; p <= end; p++) set.add(p - 1);
-  }
-  return Array.from(set).sort((a, b) => a - b);
-}
 
 export default function PdfRotateTool({
   locale,

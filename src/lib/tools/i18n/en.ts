@@ -29,8 +29,19 @@ export const toolsEN: ToolI18nBundle = {
   "compress-pdf": {
     name: "PDF Compressor",
     short: "Shrink PDF",
-    description: "Resample images to reduce PDF size.",
-    keywords: ["pdf", "compress"]
+    description: "Make a PDF smaller in your browser. Lossless mode recompresses the file and keeps text selectable; strong mode turns pages into images for the biggest savings.",
+    keywords: ["pdf", "compress", "reduce size"],
+    options: {
+      mode: "Method",
+      lossless: "Lossless, text stays selectable",
+      raster: "Strong, pages become images",
+      quality: "JPEG quality",
+      scale: "Sharpness",
+      rasterWarning: "Strong mode turns every page into a picture: text can no longer be selected, searched or copied.",
+      saved: "{before} to {after}, {percent}% smaller.",
+      noGain: "This file is already well optimized. Strong mode can shrink it further at the cost of selectable text.",
+      rasterNoGain: "Strong mode made this file bigger. Keep the original, or lower the quality and sharpness."
+    }
   },
   "convert-format": {
     name: "Format Converter",
@@ -385,6 +396,115 @@ export const toolsEN: ToolI18nBundle = {
     description: "Extract the embedded text layer of a PDF (no OCR; for scanned PDFs use Image OCR).",
     keywords: ["pdf", "text", "extract"]
   },
+  "pdf-page-numbers": {
+    name: "Add Page Numbers",
+    short: "Number every page",
+    description: "Add page numbers to a PDF: pick the position, format and first number, and skip pages such as the cover. Everything runs in your browser.",
+    keywords: ["pdf", "page numbers", "paginate", "number pages"],
+    options: {
+      position: "Position",
+      bottomCenter: "Bottom center",
+      bottomRight: "Bottom right",
+      bottomLeft: "Bottom left",
+      topCenter: "Top center",
+      topRight: "Top right",
+      topLeft: "Top left",
+      format: "Format",
+      wordsTemplate: "Page {n} of {total}",
+      start: "First number",
+      pages: "Pages",
+      pagesHint: "Empty means every page. Example: 2- skips the cover.",
+      size: "Font size",
+      margin: "Margin"
+    }
+  },
+  "pdf-watermark": {
+    name: "PDF Watermark",
+    short: "Stamp text on every page",
+    description: "Add a text watermark such as Confidential or Draft to a PDF, once in the middle or repeated across the page, with your own color, size, angle and opacity.",
+    keywords: ["pdf", "watermark", "stamp", "confidential", "draft"],
+    options: {
+      text: "Text",
+      defaultText: "Confidential",
+      layout: "Layout",
+      center: "Once, centered",
+      tile: "Repeated across the page",
+      size: "Font size",
+      opacity: "Opacity",
+      angle: "Angle",
+      color: "Color",
+      pages: "Pages",
+      pagesHint: "Empty means every page. Example: 1-3, 5"
+    }
+  },
+  "pdf-sign": {
+    name: "Sign PDF",
+    short: "Draw or upload a signature",
+    description: "Draw your signature or upload an image of it, then click where it should go on the page. This adds a visual signature, not a certificate-based digital signature.",
+    keywords: ["pdf", "sign", "signature", "e-sign"],
+    options: {
+      source: "Signature",
+      draw: "Draw it",
+      upload: "Upload an image",
+      page: "Page",
+      width: "Width",
+      clear: "Clear",
+      placeHint: "Click on the page to place the signature.",
+      legal: "This places an image of your signature. It is not a certificate-based digital signature."
+    }
+  },
+  "pdf-form-fill": {
+    name: "PDF Form Filler",
+    short: "Fill in PDF form fields",
+    description: "Open a fillable PDF, type into its text fields, tick boxes and pick options, then save. You can flatten the result so the fields can no longer be changed.",
+    keywords: ["pdf", "form", "fill", "acroform"],
+    options: {
+      noFields: "This PDF has no fillable form fields.",
+      fieldCount: "{count} fields",
+      checked: "Checked",
+      finish: "When saving",
+      flatten: "Flatten, so fields can no longer be edited",
+      keptEditable: "Some characters need the viewer's own font, so the fields stay editable and the viewer draws the text. Most PDF viewers show it correctly."
+    }
+  },
+  "pdf-protect": {
+    name: "Protect PDF",
+    short: "Add a password",
+    description: "Encrypt a PDF with a password using AES-256 and optionally block printing, copying or editing. The file is encrypted in your browser and never uploaded.",
+    keywords: ["pdf", "password", "protect", "encrypt", "lock"],
+    options: {
+      password: "Password",
+      confirm: "Repeat password",
+      mismatch: "The passwords do not match.",
+      printing: "Printing",
+      allowPrint: "Allow printing",
+      copying: "Copying",
+      allowCopy: "Allow copying text",
+      editing: "Editing",
+      allowEdit: "Allow editing",
+      keepSafe: "Keep the password somewhere safe. A lost password cannot be recovered."
+    }
+  },
+  "pdf-unlock": {
+    name: "Unlock PDF",
+    short: "Remove a password you know",
+    description: "Remove the password and printing or copying restrictions from a PDF when you know the password. Decryption runs in your browser.",
+    keywords: ["pdf", "unlock", "decrypt", "remove password"],
+    options: {
+      password: "Password",
+      passwordHint: "Leave empty if the file opens without a password but blocks printing or copying."
+    }
+  },
+  "pdf-repair": {
+    name: "Repair PDF",
+    short: "Fix damaged PDFs",
+    description: "Rebuild a damaged PDF that will not open or shows errors. qpdf reconstructs the file structure in your browser and reports what it fixed.",
+    keywords: ["pdf", "repair", "fix", "corrupt", "broken"],
+    options: {
+      fixed: "Rebuilt the file and fixed {count} problems.",
+      clean: "No structural problems found. The file was rewritten cleanly."
+    }
+  },
 
   // ------------- Design helpers
   "gradient-generator": {
@@ -479,15 +599,35 @@ export const toolsEN: ToolI18nBundle = {
   },
   "face-anonymizer": {
     name: "Face Anonymizer",
-    short: "Auto-blur faces in photos",
-    description: "Detect faces with a tiny on-device model and blur them. Coming soon — model weights are downloaded only on demand.",
-    keywords: ["face", "blur", "privacy"]
+    short: "Blur faces in photos",
+    description: "Find faces with a small on-device model and blur, pixelate or cover them. You can skip a detected face or add one the model missed. Your photo never leaves your device.",
+    keywords: ["face", "blur", "anonymize", "privacy", "gdpr"],
+    options: {
+      style: "Style",
+      blur: "Blur",
+      pixelate: "Pixelate",
+      solid: "Solid fill",
+      shape: "Shape",
+      ellipse: "Oval",
+      rectangle: "Rectangle",
+      padding: "Extra margin",
+      strength: "Strength",
+      detecting: "Looking for faces...",
+      found: "{count} faces selected. Click a box to skip it, drag on the photo to add one.",
+      check: "Check the result before sharing. Small, turned or covered faces can be missed; drag over them to add a box."
+    }
   },
   "object-detection": {
     name: "Object Detection",
-    short: "YOLO in your browser",
-    description: "Detect everyday objects with a small YOLO-style model. Coming soon — heavy model weights are gated behind explicit opt-in.",
-    keywords: ["detect", "yolo", "object"]
+    short: "Find objects in a photo",
+    description: "Detect 80 everyday object types such as people, cars and animals with a small on-device model. Download the marked-up image or the results as JSON.",
+    keywords: ["object detection", "detect", "ai", "coco"],
+    options: {
+      threshold: "Minimum confidence",
+      detecting: "Looking for objects...",
+      none: "Nothing found above this confidence.",
+      saveImage: "Download image"
+    }
   },
 
   // ------------- API & HTTP
@@ -627,9 +767,24 @@ export const toolsEN: ToolI18nBundle = {
   },
   "token-counter": {
     name: "Token Counter",
-    short: "Estimate tokens + USD cost across models",
-    description: "Paste any prompt and get an approximate token count + USD cost for Claude, GPT, and Gemini.",
-    keywords: ["token", "cost", "llm", "tokenizer"]
+    short: "Estimate tokens and cost",
+    description: "Paste any prompt and get an approximate token count and cost for current Claude, OpenAI and Gemini models, or enter your own price.",
+    keywords: ["token", "cost", "llm", "tokenizer"],
+    options: {
+      sample: "Paste any prompt to estimate tokens and cost across current models.",
+      outputTokens: "Expected output tokens",
+      outputHint: "Used for the cost estimate",
+      customInput: "Your input price",
+      customOutput: "Your output price",
+      inputCost: "in",
+      outputCost: "out",
+      custom: "Your own price",
+      placeholder: "Paste any prompt or text",
+      chars: "chars",
+      words: "words",
+      estimate: "estimates only, real tokenizers differ by about 10%",
+      checked: "Standard API prices per 1M tokens, checked on {date}:"
+    }
   },
   "llm-compare": {
     name: "LLM Side-by-side",

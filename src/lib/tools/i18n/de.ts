@@ -18,7 +18,23 @@ export const toolsDE: ToolI18nBundle = {
     }
   },
   "optimize-svg": { name: "SVG-Optimierer", short: "SVG verkleinern", description: "Mit SVGO entrümpeln.", keywords: ["svg"] },
-  "compress-pdf": { name: "PDF-Komprimierer", short: "PDF verkleinern", description: "Bilder neu samplen, Größe reduzieren.", keywords: ["pdf"] },
+  "compress-pdf": {
+    name: "PDF-Komprimierer",
+    short: "PDF verkleinern",
+    description: "Machen Sie eine PDF im Browser kleiner. Der verlustfreie Modus komprimiert neu und lässt Text markierbar; der starke Modus wandelt Seiten in Bilder um und spart am meisten.",
+    keywords: ["pdf", "komprimieren", "verkleinern"],
+    options: {
+      mode: "Methode",
+      lossless: "Verlustfrei, Text bleibt markierbar",
+      raster: "Stark, Seiten werden zu Bildern",
+      quality: "JPEG-Qualität",
+      scale: "Schärfe",
+      rasterWarning: "Der starke Modus macht jede Seite zu einem Bild: Text lässt sich danach nicht mehr markieren, durchsuchen oder kopieren.",
+      saved: "{before} auf {after}, {percent}% kleiner.",
+      noGain: "Diese Datei ist bereits gut optimiert. Der starke Modus verkleinert weiter, kostet aber markierbaren Text.",
+      rasterNoGain: "Der starke Modus hat diese Datei vergrößert. Behalten Sie das Original oder senken Sie Qualität und Schärfe."
+    }
+  },
   "convert-format": {
     name: "Format-Konverter",
     short: "PNG ↔ JPG ↔ WebP ↔ AVIF",
@@ -220,6 +236,115 @@ export const toolsDE: ToolI18nBundle = {
   "pdf-reorder": { name: "PDF neu ordnen", short: "Seiten umsortieren", description: "PDF-Seiten per Drag & Drop umsortieren und exportieren.", keywords: ["pdf", "reorder"] },
   "pdf-metadata": { name: "PDF-Metadaten", short: "Titel / Autor / Thema", description: "PDF-Info-Dictionary anzeigen und bearbeiten.", keywords: ["pdf", "metadata"] },
   "pdf-text-extract": { name: "PDF-Text extrahieren", short: "Text-Layer auslesen", description: "Eingebetteten Text-Layer aus einer PDF ziehen (kein OCR).", keywords: ["pdf", "text"] },
+  "pdf-page-numbers": {
+    name: "Seitenzahlen hinzufügen",
+    short: "Jede Seite nummerieren",
+    description: "Fügen Sie einer PDF Seitenzahlen hinzu: Position, Format und Startnummer wählen und Seiten wie das Deckblatt auslassen. Alles läuft im Browser.",
+    keywords: ["pdf", "seitenzahlen", "nummerieren", "paginierung"],
+    options: {
+      position: "Position",
+      bottomCenter: "Unten Mitte",
+      bottomRight: "Unten rechts",
+      bottomLeft: "Unten links",
+      topCenter: "Oben Mitte",
+      topRight: "Oben rechts",
+      topLeft: "Oben links",
+      format: "Format",
+      wordsTemplate: "Seite {n} von {total}",
+      start: "Erste Nummer",
+      pages: "Seiten",
+      pagesHint: "Leer bedeutet alle Seiten. Beispiel: 2- lässt das Deckblatt aus.",
+      size: "Schriftgröße",
+      margin: "Abstand vom Rand"
+    }
+  },
+  "pdf-watermark": {
+    name: "PDF-Wasserzeichen",
+    short: "Text auf jede Seite stempeln",
+    description: "Fügen Sie einer PDF ein Text-Wasserzeichen wie Vertraulich oder Entwurf hinzu, einmal mittig oder über die ganze Seite wiederholt, mit eigener Farbe, Größe, Neigung und Deckkraft.",
+    keywords: ["pdf", "wasserzeichen", "stempel", "vertraulich", "entwurf"],
+    options: {
+      text: "Text",
+      defaultText: "Vertraulich",
+      layout: "Anordnung",
+      center: "Einmal, mittig",
+      tile: "Über die Seite wiederholt",
+      size: "Schriftgröße",
+      opacity: "Deckkraft",
+      angle: "Winkel",
+      color: "Farbe",
+      pages: "Seiten",
+      pagesHint: "Leer bedeutet alle Seiten. Beispiel: 1-3, 5"
+    }
+  },
+  "pdf-sign": {
+    name: "PDF unterschreiben",
+    short: "Unterschrift zeichnen oder hochladen",
+    description: "Zeichnen Sie Ihre Unterschrift oder laden Sie ein Bild davon hoch und klicken Sie dann auf die gewünschte Stelle der Seite. Das ist eine sichtbare Unterschrift, keine zertifikatsbasierte digitale Signatur.",
+    keywords: ["pdf", "unterschrift", "signieren", "e-signatur"],
+    options: {
+      source: "Unterschrift",
+      draw: "Zeichnen",
+      upload: "Bild hochladen",
+      page: "Seite",
+      width: "Breite",
+      clear: "Löschen",
+      placeHint: "Klicken Sie auf die Seite, um die Unterschrift zu platzieren.",
+      legal: "Hier wird ein Bild Ihrer Unterschrift eingefügt. Es ist keine zertifikatsbasierte digitale Signatur."
+    }
+  },
+  "pdf-form-fill": {
+    name: "PDF-Formular ausfüllen",
+    short: "PDF-Formularfelder ausfüllen",
+    description: "Öffnen Sie eine ausfüllbare PDF, füllen Sie Textfelder aus, setzen Sie Häkchen, wählen Sie Optionen und speichern Sie. Auf Wunsch werden die Felder fixiert, damit sie nicht mehr änderbar sind.",
+    keywords: ["pdf", "formular", "ausfüllen"],
+    options: {
+      noFields: "Diese PDF hat keine ausfüllbaren Formularfelder.",
+      fieldCount: "{count} Felder",
+      checked: "Angehakt",
+      finish: "Beim Speichern",
+      flatten: "Fixieren, damit die Felder nicht mehr bearbeitbar sind",
+      keptEditable: "Einige Zeichen brauchen die Schrift des Viewers, daher bleiben die Felder bearbeitbar und der Viewer zeichnet den Text. Die meisten PDF-Viewer zeigen ihn korrekt an."
+    }
+  },
+  "pdf-protect": {
+    name: "PDF schützen",
+    short: "Passwort hinzufügen",
+    description: "Verschlüsseln Sie eine PDF mit AES-256 und einem Passwort und sperren Sie bei Bedarf Drucken, Kopieren oder Bearbeiten. Die Verschlüsselung passiert im Browser, nichts wird hochgeladen.",
+    keywords: ["pdf", "passwort", "schützen", "verschlüsseln"],
+    options: {
+      password: "Passwort",
+      confirm: "Passwort wiederholen",
+      mismatch: "Die Passwörter stimmen nicht überein.",
+      printing: "Drucken",
+      allowPrint: "Drucken erlauben",
+      copying: "Kopieren",
+      allowCopy: "Kopieren von Text erlauben",
+      editing: "Bearbeiten",
+      allowEdit: "Bearbeiten erlauben",
+      keepSafe: "Bewahren Sie das Passwort sicher auf. Ein verlorenes Passwort lässt sich nicht wiederherstellen."
+    }
+  },
+  "pdf-unlock": {
+    name: "PDF entsperren",
+    short: "Bekanntes Passwort entfernen",
+    description: "Entfernen Sie Passwort sowie Druck- und Kopiersperren aus einer PDF, deren Passwort Sie kennen. Die Entschlüsselung läuft im Browser.",
+    keywords: ["pdf", "entsperren", "passwort entfernen", "entschlüsseln"],
+    options: {
+      password: "Passwort",
+      passwordHint: "Leer lassen, wenn sich die Datei ohne Passwort öffnet, aber Drucken oder Kopieren sperrt."
+    }
+  },
+  "pdf-repair": {
+    name: "PDF reparieren",
+    short: "Beschädigte PDFs retten",
+    description: "Bauen Sie eine beschädigte PDF neu auf, die sich nicht öffnen lässt oder Fehler zeigt. qpdf rekonstruiert die Dateistruktur im Browser und meldet, was behoben wurde.",
+    keywords: ["pdf", "reparieren", "beschädigt", "defekt"],
+    options: {
+      fixed: "Datei neu aufgebaut, {count} Probleme behoben.",
+      clean: "Keine strukturellen Probleme gefunden. Die Datei wurde sauber neu geschrieben."
+    }
+  },
 
   // ------------- Design-Helfer
   "gradient-generator": { name: "Gradient-Generator", short: "Linear / radial / conic", description: "CSS-Gradient mit Stops und Winkel.", keywords: ["gradient", "css"], options: { type: "Typ", angle: "Winkel", stops: "Stops" } },
@@ -239,8 +364,38 @@ export const toolsDE: ToolI18nBundle = {
   // ------------- KI-Erweiterung
   "smart-crop": { name: "Smart Crop", short: "Saliency-Crop", description: "Auto-Zuschnitt auf den visuell interessantesten Bereich.", keywords: ["crop", "saliency"], options: { aspect: "Verhältnis", padding: "Padding" } },
   "photo-restore": { name: "Foto-Restauration", short: "Entrauschen + Schärfen", description: "Kontrast / Korn / Schärfe via In-Browser-Convolution.", keywords: ["restore", "schärfen"], options: { strength: "Stärke" } },
-  "face-anonymizer": { name: "Gesichts-Anonymizer", short: "Gesichter blurren", description: "Gesichter erkennen und blurren. Bald verfügbar — Modell wird nur on-demand geladen.", keywords: ["face", "blur"] },
-  "object-detection": { name: "Objekterkennung", short: "YOLO im Browser", description: "Alltagsobjekte mit kleinem YOLO-Modell erkennen. Bald verfügbar — Modell wird nur opt-in geladen.", keywords: ["yolo", "objekt"] },
+  "face-anonymizer": {
+    name: "Gesichts-Anonymizer",
+    short: "Gesichter in Fotos unkenntlich machen",
+    description: "Findet Gesichter mit einem kleinen Modell auf Ihrem Gerät und zeichnet sie weich, verpixelt oder überdeckt sie. Sie können ein gefundenes Gesicht auslassen oder ein übersehenes hinzufügen. Ihr Foto verlässt Ihr Gerät nicht.",
+    keywords: ["gesicht", "verpixeln", "anonymisieren", "datenschutz", "dsgvo"],
+    options: {
+      style: "Stil",
+      blur: "Weichzeichnen",
+      pixelate: "Verpixeln",
+      solid: "Fläche",
+      shape: "Form",
+      ellipse: "Oval",
+      rectangle: "Rechteck",
+      padding: "Zusätzlicher Rand",
+      strength: "Stärke",
+      detecting: "Gesichter werden gesucht...",
+      found: "{count} Gesichter ausgewählt. Klicken Sie auf einen Rahmen, um ihn auszulassen, oder ziehen Sie auf dem Foto, um einen hinzuzufügen.",
+      check: "Prüfen Sie das Ergebnis vor dem Teilen. Kleine, abgewandte oder verdeckte Gesichter können übersehen werden; ziehen Sie einen Rahmen darüber."
+    }
+  },
+  "object-detection": {
+    name: "Objekterkennung",
+    short: "Objekte im Foto finden",
+    description: "Erkennt 80 Alltagsobjekte wie Personen, Autos und Tiere mit einem kleinen Modell auf Ihrem Gerät. Laden Sie das markierte Bild oder die Ergebnisse als JSON herunter.",
+    keywords: ["objekterkennung", "erkennen", "ki"],
+    options: {
+      threshold: "Mindestkonfidenz",
+      detecting: "Objekte werden gesucht...",
+      none: "Nichts über dieser Konfidenz gefunden.",
+      saveImage: "Bild herunterladen"
+    }
+  },
 
   // ------------- API & HTTP
   "http-request": { name: "HTTP-Request-Builder", short: "Request senden, Response sehen", description: "Postman-lite im Browser. GET/POST/PUT/PATCH/DELETE, Header, JSON-Body.", keywords: ["http", "request", "rest"], options: { method: "Methode", url: "URL", headers: "Header", body: "Body" } },
@@ -268,7 +423,27 @@ export const toolsDE: ToolI18nBundle = {
   "dns-lookup": { name: "DNS-Lookup (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS über HTTPS via Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "Record-Typ" } },
   "cron-builder": { name: "Cron-Builder", short: "Cron erstellen + erklären", description: "5-Feld-Cron komponieren, Klartext-Bedeutung, nächste 5 Trigger-Zeiten.", keywords: ["cron"], options: { expression: "Cron-Expression" } },
   "timestamp": { name: "Timestamp-Konverter", short: "Unix ↔ ISO ↔ relativ", description: "Zwischen Unix-Epoch (s/ms), ISO 8601, RFC 1123 und relativer Zeit umrechnen.", keywords: ["timestamp", "unix"], options: { input: "Eingabe" } },
-  "token-counter": { name: "Token-Zähler", short: "Token + USD-Kosten schätzen", description: "Prompt einfügen, ungefähre Tokenzahl + Kosten für Claude / GPT / Gemini.", keywords: ["token", "kosten", "llm"] },
+  "token-counter": {
+    name: "Token-Zähler",
+    short: "Tokens und Kosten schätzen",
+    description: "Fügen Sie einen Prompt ein und erhalten Sie eine ungefähre Tokenzahl und die Kosten für aktuelle Claude-, OpenAI- und Gemini-Modelle, oder geben Sie Ihren eigenen Preis ein.",
+    keywords: ["token", "kosten", "llm", "tokenizer"],
+    options: {
+      sample: "Fügen Sie einen Prompt ein, um Tokens und Kosten für aktuelle Modelle zu schätzen.",
+      outputTokens: "Erwartete Ausgabe-Tokens",
+      outputHint: "Für die Kostenschätzung",
+      customInput: "Ihr Eingabepreis",
+      customOutput: "Ihr Ausgabepreis",
+      inputCost: "Eingabe",
+      outputCost: "Ausgabe",
+      custom: "Ihr eigener Preis",
+      placeholder: "Prompt oder Text einfügen",
+      chars: "Zeichen",
+      words: "Wörter",
+      estimate: "nur Schätzungen, echte Tokenizer weichen um etwa 10% ab",
+      checked: "Standard-API-Preise pro 1 Mio. Tokens, geprüft am {date}:"
+    }
+  },
   "llm-compare": { name: "LLM Side-by-side", short: "Ein Prompt, mehrere Modelle", description: "Claude / GPT / Gemini nebeneinander vergleichen. Bald — eigene API-Keys.", keywords: ["llm", "vergleich"] },
   "mcp-tester": { name: "MCP-Config-Tester", short: "Model Context Protocol JSON validieren", description: "MCP-Server-Config einfügen; Validierung, Env-Var-Diff, lesbare Zusammenfassung.", keywords: ["mcp", "claude", "cursor"] },
   "json-schema": { name: "JSON-Schema-Generator", short: "Schema aus Beispiel ableiten", description: "JSON-Beispiel einfügen, Draft-2020-12-Schema bekommen.", keywords: ["json", "schema"] },

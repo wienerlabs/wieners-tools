@@ -451,6 +451,62 @@ export const tools: ToolDefinition[] = [
     accept: ".pdf,application/pdf",
     badges: ["new", "clientside"]
   },
+  {
+    slug: "pdf-page-numbers",
+    category: "pdf",
+    icon: "ListOrdered",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-watermark",
+    category: "pdf",
+    icon: "Stamp",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-sign",
+    category: "pdf",
+    icon: "Signature",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-form-fill",
+    category: "pdf",
+    icon: "FormInput",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-protect",
+    category: "pdf",
+    icon: "Lock",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-unlock",
+    category: "pdf",
+    icon: "LockOpen",
+    status: "ready",
+    accept: ".pdf,application/pdf",
+    badges: ["new", "clientside"]
+  },
+  {
+    slug: "pdf-repair",
+    category: "pdf",
+    icon: "Wrench",
+    status: "soon",
+    accept: ".pdf,application/pdf",
+    badges: ["clientside"]
+  },
 
   // ------------- Design helpers
   {
@@ -571,7 +627,7 @@ export const tools: ToolDefinition[] = [
     slug: "face-anonymizer",
     category: "ai",
     icon: "EyeOff",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
     badges: ["ai", "beta", "clientside"]
   },
@@ -579,7 +635,7 @@ export const tools: ToolDefinition[] = [
     slug: "object-detection",
     category: "ai",
     icon: "ScanSearch",
-    status: "soon",
+    status: "ready",
     accept: "image/*",
     badges: ["ai", "beta", "clientside"]
   },

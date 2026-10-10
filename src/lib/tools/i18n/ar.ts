@@ -17,7 +17,23 @@ export const toolsAR: ToolI18nBundle = {
     }
   },
   "optimize-svg": { name: "محسّن SVG", short: "تصغير SVG", description: "تنظيف عبر SVGO.", keywords: ["svg"] },
-  "compress-pdf": { name: "ضاغط PDF", short: "تصغير PDF", description: "إعادة عيّنة الصور لتقليص الحجم.", keywords: ["pdf"] },
+  "compress-pdf": {
+    name: "ضاغط PDF",
+    short: "تصغير PDF",
+    description: "صغّر حجم ملف PDF في متصفحك. الوضع بلا فقدان يعيد الضغط ويُبقي النص قابلاً للتحديد، والوضع القوي يحوّل الصفحات إلى صور لأكبر توفير.",
+    keywords: ["pdf", "ضغط", "تصغير", "compress"],
+    options: {
+      mode: "الطريقة",
+      lossless: "بلا فقدان، يبقى النص قابلاً للتحديد",
+      raster: "قوي، تتحول الصفحات إلى صور",
+      quality: "جودة JPEG",
+      scale: "الوضوح",
+      rasterWarning: "الوضع القوي يحوّل كل صفحة إلى صورة: لن يمكن بعد ذلك تحديد النص أو البحث فيه أو نسخه.",
+      saved: "من {before} إلى {after}، أصغر بنسبة {percent}%.",
+      noGain: "هذا الملف مُحسَّن جيداً بالفعل. يمكن للوضع القوي تصغيره أكثر على حساب النص القابل للتحديد.",
+      rasterNoGain: "جعل الوضع القوي هذا الملف أكبر. احتفظ بالأصل أو خفّض الجودة والحدّة."
+    }
+  },
   "convert-format": {
     name: "محوّل الصيغ",
     short: "PNG ↔ JPG ↔ WebP ↔ AVIF",
@@ -219,6 +235,115 @@ export const toolsAR: ToolI18nBundle = {
   "pdf-reorder": { name: "إعادة ترتيب PDF", short: "ترتيب الصفحات", description: "أعد ترتيب صفحات PDF بالسحب وأعد التصدير.", keywords: ["pdf"] },
   "pdf-metadata": { name: "بيانات PDF", short: "العنوان / المؤلف", description: "عرض وتعديل قاموس معلومات PDF.", keywords: ["pdf"] },
   "pdf-text-extract": { name: "استخراج نص PDF", short: "طبقة النص", description: "استخراج طبقة النص المضمّنة من PDF (ليس OCR).", keywords: ["pdf"] },
+  "pdf-page-numbers": {
+    name: "إضافة أرقام الصفحات",
+    short: "ترقيم كل الصفحات",
+    description: "أضف أرقام الصفحات إلى ملف PDF: اختر الموضع والتنسيق والرقم الأول، وتخطَّ صفحات مثل الغلاف. كل شيء يعمل في متصفحك.",
+    keywords: ["pdf", "أرقام الصفحات", "ترقيم", "page numbers"],
+    options: {
+      position: "الموضع",
+      bottomCenter: "أسفل الوسط",
+      bottomRight: "أسفل اليمين",
+      bottomLeft: "أسفل اليسار",
+      topCenter: "أعلى الوسط",
+      topRight: "أعلى اليمين",
+      topLeft: "أعلى اليسار",
+      format: "التنسيق",
+      wordsTemplate: "صفحة {n} من {total}",
+      start: "الرقم الأول",
+      pages: "الصفحات",
+      pagesHint: "اتركه فارغاً لكل الصفحات. مثال: 2- يتخطى الغلاف.",
+      size: "حجم الخط",
+      margin: "الهامش"
+    }
+  },
+  "pdf-watermark": {
+    name: "علامة مائية على PDF",
+    short: "اطبع نصاً على كل صفحة",
+    description: "أضف علامة مائية نصية مثل سري أو مسودة إلى ملف PDF، مرة واحدة في الوسط أو متكررة على الصفحة، مع اختيار اللون والحجم والزاوية والعتامة.",
+    keywords: ["pdf", "علامة مائية", "ختم", "سري", "watermark"],
+    options: {
+      text: "النص",
+      defaultText: "سري",
+      layout: "التخطيط",
+      center: "مرة واحدة في الوسط",
+      tile: "متكررة على الصفحة",
+      size: "حجم الخط",
+      opacity: "العتامة",
+      angle: "الزاوية",
+      color: "اللون",
+      pages: "الصفحات",
+      pagesHint: "اتركه فارغاً لكل الصفحات. مثال: 1-3, 5"
+    }
+  },
+  "pdf-sign": {
+    name: "توقيع PDF",
+    short: "ارسم توقيعك أو ارفعه",
+    description: "ارسم توقيعك أو ارفع صورة له، ثم انقر حيث يجب أن يظهر على الصفحة. هذا توقيع مرئي وليس توقيعاً رقمياً قائماً على شهادة.",
+    keywords: ["pdf", "توقيع", "sign"],
+    options: {
+      source: "التوقيع",
+      draw: "بالرسم",
+      upload: "برفع صورة",
+      page: "الصفحة",
+      width: "العرض",
+      clear: "مسح",
+      placeHint: "انقر على الصفحة لوضع التوقيع.",
+      legal: "يضيف هذا صورة لتوقيعك، وليس توقيعاً رقمياً قائماً على شهادة."
+    }
+  },
+  "pdf-form-fill": {
+    name: "تعبئة نماذج PDF",
+    short: "املأ حقول نموذج PDF",
+    description: "افتح ملف PDF قابلاً للتعبئة، واكتب في الحقول النصية، وضع علامات في المربعات، واختر الخيارات، ثم احفظ. يمكنك تثبيت الحقول حتى لا يمكن تعديلها بعد ذلك.",
+    keywords: ["pdf", "نموذج", "تعبئة", "form"],
+    options: {
+      noFields: "لا يحتوي ملف PDF هذا على حقول نماذج قابلة للتعبئة.",
+      fieldCount: "عدد الحقول: {count}",
+      checked: "محدَّد",
+      finish: "عند الحفظ",
+      flatten: "تثبيت الحقول حتى لا يمكن تعديلها",
+      keptEditable: "تحتاج بعض الأحرف إلى خط العارض نفسه، لذلك بقيت الحقول قابلة للتعديل ويرسم العارض النص. تعرضه معظم عارضات PDF بشكل صحيح."
+    }
+  },
+  "pdf-protect": {
+    name: "حماية PDF بكلمة مرور",
+    short: "أضف كلمة مرور",
+    description: "شفّر ملف PDF بكلمة مرور باستخدام AES-256، ويمكنك منع الطباعة أو النسخ أو التعديل. يتم التشفير في متصفحك ولا يُرفع الملف.",
+    keywords: ["pdf", "كلمة مرور", "حماية", "تشفير"],
+    options: {
+      password: "كلمة المرور",
+      confirm: "أعد كتابة كلمة المرور",
+      mismatch: "كلمتا المرور غير متطابقتين.",
+      printing: "الطباعة",
+      allowPrint: "السماح بالطباعة",
+      copying: "النسخ",
+      allowCopy: "السماح بنسخ النص",
+      editing: "التعديل",
+      allowEdit: "السماح بالتعديل",
+      keepSafe: "احفظ كلمة المرور في مكان آمن. لا يمكن استعادة كلمة مرور منسية."
+    }
+  },
+  "pdf-unlock": {
+    name: "فتح قفل PDF",
+    short: "أزل كلمة مرور تعرفها",
+    description: "أزل كلمة المرور وقيود الطباعة أو النسخ من ملف PDF تعرف كلمة مروره. يتم فك التشفير في متصفحك.",
+    keywords: ["pdf", "فتح القفل", "إزالة كلمة المرور", "unlock"],
+    options: {
+      password: "كلمة المرور",
+      passwordHint: "اتركه فارغاً إذا كان الملف يفتح دون كلمة مرور لكنه يمنع الطباعة أو النسخ."
+    }
+  },
+  "pdf-repair": {
+    name: "إصلاح PDF",
+    short: "أصلح ملفات PDF التالفة",
+    description: "أعد بناء ملف PDF تالف لا يفتح أو يُظهر أخطاء. يعيد qpdf بناء بنية الملف في متصفحك ويخبرك بما أصلحه.",
+    keywords: ["pdf", "إصلاح", "تالف", "repair"],
+    options: {
+      fixed: "أُعيد بناء الملف وأُصلحت مشكلات عددها {count}.",
+      clean: "لم يُعثر على مشكلات في البنية. أُعيدت كتابة الملف بشكل سليم."
+    }
+  },
 
   // ------------- مساعدات التصميم
   "gradient-generator": { name: "مولّد التدرج", short: "خطي / شعاعي / مخروطي", description: "بناء CSS gradient مع stops والزاوية.", keywords: ["gradient", "css"], options: { type: "النوع", angle: "الزاوية", stops: "نقاط التوقف" } },
@@ -238,8 +363,38 @@ export const toolsAR: ToolI18nBundle = {
   // ------------- توسعة الذكاء الاصطناعي
   "smart-crop": { name: "قص ذكي", short: "قص بناءً على البروز", description: "قص تلقائي إلى أبرز منطقة عبر خريطة saliency.", keywords: ["crop"], options: { aspect: "النسبة", padding: "التبطين" } },
   "photo-restore": { name: "ترميم الصور", short: "تقليل الضوضاء + الحدّة", description: "تحسين التباين والحبيبات والحدة عبر convolution داخل المتصفح.", keywords: ["restore"], options: { strength: "القوة" } },
-  "face-anonymizer": { name: "تشويش الوجوه", short: "تشويش الوجوه تلقائياً", description: "تحديد الوجوه على الجهاز وتشويشها. قريباً — تنزيل النموذج عند الطلب.", keywords: ["face", "blur"] },
-  "object-detection": { name: "كشف الكائنات", short: "YOLO في المتصفح", description: "كشف كائنات يومية بنموذج YOLO صغير. قريباً — تنزيل النموذج بعد الموافقة.", keywords: ["yolo"] },
+  "face-anonymizer": {
+    name: "تشويش الوجوه",
+    short: "طمس الوجوه في الصور",
+    description: "يجد الوجوه بنموذج صغير على جهازك ويطمسها أو يحوّلها إلى بكسلات أو يغطيها. يمكنك تخطي وجه مكتشف أو إضافة وجه فاته النموذج. لا تغادر صورتك جهازك.",
+    keywords: ["وجه", "طمس", "إخفاء الهوية", "خصوصية", "face blur"],
+    options: {
+      style: "النمط",
+      blur: "طمس",
+      pixelate: "بكسلة",
+      solid: "تغطية كاملة",
+      shape: "الشكل",
+      ellipse: "بيضاوي",
+      rectangle: "مستطيل",
+      padding: "هامش إضافي",
+      strength: "القوة",
+      detecting: "جارٍ البحث عن الوجوه...",
+      found: "الوجوه المحددة: {count}. انقر على إطار لتخطيه، أو اسحب على الصورة لإضافة إطار.",
+      check: "راجع النتيجة قبل المشاركة. قد تفوت الوجوه الصغيرة أو المائلة أو المغطاة؛ اسحب فوقها لإضافة إطار."
+    }
+  },
+  "object-detection": {
+    name: "كشف الكائنات",
+    short: "اعثر على الأشياء في الصورة",
+    description: "يكشف 80 نوعاً من الأشياء اليومية مثل الأشخاص والسيارات والحيوانات بنموذج صغير على جهازك. نزّل الصورة المعلَّمة أو النتائج بصيغة JSON.",
+    keywords: ["كشف الكائنات", "كشف", "ذكاء اصطناعي", "object detection"],
+    options: {
+      threshold: "أدنى ثقة",
+      detecting: "جارٍ البحث عن الأشياء...",
+      none: "لم يُعثر على شيء فوق هذه الثقة.",
+      saveImage: "تنزيل الصورة"
+    }
+  },
 
   // ------------- API & HTTP
   "http-request": { name: "باني طلبات HTTP", short: "أرسل طلباً وشاهد الرد", description: "Postman-lite في المتصفح. GET/POST/PUT/PATCH/DELETE، headers، JSON body.", keywords: ["http", "rest"], options: { method: "الطريقة", url: "الرابط", headers: "الترويسات", body: "الجسم" } },
@@ -267,7 +422,27 @@ export const toolsAR: ToolI18nBundle = {
   "dns-lookup": { name: "بحث DNS (DoH)", short: "A / AAAA / MX / TXT / CNAME", description: "DNS عبر HTTPS من Cloudflare. A, AAAA, MX, TXT, CNAME, NS, SOA, CAA.", keywords: ["dns", "doh"], options: { type: "نوع السجل" } },
   "cron-builder": { name: "باني Cron", short: "بناء + شرح cron", description: "تأليف cron من 5 حقول، معناه بالنص، الـ 5 تشغيلات التالية.", keywords: ["cron"], options: { expression: "Cron expression" } },
   "timestamp": { name: "محوّل Timestamp", short: "Unix ↔ ISO ↔ نسبي", description: "تحويل بين Unix epoch (s/ms)، ISO 8601، RFC 1123 ووقت نسبي مقروء.", keywords: ["timestamp", "unix"], options: { input: "المدخل" } },
-  "token-counter": { name: "عدّاد Tokens", short: "تقدير tokens + التكلفة بالـ USD", description: "ألصق برومبت واحصل على عدد tokens تقريبي + تكلفة لـ Claude / GPT / Gemini.", keywords: ["token", "تكلفة", "llm"] },
+  "token-counter": {
+    name: "عدّاد Tokens",
+    short: "تقدير tokens والتكلفة",
+    description: "ألصق أي برومبت واحصل على عدد tokens تقريبي وتكلفة نماذج Claude وOpenAI وGemini الحالية، أو أدخل سعرك الخاص.",
+    keywords: ["token", "تكلفة", "llm"],
+    options: {
+      sample: "ألصق أي برومبت لتقدير tokens والتكلفة عبر النماذج الحالية.",
+      outputTokens: "tokens المخرجات المتوقعة",
+      outputHint: "لتقدير التكلفة",
+      customInput: "سعر الإدخال الخاص بك",
+      customOutput: "سعر الإخراج الخاص بك",
+      inputCost: "إدخال",
+      outputCost: "إخراج",
+      custom: "سعرك الخاص",
+      placeholder: "ألصق أي برومبت أو نص",
+      chars: "حرف",
+      words: "كلمة",
+      estimate: "تقديرات فقط، تختلف أدوات الترميز الحقيقية بنحو 10%",
+      checked: "أسعار API القياسية لكل مليون token، تم التحقق في {date}:"
+    }
+  },
   "llm-compare": { name: "LLM جنباً إلى جنب", short: "برومبت واحد لعدة نماذج", description: "قارن مخرجات Claude / GPT / Gemini. قريباً — بمفاتيح API الخاصة بك.", keywords: ["llm"] },
   "mcp-tester": { name: "فاحص MCP", short: "تحقق JSON لـ Model Context Protocol", description: "ألصق إعداد MCP server؛ تحقق هيكلي + ملخص.", keywords: ["mcp"] },
   "json-schema": { name: "مولّد JSON Schema", short: "اشتق Schema من عينة", description: "ألصق JSON واحصل على Draft 2020-12 schema.", keywords: ["json", "schema"] },

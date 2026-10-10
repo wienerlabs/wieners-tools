@@ -77,6 +77,13 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   "pdf-reorder": dynamic(() => import("./pdf-reorder"), { ssr: false, loading: Loader }),
   "pdf-metadata": dynamic(() => import("./pdf-metadata"), { ssr: false, loading: Loader }),
   "pdf-text-extract": dynamic(() => import("./pdf-text-extract"), { ssr: false, loading: Loader }),
+  "pdf-page-numbers": dynamic(() => import("./pdf-page-numbers"), { ssr: false, loading: Loader }),
+  "pdf-watermark": dynamic(() => import("./pdf-watermark"), { ssr: false, loading: Loader }),
+  "pdf-sign": dynamic(() => import("./pdf-sign"), { ssr: false, loading: Loader }),
+  "pdf-form-fill": dynamic(() => import("./pdf-form-fill"), { ssr: false, loading: Loader }),
+  "pdf-protect": dynamic(() => import("./pdf-protect"), { ssr: false, loading: Loader }),
+  "pdf-unlock": dynamic(() => import("./pdf-unlock"), { ssr: false, loading: Loader }),
+  "pdf-repair": dynamic(() => import("./pdf-repair"), { ssr: false, loading: Loader }),
 
   // Design
   "gradient-generator": dynamic(() => import("./gradient-generator"), { ssr: false, loading: Loader }),
@@ -96,7 +103,8 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<ToolComponentProps>> 
   // AI extension
   "smart-crop": dynamic(() => import("./smart-crop"), { ssr: false, loading: Loader }),
   "photo-restore": dynamic(() => import("./photo-restore"), { ssr: false, loading: Loader }),
-  // face-anonymizer + object-detection are status:soon → workbench placeholder
+  "face-anonymizer": dynamic(() => import("./face-anonymizer"), { ssr: false, loading: Loader }),
+  "object-detection": dynamic(() => import("./object-detection"), { ssr: false, loading: Loader }),
 
   // API & HTTP
   "http-request": dynamic(() => import("./http-request"), { ssr: false, loading: Loader }),

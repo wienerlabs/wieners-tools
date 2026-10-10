@@ -29,8 +29,19 @@ export const toolsTR: ToolI18nBundle = {
   "compress-pdf": {
     name: "PDF Sıkıştırıcı",
     short: "PDF küçült",
-    description: "Görselleri yeniden örnekleyerek PDF boyutunu düşürür.",
-    keywords: ["pdf", "compress"]
+    description: "PDF'i tarayıcınızda küçültün. Kayıpsız mod dosyayı yeniden sıkıştırır ve metin seçilebilir kalır; güçlü mod sayfaları görüntüye çevirerek en çok tasarrufu sağlar.",
+    keywords: ["pdf", "sıkıştır", "küçült", "compress"],
+    options: {
+      mode: "Yöntem",
+      lossless: "Kayıpsız, metin seçilebilir kalır",
+      raster: "Güçlü, sayfalar görüntüye dönüşür",
+      quality: "JPEG kalitesi",
+      scale: "Netlik",
+      rasterWarning: "Güçlü mod her sayfayı resme çevirir: metin artık seçilemez, aranamaz ya da kopyalanamaz.",
+      saved: "{before} yerine {after}, %{percent} daha küçük.",
+      noGain: "Bu dosya zaten iyi optimize edilmiş. Güçlü mod, seçilebilir metinden vazgeçerek daha da küçültebilir.",
+      rasterNoGain: "Güçlü mod bu dosyayı büyüttü. Orijinali kullanın ya da kaliteyi ve keskinliği düşürün."
+    }
   },
   "convert-format": {
     name: "Format Dönüştürücü",
@@ -385,6 +396,115 @@ export const toolsTR: ToolI18nBundle = {
     description: "PDF'in gömülü metin katmanını çıkart (OCR değil; taranmış PDF'ler için Image OCR'a bak).",
     keywords: ["pdf", "metin", "çıkart"]
   },
+  "pdf-page-numbers": {
+    name: "Sayfa Numarası Ekle",
+    short: "Her sayfayı numaralandır",
+    description: "PDF'e sayfa numarası ekleyin: konumu, biçimi ve ilk numarayı seçin, kapak gibi sayfaları atlayın. Her şey tarayıcınızda çalışır.",
+    keywords: ["pdf", "sayfa numarası", "numaralandır", "page numbers"],
+    options: {
+      position: "Konum",
+      bottomCenter: "Alt orta",
+      bottomRight: "Alt sağ",
+      bottomLeft: "Alt sol",
+      topCenter: "Üst orta",
+      topRight: "Üst sağ",
+      topLeft: "Üst sol",
+      format: "Biçim",
+      wordsTemplate: "Sayfa {n} / {total}",
+      start: "İlk numara",
+      pages: "Sayfalar",
+      pagesHint: "Boş bırakırsanız tüm sayfalar. Örnek: 2- kapağı atlar.",
+      size: "Yazı boyutu",
+      margin: "Kenar boşluğu"
+    }
+  },
+  "pdf-watermark": {
+    name: "PDF Filigran",
+    short: "Her sayfaya yazı damgası",
+    description: "PDF'e Gizli ya da Taslak gibi bir yazı filigranı ekleyin: ortada bir kez ya da sayfa boyunca tekrarlı; renk, boyut, açı ve opaklığı siz seçin.",
+    keywords: ["pdf", "filigran", "damga", "gizli", "taslak", "watermark"],
+    options: {
+      text: "Yazı",
+      defaultText: "Gizli",
+      layout: "Yerleşim",
+      center: "Bir kez, ortada",
+      tile: "Sayfa boyunca tekrarlı",
+      size: "Yazı boyutu",
+      opacity: "Opaklık",
+      angle: "Açı",
+      color: "Renk",
+      pages: "Sayfalar",
+      pagesHint: "Boş bırakırsanız tüm sayfalar. Örnek: 1-3, 5"
+    }
+  },
+  "pdf-sign": {
+    name: "PDF İmzala",
+    short: "İmzanızı çizin ya da yükleyin",
+    description: "İmzanızı çizin ya da görselini yükleyin, sonra sayfada nereye gideceğine tıklayın. Bu görsel bir imzadır, sertifikalı elektronik imza değildir.",
+    keywords: ["pdf", "imza", "imzala", "sign"],
+    options: {
+      source: "İmza",
+      draw: "Çizerek",
+      upload: "Görsel yükleyerek",
+      page: "Sayfa",
+      width: "Genişlik",
+      clear: "Temizle",
+      placeHint: "İmzayı yerleştirmek için sayfaya tıklayın.",
+      legal: "Bu işlem imzanızın görselini ekler. Sertifikaya dayalı elektronik imza değildir."
+    }
+  },
+  "pdf-form-fill": {
+    name: "PDF Form Doldur",
+    short: "PDF form alanlarını doldurun",
+    description: "Doldurulabilir bir PDF açın, metin alanlarına yazın, kutuları işaretleyin, seçenekleri belirleyin ve kaydedin. İsterseniz alanları düzleştirip değiştirilemez hale getirebilirsiniz.",
+    keywords: ["pdf", "form", "doldur", "form doldurma"],
+    options: {
+      noFields: "Bu PDF'te doldurulabilir form alanı yok.",
+      fieldCount: "{count} alan",
+      checked: "İşaretli",
+      finish: "Kaydederken",
+      flatten: "Düzleştir, alanlar artık değiştirilemesin",
+      keptEditable: "Bazı karakterler görüntüleyicinin kendi fontunu gerektiriyor, bu yüzden alanlar düzenlenebilir kaldı ve metni görüntüleyici çiziyor. Çoğu PDF görüntüleyici doğru gösterir."
+    }
+  },
+  "pdf-protect": {
+    name: "PDF Şifrele",
+    short: "Şifre ekleyin",
+    description: "PDF'i AES-256 ile şifreleyin; isterseniz yazdırmayı, kopyalamayı ya da düzenlemeyi kapatın. Şifreleme tarayıcınızda yapılır, dosya yüklenmez.",
+    keywords: ["pdf", "şifre", "şifrele", "koru", "kilitle"],
+    options: {
+      password: "Şifre",
+      confirm: "Şifre tekrar",
+      mismatch: "Şifreler eşleşmiyor.",
+      printing: "Yazdırma",
+      allowPrint: "Yazdırmaya izin ver",
+      copying: "Kopyalama",
+      allowCopy: "Metin kopyalamaya izin ver",
+      editing: "Düzenleme",
+      allowEdit: "Düzenlemeye izin ver",
+      keepSafe: "Şifreyi güvenli bir yerde saklayın. Unutulan şifre kurtarılamaz."
+    }
+  },
+  "pdf-unlock": {
+    name: "PDF Şifresini Kaldır",
+    short: "Bildiğiniz şifreyi kaldırın",
+    description: "Şifresini bildiğiniz bir PDF'ten şifreyi ve yazdırma ya da kopyalama kısıtlarını kaldırın. Çözme işlemi tarayıcınızda yapılır.",
+    keywords: ["pdf", "şifre kaldır", "kilit aç", "unlock"],
+    options: {
+      password: "Şifre",
+      passwordHint: "Dosya şifresiz açılıyor ama yazdırmayı ya da kopyalamayı engelliyorsa boş bırakın."
+    }
+  },
+  "pdf-repair": {
+    name: "PDF Onar",
+    short: "Bozuk PDF'leri düzeltin",
+    description: "Açılmayan ya da hata veren bozuk bir PDF'i yeniden kurun. qpdf dosya yapısını tarayıcınızda yeniden oluşturur ve neyi düzelttiğini bildirir.",
+    keywords: ["pdf", "onar", "bozuk", "düzelt", "repair"],
+    options: {
+      fixed: "Dosya yeniden kuruldu, {count} sorun düzeltildi.",
+      clean: "Yapısal bir sorun bulunmadı. Dosya temiz biçimde yeniden yazıldı."
+    }
+  },
 
   // ------------- Tasarım yardımcıları
   "gradient-generator": {
@@ -479,15 +599,35 @@ export const toolsTR: ToolI18nBundle = {
   },
   "face-anonymizer": {
     name: "Yüz Bulanıklaştırıcı",
-    short: "Yüzleri otomatik bulanıklaştır",
-    description: "Cihazda küçük bir model ile yüzleri tespit et ve bulanıklaştır. Yakında — model ağırlıkları yalnızca talep üzerine indirilir.",
-    keywords: ["yüz", "bulanıklaştır", "gizlilik"]
+    short: "Fotoğraflardaki yüzleri gizle",
+    description: "Cihazınızda çalışan küçük bir modelle yüzleri bulur; bulanıklaştırır, pikselleştirir ya da kapatır. Bulunan bir yüzü atlayabilir, modelin kaçırdığını ekleyebilirsiniz. Fotoğrafınız cihazınızdan çıkmaz.",
+    keywords: ["yüz", "bulanıklaştır", "anonim", "gizlilik", "kvkk"],
+    options: {
+      style: "Stil",
+      blur: "Bulanıklaştır",
+      pixelate: "Pikselleştir",
+      solid: "Düz renk",
+      shape: "Şekil",
+      ellipse: "Oval",
+      rectangle: "Dikdörtgen",
+      padding: "Ek pay",
+      strength: "Güç",
+      detecting: "Yüzler aranıyor...",
+      found: "{count} yüz seçili. Atlamak için kutuya tıklayın, eklemek için fotoğrafın üzerinde sürükleyin.",
+      check: "Paylaşmadan önce sonucu kontrol edin. Küçük, yan dönük ya da kapalı yüzler kaçabilir; üzerlerine sürükleyerek kutu ekleyin."
+    }
   },
   "object-detection": {
     name: "Nesne Tespiti",
-    short: "Tarayıcıda YOLO",
-    description: "Küçük YOLO tarzı modelle gündelik nesneleri tespit et. Yakında — büyük model dosyaları sadece onaydan sonra indirilir.",
-    keywords: ["tespit", "yolo", "nesne"]
+    short: "Fotoğraftaki nesneleri bul",
+    description: "Cihazınızda çalışan küçük bir modelle insan, araba, hayvan gibi 80 gündelik nesne türünü tespit eder. İşaretlenmiş görseli ya da sonuçları JSON olarak indirin.",
+    keywords: ["nesne tespiti", "tespit", "yapay zeka", "object detection"],
+    options: {
+      threshold: "En düşük güven",
+      detecting: "Nesneler aranıyor...",
+      none: "Bu güven düzeyinin üstünde bir şey bulunamadı.",
+      saveImage: "Görseli indir"
+    }
   },
 
   // ------------- API & HTTP
@@ -627,9 +767,24 @@ export const toolsTR: ToolI18nBundle = {
   },
   "token-counter": {
     name: "Token Sayacı",
-    short: "Token + USD maliyet tahmini",
-    description: "Promptu yapıştır, Claude / GPT / Gemini için yaklaşık token sayısı + USD maliyetini al.",
-    keywords: ["token", "maliyet", "llm", "tokenizer"]
+    short: "Token ve maliyet tahmini",
+    description: "Herhangi bir promptu yapıştırın; güncel Claude, OpenAI ve Gemini modelleri için yaklaşık token sayısını ve maliyeti görün ya da kendi fiyatınızı girin.",
+    keywords: ["token", "maliyet", "llm", "tokenizer"],
+    options: {
+      sample: "Güncel modellerde token ve maliyeti tahmin etmek için bir prompt yapıştırın.",
+      outputTokens: "Beklenen çıktı tokenı",
+      outputHint: "Maliyet tahmini için",
+      customInput: "Sizin giriş fiyatınız",
+      customOutput: "Sizin çıkış fiyatınız",
+      inputCost: "giriş",
+      outputCost: "çıkış",
+      custom: "Kendi fiyatınız",
+      placeholder: "Bir prompt ya da metin yapıştırın",
+      chars: "karakter",
+      words: "kelime",
+      estimate: "yalnız tahmin, gerçek tokenizer'lar yaklaşık %10 farklı sayar",
+      checked: "Milyon token başına standart API fiyatları, {date} tarihinde kontrol edildi:"
+    }
   },
   "llm-compare": {
     name: "LLM Yan Yana",
