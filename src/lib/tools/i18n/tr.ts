@@ -815,32 +815,32 @@ export const toolsTR: ToolI18nBundle = {
     name: "Video İndirici (macOS)",
     short: "URL yapıştır, MP4 al",
     description:
-      "YouTube, TikTok, Instagram, Twitter, Reddit ve 1800+ siteden video indir. Küçük bir macOS .app — yt-dlp + ffmpeg bundle edilmiş, her şey Mac'inde çalışıyor, sunucu yok.",
-    keywords: ["video", "indir", "youtube", "tiktok", "instagram", "mp4", "yt-dlp", "macos"],
+      "YouTube, TikTok, Instagram, X, Reddit ve 1800+ siteden video indir. Küçük, yerel bir macOS uygulaması: yt-dlp, ffmpeg ve Deno içinde gelir, her şey Mac'inde çalışır, sunucu yok.",
+    keywords: ["video", "indir", "youtube", "tiktok", "instagram", "x", "mp4", "yt-dlp", "macos"],
     options: {
-      tagline: "URL yapıştır → MP4 indir. Tarayıcıdan değil, native macOS app'ten.",
+      tagline: "URL yapıştır → MP4. Tarayıcıda değil, küçük bir macOS uygulamasında.",
       whyNotBrowser: "Neden tarayıcı içinde olmuyor?",
-      whyNotBrowserBody:
-        "YouTube/TikTok/Instagram tarayıcının fetch çağrılarını CORS ile bloke ediyor. Üstelik yapıştırdığın URL videonun kendisi değil — gerçek MP4 imza şifreli, gizli bir manifest'in arkasında. Bunu çözmek yt-dlp'nin 5000 satır Python kodu. Bu yüzden Wiener DL'i ayrı bir .app olarak yapıyoruz.",
+      whyNotBrowserBody: "YouTube, TikTok ve Instagram tarayıcıdan gelen istekleri CORS ile engelliyor. Yapıştırdığın URL de videonun kendisi değil: gerçek dosya imzalı akış listelerinin arkasında duruyor. Bunu çözmek yt-dlp'nin işi, bu yüzden Wiener DL yerel bir uygulama olarak geliyor.",
       installTitle: "Kurulum",
-      step1: "↓ .dmg dosyasını indir",
-      step2: "Aç, Wiener DL.app'i Applications klasörüne sürükle",
-      step3: "İlk açılışta macOS uyarısı çıkarsa: sağ tık → Aç → Aç",
-      step4: "URL yapıştır, indirme tuşuna bas.",
-      cta: "İndir Wiener DL.app",
+      step1: "Mac'ine uygun .dmg dosyasını indir (Apple Silicon ya da Intel)",
+      step2: "Aç ve Wiener DL.app'i Uygulamalar klasörüne sürükle",
+      step3: "İlk açılış: macOS 15 ve sonrasında uygulamayı bir kez aç, ardından Sistem Ayarları → Gizlilik ve Güvenlik bölümünde \"Yine de Aç\"a tıkla. Daha eski macOS'ta sağ tık → Aç.",
+      step4: "URL yapıştır ve Download'a bas. Instagram ya da gizli videolar için \"Browser login\" altında tarayıcını seç.",
+      cta: "Apple Silicon için indir",
+      ctaIntel: "Intel için indir",
       ctaSecondary: "GitHub'da kaynak",
       whatsInside: "İçinde ne var?",
-      bundleYtdlp: "yt-dlp (1800+ site desteği)",
-      bundleFfmpeg: "ffmpeg + ffprobe (codec dönüşümü)",
-      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleYtdlp: "yt-dlp (1800+ site), her açılışta kendini günceller",
+      bundleDeno: "Deno, YouTube'un JavaScript kontrolleri için",
+      bundleFfmpeg: "ffmpeg + ffprobe (birleştirme ve dönüştürme)",
+      bundleLogin: "Instagram ve gizli videolar için isteğe bağlı tarayıcı girişi",
+      bundleNative: "Tauri + Rust",
       bundleNoServer: "Sıfır sunucu, sıfır telemetri",
-      sizeHint: "~135 MB · Apple Silicon ve Intel · macOS 11+",
+      sizeHint: "Sürüm 0.2.0 · Apple Silicon ~128 MB · Intel ~146 MB · macOS 11+",
       privacyTitle: "Gizlilik",
-      privacyBody:
-        "URL, video verisi, ya da herhangi bir şey hiçbir zaman sunucumuza gitmez. Wiener Labs'ın tek görevi .dmg'yi GitHub Releases'ten servis etmek.",
-      licenseTitle: "Lisans & sorumlu kullanım",
-      licenseBody:
-        "App kodu MIT. yt-dlp Unlicense, ffmpeg LGPL. Bu araç telif haklı içeriği indirip yeniden yayınlamak için değildir — bunu yapmak hem yasadışı hem etik dışı."
+      privacyBody: "URL'ler ve videolar Mac'inden çıkmaz. Uygulama açılışta yalnızca yt-dlp güncellemesi için GitHub'a bakar. Wiener Labs .dmg dosyasını GitHub Releases üzerinden dağıtır.",
+      licenseTitle: "Lisans ve sorumlu kullanım",
+      licenseBody: "Uygulama kodu MIT. yt-dlp Unlicense, Deno MIT, ffmpeg LGPL/GPL. Kendi videoların ve indirme hakkın olan içerikler için kullan; telif hakkıyla korunan içeriği indirip yeniden yayınlamak hem yasa dışı hem etik dışı."
     }
   },
   architect: {

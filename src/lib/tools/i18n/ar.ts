@@ -452,32 +452,32 @@ export const toolsAR: ToolI18nBundle = {
     name: "محمّل الفيديو (macOS)",
     short: "ألصق رابطاً، احصل على MP4",
     description:
-      "حمّل الفيديو من YouTube و TikTok و Instagram و Twitter و Reddit و1800+ موقع. تطبيق macOS صغير — yt-dlp + ffmpeg مضمّنين، كل شيء يبقى على Mac الخاص بك، بدون سيرفر.",
-    keywords: ["فيديو", "تحميل", "youtube", "tiktok", "mp4", "yt-dlp", "macos"],
+      "حمّل الفيديو من YouTube و TikTok و Instagram و X و Reddit و1800+ موقع. تطبيق macOS صغير يضم yt-dlp و ffmpeg و Deno، وكل شيء يبقى على جهاز Mac الخاص بك، بدون خادم.",
+    keywords: ["فيديو", "تحميل", "youtube", "tiktok", "instagram", "x", "mp4", "yt-dlp", "macos"],
     options: {
-      tagline: "ألصق الرابط → MP4. ليس في المتصفح — في تطبيق macOS صغير.",
+      tagline: "ألصق الرابط ← MP4. ليس في المتصفح، بل في تطبيق macOS صغير.",
       whyNotBrowser: "لماذا ليس في المتصفح مباشرة؟",
-      whyNotBrowserBody:
-        "YouTube و TikTok و Instagram تحجب طلبات fetch من المتصفح عبر CORS. الرابط الذي تلصقه ليس الفيديو نفسه — الـ MP4 الفعلي خلف manifests موقّعة بالتشفير. حلّ ذلك يحتاج ~5000 سطر Python في yt-dlp. لذلك Wiener DL تطبيق native صغير.",
+      whyNotBrowserBody: "تحجب YouTube و TikTok و Instagram طلبات المتصفح عبر CORS. والرابط الذي تلصقه ليس الفيديو نفسه: الملف الحقيقي خلف قوائم بث موقّعة. فك ذلك هو عمل yt-dlp، ولهذا يأتي Wiener DL كتطبيق أصلي.",
       installTitle: "التثبيت",
-      step1: "↓ حمّل ملف .dmg",
-      step2: "افتحه، اسحب Wiener DL.app إلى Applications",
-      step3: "أول تشغيل: انقر باليمين → فتح → فتح (التطبيق غير موثّق notarized بعد)",
-      step4: "ألصق الرابط، اضغط تحميل.",
-      cta: "تحميل Wiener DL.app",
+      step1: "حمّل ملف .dmg المناسب لجهازك (Apple Silicon أو Intel)",
+      step2: "افتحه واسحب Wiener DL.app إلى مجلد التطبيقات",
+      step3: "أول تشغيل: في macOS 15 وما بعده افتح التطبيق مرة واحدة، ثم من إعدادات النظام ← الخصوصية والأمن اختر الفتح على أي حال. في الإصدارات الأقدم: انقر باليمين ← فتح.",
+      step4: "ألصق الرابط واضغط Download. لـ Instagram أو الفيديوهات الخاصة اختر متصفحك من \"Browser login\".",
+      cta: "تحميل لـ Apple Silicon",
+      ctaIntel: "تحميل لـ Intel",
       ctaSecondary: "الكود المصدري على GitHub",
       whatsInside: "ما بداخله",
-      bundleYtdlp: "yt-dlp (دعم 1800+ موقع)",
-      bundleFfmpeg: "ffmpeg + ffprobe (تحويل codec)",
-      bundleNative: "Tauri + Rust (~5 MB native binary)",
-      bundleNoServer: "بدون سيرفرات، بدون telemetry",
-      sizeHint: "~135 MB · Apple Silicon و Intel · macOS 11+",
+      bundleYtdlp: "yt-dlp (أكثر من 1800 موقع)، يحدّث نفسه عند كل تشغيل",
+      bundleDeno: "Deno لفحوصات JavaScript في YouTube",
+      bundleFfmpeg: "ffmpeg + ffprobe (الدمج والتحويل)",
+      bundleLogin: "تسجيل دخول اختياري عبر المتصفح لـ Instagram والفيديوهات الخاصة",
+      bundleNative: "Tauri + Rust",
+      bundleNoServer: "بدون خوادم، بدون تتبّع",
+      sizeHint: "الإصدار 0.2.0 · Apple Silicon ~128 MB · Intel ~146 MB · macOS 11+",
       privacyTitle: "الخصوصية",
-      privacyBody:
-        "الروابط، بيانات الفيديو، أي شيء — لا شيء يغادر Mac الخاص بك. Wiener Labs فقط يخدم الـ .dmg عبر GitHub Releases.",
+      privacyBody: "لا تغادر الروابط والفيديوهات جهاز Mac الخاص بك. عند التشغيل يتحقق التطبيق من GitHub فقط بحثاً عن تحديث yt-dlp. توزّع Wiener Labs ملف .dmg عبر GitHub Releases.",
       licenseTitle: "الترخيص والاستخدام المسؤول",
-      licenseBody:
-        "كود التطبيق MIT. yt-dlp بترخيص Unlicense، ffmpeg LGPL. هذه الأداة ليست لإعادة نشر محتوى محمي بحقوق الطبع — ذلك غير قانوني وغير أخلاقي."
+      licenseBody: "كود التطبيق MIT. yt-dlp بترخيص Unlicense و Deno بترخيص MIT و ffmpeg بترخيص LGPL/GPL. استخدمه لفيديوهاتك وللمحتوى الذي يحق لك تحميله؛ تحميل المحتوى المحمي بحقوق الطبع وإعادة نشره غير قانوني وغير أخلاقي."
     }
   },
   architect: {

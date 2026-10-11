@@ -4607,6 +4607,17 @@ button, input, textarea, select { font: inherit; }
   transform: translateY(-1px);
 }
 
+.ws-vdl-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ws-vdl-primary.is-outline {
+  background: transparent;
+  color: var(--ink);
+}
+
 .ws-vdl-secondary {
   display: inline-flex;
   align-items: center;

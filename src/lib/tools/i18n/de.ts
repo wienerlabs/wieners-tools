@@ -453,32 +453,32 @@ export const toolsDE: ToolI18nBundle = {
     name: "Video-Downloader (macOS)",
     short: "URL einfügen, MP4 erhalten",
     description:
-      "Lade Videos von YouTube, TikTok, Instagram, Twitter, Reddit und 1800+ Seiten herunter. Eine kleine native macOS-App — yt-dlp + ffmpeg gebündelt, alles bleibt auf deinem Mac, kein Server.",
-    keywords: ["video", "download", "youtube", "tiktok", "mp4", "yt-dlp", "macos"],
+      "Lade Videos von YouTube, TikTok, Instagram, X, Reddit und 1800+ Seiten herunter. Eine kleine native macOS-App mit yt-dlp, ffmpeg und Deno; alles bleibt auf deinem Mac, kein Server.",
+    keywords: ["video", "download", "youtube", "tiktok", "instagram", "x", "mp4", "yt-dlp", "macos"],
     options: {
       tagline: "URL einfügen → MP4. Nicht im Browser, sondern in einer kleinen nativen macOS-App.",
       whyNotBrowser: "Warum nicht direkt im Browser?",
-      whyNotBrowserBody:
-        "YouTube/TikTok/Instagram blockieren Browser-fetch-Anfragen via CORS. Und die URL die du einfügst ist nicht das Video selbst — der echte MP4-Stream liegt hinter signierten Manifesten. Das aufzulösen sind ~5000 Zeilen Python in yt-dlp. Deshalb ist Wiener DL eine kleine native App.",
+      whyNotBrowserBody: "YouTube, TikTok und Instagram blockieren Anfragen aus dem Browser per CORS. Und die eingefügte URL ist nicht das Video selbst: Die echte Datei liegt hinter signierten Streaming-Manifesten. Das aufzulösen ist die Arbeit von yt-dlp, deshalb kommt Wiener DL als native App.",
       installTitle: "Installation",
-      step1: "↓ .dmg herunterladen",
-      step2: "Öffnen, Wiener DL.app in Programme ziehen",
-      step3: "Erster Start: Rechtsklick → Öffnen → Öffnen (App ist noch nicht notarisiert)",
-      step4: "URL einfügen, Download drücken.",
-      cta: "Wiener DL.app herunterladen",
+      step1: ".dmg für deinen Mac herunterladen (Apple Silicon oder Intel)",
+      step2: "Öffnen und Wiener DL.app in den Programme-Ordner ziehen",
+      step3: "Erster Start: Unter macOS 15 und neuer die App einmal öffnen, dann unter Systemeinstellungen → Datenschutz & Sicherheit auf \"Dennoch öffnen\" klicken. Unter älterem macOS: Rechtsklick → Öffnen.",
+      step4: "URL einfügen und Download drücken. Für Instagram oder private Videos unter \"Browser login\" deinen Browser wählen.",
+      cta: "Für Apple Silicon laden",
+      ctaIntel: "Für Intel laden",
       ctaSecondary: "Quellcode auf GitHub",
       whatsInside: "Was steckt drin",
-      bundleYtdlp: "yt-dlp (1800+ Seiten unterstützt)",
-      bundleFfmpeg: "ffmpeg + ffprobe (Codec-Konvertierung)",
-      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleYtdlp: "yt-dlp (1800+ Seiten), aktualisiert sich bei jedem Start",
+      bundleDeno: "Deno für die JavaScript-Prüfungen von YouTube",
+      bundleFfmpeg: "ffmpeg + ffprobe (Zusammenführen und Konvertieren)",
+      bundleLogin: "Optionaler Browser-Login für Instagram und private Videos",
+      bundleNative: "Tauri + Rust",
       bundleNoServer: "Null Server, null Telemetrie",
-      sizeHint: "~135 MB · Apple Silicon und Intel · macOS 11+",
+      sizeHint: "Version 0.2.0 · Apple Silicon ~128 MB · Intel ~146 MB · macOS 11+",
       privacyTitle: "Datenschutz",
-      privacyBody:
-        "URLs, Videodaten, gar nichts verlässt deinen Mac. Wiener Labs liefert nur die .dmg über GitHub Releases.",
-      licenseTitle: "Lizenz & verantwortlicher Gebrauch",
-      licenseBody:
-        "App-Code MIT. yt-dlp Unlicense, ffmpeg LGPL. Dieses Tool ist nicht dazu da, urheberrechtlich geschützte Inhalte herunterzuladen und weiterzuverbreiten — das ist illegal und unethisch."
+      privacyBody: "URLs und Videos verlassen deinen Mac nicht. Beim Start prüft die App nur auf GitHub, ob es ein yt-dlp-Update gibt. Wiener Labs liefert die .dmg über GitHub Releases.",
+      licenseTitle: "Lizenz und verantwortlicher Gebrauch",
+      licenseBody: "App-Code MIT. yt-dlp Unlicense, Deno MIT, ffmpeg LGPL/GPL. Nutze es für eigene Videos und Inhalte, die du herunterladen darfst; urheberrechtlich geschützte Inhalte herunterzuladen und weiterzuverbreiten ist illegal und unethisch."
     }
   },
   architect: {

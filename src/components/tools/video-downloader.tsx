@@ -11,6 +11,8 @@ type Props = {
 };
 
 const RELEASES_LATEST = "https://github.com/wienerlabs/wiener-dl-mac/releases/latest";
+const DMG_APPLE_SILICON = `${RELEASES_LATEST}/download/Wiener-DL-mac-apple-silicon.dmg`;
+const DMG_INTEL = `${RELEASES_LATEST}/download/Wiener-DL-mac-intel.dmg`;
 const SOURCE_REPO = "https://github.com/wienerlabs/wiener-dl-mac";
 
 export default function VideoDownloaderTool({ i18n }: Props) {
@@ -22,10 +24,16 @@ export default function VideoDownloaderTool({ i18n }: Props) {
       <p className="ws-vdl-tagline">{t("tagline", "")}</p>
 
       <section className="ws-vdl-cta">
-        <a className="ws-vdl-primary" href={RELEASES_LATEST} target="_blank" rel="noreferrer">
-          <Download size={16} />
-          <span>{t("cta", "Download Wiener DL.app")}</span>
-        </a>
+        <div className="ws-vdl-downloads">
+          <a className="ws-vdl-primary" href={DMG_APPLE_SILICON}>
+            <Download size={16} />
+            <span>{t("cta", "Download for Apple Silicon")}</span>
+          </a>
+          <a className="ws-vdl-primary is-outline" href={DMG_INTEL}>
+            <Download size={16} />
+            <span>{t("ctaIntel", "Download for Intel")}</span>
+          </a>
+        </div>
         <a className="ws-vdl-secondary" href={SOURCE_REPO} target="_blank" rel="noreferrer">
           <Github size={14} />
           <span>{t("ctaSecondary", "Source on GitHub")}</span>
@@ -57,7 +65,15 @@ export default function VideoDownloaderTool({ i18n }: Props) {
           </li>
           <li>
             <Cpu size={14} />
-            <span>{t("bundleFfmpeg", "ffmpeg + ffprobe (codec conversion)")}</span>
+            <span>{t("bundleDeno", "Deno, for YouTube's JavaScript checks")}</span>
+          </li>
+          <li>
+            <Cpu size={14} />
+            <span>{t("bundleFfmpeg", "ffmpeg + ffprobe (merging and conversion)")}</span>
+          </li>
+          <li>
+            <ShieldCheck size={14} />
+            <span>{t("bundleLogin", "Optional browser login for Instagram and private videos")}</span>
           </li>
           <li>
             <Apple size={14} />

@@ -815,32 +815,32 @@ export const toolsEN: ToolI18nBundle = {
     name: "Video Downloader (macOS)",
     short: "Paste URL, get MP4",
     description:
-      "Download videos from YouTube, TikTok, Instagram, Twitter, Reddit and 1800+ sites. A small native macOS app — yt-dlp + ffmpeg bundled, everything stays on your Mac, no server.",
-    keywords: ["video", "download", "youtube", "tiktok", "instagram", "mp4", "yt-dlp", "macos"],
+      "Download videos from YouTube, TikTok, Instagram, X, Reddit and 1800+ sites. A small native macOS app with yt-dlp, ffmpeg and Deno inside; everything stays on your Mac, no server.",
+    keywords: ["video", "download", "youtube", "tiktok", "instagram", "x", "mp4", "yt-dlp", "macos"],
     options: {
-      tagline: "Paste URL → MP4. Not in your browser — in a tiny native macOS app.",
+      tagline: "Paste URL → MP4. Not in your browser, but in a tiny native macOS app.",
       whyNotBrowser: "Why isn't this just a web page?",
-      whyNotBrowserBody:
-        "YouTube/TikTok/Instagram block your browser's fetch requests via CORS. And the URL you paste isn't the video itself — the actual MP4 lives behind cipher-signed manifests. Decoding that is ~5000 lines of Python in yt-dlp. So Wiener DL ships as a tiny native app instead.",
+      whyNotBrowserBody: "YouTube, TikTok and Instagram block requests from your browser with CORS. And the URL you paste isn't the video itself: the real file sits behind signed streaming manifests. Untangling that is yt-dlp's job, so Wiener DL ships as a native app instead.",
       installTitle: "Install",
-      step1: "↓ Download the .dmg",
-      step2: "Open it, drag Wiener DL.app into Applications",
-      step3: "First launch: right-click → Open → Open (the app isn't notarized yet)",
-      step4: "Paste a URL, hit Download.",
-      cta: "Download Wiener DL.app",
+      step1: "Download the .dmg for your Mac (Apple Silicon or Intel)",
+      step2: "Open it and drag Wiener DL.app into Applications",
+      step3: "First launch: on macOS 15 and newer, open the app once, then go to System Settings → Privacy & Security and click \"Open Anyway\". On older macOS, right-click → Open.",
+      step4: "Paste a URL and hit Download. For Instagram or private videos, pick your browser under \"Browser login\".",
+      cta: "Download for Apple Silicon",
+      ctaIntel: "Download for Intel",
       ctaSecondary: "Source on GitHub",
       whatsInside: "What's inside",
-      bundleYtdlp: "yt-dlp (1800+ sites supported)",
-      bundleFfmpeg: "ffmpeg + ffprobe (codec conversion)",
-      bundleNative: "Tauri + Rust (~5 MB native binary)",
+      bundleYtdlp: "yt-dlp (1800+ sites), updates itself at every launch",
+      bundleDeno: "Deno, for YouTube's JavaScript checks",
+      bundleFfmpeg: "ffmpeg + ffprobe (merging and conversion)",
+      bundleLogin: "Optional browser login for Instagram and private videos",
+      bundleNative: "Tauri + Rust",
       bundleNoServer: "Zero servers, zero telemetry",
-      sizeHint: "~135 MB · Apple Silicon and Intel · macOS 11+",
+      sizeHint: "Version 0.2.0 · Apple Silicon ~128 MB · Intel ~146 MB · macOS 11+",
       privacyTitle: "Privacy",
-      privacyBody:
-        "URLs, video data, anything — nothing ever leaves your Mac. Wiener Labs only ships the .dmg via GitHub Releases.",
-      licenseTitle: "License & responsible use",
-      licenseBody:
-        "App code is MIT. yt-dlp is Unlicense, ffmpeg is LGPL. This tool is not for ripping and redistributing copyrighted content — doing so is both illegal and unethical."
+      privacyBody: "URLs and videos never leave your Mac. At launch the app only checks GitHub for a yt-dlp update. Wiener Labs ships the .dmg through GitHub Releases.",
+      licenseTitle: "License and responsible use",
+      licenseBody: "App code is MIT. yt-dlp is Unlicense, Deno is MIT, ffmpeg is LGPL/GPL. Use it for your own videos and content you have the right to download; ripping and redistributing copyrighted content is illegal and unethical."
     }
   },
   architect: {
